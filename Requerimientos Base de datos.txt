@@ -1,0 +1,39 @@
+Tabla usuario,que tendrá una clave primaria(DNI), edad, peso, altura, lesiones(Será un objeto o un String por ejemplo si es la rodilla, tendrán que evitarse todos los ejercicios que relacionen la rodilla, podemos dar dos rutinas, una con poco peso y otra quitando directamente esos ejercicios).
+Musculos
+--------
+Densidad de espalda
+Amplitud de espalda
+Pectoral Superior
+Pectoral Inferior
+Hombro Posterior
+Hombro Lateral
+Hombro Anterior
+Biceps
+Antebrazo
+Triceps
+Abdomen
+Quadriceps
+Isquiotibiales
+Abductores
+Gluteo
+Gemelos
+-------------------
+Alimentos Subida de peso
+-------------------------
+Pechuga
+Ternera 
+Lomo
+Jamon
+Lomo embuchado
+
+Aceite de Oliva Virgen Extra (AOVE)
+Frutos secos (naturales o tostados)
+Aguacate
+Quesos ricos en grasa (curados, semicurados…)
+Leche y yogures enteros
+Fruta deshidratada (dátiles, uvas pasas, ciruelas, pasas…)
+Coco
+Aceitunas
+Pescado azul
+Huevos
+Cereales de buena calidad (pan, copos de avena, pasta, arroz…).
