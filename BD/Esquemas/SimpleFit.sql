@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS SimpleFit;
 
 -- Seleccionar la base de datos recién creada
-USE SimpleFitmaquinas;
+USE SimpleFit;
 
 
 CREATE TABLE `users` (
@@ -27,7 +27,37 @@ CREATE TABLE `rutinas` (
   `userid` int,
   `nombre` varchar(255),
   `frecuencia` int,
-  `maquinas` longtext
+  `maquinas` longtext,
+  FOREIGN KEY (userid) REFERENCES users(dni)
+);
+
+
+CREATE TABLE `dietas` (
+  `dietaid` INT PRIMARY KEY,
+  `userid` int,
+  `descripcion` longtext,
+  `nombre` varchar(255),
+  `objetivo` VARCHAR(255),
+  `calorias` INT,
+  `duracion` INT,
+  FOREIGN KEY (userid) REFERENCES users(dni)
+);
+
+CREATE TABLE `alimentos` (
+  `alimentoid` int PRIMARY KEY,
+  `nombre` varchar(255),
+  `calorias` INT,
+  `proteinas` INT,
+  `grasas` INT,
+  `carbohidratos` INT
+);
+
+CREATE TABLE `dietaAlimento` (
+  `dietaid` INT,
+  `alimentoid` INT,
+  `Cantidad` FLOAT,
+  FOREIGN KEY (dietaid) REFERENCES dietas(dietaid),
+  FOREIGN KEY (alimentoid) REFERENCES alimentos(alimentoid)
 );
 
 
