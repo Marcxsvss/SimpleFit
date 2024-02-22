@@ -11,8 +11,8 @@ fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
 )
 
 fun LoginUiState.toUsuario(): Usuario = Usuario(
-    0,
     this.email,
+    "0",
     this.password
 )
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()

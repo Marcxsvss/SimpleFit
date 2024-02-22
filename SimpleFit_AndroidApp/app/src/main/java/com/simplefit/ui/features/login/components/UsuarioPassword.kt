@@ -9,8 +9,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.pmdm.recetas.ui.composables.CheckboxWithText
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPassword
-import com.pmdm.recetas.ui.theme.RecetasTheme
 import com.pmdm.tienda.utilities.validacion.Validacion
+import com.simplefit.ui.theme.SimpleFitTheme
 
 
 @Composable
@@ -68,7 +68,7 @@ fun UsuarioPasswordTest() {
     var passwordState by remember { mutableStateOf("") }
     var recordarme by remember { mutableStateOf(false) }
 
-    RecetasTheme {
+    SimpleFitTheme {
         UsuarioPassword(
             modifier = Modifier.fillMaxWidth(),
             loginState = loginState,

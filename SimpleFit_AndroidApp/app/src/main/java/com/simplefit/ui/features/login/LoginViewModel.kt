@@ -36,7 +36,7 @@ class LoginViewModel @Inject constructor(
                     email = loginEvent.login
                 )
                 validacionLoginUiState = validacionLoginUiState.copy(
-                    validacionLogin = validadorLogin.validadorLogin.valida(loginEvent.login)
+                    validacionEmail = validadorLogin.validadorEmail.valida(loginEvent.login)
                 )
             }
 
