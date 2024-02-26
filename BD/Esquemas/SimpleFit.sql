@@ -4,11 +4,10 @@ CREATE DATABASE IF NOT EXISTS SimpleFit;
 -- Seleccionar la base de datos recién creada
 USE SimpleFit;
 
-
 CREATE TABLE `users` (
   `dni` int PRIMARY KEY,
   `nombre` varchar(255),
-  `email` varchar(255),
+  `email` varchar(255) UNIQUE NOT NULL,
   `sexo` varchar(255),
   `edad` int,
   `altura` int,
@@ -16,48 +15,62 @@ CREATE TABLE `users` (
 );
 
 CREATE TABLE `maquinas` (
-  `id` int PRIMARY KEY auto_increment,
+  `maquinaid` int PRIMARY KEY,
   `nombre` varchar(255),
   `musculo` varchar(255),
   `imagen` blob
 );
 
 CREATE TABLE `rutinas` (
-  `id` int PRIMARY KEY,
+  `rutinaid` int PRIMARY KEY,
   `userid` int,
   `nombre` varchar(255),
-  `frecuencia` int,
-  `maquinas` longtext,
-  FOREIGN KEY (userid) REFERENCES users(dni)
+  `frecuencia` int
 );
-
-
+ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 CREATE TABLE `dietas` (
-  `dietaid` INT PRIMARY KEY,
+  `dietaid` int PRIMARY KEY,
   `userid` int,
   `descripcion` longtext,
   `nombre` varchar(255),
-  `objetivo` VARCHAR(255),
-  `calorias` INT,
-  `duracion` INT,
-  FOREIGN KEY (userid) REFERENCES users(dni)
+  `objetivo` varchar(255),
+  `calorias` int,
+  `duracion` int
+  
 );
+ALTER TABLE `dietas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 
 CREATE TABLE `alimentos` (
   `alimentoid` int PRIMARY KEY,
-  `nombre` varchar(255),
-  `calorias` INT,
-  `proteinas` INT,
-  `grasas` INT,
-  `carbohidratos` INT
+  `Nombre` varchar(255),
+  `calorias` int,
+  `proteinas` int,
+  `grasas` int,
+  `carbohidratos` int
 );
 
-CREATE TABLE `dietaAlimento` (
-  `dietaid` INT,
-  `alimentoid` INT,
-  `Cantidad` FLOAT,
-  FOREIGN KEY (dietaid) REFERENCES dietas(dietaid),
-  FOREIGN KEY (alimentoid) REFERENCES alimentos(alimentoid)
+CREATE TABLE `dietaalimento` (
+  `dietaid` int,
+  `alimentoid` int,
+  `cantidad` int,
+  PRIMARY KEY (`dietaid`, `alimentoid`)
 );
+
+ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`dietaid`) REFERENCES `dietas` (`dietaid`);
+
+ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`alimentoid`) REFERENCES `alimentos` (`alimentoid`);
+
+
+CREATE TABLE `rutinamaquina` (
+  `rutinaid` int,
+  `maquinaid` int,
+  PRIMARY KEY (`rutinaid`, `maquinaid`)
+);
+
+ALTER TABLE `rutinamaquina` ADD FOREIGN KEY (`rutinaid`) REFERENCES `rutinas` (`rutinaid`);
+
+ALTER TABLE `rutinamaquina` ADD FOREIGN KEY (`maquinaid`) REFERENCES `maquinas` (`maquinaid`);
+
+
 
 
