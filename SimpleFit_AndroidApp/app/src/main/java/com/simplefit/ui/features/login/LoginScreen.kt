@@ -1,16 +1,13 @@
 package com.simplefit.ui.features.login
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
@@ -23,7 +20,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,7 +27,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pmdm.recetas.ui.composables.CircularImageFromResource
 import com.pmdm.recetas.ui.composables.TextNewAccount
-import com.pmdm.tienda.ui.features.login.ValidacionLoginUiState
 import com.pmdm.tienda.ui.features.login.components.UsuarioPassword
 import com.simplefit.R
 import com.simplefit.ui.theme.Purple40
@@ -87,12 +82,6 @@ fun LoginScreen(
                     }
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            Text(
-                "Olvidaste la contraseña?",
-                fontSize = 15.sp,
-                fontStyle = FontStyle.Italic,
-                color = Purple40
-            )
             TextNewAccount(onClick = {
             })
         }

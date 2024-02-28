@@ -1,11 +1,10 @@
-package com.pmdm.tienda.ui.features.login
+package com.simplefit.ui.features.login
 
 import com.pmdm.tienda.utilities.validacion.Validador
 import com.pmdm.tienda.utilities.validacion.ValidadorCompuesto
 import com.pmdm.tienda.utilities.validacion.validadores.ValidadorCorreo
 import com.pmdm.tienda.utilities.validacion.validadores.ValidadorLongitudMinimaTexto
 import com.pmdm.tienda.utilities.validacion.validadores.ValidadorTextoNoVacio
-import com.simplefit.ui.features.login.LoginUiState
 import javax.inject.Inject
 
 class ValidadorLogin  @Inject constructor() : Validador<LoginUiState> {

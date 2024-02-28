@@ -5,8 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pmdm.tienda.ui.features.login.ValidacionLoginUiState
-import com.pmdm.tienda.ui.features.login.ValidadorLogin
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.ui.features.toUsuario
 import dagger.hilt.android.lifecycle.HiltViewModel
