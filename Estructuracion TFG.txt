@@ -2,11 +2,15 @@ Pantallas Android
 ------------------
 Inicio Sesion, 
 Registro, 
-Inicio donde tendremos la rutina actual con datos como que tocaria ese dia, o para ver la dieta, consejos segun tu objetivo, 
-un check para marcar que hoy se ha completado y poner los datos como peso que usaste, repeticiones etc.
+Inicio donde tendremos la rutina actual con datos como que tocaria ese dia en el gym, que tocaría comer ese dia,
+consejos segun tu objetivo, un check para marcar que hoy se ha completado y poner los datos como peso que usaste, repeticiones etc.
 en el caso de no tener ninguna rutina/dieta aparecera("No tienes ninguna rutina creada") y un boton seguidamente
 para ir a la seccion de creacion de dietas.
 En la seccion de dietas tendremos un incono en la bottombar como de una lista y en ese apartado apareceran las distintas 
 rutinas/dietas con su nombre y habrá un icono para crear una rutina de 0, me gustaria añadir un apartado para medir 
 cuanto deberias pesar segun tu altura y tipo de cuerpo.
 En en engranaje tendremos nuestros datos para personalizar peso, altura, objetivo, edad y demas datos.
+
+
+-----------------------------------
+La dieta estará basada en el objetivo

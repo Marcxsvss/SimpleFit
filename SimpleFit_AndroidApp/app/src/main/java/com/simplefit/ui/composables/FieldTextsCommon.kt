@@ -4,9 +4,11 @@ import android.telephony.PhoneNumberUtils
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CreditCard
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.TextFields
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
@@ -311,6 +313,60 @@ fun OutlinedTextFieldEmail(
         onValueChange = onValueChange
     )
 }
+@Composable
+fun OutlinedTextFieldDni(
+    modifier: Modifier = Modifier,
+    enabled: Boolean=true,
+    label: String = "Email",
+    dniState: String,
+    validacionState: Validacion,
+    onValueChange: (String) -> Unit
+)
+{
+    OutlinedTextFieldWithErrorState(
+        modifier = modifier,
+        label = label,
+        enabled=enabled,
+        textoState = dniState,
+        textoPista = "12345678R",
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.CreditCard,
+                contentDescription = "DNI"
+            )
+        },
+        validacionState = validacionState,
+        onValueChange = onValueChange
+    )
+}
 
+@Composable
+fun OutlinedTextFieldNombre(
+    modifier: Modifier = Modifier,
+    enabled: Boolean=true,
+    label: String = "Nombre",
+    nombreState: String,
+    validacionState: Validacion,
+    onValueChange: (String) -> Unit
+)
+{
+    OutlinedTextFieldWithErrorState(
+        modifier = modifier,
+        label = label,
+        enabled=enabled,
+        textoState = nombreState,
+        textoPista = "Nombre",
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.TextFields,
+                contentDescription = "Nombre"
+            )
+        },
+        validacionState = validacionState,
+        onValueChange = onValueChange
+    )
+}
 
 

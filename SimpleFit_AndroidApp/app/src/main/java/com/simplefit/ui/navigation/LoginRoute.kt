@@ -9,7 +9,8 @@ import com.simplefit.ui.features.login.LoginViewModel
 const val LoginRoute="login"
 fun NavGraphBuilder.loginScreen(
     loginViewModel: LoginViewModel,
-    onNavigateToHome:(correo:String)->Unit
+    onNavigateToHome:(correo:String)->Unit,
+    onNavigateToRegister:()->Unit
 ) {
 
     composable(LoginRoute){
@@ -19,7 +20,8 @@ fun NavGraphBuilder.loginScreen(
             mostrarSnack = loginViewModel.mostrarSnackBar ,
             onLoginEvent = loginViewModel::onLoginEvent,
             onMostrarSnackBar =loginViewModel.onMostrarSnackBar,
-            onNavigateToRecetas = onNavigateToHome)
+            onNavigateToHome = onNavigateToHome,
+            onNavigateToRegister = onNavigateToRegister)
     }
 
 

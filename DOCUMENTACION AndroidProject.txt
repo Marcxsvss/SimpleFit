@@ -1,0 +1,3 @@
+-El registro se va a dividir en dos, RegisterAccountInfo, donde introduciremos: email, dni y contraseña, 
+después de este primer registro, pasaremos a la pantalla RegisterProfileInfo, donde nos pediran el resto de 
+datos para personalizar nuestras dietas y rutinas,como la edad, peso, altura...

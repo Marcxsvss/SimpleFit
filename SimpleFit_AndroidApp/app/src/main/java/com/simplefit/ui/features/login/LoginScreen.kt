@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pmdm.recetas.ui.composables.CircularImageFromResource
 import com.pmdm.recetas.ui.composables.TextNewAccount
-import com.pmdm.tienda.ui.features.login.components.UsuarioPassword
+import com.pmdm.tienda.ui.features.login.components.LoginForm
 import com.simplefit.R
 import com.simplefit.ui.theme.Purple40
 import com.simplefit.ui.theme.SimpleFitTheme
@@ -41,7 +41,8 @@ fun LoginScreen(
     mostrarSnack: Boolean,
     onLoginEvent: (LoginEvent) -> Unit,
     onMostrarSnackBar: () -> Unit,
-    onNavigateToRecetas: ((correo: String) -> Unit)? = null,
+    onNavigateToHome: ((correo: String) -> Unit)? = null,
+    onNavigateToRegister : () -> Unit
     ) {
 
 //    var mensaje by remember { mutableStateOf("") }
@@ -60,21 +61,21 @@ fun LoginScreen(
             )
 
 
-            UsuarioPassword(modifier = Modifier.fillMaxWidth(),
+            LoginForm(modifier = Modifier.fillMaxWidth(),
                 loginState = usuarioUiState.email,
                 passwordState = usuarioUiState.password,
                 validacionLogin = validacionLoginUiState.validacionEmail,
                 validacionPassword = validacionLoginUiState.validacionPassword,
                 recordarmeState = recordarmeState,
                 onValueChangeLogin = {
-                    onLoginEvent(LoginEvent.LoginChanged(it))
+                    onLoginEvent(LoginEvent.EmailChanged(it))
                 },
                 onValueChangePassword = {
                     onLoginEvent(LoginEvent.PasswordChanged(it))
                 },
                 onCheckedChanged = { recordarmeState = it },
                 onClickLogearse = {
-                    onLoginEvent(LoginEvent.OnClickLogearse(onNavigateToRecetas))
+                    onLoginEvent(LoginEvent.OnClickLogearse(onNavigateToHome))
                     onMostrarSnackBar()
                     scope.launch() {
                         delay(4000)
@@ -114,8 +115,9 @@ fun LoginScreenPreview() {
                 validacionLoginUiState = loginViewModel.validacionLoginUiState,
                 onLoginEvent = loginViewModel::onLoginEvent,
                 mostrarSnack = false,
-                onNavigateToRecetas = {},
-                onMostrarSnackBar = {})
+                onNavigateToHome = {},
+                onMostrarSnackBar = {},
+                onNavigateToRegister = {})
         }
     }
 }

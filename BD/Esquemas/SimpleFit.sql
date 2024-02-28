@@ -8,6 +8,7 @@ CREATE TABLE `users` (
   `dni` int PRIMARY KEY,
   `nombre` varchar(255),
   `email` varchar(255) UNIQUE NOT NULL,
+  `password` varchar(255),
   `sexo` varchar(255),
   `edad` int,
   `altura` int,

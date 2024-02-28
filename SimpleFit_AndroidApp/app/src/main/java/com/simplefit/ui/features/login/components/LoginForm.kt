@@ -14,7 +14,7 @@ import com.simplefit.ui.theme.SimpleFitTheme
 
 
 @Composable
-fun UsuarioPassword(
+fun LoginForm(
     modifier: Modifier,
     loginState: String,
     validacionLogin: Validacion,
@@ -62,14 +62,14 @@ fun UsuarioPassword(
 
 @Preview(showBackground = true)
 @Composable
-fun UsuarioPasswordTest() {
+fun LoginFormTest() {
 
     var loginState by remember { mutableStateOf("") }
     var passwordState by remember { mutableStateOf("") }
     var recordarme by remember { mutableStateOf(false) }
 
     SimpleFitTheme {
-        UsuarioPassword(
+        LoginForm(
             modifier = Modifier.fillMaxWidth(),
             loginState = loginState,
             validacionLogin = object : Validacion {},

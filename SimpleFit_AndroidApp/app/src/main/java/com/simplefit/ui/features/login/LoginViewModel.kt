@@ -29,7 +29,7 @@ class LoginViewModel @Inject constructor(
 
     fun onLoginEvent(loginEvent: LoginEvent) {
         when (loginEvent) {
-            is LoginEvent.LoginChanged -> {
+            is LoginEvent.EmailChanged -> {
                 usuarioUiState = usuarioUiState.copy(
                     email = loginEvent.login
                 )
