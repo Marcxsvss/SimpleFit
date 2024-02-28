@@ -1,5 +1,6 @@
 package com.simplefit.data
 
+import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 import com.simplefit.models.Usuario
 
@@ -24,4 +25,12 @@ fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
     this.map { it.toUsuario() }
 
 
+//endregion
+
+//region UsuarioMock
+fun UsuarioMock.toUsuario(): Usuario = Usuario(
+    this.email,
+    this.dni,
+    this.password
+)
 //endregion

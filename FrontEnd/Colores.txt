@@ -1,0 +1,5 @@
+Negro -> #000000
+Blanco -> #dddcd8
+Amarillo claro -> #dccea2
+Amarillo medio-> #dbc06d
+Amarillo oscuro-> #dab338

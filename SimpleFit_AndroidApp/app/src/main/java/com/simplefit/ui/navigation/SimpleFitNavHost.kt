@@ -10,10 +10,10 @@ import com.simplefit.ui.features.login.LoginViewModel
 @Composable
 fun SimpleFitNavHost(){
     val navController= rememberNavController()
-    val loginViewModel: LoginViewModel = hiltViewModel()
+    val loginViewModel = hiltViewModel<LoginViewModel>()
     val scope= rememberCoroutineScope()
     NavHost(navController,startDestination = LoginRoute)
     {
-
+        loginScreen(loginViewModel) {}
     }
 }

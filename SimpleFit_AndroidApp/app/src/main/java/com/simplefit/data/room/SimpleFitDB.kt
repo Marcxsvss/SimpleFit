@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.pmdm.tienda.data.room.cliente.UsuarioDao
+import com.simplefit.data.room.usuario.UsuarioDao
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 
 

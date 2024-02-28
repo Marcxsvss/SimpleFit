@@ -1,6 +1,6 @@
 package com.simplefit.data
 
-import com.pmdm.tienda.data.room.cliente.UsuarioDao
+import com.simplefit.data.room.usuario.UsuarioDao
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 import com.simplefit.models.Usuario
 import kotlinx.coroutines.Dispatchers

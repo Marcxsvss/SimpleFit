@@ -1,6 +1,7 @@
-package com.pmdm.tienda.data.room.cliente
+package com.simplefit.data.room.usuario
 
 import androidx.room.*
+import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 
 
 @Dao
@@ -18,4 +19,6 @@ interface UsuarioDao {
     @Update
     suspend fun update(usuario: UsuarioEntity)
 
+    @Query("SELECT COUNT(*) FROM usuarios")
+    suspend fun count(): Int
 }

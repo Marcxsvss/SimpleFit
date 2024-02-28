@@ -88,34 +88,11 @@ fun LoginScreen(
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
             Text(
-                "Olvidaste Password?",
+                "Olvidaste la contraseña?",
                 fontSize = 15.sp,
                 fontStyle = FontStyle.Italic,
                 color = Purple40
             )
-            Text("ó")
-            Row(
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.facebook),
-                    contentDescription = "Facebook",
-                    alignment = Alignment.Center,
-                    modifier = Modifier.size(35.dp)
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.gmail),
-                    contentDescription = "Gmail",
-                    alignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(36.dp)
-                        .padding(3.dp)
-
-                )
-            }
             TextNewAccount(onClick = {
             })
         }
