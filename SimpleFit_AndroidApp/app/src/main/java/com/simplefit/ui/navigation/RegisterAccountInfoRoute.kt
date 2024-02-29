@@ -11,7 +11,8 @@ import com.simplefit.ui.features.login.LoginViewModel
 const val RegisterAccountInfoRoute = "registerAccountInfo"
 fun NavGraphBuilder.registerAccountInfoScreen(
     registerAccountInfoViewModel: RegisterAccountInfoViewModel,
-    onNavigateToRegisterProfileInfo: () -> Unit
+    onNavigateToRegisterProfileInfo: () -> Unit,
+    onNavigateToLogin: () -> Unit
 ) {
 
     composable(RegisterAccountInfoRoute) {
@@ -19,7 +20,7 @@ fun NavGraphBuilder.registerAccountInfoScreen(
             registerAccountInfoUiState = registerAccountInfoViewModel.nuevoUsuarioUiState,
             mostrarSnack = registerAccountInfoViewModel.mostrarSnackBar,
             onMostrarSnackBar = registerAccountInfoViewModel.onMostrarSnackBar,
-            validacionRegisterAccountInfoUiState = registerAccountInfoViewModel.validacionRegisterRegisterAccountInfoUiState,
+            validacionRegisterAccountInfoUiState = registerAccountInfoViewModel.validacionRegisterProfileInfoUiState,
             onRegisterAccountInfoEvent = registerAccountInfoViewModel::onRegisterAccountInfoEvent)
     }
 

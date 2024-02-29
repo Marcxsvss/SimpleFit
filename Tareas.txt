@@ -1,0 +1,10 @@
+Tareas
+-----------------
+Añadir al RegisterProfileInfoForm los dos outlinedTExtField con las validaciones
+Configurar la navegacion para que el registerAccount le pase el email a registerProfile para ir al home con los datos del usuario
+Configurar la navegacion general
+Añadir Datos a la base de datos(Alimentos, maquinas,etc)
+Mirar como va lo de Azure, Decirle a carles que me envie el PDF con la explicacion
+Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
+Maquetar la UI de HOME,Lista de rutinas y dietas,Perfil de usuario.
+Una vez visto como va lo de Azure, ver como cojer los datos de Azure para la Aplicacion de android, creo que se usaba retrofit

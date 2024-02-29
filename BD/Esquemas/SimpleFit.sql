@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS SimpleFit;
 -- Seleccionar la base de datos recién creada
 USE SimpleFit;
 
-CREATE TABLE `users` (
+CREATE TABLE `users`(
   `dni` int PRIMARY KEY,
   `nombre` varchar(255),
   `email` varchar(255) UNIQUE NOT NULL,
@@ -12,6 +12,8 @@ CREATE TABLE `users` (
   `sexo` varchar(255),
   `edad` int,
   `altura` int,
+  `peso` int,
+  `somatotipo` varchar(255),
   `alergias` varchar(255)
 );
 
@@ -47,7 +49,9 @@ CREATE TABLE `alimentos` (
   `calorias` int,
   `proteinas` int,
   `grasas` int,
-  `carbohidratos` int
+  `carbohidratos` int,
+  `lactosa` boolean,
+  `gluten` boolean
 );
 
 CREATE TABLE `dietaalimento` (

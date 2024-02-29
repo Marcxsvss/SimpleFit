@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldDni
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
+import com.pmdm.recetas.ui.composables.OutlinedTextFieldNombre
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPassword
 import com.pmdm.tienda.utilities.validacion.Validacion
 import com.simplefit.ui.theme.SimpleFitTheme
@@ -26,9 +27,12 @@ fun RegisterAccountInfoForm(
     validacionPassword: Validacion,
     dniState : String,
     validacionDni: Validacion,
+    nombreState : String,
+    validacionNombre: Validacion,
     onValueChangeEmail: (String) -> Unit,
     onValueChangePassword: (String) -> Unit,
     onValueChangeDni: (String) -> Unit,
+    onValueChangeNombre : (String) -> Unit,
     onClickRegistrarse: () -> Unit
 ) {
     Column {
@@ -61,6 +65,13 @@ fun RegisterAccountInfoForm(
             validacionState = validacionDni,
             onValueChange = onValueChangeDni
         )
+        OutlinedTextFieldNombre(
+            modifier = modifier,
+            label = "Nombre",
+            nombreState = nombreState,
+            validacionState = validacionNombre,
+            onValueChange = onValueChangeNombre
+        )
 
 
 
@@ -82,6 +93,7 @@ fun RegisterFormTest() {
     var emailState by remember { mutableStateOf("") }
     var passwordState by remember { mutableStateOf("") }
     var dniState by remember { mutableStateOf("") }
+    var nombreState by remember{ mutableStateOf("")}
     var recordarme by remember { mutableStateOf(false) }
 
     SimpleFitTheme {
@@ -93,9 +105,12 @@ fun RegisterFormTest() {
             dniState = dniState,
             validacionDni = object : Validacion {},
             validacionPassword = object : Validacion {},
+            nombreState = nombreState,
+            validacionNombre = object : Validacion {},
             onValueChangeEmail = { emailState = it },
             onValueChangePassword = { passwordState = it },
             onValueChangeDni = { dniState = it },
+            onValueChangeNombre = { nombreState = it },
             onClickRegistrarse = {}
         )
     }

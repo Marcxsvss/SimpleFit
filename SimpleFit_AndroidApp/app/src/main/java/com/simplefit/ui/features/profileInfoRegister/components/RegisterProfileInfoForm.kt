@@ -5,51 +5,56 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.pmdm.recetas.ui.composables.OutlinedTextFieldNombre
 import com.pmdm.tienda.utilities.validacion.Validacion
+import com.simplefit.ui.composables.ExposedDropdownMenuBoxAlergia
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
-import com.simplefit.ui.theme.SimpleFitTheme
+import com.simplefit.ui.composables.ExposedDropdownMenuBoxSexo
+import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
 
 @Composable
 fun RegisterProfileInfoForm(
     modifier: Modifier,
-    nombreState: String,
-    validacionNombre: Validacion,
     edadState: Int,
     sexoState : String,
-    onValueChangeNombre: (String) -> Unit,
-    onValueChangeEdad: (String) -> Unit,
+    somatotipoState : String,
+    alergiaState : String,
+    alturaState : Int,
+    validacionAltura: Validacion,
+    PesoState : Int,
+    validacionPeso: Validacion,
+    onValueChangeEdad: (Int) -> Unit,
     onValueChangeSexo: (String) -> Unit,
+    onValueChangeSomatotipo: (String) -> Unit,
+    onValueChangeAlergia: (String) -> Unit,
+    onValueChangeAltura: (Int) -> Unit,
+    onValueChangePeso: (Int) -> Unit,
     onClickGuardar: () -> Unit
 ) {
-    Column {//Crear todos los Outlined correspondientes a cada dato, estos están mal, hay que cambiarlos¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-        //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-        OutlinedTextFieldNombre(
-            modifier = modifier,
-            label = "Nombre",
-            nombreState = nombreState,
-            validacionState = validacionNombre,
-            onValueChange = onValueChangeNombre
-        )
+    Column {
 
-        /*ExposedDropdownMenuBoxEdad(
+        //Faltan los 2 OutlinedTextField
+
+        ExposedDropdownMenuBoxEdad(
             modifier = modifier,
-            edadState = edadState,
+            //edadState = edadState,
             onValueChange = onValueChangeEdad
         )
         ExposedDropdownMenuBoxSexo(
             modifier = modifier,
-            label = "Sexo",
-            sexoState = sexoState,
-            validacionState = validacionSexo,
+            //sexoState = sexoState,
             onValueChange = onValueChangeSexo
-        )*/
+        )
+        ExposedDropdownMenuBoxSomatotipo(
+            modifier = modifier,
+            //sexoState = sexoState,
+            onValueChange = onValueChangeSexo
+        )
+        ExposedDropdownMenuBoxAlergia(
+            modifier = modifier,
+            //sexoState = sexoState,
+            onValueChange = onValueChangeSexo
+        )
 
 
 

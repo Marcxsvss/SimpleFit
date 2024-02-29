@@ -18,6 +18,7 @@ import com.pmdm.recetas.ui.composables.CircularImageFromResource
 import com.pmdm.recetas.ui.composables.TextNewAccount
 import com.simplefit.R
 import com.simplefit.ui.features.accountInfoRegister.components.RegisterAccountInfoForm
+import com.simplefit.ui.features.profileInfoRegister.components.RegisterProfileInfoForm
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -29,6 +30,7 @@ fun RegisterProfileInfoScreen(
     validacionRegisterProfileInfoUiState: ValidacionRegisterProfileInfoUiState,
     onRegisterProfileInfoEvent: (RegisterProfileInfoEvent) -> Unit,
     onNavigateToHome: ((correo: String) -> Unit)? = null) {
+    //Este email tiene que llegar desde AccountInfoRegister
 
     val scope = rememberCoroutineScope()
     Box() {
@@ -42,43 +44,56 @@ fun RegisterProfileInfoScreen(
             )
 
 
-            RegisterAccountInfoForm(modifier = Modifier.fillMaxWidth(),
-                emailState = registerProfileInfoUiState.email,
-                passwordState = registerProfileInfoUiState.password,
-                dniState = registerProfileInfoUiState.dni,
-                validacionEmail = validacionRegisterProfileInfoUiState.validacionEmail,
-                validacionPassword = validacionRegisterProfileInfoUiState.validacionPassword,
-                validacionDni = validacionRegisterProfileInfoUiState.validacionDni,
-                onValueChangeEmail = {
-                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.EmailChanged(it))
+            RegisterProfileInfoForm(
+                modifier = Modifier.fillMaxWidth(),
+                edadState = registerProfileInfoUiState.edad,
+                sexoState = registerProfileInfoUiState.sexo,
+                somatotipoState = registerProfileInfoUiState.somatotipo,
+                alergiaState = registerProfileInfoUiState.alergia,
+                alturaState = registerProfileInfoUiState.altura,
+                PesoState= registerProfileInfoUiState.peso,
+                validacionAltura=  validacionRegisterProfileInfoUiState.validacionAltura,
+                validacionPeso = validacionRegisterProfileInfoUiState.validacionPeso,
+                onValueChangeEdad = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.EdadChanged(it))
                 },
-                onValueChangePassword = {
-                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.PasswordChanged(it))
+                onValueChangeSexo = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.SexoChanged(it))
                 },
-                onValueChangeDni = { onRegisterProfileInfoEvent(RegisterProfileInfoEvent.DniChanged(it)) },
-                onClickRegistrarse = {
+                onValueChangeSomatotipo = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.SomatotipoChanged(it))
+                },
+                onValueChangeAlergia = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlergiaChanged(it))
+                },
+                onValueChangeAltura = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlturaChanged(it))
+                },
+                onValueChangePeso = {
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.PesoChanged(it))
+                },
+                onClickGuardar = {
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.OnClickGuardarPerfil(onNavigateToHome))
-                    onMostrarSnackBar()
-                    scope.launch() {
-                        delay(4000)
-                        onMostrarSnackBar()
+                    scope.launch {
+                        delay(1000)
+                        //onMostrarSnackBar()
                     }
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
             TextNewAccount(onClick = {
             })
         }
-        if (mostrarSnack) {
-            var mensaje = ""
-            if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
-            else if (registerProfileInfoUiState.estaRegistrado) mensaje =
-                "Entrando a la APP con usuario ${registerProfileInfoUiState.email}"
-            else mensaje = "Error, el email usuario ya está registrado"
-            Snackbar(
-                modifier = Modifier.align(Alignment.BottomCenter)
-            ) {
-                Text(text = mensaje)
-            }
-        }
+//        if (mostrarSnack) {
+//            var mensaje = ""
+//            if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
+//            else if (registerProfileInfoUiState.estaRegistrado) mensaje =
+//                "Entrando a la APP con usuario ${registerProfileInfoUiState.email}"
+//            else mensaje = "Error, el email usuario ya está registrado"
+//            Snackbar(
+//                modifier = Modifier.align(Alignment.BottomCenter)
+//            ) {
+//                Text(text = mensaje)
+//            }
+//        }
     }
 }

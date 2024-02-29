@@ -6,7 +6,8 @@ import com.pmdm.tienda.utilities.validacion.ValidacionCompuesta
 data class ValidacionRegisterAccountInfoUiState(
     val validacionEmail: Validacion = object : Validacion {},
     val validacionPassword: Validacion = object : Validacion {},
-    val validacionDni: Validacion = object : Validacion {}
+    val validacionDni: Validacion = object : Validacion {},
+    val validacionNombre: Validacion = object : Validacion {}
 ) : Validacion {
     private lateinit var validacionCompuesta: ValidacionCompuesta
 
@@ -15,6 +16,7 @@ data class ValidacionRegisterAccountInfoUiState(
             .add(validacionEmail)
             .add(validacionPassword)
             .add(validacionDni)
+            .add(validacionNombre)
         return validacionCompuesta
     }
 

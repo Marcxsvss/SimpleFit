@@ -28,7 +28,7 @@ fun RegisterAccountInfoScreen(
     onMostrarSnackBar: () -> Unit,
     validacionRegisterAccountInfoUiState: ValidacionRegisterAccountInfoUiState,
     onRegisterAccountInfoEvent: (RegisterAccountInfoEvent) -> Unit,
-    onNavigateToHome: ((correo: String) -> Unit)? = null) {
+    onNavigateToProfileInfoRegister: ((correo: String) -> Unit)? = null) {
 
     val scope = rememberCoroutineScope()
     Box() {
@@ -46,9 +46,11 @@ fun RegisterAccountInfoScreen(
                 emailState = registerAccountInfoUiState.email,
                 passwordState = registerAccountInfoUiState.password,
                 dniState = registerAccountInfoUiState.dni,
+                nombreState = registerAccountInfoUiState.nombre,
                 validacionEmail = validacionRegisterAccountInfoUiState.validacionEmail,
                 validacionPassword = validacionRegisterAccountInfoUiState.validacionPassword,
                 validacionDni = validacionRegisterAccountInfoUiState.validacionDni,
+                validacionNombre = validacionRegisterAccountInfoUiState.validacionNombre,
                 onValueChangeEmail = {
                     onRegisterAccountInfoEvent(RegisterAccountInfoEvent.EmailChanged(it))
                 },
@@ -56,8 +58,9 @@ fun RegisterAccountInfoScreen(
                     onRegisterAccountInfoEvent(RegisterAccountInfoEvent.PasswordChanged(it))
                 },
                 onValueChangeDni = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.DniChanged(it)) },
+                onValueChangeNombre = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.NombreChanged(it)) },
                 onClickRegistrarse = {
-                    onRegisterAccountInfoEvent(RegisterAccountInfoEvent.OnClickRegistrarse(onNavigateToHome))
+                    onRegisterAccountInfoEvent(RegisterAccountInfoEvent.OnClickRegistrarse(onNavigateToProfileInfoRegister))
                     onMostrarSnackBar()
                     scope.launch() {
                         delay(4000)

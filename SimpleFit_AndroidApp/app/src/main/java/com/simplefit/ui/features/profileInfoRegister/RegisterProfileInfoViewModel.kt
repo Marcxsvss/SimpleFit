@@ -28,29 +28,40 @@ class RegisterProfileInfoViewModel @Inject constructor(
 
     fun onRegisterProfileInfoEvent(registerProfileInfoEvent: RegisterProfileInfoEvent) {
         when (registerProfileInfoEvent) {
-            is RegisterProfileInfoEvent.EmailChanged -> {
+            is RegisterProfileInfoEvent.EdadChanged -> {
                 perfilUsuarioUiState = perfilUsuarioUiState.copy(
-                    email = registerProfileInfoEvent.login
-                )
-                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
-                    validacionEmail = validadorRegisterProfileInfo.validadorEmail.valida(registerProfileInfoEvent.login)
+                    edad = registerProfileInfoEvent.edad
                 )
             }
-
-            is RegisterProfileInfoEvent.PasswordChanged -> {
+            is RegisterProfileInfoEvent.AlergiaChanged -> {
                 perfilUsuarioUiState = perfilUsuarioUiState.copy(
-                    password = registerProfileInfoEvent.password
-                )
-                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
-                    validacionPassword = validadorRegisterProfileInfo.validadorPassword.valida(registerProfileInfoEvent.password)
+                    alergia = registerProfileInfoEvent.alergia
                 )
             }
-            is RegisterProfileInfoEvent.DniChanged -> {
+            is RegisterProfileInfoEvent.SexoChanged -> {
                 perfilUsuarioUiState = perfilUsuarioUiState.copy(
-                    password = registerProfileInfoEvent.dni
+                    sexo = registerProfileInfoEvent.sexo
+                )
+            }
+            is RegisterProfileInfoEvent.SomatotipoChanged -> {
+                perfilUsuarioUiState = perfilUsuarioUiState.copy(
+                    somatotipo = registerProfileInfoEvent.somatotipo
+                )
+            }
+            is RegisterProfileInfoEvent.PesoChanged -> {
+                perfilUsuarioUiState = perfilUsuarioUiState.copy(
+                    peso = registerProfileInfoEvent.peso
                 )
                 validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
-                    validacionPassword = validadorRegisterProfileInfo.validadorPassword.valida(registerProfileInfoEvent.dni)
+                    validacionPeso = validadorRegisterProfileInfo.validadorPeso.valida(registerProfileInfoEvent.peso.toString())
+                )
+            }
+            is RegisterProfileInfoEvent.AlturaChanged -> {
+                perfilUsuarioUiState = perfilUsuarioUiState.copy(
+                    altura = registerProfileInfoEvent.altura
+                )
+                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
+                    validacionAltura = validadorRegisterProfileInfo.validadorAltura.valida(registerProfileInfoEvent.altura.toString())
                 )
             }
 
@@ -60,12 +71,12 @@ class RegisterProfileInfoViewModel @Inject constructor(
                     if (!validacionRegisterProfileInfoUiState.hayError) {
 
                         perfilUsuarioUiState = perfilUsuarioUiState.copy(
-                            //estaRegistrado = registro()
+                            estaRegistrado = true
                         )
-//                        if (nuevoUsuarioUiState.estaRegistrado) {
-//                            delay(1000)
-//                            registerAccountInfoEvent.onNavigateHome?.let { it(nuevoUsuarioUiState.email) }
-//                        }
+                        if (perfilUsuarioUiState.estaRegistrado) {
+                            delay(1000)
+                            registerProfileInfoEvent.onNavigateHome?.let { it(perfilUsuarioUiState.email) }
+                        }
                     }
                 }
             }
@@ -74,19 +85,19 @@ class RegisterProfileInfoViewModel @Inject constructor(
         }
     }
 
-    suspend fun registro(): Boolean {
-        val usuario = perfilUsuarioUiState.toUsuario()
-
-        if (usuarioRepository.get(usuario.email) == null)
-        {
-            usuarioRepository.insert(usuario)
-            return true
-        }
-        else
-        {
-            return false
-        }
-
-    }
+//    suspend fun registro(): Boolean {
+//        val usuario = perfilUsuarioUiState.toUsuario()
+//
+//        if (usuarioRepository.get(usuario.email) == null)
+//        {
+//            usuarioRepository.insert(usuario)
+//            return true
+//        }
+//        else
+//        {
+//            return false
+//        }
+//
+//    }
 
 }

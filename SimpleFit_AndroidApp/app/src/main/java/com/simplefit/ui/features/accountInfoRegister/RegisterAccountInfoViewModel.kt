@@ -19,7 +19,7 @@ class RegisterAccountInfoViewModel @Inject constructor(
 ) : ViewModel() {
     var nuevoUsuarioUiState by mutableStateOf(RegisterAccountInfoUiState())
         private set
-    var validacionRegisterProfileInfoUiState by mutableStateOf(ValidacionRegisterAccountInfoUiState())
+    var validacionRegisterAccountInfoUiState by mutableStateOf(ValidacionRegisterAccountInfoUiState())
         private set
     var mostrarSnackBar by mutableStateOf(false)
     val onMostrarSnackBar: () -> Unit by mutableStateOf({
@@ -30,10 +30,10 @@ class RegisterAccountInfoViewModel @Inject constructor(
         when (registerAccountInfoEvent) {
             is RegisterAccountInfoEvent.EmailChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
-                    email = registerAccountInfoEvent.login
+                    email = registerAccountInfoEvent.email
                 )
-                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
-                    validacionEmail = validadorRegisterAccountInfo.validadorEmail.valida(registerAccountInfoEvent.login)
+                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
+                    validacionEmail = validadorRegisterAccountInfo.validadorEmail.valida(registerAccountInfoEvent.email)
                 )
             }
 
@@ -41,23 +41,31 @@ class RegisterAccountInfoViewModel @Inject constructor(
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     password = registerAccountInfoEvent.password
                 )
-                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
+                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
                     validacionPassword = validadorRegisterAccountInfo.validadorPassword.valida(registerAccountInfoEvent.password)
                 )
             }
             is RegisterAccountInfoEvent.DniChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
-                    password = registerAccountInfoEvent.dni
+                    dni = registerAccountInfoEvent.dni
                 )
-                validacionRegisterProfileInfoUiState = validacionRegisterProfileInfoUiState.copy(
-                    validacionPassword = validadorRegisterAccountInfo.validadorPassword.valida(registerAccountInfoEvent.dni)
+                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
+                    validacionDni = validadorRegisterAccountInfo.validadorDni.valida(registerAccountInfoEvent.dni)
+                )
+            }
+            is RegisterAccountInfoEvent.NombreChanged -> {
+                nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
+                    nombre = registerAccountInfoEvent.nombre
+                )
+                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
+                    validacionNombre = validadorRegisterAccountInfo.validadorNombre.valida(registerAccountInfoEvent.nombre)
                 )
             }
 
             is RegisterAccountInfoEvent.OnClickRegistrarse -> {
                 viewModelScope.launch {
-                    validacionRegisterProfileInfoUiState = validadorRegisterAccountInfo.valida(nuevoUsuarioUiState)
-                    if (!validacionRegisterProfileInfoUiState.hayError) {
+                    validacionRegisterAccountInfoUiState = validadorRegisterAccountInfo.valida(nuevoUsuarioUiState)
+                    if (!validacionRegisterAccountInfoUiState.hayError) {
 
                         nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                             estaRegistrado = registro()

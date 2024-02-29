@@ -24,11 +24,11 @@ import com.simplefit.ui.theme.SimpleFitTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxEdad(/*modifier: Modifier, edadState: Int, onValueChange: (String) -> Unit*/) {
+fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (Int) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
-    val coffeeDrinks = arrayOf("Americano", "Cappuccino", "Espresso", "Latte", "Mocha")
+    val Edades = arrayOf("16-28", "28-45", "45-60", "60-X")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(coffeeDrinks[0]) }
+    var selectedText by remember { mutableStateOf(Edades[0]) }
 
     Box(
         modifier = Modifier
@@ -49,11 +49,12 @@ fun ExposedDropdownMenuBoxEdad(/*modifier: Modifier, edadState: Int, onValueChan
                 expanded = expanded,
                 onDismissRequest = { expanded = false }
             ) {
-                coffeeDrinks.forEach { item ->
+                Edades.forEach { item ->
                     DropdownMenuItem(
                         text = { Text(text = item) },
                         onClick = {
                             selectedText = item
+                            onValueChange(item.toInt())
                             expanded = false
                             Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
                         }
@@ -63,13 +64,136 @@ fun ExposedDropdownMenuBoxEdad(/*modifier: Modifier, edadState: Int, onValueChan
         }
     }
 }
-@Preview
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxEdadPreview() {
-    SimpleFitTheme {
-        ExposedDropdownMenuBoxEdad(
-            /*modifier = Modifier.fillMaxWidth(),
-            edadState = 0,
-            onValueChange = {}*/)
+fun ExposedDropdownMenuBoxSexo(/*sexoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+    val context = LocalContext.current
+    val Edades = arrayOf("Masculino", "Femenino")
+    var expanded by remember { mutableStateOf(false) }
+    var selectedText by remember { mutableStateOf(Edades[0]) }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(32.dp)
+    ) {
+        ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = {expanded = !expanded})
+        {
+            TextField(
+                value = selectedText,
+                onValueChange = {},
+                readOnly = true,
+                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                modifier = Modifier.menuAnchor()
+            )
+
+            ExposedDropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false }
+            ) {
+                Edades.forEach { item ->
+                    DropdownMenuItem(
+                        text = { Text(text = item) },
+                        onClick = {
+                            selectedText = item
+                            onValueChange(item)
+                            expanded = false
+                            Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
+                        }
+                    )
+                }
+            }
+        }
     }
 }
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+    val context = LocalContext.current
+    val Edades = arrayOf("Ectomorfo", "Mesomorfo", "Endomorfo")
+    var expanded by remember { mutableStateOf(false) }
+    var selectedText by remember { mutableStateOf(Edades[0]) }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(32.dp)
+    ) {
+        ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = {expanded = !expanded})
+        {
+            TextField(
+                value = selectedText,
+                onValueChange = {},
+                readOnly = true,
+                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                modifier = Modifier.menuAnchor()
+            )
+
+            ExposedDropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false }
+            ) {
+                Edades.forEach { item ->
+                    DropdownMenuItem(
+                        text = { Text(text = item) },
+                        onClick = {
+                            selectedText = item
+                            onValueChange(item)
+                            expanded = false
+                            Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ExposedDropdownMenuBoxAlergia(/*sexoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+    val context = LocalContext.current
+    val Edades = arrayOf("Lactosa", "Gluten", "Pescado", "Huevo")
+    var expanded by remember { mutableStateOf(false) }
+    var selectedText by remember {mutableStateOf(Edades[0])}
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(32.dp)
+    ) {
+        ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = {expanded = !expanded})
+        {
+            TextField(
+                value = selectedText,
+                onValueChange = {},
+                readOnly = true,
+                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                modifier = Modifier.menuAnchor()
+            )
+
+            ExposedDropdownMenu(
+                expanded = expanded,
+                onDismissRequest = { expanded = false }
+            ) {
+                Edades.forEach { item ->
+                    DropdownMenuItem(
+                        text = { Text(text = item) },
+                        onClick = {
+                            selectedText = item
+                            onValueChange(item)
+                            expanded = false
+                            Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+//@Preview
+//@Composable
+//fun ExposedDropdownMenuBoxEdadPreview() {
+//    SimpleFitTheme {
+//        ExposedDropdownMenuBoxEdad({}, modifier = Modifier)
+//    }
+//}

@@ -21,6 +21,9 @@ class ValidadorRegisterAccountInfo  @Inject constructor() : Validador<RegisterAc
         ValidadorCompuesto<String>()
             .add(ValidadorTextoNoVacio("El DNI no puede estar vacío"))
             .add(ValidadorLongitudMinimaTexto(9, "El DNI debe tener como mínimo 9 carácteres"))
+    var validadorNombre =
+        ValidadorCompuesto<String>()
+            .add(ValidadorTextoNoVacio("El nombre no puede estar vacío"))
 
     override fun valida(datos: RegisterAccountInfoUiState): ValidacionRegisterAccountInfoUiState {
         val validacionLogin = validadorEmail.valida(datos.email)
