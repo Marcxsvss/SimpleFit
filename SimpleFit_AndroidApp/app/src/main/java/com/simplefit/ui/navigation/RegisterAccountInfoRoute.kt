@@ -9,9 +9,10 @@ import com.simplefit.ui.features.login.LoginScreen
 import com.simplefit.ui.features.login.LoginViewModel
 
 const val RegisterAccountInfoRoute = "registerAccountInfo"
+const val registerAccountParameterName = "email"
 fun NavGraphBuilder.registerAccountInfoScreen(
     registerAccountInfoViewModel: RegisterAccountInfoViewModel,
-    onNavigateToRegisterProfileInfo: () -> Unit,
+    onNavigateToRegisterProfileInfo: ((correo: String) -> Unit)? = null,
     onNavigateToLogin: () -> Unit
 ) {
 
@@ -20,7 +21,7 @@ fun NavGraphBuilder.registerAccountInfoScreen(
             registerAccountInfoUiState = registerAccountInfoViewModel.nuevoUsuarioUiState,
             mostrarSnack = registerAccountInfoViewModel.mostrarSnackBar,
             onMostrarSnackBar = registerAccountInfoViewModel.onMostrarSnackBar,
-            validacionRegisterAccountInfoUiState = registerAccountInfoViewModel.validacionRegisterProfileInfoUiState,
+            validacionRegisterAccountInfoUiState = registerAccountInfoViewModel.validacionRegisterAccountInfoUiState,
             onRegisterAccountInfoEvent = registerAccountInfoViewModel::onRegisterAccountInfoEvent)
     }
 

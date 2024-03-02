@@ -368,5 +368,58 @@ fun OutlinedTextFieldNombre(
         onValueChange = onValueChange
     )
 }
-
+@Composable
+fun OutlinedTextFieldAltura(
+    modifier: Modifier = Modifier,
+    enabled: Boolean=true,
+    label: String = "Altura",
+    alturaState: String,
+    validacionState: Validacion,
+    onValueChange: (String) -> Unit
+)
+{
+    OutlinedTextFieldWithErrorState(
+        modifier = modifier,
+        label = label,
+        enabled=enabled,
+        textoState = alturaState,
+        textoPista = "Altura",
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.TextFields,
+                contentDescription = "Altura"
+            )
+        },
+        validacionState = validacionState,
+        onValueChange = onValueChange
+    )
+}
+@Composable
+fun OutlinedTextFieldPeso(
+    modifier: Modifier = Modifier,
+    enabled: Boolean=true,
+    label: String = "Peso",
+    pesoState: String,
+    validacionState: Validacion,
+    onValueChange: (String) -> Unit
+)
+{
+    OutlinedTextFieldWithErrorState(
+        modifier = modifier,
+        label = label,
+        enabled=enabled,
+        textoState = pesoState,
+        textoPista = "Peso",
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.TextFields,
+                contentDescription = "Peso"
+            )
+        },
+        validacionState = validacionState,
+        onValueChange = onValueChange
+    )
+}
 

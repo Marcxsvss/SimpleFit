@@ -6,6 +6,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.pmdm.recetas.ui.composables.OutlinedTextFieldAltura
+import com.pmdm.recetas.ui.composables.OutlinedTextFieldPeso
 import com.pmdm.tienda.utilities.validacion.Validacion
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxAlergia
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
@@ -21,19 +23,27 @@ fun RegisterProfileInfoForm(
     alergiaState : String,
     alturaState : Int,
     validacionAltura: Validacion,
-    PesoState : Int,
+    pesoState : Int,
     validacionPeso: Validacion,
     onValueChangeEdad: (Int) -> Unit,
     onValueChangeSexo: (String) -> Unit,
     onValueChangeSomatotipo: (String) -> Unit,
     onValueChangeAlergia: (String) -> Unit,
-    onValueChangeAltura: (Int) -> Unit,
-    onValueChangePeso: (Int) -> Unit,
+    onValueChangeAltura: (String) -> Unit,
+    onValueChangePeso: (String) -> Unit,
     onClickGuardar: () -> Unit
 ) {
     Column {
 
-        //Faltan los 2 OutlinedTextField
+
+        OutlinedTextFieldAltura(
+            alturaState = alturaState.toString(),
+            validacionState = validacionAltura,
+            onValueChange = onValueChangeAltura)
+        OutlinedTextFieldPeso(
+            pesoState = pesoState.toString(),
+            validacionState = validacionPeso,
+            onValueChange = onValueChangePeso)
 
         ExposedDropdownMenuBoxEdad(
             modifier = modifier,
@@ -48,12 +58,12 @@ fun RegisterProfileInfoForm(
         ExposedDropdownMenuBoxSomatotipo(
             modifier = modifier,
             //sexoState = sexoState,
-            onValueChange = onValueChangeSexo
+            onValueChange = onValueChangeSomatotipo
         )
         ExposedDropdownMenuBoxAlergia(
             modifier = modifier,
             //sexoState = sexoState,
-            onValueChange = onValueChangeSexo
+            onValueChange = onValueChangeAlergia
         )
 
 

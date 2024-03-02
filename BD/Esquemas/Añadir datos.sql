@@ -1,13 +1,13 @@
-INSERT INTO alimentos (alimentoid, Nombre, calorias, proteinas, grasas, carbohidratos) VALUES 
-	(1, 'ternera',250,27,30,35),
-    (2, 'pollo', 165, 31, 3.6, 0),
-    (3, 'salmón', 206, 22, 13, 0),
-    (4, 'brócoli', 55, 3.7, 0.6, 11),
-    (5, 'arroz integral', 218, 5, 1.6, 45),
-    (6, 'batata', 112, 2, 0.1, 26),
-    (7, 'huevo', 68, 5.5, 4.8, 0.6),
-    (8, 'espinacas', 23, 2.9, 0.4, 3.6),
-    (9, 'plátano', 105, 1.3, 0.3, 27),
-    (10, 'yogur griego', 59, 10, 1.3, 3.6),
-    (11, 'avena', 68, 2.4, 1.4, 12);
-SELECT * FROM alimentos;
+INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (1, 'Press de pecho sentado', 'Pecho', NULL),
+  (2, 'Máquina de pecho inclinada', 'Pecho', NULL),
+  (3, 'Fondos en paralelas', 'Pecho', NULL),
+  (4, 'Máquina de pecho declinada', 'Pecho', NULL),
+  (5, 'Press de banca con barra', 'Pecho', NULL),
+  (6, 'Press con mancuernas', 'Pecho', NULL),
+  (7, 'Peck Deck con doble polea alta', 'Pecho', NULL),
+  (8, 'Pec Deck en maquina', 'Pecho', NULL),
+  (9, 'Press inclinado en multipower', 'Pecho', NULL),
+  (10, 'Press inclinado con mancuernas', 'Pecho', NULL);
+  
+  SELECT * FROM maquinas;

@@ -1,6 +1,5 @@
 Tareas
 -----------------
-Añadir al RegisterProfileInfoForm los dos outlinedTExtField con las validaciones
 Configurar la navegacion para que el registerAccount le pase el email a registerProfile para ir al home con los datos del usuario
 Configurar la navegacion general
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)

@@ -9,7 +9,7 @@ import com.simplefit.ui.features.login.LoginViewModel
 const val LoginRoute="login"
 fun NavGraphBuilder.loginScreen(
     loginViewModel: LoginViewModel,
-    onNavigateToHome:(correo:String)->Unit,
+    onNavigateToHome:((correo: String) -> Unit)? = null,
     onNavigateToRegister:()->Unit
 ) {
 

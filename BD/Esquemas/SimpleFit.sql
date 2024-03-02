@@ -39,7 +39,6 @@ CREATE TABLE `dietas` (
   `objetivo` varchar(255),
   `calorias` int,
   `duracion` int
-  
 );
 ALTER TABLE `dietas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 

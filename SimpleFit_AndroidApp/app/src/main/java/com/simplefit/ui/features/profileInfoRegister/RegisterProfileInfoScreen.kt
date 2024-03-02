@@ -51,7 +51,7 @@ fun RegisterProfileInfoScreen(
                 somatotipoState = registerProfileInfoUiState.somatotipo,
                 alergiaState = registerProfileInfoUiState.alergia,
                 alturaState = registerProfileInfoUiState.altura,
-                PesoState= registerProfileInfoUiState.peso,
+                pesoState= registerProfileInfoUiState.peso,
                 validacionAltura=  validacionRegisterProfileInfoUiState.validacionAltura,
                 validacionPeso = validacionRegisterProfileInfoUiState.validacionPeso,
                 onValueChangeEdad = {
@@ -67,10 +67,10 @@ fun RegisterProfileInfoScreen(
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlergiaChanged(it))
                 },
                 onValueChangeAltura = {
-                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlturaChanged(it))
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlturaChanged(it.toInt()))
                 },
                 onValueChangePeso = {
-                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.PesoChanged(it))
+                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.PesoChanged(it.toInt()))
                 },
                 onClickGuardar = {
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.OnClickGuardarPerfil(onNavigateToHome))
