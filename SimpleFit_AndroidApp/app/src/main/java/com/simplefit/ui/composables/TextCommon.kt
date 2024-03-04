@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun TextNewAccount(onClick: () -> Unit, color: Color = MaterialTheme.colorScheme.primary) {
+fun TextNewAccount(onNavigateToRegisterAccount: () -> Unit, color: Color = MaterialTheme.colorScheme.primary) {
     Row(
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically,
@@ -33,7 +33,7 @@ fun TextNewAccount(onClick: () -> Unit, color: Color = MaterialTheme.colorScheme
             "Crear cuenta",
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable(enabled = true, onClick = onClick),
+                .clickable(enabled = true, onClick = onNavigateToRegisterAccount),
             textAlign = TextAlign.End,
             color = color
         )
@@ -73,7 +73,7 @@ fun TextWithLine(texto: String, color: Color) {
 @Composable
 fun TextNewAccountTest() {
     Column() {
-        TextNewAccount(onClick = {})
+        TextNewAccount(onNavigateToRegisterAccount = {})
         TextWithLine(texto = "Dirección", color = Color.Magenta)
 
     }

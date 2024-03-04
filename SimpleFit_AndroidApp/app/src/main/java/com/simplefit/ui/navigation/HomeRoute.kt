@@ -7,38 +7,41 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.simplefit.ui.features.home.HomeScreen
+import com.simplefit.ui.features.home.HomeViewModel
 
 
-//const val homeRoute = "Home"
-//const val homeParameterName = "email"
-//
-//// Definimos un método de extensión de NavGraphBuilder para poder
-//// usarlo en el contexto de nuestro NavHost
-//fun NavGraphBuilder.homeScreen(
-//    vm : HomeViewModel,
-//    onNavigateToLogin: () -> Unit,
-//) {
-//    composable(
-//        route = "$homeRoute/{$homeParameterName}",
-//        arguments = listOf(
-//            navArgument(homeParameterName) {
-//                type = NavType.StringType
-//            }
-//        )
-//    ) { backStackEntry ->
-//        val email :String? = backStackEntry.arguments?.getString(homeParameterName, "Email erroneo")
-//        vm.setUsuario(email ?: "Email erroneo")
-//
-//        HomeScreen(
-//            currentRoutine = vm.routineState,
-//            onHomeEvent = vm::onHomeEvent,
-//            onNavigateToLogin = onNavigateToLogin,
-//            login = email ?: "Email erroneo"
-//        )
-//    }
-//}
-//fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null) {
-//    val ruta = homeRoute
-//    Log.d("Navegacion", "Navegando a $ruta")
-//    this.navigate("$ruta/$email", navOptions)
-//}
+const val homeRoute = "Home"
+const val homeParameterName = "email"
+
+// Definimos un método de extensión de NavGraphBuilder para poder
+// usarlo en el contexto de nuestro NavHost
+fun NavGraphBuilder.homeScreen(
+    homeViewModel : HomeViewModel,
+    onNavigateToLogin: () -> Unit,
+) {
+    composable(
+        route = "$homeRoute/{$homeParameterName}",
+        arguments = listOf(
+            navArgument(homeParameterName) {
+                type = NavType.StringType
+            }
+        )
+    ) {
+    backStackEntry ->
+       val email :String? = backStackEntry.arguments?.getString(homeParameterName, "Email erroneo")
+        HomeViewModel.setUsuario(email ?: "Email erroneo")
+
+        HomeScreen(
+            homeUiState = homeViewModel.homeUiState,
+            onHomeEvent = homeViewModel::onHomeEvent,
+            onNavigateToLogin = onNavigateToLogin,
+
+        )
+    }
+}
+fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null) {
+    val ruta = homeRoute
+    Log.d("Navegacion", "Navegando a $ruta")
+    this.navigate("$ruta/$email", navOptions)
+}

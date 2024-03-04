@@ -7,29 +7,27 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Snackbar
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.pmdm.recetas.ui.composables.CircularImageFromResource
-import com.pmdm.recetas.ui.composables.TextNewAccount
 import com.simplefit.R
-import com.simplefit.ui.features.accountInfoRegister.components.RegisterAccountInfoForm
 import com.simplefit.ui.features.profileInfoRegister.components.RegisterProfileInfoForm
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
 fun RegisterProfileInfoScreen(
-    registerProfileInfoUiState : RegisterProfileInfoUiState,
+    registerProfileInfoUiState: RegisterProfileInfoUiState,
     mostrarSnack: Boolean,
     onMostrarSnackBar: () -> Unit,
     validacionRegisterProfileInfoUiState: ValidacionRegisterProfileInfoUiState,
     onRegisterProfileInfoEvent: (RegisterProfileInfoEvent) -> Unit,
-    onNavigateToHome: ((correo: String) -> Unit)? = null) {
+    onNavigateToHome: ((correo: String) -> Unit)? = null,
+    emailState: String
+) {
     //Este email tiene que llegar desde AccountInfoRegister
 
     val scope = rememberCoroutineScope()
@@ -80,8 +78,7 @@ fun RegisterProfileInfoScreen(
                     }
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            TextNewAccount(onClick = {
-            })
+
         }
 //        if (mostrarSnack) {
 //            var mensaje = ""

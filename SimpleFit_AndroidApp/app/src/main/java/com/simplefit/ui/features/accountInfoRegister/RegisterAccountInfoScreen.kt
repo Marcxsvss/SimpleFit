@@ -68,8 +68,7 @@ fun RegisterAccountInfoScreen(
                     }
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            TextNewAccount(onClick = {
-            })
+
         }
         if (mostrarSnack) {
             var mensaje = ""

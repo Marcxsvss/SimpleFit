@@ -83,8 +83,7 @@ fun LoginScreen(
                     }
                 })
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            TextNewAccount(onClick = {
-            })
+            TextNewAccount(onNavigateToRegisterAccount = onNavigateToRegister)
         }
         if (mostrarSnack) {
             var mensaje = ""

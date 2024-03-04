@@ -22,11 +22,7 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     this.dni,
     this.password
 )
-fun RegisterProfileInfoUiState.toUsuario(): Usuario = Usuario(
-    this.email,
-    this.dni,
-    this.password
-)
+
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()
 //
 //fun Usuario.toUsuarioUiState():LoginUiState= LoginUiState(login,password,true,likeds)
