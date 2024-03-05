@@ -11,17 +11,17 @@ import javax.inject.Inject
 
 @HiltAndroidApp
 class SimpleFitApplication: Application (){
-    @Inject
-    lateinit var UsuariosDaoMock: UsuarioDaoMock
-    @Inject
-    lateinit var UsuariosDaoEntity: UsuarioDao
-
-    override fun onCreate() {
-        super.onCreate()
-
-        runBlocking {
-            if(UsuariosDaoEntity.count() == 0)
-                UsuariosDaoMock.get().forEach { UsuariosDaoEntity.insert(it.toUsuario().toUsuarioEntity())}
-        }
-    }
+//    @Inject
+//    lateinit var UsuariosDaoMock: UsuarioDaoMock
+//    @Inject
+//    lateinit var UsuariosDaoEntity: UsuarioDao
+//
+//    override fun onCreate() {
+//        super.onCreate()
+//
+//        runBlocking {
+//            if(UsuariosDaoEntity.count() == 0)
+//                UsuariosDaoMock.get().forEach { UsuariosDaoEntity.insert(it.toUsuario().toUsuarioEntity())}
+//        }
+//    }
 }

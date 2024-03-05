@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoScreen
 import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoViewModel
+import com.simplefit.ui.features.home.HomeViewModel
 import com.simplefit.ui.features.login.LoginViewModel
 import com.simplefit.ui.features.profileInfoRegister.RegisterProfileInfoViewModel
 
@@ -16,6 +17,8 @@ fun SimpleFitNavHost(){
     val loginViewModel = hiltViewModel<LoginViewModel>()
     val accountViewModel = hiltViewModel<RegisterAccountInfoViewModel>()
     val profileViewModel = hiltViewModel<RegisterProfileInfoViewModel>()
+    val homeViewModel = hiltViewModel<HomeViewModel>()
+
     //val scope= rememberCoroutineScope()
     //Puedo cojer el email desde RegisterAccount y guardarlo en una variable que puedo crear aqui mismo y usarla mas adelante al hacer la navegacion al ProfileInfo y luego home
     NavHost(
@@ -43,10 +46,11 @@ fun SimpleFitNavHost(){
         registerProfileInfoScreen (
             registerProfileInfoViewModel = profileViewModel,
             onNavigateToHome  = {
-                    email -> navController.navigateToHome(email) //Meter este email en el viewmodel de Home
+                    email -> navController.navigateToHome(email) //El email se pasa directamente por el vm, y lo recibimos aquí
             }
         )
         homeScreen (
+            homeViewModel = homeViewModel,
             onNavigateToLogin = {
                 navController.navigateUp()
             }

@@ -20,13 +20,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.Icon
+import com.simplefit.ui.features.home.HomeEvent
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavBar(
     indexScreenState: Int,
-    onNavigateToScreen: (Int) -> Unit
+    onHomeEvent: (HomeEvent) -> Unit
 ) {
     val titlesAndIcons = remember {
         listOf(
@@ -42,11 +43,12 @@ fun NavBar(
                 icon = { Icon(imageVector = icon, contentDescription = title) },
                 label = { },
                 selected = indexScreenState == index,
-                onClick = { onNavigateToScreen(index) }
+                onClick = { onHomeEvent(HomeEvent.onNavigateToScreen(index)) }
             )
         }
     }
 }
+
 @Preview
 @Composable
 fun NavBarPreview()

@@ -3,6 +3,7 @@ package com.simplefit.ui.features
 import com.simplefit.models.Usuario
 import com.simplefit.ui.features.login.LoginUiState
 import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoUiState
+import com.simplefit.ui.features.home.HomeUiState
 import com.simplefit.ui.features.profileInfoRegister.RegisterProfileInfoUiState
 
 fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
@@ -12,15 +13,30 @@ fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
 
 )
 
+
 fun LoginUiState.toUsuario(): Usuario = Usuario(
     this.email,
-    "0",
-    this.password
+    this.password,
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+""
 )
 fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     this.email,
     this.dni,
-    this.password
+    this.password,
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
 )
 
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()

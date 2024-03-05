@@ -25,6 +25,12 @@ class RegisterProfileInfoViewModel @Inject constructor(
     val onMostrarSnackBar: () -> Unit by mutableStateOf({
         mostrarSnackBar = !mostrarSnackBar
     })
+//    fun setUsuario(email : String)
+//    {
+//        perfilUsuarioUiState = perfilUsuarioUiState.copy(
+//            email = email
+//        )
+//    }
 
     fun onRegisterProfileInfoEvent(registerProfileInfoEvent: RegisterProfileInfoEvent) {
         when (registerProfileInfoEvent) {
@@ -73,6 +79,16 @@ class RegisterProfileInfoViewModel @Inject constructor(
                         perfilUsuarioUiState = perfilUsuarioUiState.copy(
                             estaRegistrado = true
                         )
+                        val usuario = usuarioRepository.get(perfilUsuarioUiState.email)?.let {
+                            it.copy(
+                                edad = perfilUsuarioUiState.edad.toString(),
+                                altura = perfilUsuarioUiState.altura.toString(),
+                                peso = perfilUsuarioUiState.peso.toString(),
+                                sexo = perfilUsuarioUiState.sexo,
+                                somatotipo = perfilUsuarioUiState.somatotipo,
+                                alergia = perfilUsuarioUiState.alergia)
+                        }
+                        usuarioRepository.insert(usuario!!)
                         if (perfilUsuarioUiState.estaRegistrado) {
                             delay(1000)
                             registerProfileInfoEvent.onNavigateHome?.let { it(perfilUsuarioUiState.email) }

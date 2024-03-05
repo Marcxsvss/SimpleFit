@@ -30,12 +30,13 @@ fun NavGraphBuilder.homeScreen(
     ) {
     backStackEntry ->
        val email :String? = backStackEntry.arguments?.getString(homeParameterName, "Email erroneo")
-        HomeViewModel.setUsuario(email ?: "Email erroneo")
+        homeViewModel.setUsuario(email ?: "Email erroneo")
 
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent,
             onNavigateToLogin = onNavigateToLogin,
+            indexState = homeViewModel.indexState
 
         )
     }

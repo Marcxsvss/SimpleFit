@@ -16,5 +16,19 @@ data class UsuarioEntity(
     @ColumnInfo(name="dni")
     val dni : String,
     @ColumnInfo(name="password")
-    val password: String) : Parcelable
+    val password: String,
+    @ColumnInfo(name="nombre")
+    val nombre : String,
+    @ColumnInfo(name="altura")
+    val altura : String,
+    @ColumnInfo(name="peso")
+    val peso : String,
+    @ColumnInfo(name="edad")
+    val edad : String,
+    @ColumnInfo(name="sexo")
+    val sexo : String,
+    @ColumnInfo(name="somatotipo")
+    val somatotipo : String,
+    @ColumnInfo(name="alergia")
+    val alergia : String) : Parcelable
 

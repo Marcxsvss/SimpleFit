@@ -26,7 +26,7 @@ fun NavGraphBuilder.registerProfileInfoScreen(
     ){
             backStackEntry ->
         val email :String? = backStackEntry.arguments?.getString(registerProfileParameterName, "Email erroneo")
-        registerProfileInfoViewModel.setUsuario(email ?: "Email erroneo")
+        //registerProfileInfoViewModel.setUsuario(email ?: "Email erroneo")
 
         RegisterProfileInfoScreen(
             registerProfileInfoUiState = registerProfileInfoViewModel.perfilUsuarioUiState,

@@ -7,13 +7,27 @@ import com.simplefit.models.Usuario
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.email,
     this.dni,
-    this.password
+    this.password,
+    this.nombre,
+    this.altura,
+    this.peso,
+    this.edad,
+    this.sexo,
+    this.somatotipo,
+    this.alergia
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     this.email,
     this.dni,
-    this.contraseña
+    this.contraseña,
+    this.nombre,
+    this.altura,
+    this.peso,
+    this.edad,
+    this.sexo,
+    this.somatotipo,
+    this.alergia
 )
 
 
@@ -31,6 +45,13 @@ fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
 fun UsuarioMock.toUsuario(): Usuario = Usuario(
     this.email,
     this.dni,
-    this.password
+    this.contraseña,
+    this.nombre,
+    this.altura,
+    this.peso,
+    this.edad,
+    this.sexo,
+    this.somatotipo,
+    this.alergia
 )
 //endregion
