@@ -2,13 +2,21 @@ package com.pmdm.recetas.data.mocks
 
 import javax.inject.Inject
 
-class UsuarioDaoMock @Inject constructor(){
-//    private var users = mutableListOf(
-//        UsuarioMock(
-//            email = "marcos",
-//            dni = "12323544Y",
-//            password = "1234"
-//        ),
+class UsuarioDaoMock @Inject constructor() {
+    private var users = mutableListOf(
+        UsuarioMock(
+            email = "marcos@gmail.com",
+            dni = "12323544Y",
+            contraseña = "12345678",
+            nombre = "marcos",
+            altura = "184",
+            peso = "84",
+            edad = "21",
+            sexo = "H",
+            somatotipo = "ectomorfo",
+            alergia = null
+
+        ),
 //        UsuarioMock(
 //            email = "carles",
 //            dni = "12323544Y",
@@ -24,11 +32,12 @@ class UsuarioDaoMock @Inject constructor(){
 //            dni = "12323544Y",
 //            password = "1234"
 //        ),
-//    )
-//    fun get(): MutableList<UsuarioMock> = users
-//    fun get(email: String): UsuarioMock? = users.find { u -> u.email == email }
-//    fun update(user:UsuarioMock) {
-//        val position=users.indexOf(get(user.email) )
-//        users[position]=user
-//    }
+    )
+
+    fun get(): MutableList<UsuarioMock> = users
+    fun get(email: String): UsuarioMock? = users.find { u -> u.email == email }
+    fun update(user: UsuarioMock) {
+        val position = users.indexOf(get(user.email))
+        users[position] = user
+    }
 }

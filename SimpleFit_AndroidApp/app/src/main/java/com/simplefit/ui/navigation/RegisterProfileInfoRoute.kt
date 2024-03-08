@@ -7,8 +7,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.profileInfoRegister.RegisterProfileInfoScreen
-import com.simplefit.ui.features.profileInfoRegister.RegisterProfileInfoViewModel
+import com.simplefit.ui.features.userAuthentication.profileInfoRegister.RegisterProfileInfoScreen
+import com.simplefit.ui.features.userAuthentication.profileInfoRegister.RegisterProfileInfoViewModel
 
 const val RegisterProfileInfoRoute="registerProfileInfo"
 const val registerProfileParameterName = "email"

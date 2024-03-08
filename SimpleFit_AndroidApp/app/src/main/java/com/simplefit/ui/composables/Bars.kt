@@ -20,30 +20,61 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.Icon
-import com.simplefit.ui.features.home.HomeEvent
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.vector.ImageVector
+import com.simplefit.ui.features.mainApp.home.HomeEvent
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavBar(
     indexScreenState: Int,
-    onHomeEvent: (HomeEvent) -> Unit
+    onNavigateToHome: () -> Unit,
+    onNavigateToProfile: () -> Unit,
+    onNavigateToList: () -> Unit
 ) {
-    val titlesAndIcons = remember {
-        listOf(
-            "Pantalla 1" to Icons.Filled.Home,
-            "Pantalla 2" to Icons.AutoMirrored.Filled.List,
-            "Pantalla 3" to Icons.Filled.Person
+    @Immutable
+    data class ItemIconButton(
+        val icon: ImageVector,
+        val description: String? = null,
+        val title: String,
+        val onClick: () -> Unit
+    )
+
+    val listItemsIconButtons:List<ItemIconButton> = listOf<ItemIconButton>(
+        ItemIconButton(
+            icon = Icons.Filled.Home,
+            description = "home",
+            title = "Home",
+            onClick = onNavigateToHome
+        ),
+        ItemIconButton(
+            icon = Icons.AutoMirrored.Filled.List,
+            description = "list",
+            title = "List",
+            onClick = onNavigateToList
+        ),
+        ItemIconButton(
+            icon = Icons.Filled.Person,
+            description = "profile",
+            title = "Profile",
+            onClick = onNavigateToProfile
         )
-    }
+    )
+
+    var selectedItem: Int by remember { mutableIntStateOf(indexScreenState) }
 
     NavigationBar {
-        titlesAndIcons.forEachIndexed { index, (title, icon) ->
+        listItemsIconButtons.forEachIndexed { index, button ->
             NavigationBarItem(
-                icon = { Icon(imageVector = icon, contentDescription = title) },
+                icon = { Icon(imageVector = button.icon, contentDescription = button.title) },
                 label = { },
-                selected = indexScreenState == index,
-                onClick = { onHomeEvent(HomeEvent.onNavigateToScreen(index)) }
+                selected = selectedItem == index,
+                onClick = { button.onClick
+                    selectedItem = index}
             )
         }
     }
@@ -53,5 +84,5 @@ fun NavBar(
 @Composable
 fun NavBarPreview()
 {
-    NavBar(0, {})
+    //NavBar(0, {})
 }

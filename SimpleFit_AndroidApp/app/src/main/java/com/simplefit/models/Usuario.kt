@@ -10,6 +10,6 @@ data class Usuario(
     val edad : String,
     val sexo : String,
     val somatotipo : String,
-    val alergia : String
+    val alergia : String?
 
 )

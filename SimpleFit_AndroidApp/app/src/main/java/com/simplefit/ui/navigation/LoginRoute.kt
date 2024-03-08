@@ -3,8 +3,8 @@ package com.simplefit.ui.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.simplefit.ui.features.login.LoginScreen
-import com.simplefit.ui.features.login.LoginViewModel
+import com.simplefit.ui.features.userAuthentication.login.LoginScreen
+import com.simplefit.ui.features.userAuthentication.login.LoginViewModel
 
 const val LoginRoute="login"
 fun NavGraphBuilder.loginScreen(
@@ -25,8 +25,9 @@ fun NavGraphBuilder.loginScreen(
     }
 
 
-    fun NavController.navigateToLogin() {
-        this.navigate(LoginRoute)
-    }
 
+
+}
+fun NavController.navigateToLogin() {
+    this.navigate(LoginRoute)
 }

@@ -7,12 +7,12 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.home.HomeScreen
-import com.simplefit.ui.features.home.HomeViewModel
+import com.simplefit.ui.features.mainApp.home.HomeScreen
+import com.simplefit.ui.features.mainApp.home.HomeViewModel
 
 
-const val homeRoute = "Home"
-const val homeParameterName = "email"
+const val HomeRoute = "Home"
+const val HomeParameterName = "email"
 
 // Definimos un método de extensión de NavGraphBuilder para poder
 // usarlo en el contexto de nuestro NavHost
@@ -21,15 +21,15 @@ fun NavGraphBuilder.homeScreen(
     onNavigateToLogin: () -> Unit,
 ) {
     composable(
-        route = "$homeRoute/{$homeParameterName}",
+        route = "$ProfileRoute/{$HomeParameterName}",
         arguments = listOf(
-            navArgument(homeParameterName) {
+            navArgument(HomeParameterName) {
                 type = NavType.StringType
             }
         )
     ) {
     backStackEntry ->
-       val email :String? = backStackEntry.arguments?.getString(homeParameterName, "Email erroneo")
+       val email :String? = backStackEntry.arguments?.getString(HomeParameterName, "Email erroneo")
         homeViewModel.setUsuario(email ?: "Email erroneo")
 
         HomeScreen(
@@ -41,8 +41,13 @@ fun NavGraphBuilder.homeScreen(
         )
     }
 }
-fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null) {
-    val ruta = homeRoute
+fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null){
+    val ruta = ProfileRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$email", navOptions)
+}
+fun NavController.navigateToHome(navOptions: NavOptions? = null){
+    val ruta = ProfileRoute
+    Log.d("Navegacion", "Navegando a $ruta")
+    this.navigate(ruta, navOptions)
 }

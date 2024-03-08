@@ -30,5 +30,6 @@ data class UsuarioEntity(
     @ColumnInfo(name="somatotipo")
     val somatotipo : String,
     @ColumnInfo(name="alergia")
-    val alergia : String) : Parcelable
+    val alergia : String?
+) : Parcelable
 

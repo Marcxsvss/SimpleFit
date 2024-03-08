@@ -1,10 +1,8 @@
 package com.simplefit.ui.features
 
 import com.simplefit.models.Usuario
-import com.simplefit.ui.features.login.LoginUiState
-import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoUiState
-import com.simplefit.ui.features.home.HomeUiState
-import com.simplefit.ui.features.profileInfoRegister.RegisterProfileInfoUiState
+import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoUiState
+import com.simplefit.ui.features.userAuthentication.login.LoginUiState
 
 fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
     this.email,

@@ -5,10 +5,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoScreen
-import com.simplefit.ui.features.accountInfoRegister.RegisterAccountInfoViewModel
-import com.simplefit.ui.features.login.LoginScreen
-import com.simplefit.ui.features.login.LoginViewModel
+import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoScreen
+import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoViewModel
 
 const val RegisterAccountInfoRoute = "registerAccountInfo"
 fun NavGraphBuilder.registerAccountInfoScreen(
