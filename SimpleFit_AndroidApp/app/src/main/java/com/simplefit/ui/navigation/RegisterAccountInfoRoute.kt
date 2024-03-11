@@ -21,7 +21,10 @@ fun NavGraphBuilder.registerAccountInfoScreen(
             mostrarSnack = registerAccountInfoViewModel.mostrarSnackBar,
             onMostrarSnackBar = registerAccountInfoViewModel.onMostrarSnackBar,
             validacionRegisterAccountInfoUiState = registerAccountInfoViewModel.validacionRegisterAccountInfoUiState,
-            onRegisterAccountInfoEvent = registerAccountInfoViewModel::onRegisterAccountInfoEvent)
+            onRegisterAccountInfoEvent = registerAccountInfoViewModel::onRegisterAccountInfoEvent,
+            onNavigateToRegisterProfileInfo = onNavigateToRegisterProfileInfo,
+            onNavigateToLogin = onNavigateToLogin
+        )
     }
 
 }

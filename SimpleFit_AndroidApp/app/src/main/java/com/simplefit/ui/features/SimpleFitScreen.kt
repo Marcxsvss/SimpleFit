@@ -19,9 +19,6 @@ import com.simplefit.ui.navigation.RegisterAccountInfoRoute
 import com.simplefit.ui.navigation.RegisterProfileInfoRoute
 import com.simplefit.ui.navigation.RoutinesRoute
 import com.simplefit.ui.navigation.SimpleFitNavHost
-import com.simplefit.ui.navigation.navigateToHome
-import com.simplefit.ui.navigation.navigateToProfile
-import com.simplefit.ui.navigation.navigateToRoutines
 
 @SuppressLint("UnrememberedMutableState")//Para que no salte el error del remember en el derivedStateOf
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,27 +42,23 @@ fun SimpleFitScreen() {
         bottomBar = {
             if (verNavegacion.value)
                 NavBar(
-                    indexScreenState = iOpcionNevagacionSeleccionada.value,
-                    onNavigateToHome = { navController.navigateToHome() },
-                    onNavigateToProfile = { navController.navigateToProfile()},
-                    onNavigateToList  = {navController.navigateToRoutines()})
-
+                    navController = navController,currentIndex = iOpcionNevagacionSeleccionada.value
+                )
         },
         content = { innerPadding ->
             SimpleFitNavHost(innerPadding = innerPadding, navController = navController)
         }
     )
-
 }
-
 private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
     return when (route?.substringBefore("/")) {
-        LoginRoute -> 3
-        RegisterAccountInfoRoute -> 4
-        RegisterProfileInfoRoute -> 5
         HomeRoute -> 0
         RoutinesRoute -> 1
         ProfileRoute -> 2
+        LoginRoute -> 3
+        RegisterAccountInfoRoute -> 4
+        RegisterProfileInfoRoute -> 5
+
         else -> 10
     }
 }

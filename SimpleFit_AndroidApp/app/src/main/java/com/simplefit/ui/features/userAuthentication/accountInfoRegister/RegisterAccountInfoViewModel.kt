@@ -26,9 +26,9 @@ class RegisterAccountInfoViewModel @Inject constructor(
         mostrarSnackBar = !mostrarSnackBar
     })
 
-    fun onRegisterAccountInfoEvent(registerAccountInfoEvent: com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent) {
+    fun onRegisterAccountInfoEvent(registerAccountInfoEvent: RegisterAccountInfoEvent) {
         when (registerAccountInfoEvent) {
-            is com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.EmailChanged -> {
+            is RegisterAccountInfoEvent.EmailChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     email = registerAccountInfoEvent.email
                 )
@@ -37,7 +37,7 @@ class RegisterAccountInfoViewModel @Inject constructor(
                 )
             }
 
-            is com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.PasswordChanged -> {
+            is RegisterAccountInfoEvent.PasswordChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     password = registerAccountInfoEvent.password
                 )
@@ -45,7 +45,7 @@ class RegisterAccountInfoViewModel @Inject constructor(
                     validacionPassword = validadorRegisterAccountInfo.validadorPassword.valida(registerAccountInfoEvent.password)
                 )
             }
-            is com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.DniChanged -> {
+            is RegisterAccountInfoEvent.DniChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     dni = registerAccountInfoEvent.dni
                 )
@@ -53,7 +53,7 @@ class RegisterAccountInfoViewModel @Inject constructor(
                     validacionDni = validadorRegisterAccountInfo.validadorDni.valida(registerAccountInfoEvent.dni)
                 )
             }
-            is com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.NombreChanged -> {
+            is RegisterAccountInfoEvent.NombreChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     nombre = registerAccountInfoEvent.nombre
                 )
@@ -62,7 +62,7 @@ class RegisterAccountInfoViewModel @Inject constructor(
                 )
             }
 
-            is com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.OnClickRegistrarse -> {
+            is RegisterAccountInfoEvent.OnClickRegistrarse -> {
                 viewModelScope.launch {
                     validacionRegisterAccountInfoUiState = validadorRegisterAccountInfo.valida(nuevoUsuarioUiState)
                     if (!validacionRegisterAccountInfoUiState.hayError) {

@@ -10,7 +10,7 @@ fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
     onNavigateToLogin: () -> Unit,
-    indexState : Int
+
 ) {
     Text(text = "Home Screen")
 }

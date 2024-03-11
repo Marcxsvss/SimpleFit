@@ -15,7 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.pmdm.recetas.ui.composables.CircularImageFromResource
-import com.pmdm.recetas.ui.composables.TextNewAccount
 import com.simplefit.R
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.components.RegisterAccountInfoForm
 import kotlinx.coroutines.delay
@@ -23,12 +22,14 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun RegisterAccountInfoScreen(
-    registerAccountInfoUiState : RegisterAccountInfoUiState,
+    registerAccountInfoUiState: RegisterAccountInfoUiState,
     mostrarSnack: Boolean,
     onMostrarSnackBar: () -> Unit,
     validacionRegisterAccountInfoUiState: ValidacionRegisterAccountInfoUiState,
-    onRegisterAccountInfoEvent: (com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent) -> Unit,
-    onNavigateToProfileInfoRegister: ((correo: String) -> Unit)? = null) {
+    onRegisterAccountInfoEvent: (RegisterAccountInfoEvent) -> Unit,
+    onNavigateToRegisterProfileInfo: ((correo: String) -> Unit)?,
+    onNavigateToLogin: () -> Unit
+) {
 
     val scope = rememberCoroutineScope()
     Box() {
@@ -52,15 +53,15 @@ fun RegisterAccountInfoScreen(
                 validacionDni = validacionRegisterAccountInfoUiState.validacionDni,
                 validacionNombre = validacionRegisterAccountInfoUiState.validacionNombre,
                 onValueChangeEmail = {
-                    onRegisterAccountInfoEvent(com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.EmailChanged(it))
+                    onRegisterAccountInfoEvent(RegisterAccountInfoEvent.EmailChanged(it))
                 },
                 onValueChangePassword = {
-                    onRegisterAccountInfoEvent(com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.PasswordChanged(it))
+                    onRegisterAccountInfoEvent(RegisterAccountInfoEvent.PasswordChanged(it))
                 },
-                onValueChangeDni = { onRegisterAccountInfoEvent(com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.DniChanged(it)) },
-                onValueChangeNombre = { onRegisterAccountInfoEvent(com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.NombreChanged(it)) },
+                onValueChangeDni = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.DniChanged(it)) },
+                onValueChangeNombre = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.NombreChanged(it)) },
                 onClickRegistrarse = {
-                    onRegisterAccountInfoEvent(com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent.OnClickRegistrarse(onNavigateToProfileInfoRegister))
+                    onRegisterAccountInfoEvent(RegisterAccountInfoEvent.OnClickRegistrarse(onNavigateToRegisterProfileInfo))
                     onMostrarSnackBar()
                     scope.launch() {
                         delay(4000)

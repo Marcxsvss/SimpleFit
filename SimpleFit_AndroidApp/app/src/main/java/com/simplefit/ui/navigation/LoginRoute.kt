@@ -23,10 +23,6 @@ fun NavGraphBuilder.loginScreen(
             onNavigateToHome = onNavigateToHome,
             onNavigateToRegister = onNavigateToRegister)
     }
-
-
-
-
 }
 fun NavController.navigateToLogin() {
     this.navigate(LoginRoute)

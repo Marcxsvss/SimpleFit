@@ -1,21 +1,12 @@
 package com.simplefit.ui.composables
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.EventNote
 import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Dehaze
-import androidx.compose.material.icons.filled.EventNote
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.SportsGymnastics
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.SegmentedButtonDefaults.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,16 +16,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.simplefit.ui.features.mainApp.home.HomeEvent
+import androidx.navigation.NavController
+import com.simplefit.ui.navigation.navigateToHome
+import com.simplefit.ui.navigation.navigateToHome2
+import com.simplefit.ui.navigation.navigateToProfile
+import com.simplefit.ui.navigation.navigateToRoutines
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavBar(
-    indexScreenState: Int,
-    onNavigateToHome: () -> Unit,
-    onNavigateToProfile: () -> Unit,
-    onNavigateToList: () -> Unit
+    navController: NavController,
+    currentIndex: Int = 0
 ) {
     @Immutable
     data class ItemIconButton(
@@ -44,28 +37,28 @@ fun NavBar(
         val onClick: () -> Unit
     )
 
-    val listItemsIconButtons:List<ItemIconButton> = listOf<ItemIconButton>(
+    val listItemsIconButtons:List<ItemIconButton> = listOf(
         ItemIconButton(
             icon = Icons.Filled.Home,
             description = "home",
             title = "Home",
-            onClick = onNavigateToHome
+            onClick = { navController.navigateToHome2() }
         ),
         ItemIconButton(
             icon = Icons.AutoMirrored.Filled.List,
             description = "list",
             title = "List",
-            onClick = onNavigateToList
+            onClick = { navController.navigateToRoutines() }
         ),
         ItemIconButton(
             icon = Icons.Filled.Person,
             description = "profile",
             title = "Profile",
-            onClick = onNavigateToProfile
+            onClick = { navController.navigateToProfile() }
         )
     )
 
-    var selectedItem: Int by remember { mutableIntStateOf(indexScreenState) }
+    var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
 
     NavigationBar {
         listItemsIconButtons.forEachIndexed { index, button ->
@@ -73,7 +66,7 @@ fun NavBar(
                 icon = { Icon(imageVector = button.icon, contentDescription = button.title) },
                 label = { },
                 selected = selectedItem == index,
-                onClick = { button.onClick
+                onClick = { button.onClick()
                     selectedItem = index}
             )
         }
