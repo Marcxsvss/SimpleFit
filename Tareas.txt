@@ -1,7 +1,9 @@
 Tareas
 -----------------
-Configurar la navegacion para que el registerAccount le pase el email a registerProfile para ir al home con los datos del usuario
-Configurar la navegacion general
+Si la base de datos se complica a la hora de que en la app de admins no se pueden añadir nuevas maquinas o 
+alimentos ya que la configuracion seria muy complicada, podemos recurrir a crear rutinas y dietas ya creadas 
+y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te convenga
+------------------------------------------------------------------------------------------------------------------
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)
 Mirar como va lo de Azure, Decirle a carles que me envie el PDF con la explicacion
 Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
