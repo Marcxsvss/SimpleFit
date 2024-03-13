@@ -2,6 +2,8 @@ package com.simplefit.data
 
 import com.simplefit.data.room.usuario.UsuarioDao
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
+import com.simplefit.data.services.UsuarioService
+import com.simplefit.data.services.UsuarioServiceImplementation
 import com.simplefit.models.Usuario
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -9,7 +11,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class UsuarioRepository @Inject constructor(
-    private val proveedorUsuarios: UsuarioDao
+    private val usuarioService: UsuarioServiceImplementation
 ) {
     init {
         //Para inicializar con datos la BD
@@ -20,16 +22,16 @@ class UsuarioRepository @Inject constructor(
 //        }
     }
 
-    suspend fun get(): List<Usuario> =
-        withContext(Dispatchers.IO) { proveedorUsuarios.get().toUsuarios() }
-
-    suspend fun get(login: String): Usuario? =
-        withContext(Dispatchers.IO) { proveedorUsuarios.get(login)?.toUsuario() }
+    suspend fun get(email: String): Usuario? =
+        withContext(Dispatchers.IO) { usuarioService.get(email).toUsuario() }
 
     suspend fun insert(usuario: Usuario) =
-        withContext(Dispatchers.IO) { proveedorUsuarios.insert(usuario.toUsuarioEntity()) }
+        withContext(Dispatchers.IO) { usuarioService.insert(usuario.toUsuarioApi()) }
 
     suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
-        proveedorUsuarios.update(usuario.toUsuarioEntity())
+        usuarioService.update(usuario.toUsuarioApi())
+    }
+    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
+        usuarioService.delete(email)
     }
 }
