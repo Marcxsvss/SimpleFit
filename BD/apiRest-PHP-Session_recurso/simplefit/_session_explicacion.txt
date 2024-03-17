@@ -1,0 +1,6 @@
+Para que se active la identificación de usuarios, 
+es necesario añadir datos en el array $usuarios 
+en el archivo apirest_variables.php
+
+
+

@@ -1,0 +1,9 @@
+Cuando el navegador realiza una llamada AJAX con el método POST 
+realiza antes una llamada al método OPTIONS, 
+por lo que debemos permitir (o dar permiso) también OPTIONS 
+para que funcione.
+
+Esto no pasa en Java o Postman
+
+
+
