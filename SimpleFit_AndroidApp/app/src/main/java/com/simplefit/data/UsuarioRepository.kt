@@ -1,12 +1,8 @@
 package com.simplefit.data
 
-import com.simplefit.data.room.usuario.UsuarioDao
-import com.pmdm.tienda.data.room.cliente.UsuarioEntity
-import com.simplefit.data.services.UsuarioService
-import com.simplefit.data.services.UsuarioServiceImplementation
+import com.simplefit.data.services.usuario.UsuarioServiceImplementation
 import com.simplefit.models.Usuario
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 

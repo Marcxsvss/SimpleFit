@@ -2,7 +2,7 @@ package com.simplefit.data
 
 import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
-import com.simplefit.data.services.UsuarioApi
+import com.simplefit.data.services.usuario.UsuarioApi
 import com.simplefit.models.Usuario
 
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(

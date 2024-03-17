@@ -1,5 +1,6 @@
-package com.simplefit.data.services
+package com.simplefit.data.services.usuario
 
+import com.simplefit.data.services.RespuestaApi
 import retrofit2.Response
 import retrofit2.http.*
 

@@ -1,4 +1,4 @@
-package com.simplefit.data.services
+package com.simplefit.data.services.usuario
 
 import com.google.gson.annotations.SerializedName
 

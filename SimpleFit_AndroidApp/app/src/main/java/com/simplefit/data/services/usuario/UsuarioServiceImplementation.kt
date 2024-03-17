@@ -1,6 +1,7 @@
-package com.simplefit.data.services
+package com.simplefit.data.services.usuario
 
 import android.util.Log
+import com.simplefit.data.services.ApiServicesException
 import javax.inject.Inject
 
 class UsuarioServiceImplementation @Inject constructor(

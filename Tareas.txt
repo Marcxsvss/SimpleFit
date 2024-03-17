@@ -4,6 +4,7 @@ Si la base de datos se complica a la hora de que en la app de admins no se puede
 alimentos ya que la configuracion seria muy complicada, podemos recurrir a crear rutinas y dietas ya creadas 
 y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te convenga
 ------------------------------------------------------------------------------------------------------------------
+Añadir la autenticacion login con retrofit, todo está alfinal del pdf de retrofit en aules
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)
 Mirar como va lo de Azure, Decirle a carles que me envie el PDF con la explicacion
 Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
