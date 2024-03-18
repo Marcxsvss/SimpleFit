@@ -1,3 +1,7 @@
+
+USE simplefit;
+
+
 INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
   (1, 'Press de pecho sentado', 'Pecho', NULL),
   (2, 'Máquina de pecho inclinada', 'Pecho', NULL),
@@ -11,3 +15,10 @@ INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
   (10, 'Press inclinado con mancuernas', 'Pecho', NULL);
   
   SELECT * FROM maquinas;
+  
+  INSERT INTO `users`(`dni`,`nombre`,`email`,`password`,`sexo`,`edad`,`altura`,`peso`,`somatotipo`,`alergias`) VALUES
+  ('50387394Y','Marcos Verdu Sanchez','markitos76449@gmail.com','1234','M',21,184,83,'ectomorfo',null);
+  
+  SELECT * FROM users;
+  
+  

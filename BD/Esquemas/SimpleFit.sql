@@ -1,11 +1,10 @@
 -- Crea la base de datos si no existe
 CREATE DATABASE IF NOT EXISTS SimpleFit;
-
 -- Seleccionar la base de datos recién creada
 USE SimpleFit;
 
 CREATE TABLE `users`(
-  `dni` int PRIMARY KEY,
+  `dni` varchar(255) PRIMARY KEY,
   `nombre` varchar(255),
   `email` varchar(255) UNIQUE NOT NULL,
   `password` varchar(255),
@@ -26,14 +25,14 @@ CREATE TABLE `maquinas` (
 
 CREATE TABLE `rutinas` (
   `rutinaid` int PRIMARY KEY,
-  `userid` int,
+  `userid` varchar(255),
   `nombre` varchar(255),
   `frecuencia` int
 );
 ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 CREATE TABLE `dietas` (
   `dietaid` int PRIMARY KEY,
-  `userid` int,
+  `userid` varchar(255),
   `descripcion` longtext,
   `nombre` varchar(255),
   `objetivo` varchar(255),
