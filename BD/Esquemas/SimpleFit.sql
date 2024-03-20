@@ -3,6 +3,7 @@ CREATE DATABASE IF NOT EXISTS SimpleFit;
 -- Seleccionar la base de datos recién creada
 USE SimpleFit;
 
+
 CREATE TABLE `users`(
   `dni` varchar(255) PRIMARY KEY,
   `nombre` varchar(255),
