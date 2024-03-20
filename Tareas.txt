@@ -9,6 +9,7 @@ Añadir la autenticacion login con retrofit, todo está alfinal del pdf de retro
 =======
 Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
 >>>>>>> 7edf29d5da22deb466ff8fb448b512efeaa535ae
+Continuar configurando la maquina virtual, me he quedado por el 4.2 y probar el acceso desde workbench al Servidor de Azure, la contraseña es o "1234" o "XXXXXXXX"
 apuntarme todas las posibles llamadas a la api.
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)
 Mirar como va lo de Azure, Decirle a carles que me envie el PDF con la explicacion
