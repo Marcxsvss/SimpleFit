@@ -57,8 +57,19 @@ INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
   (34, 'Curl mancuerna', 'Biceps', NULL),
   (35, 'Curl polea', 'Biceps', NULL),
   (36, 'Curl barra Z', 'Biceps', NULL),
-  (37, 'Predicador Polea', 'Biceps', NULL);  
+  (37, 'Predicador Polea', 'Biceps', NULL); 
+  
+INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (38, 'Elevacion de piernas', 'Adbomen', NULL),
+  (39, 'Abdomen en barra', 'Adbomen', NULL),
+  (40, 'Abdomen en paralelas', 'Adbomen', NULL),
+  (41, 'crunch abdominal', 'Adbomen', NULL);  
 
+INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (38, 'Elevacion de piernas', 'Adbomen', NULL),
+  (39, 'Abdomen en barra', 'Adbomen', NULL),
+  (40, 'Abdomen en paralelas', 'Adbomen', NULL),
+  (41, 'crunch abdominal', 'Adbomen', NULL);  
   
 
   

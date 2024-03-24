@@ -21,14 +21,17 @@ CREATE TABLE `maquinas` (
   `maquinaid` int PRIMARY KEY,
   `nombre` varchar(255),
   `musculo` varchar(255),
-  `imagen` blob
+  `imagen` blob,
+  `descripcion` varchar(255)
 );
 
 CREATE TABLE `rutinas` (
   `rutinaid` int PRIMARY KEY,
   `userid` varchar(255),
   `nombre` varchar(255),
-  `frecuencia` int
+  `frecuencia` int,
+  `duracion` int,
+  `descripcion` varchar(255)
 );
 ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 CREATE TABLE `dietas` (
