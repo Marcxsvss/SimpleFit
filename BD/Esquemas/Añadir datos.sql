@@ -66,13 +66,25 @@ INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
   (41, 'crunch abdominal', 'Adbomen', NULL);  
 
 INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
-  (38, 'Elevacion de piernas', 'Adbomen', NULL),
-  (39, 'Abdomen en barra', 'Adbomen', NULL),
-  (40, 'Abdomen en paralelas', 'Adbomen', NULL),
-  (41, 'crunch abdominal', 'Adbomen', NULL);  
+  (42, 'Extensión cuadriceps', 'Cuadriceps', NULL),
+  (43, 'Sentadilla', 'Cuadriceps', NULL),
+  (44, 'Haka', 'Cuadriceps', NULL),
+  (45, 'Prensa', 'Cuadriceps', NULL);
   
-
+  INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (46, 'Peso muerto', 'Femoral', NULL),
+  (47, 'Curl femoral', 'Femoral', NULL);
   
+  INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (48, 'Hip Trust', 'Gluteo', NULL),
+  (49, 'Sentadilla Sumo', 'Gluteo', NULL),
+  (50, 'Máquina de abducción', 'Gluteo', NULL),
+  (51, 'Patada en polea', 'Gluteo', NULL),
+  (52, 'Sentadilla Búlgara', 'Gluteo', NULL);  
+  
+  INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
+  (53, 'Extension de tobillo', 'Gemelo', NULL),
+  (54, 'Maquina gemelo', 'Gemelo', NULL);
   
   
   
