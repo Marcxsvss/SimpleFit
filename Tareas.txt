@@ -12,6 +12,9 @@ y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te c
 <<<<<<< HEAD
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
 =======
+El problema ahora está en como guardo los datos de registerAccount en ProfileAccount para que lo cree finalmente en esta pantalla, y mirar como solucionar el error de los nulos.
+
+
 Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
 >>>>>>> 7edf29d5da22deb466ff8fb448b512efeaa535ae
 Añadir rutinas y dietas por defecto, unas 20 rutinas y unas 20 dietas.

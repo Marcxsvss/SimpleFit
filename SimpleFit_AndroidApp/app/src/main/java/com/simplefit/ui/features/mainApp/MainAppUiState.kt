@@ -15,4 +15,17 @@ data class MainAppUiState(
     val sexo : String,
     val somatotipo : String,
     val alergia : String?
-)
+){
+    constructor() : this(
+    email = "",
+    dni = "",
+    password = "",
+    nombre = "",
+    altura = "",
+    peso = "",
+    edad = "",
+    sexo = "",
+    somatotipo = "",
+    alergia = null
+    )
+}

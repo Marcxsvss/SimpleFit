@@ -28,7 +28,7 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     this.email,
     this.dni,
     this.password,
-    "",
+    this.nombre,
     "",
     "",
     "",

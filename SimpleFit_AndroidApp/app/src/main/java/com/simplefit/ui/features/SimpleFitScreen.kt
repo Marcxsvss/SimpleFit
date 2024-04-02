@@ -2,12 +2,15 @@ package com.simplefit.ui.features
 
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -42,14 +45,17 @@ fun SimpleFitScreen() {
         bottomBar = {
             if (verNavegacion.value)
                 NavBar(
-                    navController = navController,currentIndex = iOpcionNevagacionSeleccionada.value
+                    navController = navController,
+                    currentIndex = iOpcionNevagacionSeleccionada.value
                 )
         },
         content = { innerPadding ->
             SimpleFitNavHost(innerPadding = innerPadding, navController = navController)
         }
     )
+
 }
+
 private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
     return when (route?.substringBefore("/")) {
         HomeRoute -> 0

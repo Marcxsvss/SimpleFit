@@ -1,6 +1,8 @@
 package com.pmdm.recetas.ui.composables
 
 import android.telephony.PhoneNumberUtils
+import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -11,20 +13,28 @@ import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.TextFields
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
 import com.pmdm.tienda.utilities.validacion.Validacion
 
 
@@ -64,6 +74,7 @@ fun TextFieldWithErrorState(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OutlinedTextFieldWithErrorState(
     modifier: Modifier = Modifier,
@@ -87,7 +98,7 @@ fun OutlinedTextFieldWithErrorState(
         placeholder = {
             Text(
                 text = textoPista,
-                style = TextStyle(color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f))
+                style = TextStyle(color = Color(0xFFDAB338))
             )
         },
         label = { Text(if (validacionState.hayError) "${label}*" else label) },
@@ -98,7 +109,14 @@ fun OutlinedTextFieldWithErrorState(
             }
         },
         isError = validacionState.hayError,
-        keyboardActions = keyboardActions
+        keyboardActions = keyboardActions,
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedBorderColor = Color(0xFFDAB338),
+            unfocusedBorderColor = Color(0xFFDAB338),
+            disabledBorderColor = Color.Gray,
+            errorBorderColor = Color.Red,
+            focusedLabelColor = Color(0xFFDAB338)
+        )
     )
 }
 
@@ -186,7 +204,14 @@ fun OutlinedTextFieldPassword(
                 val description = if (passwordHidden) labelShow else labelHide
                 Icon(imageVector = visibilityIcon, contentDescription = description)
             }
-        }
+        },
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedBorderColor = Color(0xFFDAB338),
+            unfocusedBorderColor = Color(0xFFDAB338),
+            disabledBorderColor = Color.Gray,
+            errorBorderColor = Color.Red,
+            focusedLabelColor = Color(0xFFDAB338)
+        )
     )
 }
 

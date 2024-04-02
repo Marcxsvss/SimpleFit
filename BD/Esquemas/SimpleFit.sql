@@ -3,6 +3,10 @@ CREATE DATABASE IF NOT EXISTS SimpleFit;
 -- Seleccionar la base de datos recién creada
 USE SimpleFit;
 
+
+
+
+
 CREATE TABLE `users`(
   `dni` varchar(255) PRIMARY KEY,
   `nombre` varchar(255),
@@ -13,7 +17,8 @@ CREATE TABLE `users`(
   `altura` int,
   `peso` int,
   `somatotipo` varchar(255),
-  `alergias` varchar(255)
+  `lactosa` boolean,
+  `gluten` boolean
 );
 
 CREATE TABLE `maquinas` (
@@ -40,12 +45,8 @@ CREATE TABLE `dietas`(
   `nombre` varchar(255),
   `objetivo` varchar(255),
   `calorias` int,
-  `duracion` int,
-  `desayuno` varchar(255),
-  `almuerzo` varchar(255),
-  `comida` varchar(255),
-  `merienda` varchar(255),
-  `cena` varchar(255)
+  `lactosa` boolean,
+  `gluten` boolean
 );
 ALTER TABLE `dietas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 
@@ -66,8 +67,8 @@ CREATE TABLE `dietaalimento` (
 PRIMARY KEY (`dietaid`, `userid`)
 );
 
-ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`dietaid`) REFERENCES `dietas` (`dietaid`);
-ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+-- ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`dietaid`) REFERENCES `dietas` (`dietaid`);
+-- ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
 
 CREATE TABLE `rutinamaquina` (
   `rutinaid` int,

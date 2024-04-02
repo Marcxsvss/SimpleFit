@@ -1,12 +1,14 @@
 package com.simplefit.ui.features.mainApp.routines
 
+import com.simplefit.models.Rutinas
+
 data class RoutinesUiState(
-    routines : List<Routine>
+    val routines : List<Rutinas>
 
     ) {
 
 
     constructor() : this(
-        email = "",
-    )
+        routines = emptyList()
+        )
 }

@@ -2,9 +2,11 @@ package com.pmdm.tienda.ui.features.login.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.pmdm.recetas.ui.composables.CheckboxWithText
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
@@ -50,6 +52,7 @@ fun LoginForm(
         )
 
         Button(
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickLogearse,
             modifier = Modifier
                 .fillMaxWidth()

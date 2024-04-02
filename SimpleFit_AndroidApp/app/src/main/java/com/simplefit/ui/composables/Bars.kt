@@ -15,6 +15,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import com.simplefit.ui.navigation.navigateToHome
@@ -60,7 +61,7 @@ fun NavBar(
 
     var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
 
-    NavigationBar {
+    NavigationBar(containerColor = Color(0xFFdbc06d)) {
         listItemsIconButtons.forEachIndexed { index, button ->
             NavigationBarItem(
                 icon = { Icon(imageVector = button.icon, contentDescription = button.title) },

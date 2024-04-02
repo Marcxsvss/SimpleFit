@@ -20,6 +20,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,59 +45,75 @@ fun LoginScreen(
     onLoginEvent: (LoginEvent) -> Unit,
     onMostrarSnackBar: () -> Unit,
     onNavigateToHome: ((correo: String) -> Unit)? = null,
-    onNavigateToRegister : () -> Unit
-    ) {
+    onNavigateToRegister: () -> Unit
+) {
 
 //    var mensaje by remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
 
     var recordarmeState by remember { mutableStateOf(false) }
-
-    Box() {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(20.dp)
-        ) {
-            CircularImageFromResource(
-                idImageResource = R.drawable.login, contentDescription = "Imagen Login"
-            )
-
-
-            LoginForm(modifier = Modifier.fillMaxWidth(),
-                loginState = usuarioUiState.email,
-                passwordState = usuarioUiState.password,
-                validacionLogin = validacionLoginUiState.validacionEmail,
-                validacionPassword = validacionLoginUiState.validacionPassword,
-                recordarmeState = recordarmeState,
-                onValueChangeLogin = {
-                    onLoginEvent(LoginEvent.EmailChanged(it))
-                },
-                onValueChangePassword = {
-                    onLoginEvent(LoginEvent.PasswordChanged(it))
-                },
-                onCheckedChanged = { recordarmeState = it },
-                onClickLogearse = {
-                    onLoginEvent(LoginEvent.OnClickLogearse(onNavigateToHome))
-                    onMostrarSnackBar()
-                    scope.launch() {
-                        delay(4000)
-                        onMostrarSnackBar()
-                    }
-                })
-            Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            TextNewAccount(onNavigateToRegisterAccount = onNavigateToRegister)
-        }
-        if (mostrarSnack) {
-            var mensaje = ""
-            if (validacionLoginUiState.hayError) mensaje = validacionLoginUiState.mensajeError ?: ""
-            else if (usuarioUiState.estaLogeado) mensaje =
-                "Entrando a la APP con usuario ${usuarioUiState.email}"
-            else mensaje = "Error, no existe el usuario o contraseña incorrecta"
-            Snackbar(
-                modifier = Modifier.align(Alignment.BottomCenter)
+    Surface(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Box() {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(20.dp)
             ) {
-                Text(text = mensaje)
+//                CircularImageFromResource(
+//                    idImageResource = R.drawable.simplefit_logo, contentDescription = "Imagen Login"
+//                )
+                Text(
+                    text = "SimpleFit",
+                    color = Color(0xFFDAB338),
+                    fontSize = 30.sp,
+                    fontFamily = FontFamily(
+                        Font(resId = R.font.bayon_regular)
+                    )
+                )
+
+
+                LoginForm(modifier = Modifier.fillMaxWidth(),
+                    loginState = usuarioUiState.email,
+                    passwordState = usuarioUiState.password,
+                    validacionLogin = validacionLoginUiState.validacionEmail,
+                    validacionPassword = validacionLoginUiState.validacionPassword,
+                    recordarmeState = recordarmeState,
+                    onValueChangeLogin = {
+                        onLoginEvent(LoginEvent.EmailChanged(it))
+                    },
+                    onValueChangePassword = {
+                        onLoginEvent(LoginEvent.PasswordChanged(it))
+                    },
+                    onCheckedChanged = { recordarmeState = it },
+                    onClickLogearse = {
+                        onLoginEvent(LoginEvent.OnClickLogearse(onNavigateToHome))
+                        onMostrarSnackBar()
+                        scope.launch() {
+                            delay(4000)
+                            onMostrarSnackBar()
+                        }
+                    })
+                Spacer(modifier = Modifier.fillMaxHeight(0.1f))
+                TextNewAccount(
+                    onNavigateToRegisterAccount = onNavigateToRegister,
+                    color = Color.Black
+                )
+            }
+
+            if (mostrarSnack) {
+                var mensaje = ""
+                if (validacionLoginUiState.hayError) mensaje =
+                    validacionLoginUiState.mensajeError ?: ""
+                else if (usuarioUiState.estaLogeado) mensaje =
+                    "Entrando a la APP con usuario ${usuarioUiState.email}"
+                else mensaje = "Error, no existe el usuario o contraseña incorrecta"
+                Snackbar(
+                    modifier = Modifier.align(Alignment.BottomCenter)
+                ) {
+                    Text(text = mensaje)
+                }
             }
         }
     }

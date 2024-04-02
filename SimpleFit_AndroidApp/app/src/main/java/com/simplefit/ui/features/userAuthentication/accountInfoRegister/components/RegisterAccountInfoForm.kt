@@ -3,6 +3,7 @@ package com.simplefit.ui.features.userAuthentication.accountInfoRegister.compone
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -10,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldDni
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
@@ -76,6 +78,7 @@ fun RegisterAccountInfoForm(
 
 
         Button(
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickRegistrarse,
             modifier = Modifier
                 .fillMaxWidth()

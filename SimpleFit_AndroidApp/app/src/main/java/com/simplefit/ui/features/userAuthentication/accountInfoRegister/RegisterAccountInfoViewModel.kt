@@ -70,9 +70,9 @@ class RegisterAccountInfoViewModel @Inject constructor(
                         nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                             estaRegistrado = registro()
                         )
-                        if (nuevoUsuarioUiState.estaRegistrado) {
+                        if (!nuevoUsuarioUiState.estaRegistrado) {
                             delay(1000)
-                            registerAccountInfoEvent.onNavigateHome?.let { it(nuevoUsuarioUiState.email) }
+                            registerAccountInfoEvent.onNavigateRegisterProfileInfo?.let { it(nuevoUsuarioUiState.email) }
                         }
                     }
                 }
@@ -83,17 +83,19 @@ class RegisterAccountInfoViewModel @Inject constructor(
     }
 
     suspend fun registro(): Boolean {
-        val usuario = nuevoUsuarioUiState.toUsuario()
-
-        if (usuarioRepository.get(usuario.email) == null)
-        {
-            usuarioRepository.insert(usuario)
-            return true
-        }
-        else
-        {
+        if (nuevoUsuarioUiState != null) {
+            val usuario = nuevoUsuarioUiState.toUsuario()
+            if (usuarioRepository.get(usuario.email) == null) {
+                usuarioRepository.insert(usuario)
+                return true
+            } else {
+                return false
+            }
+        } else {
+            // Manejar el caso en que nuevoUsuarioUiState es null
             return false
         }
+
 
     }
 

@@ -9,6 +9,6 @@ sealed interface RegisterAccountInfoEvent {
         com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent
     data class NombreChanged(val nombre: String) :
         com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent
-    data class  OnClickRegistrarse(val onNavigateHome:((correo:String)->Unit)?):
+    data class  OnClickRegistrarse(val onNavigateRegisterProfileInfo:((correo:String)->Unit)?):
         com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoEvent
 }

@@ -3,3 +3,10 @@ Blanco -> #dddcd8
 Amarillo claro -> #dccea2
 Amarillo medio-> #dbc06d
 Amarillo oscuro-> #dab338
+
+colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = Color(0xFFDAB338),
+            unfocusedBorderColor = Color(0xFFDAB338),
+            errorBorderColor = Color.Red,
+            disabledBorderColor = Color.Gray
+        )
