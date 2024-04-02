@@ -86,9 +86,16 @@ INSERT INTO `maquinas` (`maquinaid`, `nombre`, `musculo`, `imagen`) VALUES
   (53, 'Extension de tobillo', 'Gemelo', NULL),
   (54, 'Maquina gemelo', 'Gemelo', NULL);
   
+
   
-  
-  
+  -- ---------------------------------------------------------------------------------------------------------------------
+  INSERT INTO `dietas`(`dietaid`,`descripcion`,`nombre`,`objetivo`,`calorias`,`duracion`,`desayuno`,`almuerzo`,`comida`,`merienda`,`cena`) VALUES
+  (1,'','','',4000,4,'Tortilla de 4 claras de huevo y 2 huevos enteros con espinacas, tomate y queso. Acompañado de 2 rebanadas de pan integral.','Pechuga de pollo a la parrilla, 1 taza de arroz y esparragos a la plancha.','Ensalada de garbanzos con vegetales mixtos, atún, aguacate y aderezo de aceite de oliva y limón.','Fruta fresca y un puñado de almendras.','Salmón al horno con batata asada y espárragos.'),
+  (2,'','','','',4000,4,'','','','',''),
+  (3,'','','','',4000,4,'','','','',''),
+  (4,'','','','',4000,4,'','','','',''),
+  (5,'','','','',4000,4,'','','','',''),
+  (6,'','','','',4000,4,'','','','','');
   SELECT * FROM maquinas;
   
   INSERT INTO `users`(`dni`,`nombre`,`email`,`password`,`sexo`,`edad`,`altura`,`peso`,`somatotipo`,`alergias`) VALUES
