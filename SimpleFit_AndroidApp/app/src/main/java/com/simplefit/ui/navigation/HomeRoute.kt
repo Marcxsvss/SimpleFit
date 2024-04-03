@@ -20,7 +20,6 @@ const val HomeParameterName = "email"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
-    onNavigateToLogin: () -> Unit,
     mainAppViewModel: MainAppViewModel
 ) {
     composable(
@@ -36,16 +35,16 @@ fun NavGraphBuilder.homeScreen(
         mainAppViewModel.setUsuario(email ?: "Email erroneo")
 
         HomeScreen(
+            mainAppUiState = mainAppViewModel.UserUiState,
             homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToLogin = onNavigateToLogin)
+            onHomeEvent = homeViewModel::onHomeEvent)
     }
     composable(HomeRoute)
     {
         HomeScreen(
+            mainAppUiState = mainAppViewModel.UserUiState,
             homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToLogin = onNavigateToLogin)
+            onHomeEvent = homeViewModel::onHomeEvent)
 
     }
 }

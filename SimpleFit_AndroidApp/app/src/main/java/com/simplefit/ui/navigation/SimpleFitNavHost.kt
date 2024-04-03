@@ -46,6 +46,7 @@ fun SimpleFitNavHost(
         registerAccountInfoScreen(
             registerAccountInfoViewModel = accountViewModel,
             onNavigateToRegisterProfileInfo = { email ->
+                registerProfileViewModel.accountMail = email
                 navController.navigateToRegisterProfile(email)
             },
             onNavigateToLogin = {
@@ -60,13 +61,14 @@ fun SimpleFitNavHost(
         )
         homeScreen(
             mainAppViewModel = mainAppViewModel,
-            homeViewModel = homeViewModel,
-            onNavigateToLogin = {
-                navController.navigateUp()
-            }
+            homeViewModel = homeViewModel
         )
         routinesScreen(routinesViewModel = routinesViewModel,mainAppViewModel = mainAppViewModel)
-        profileScreen(profileViewModel = profileViewModel,mainAppViewModel = mainAppViewModel)
+        profileScreen(
+            profileViewModel = profileViewModel,mainAppViewModel = mainAppViewModel,
+            onNavigateToLogin = {
+                navController.navigateToLogin()
+            })
     }
 
 }

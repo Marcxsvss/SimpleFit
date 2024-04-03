@@ -24,17 +24,18 @@ import com.simplefit.ui.theme.SimpleFitTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (Int) -> Unit, modifier: Modifier) {
+fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
     val Edades = arrayOf("16-28", "28-45", "45-60", "60-X")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(Edades[0]) }
+    var selectedText by remember { mutableStateOf("Edad") }
 
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .padding(32.dp)
     ) {
+
         ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = {expanded = !expanded})
         {
             TextField(
@@ -54,7 +55,7 @@ fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (Int) -> Unit,
                         text = { Text(text = item) },
                         onClick = {
                             selectedText = item
-                            onValueChange(item.toInt())
+                            onValueChange(item)
                             expanded = false
                             Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
                         }
@@ -70,7 +71,7 @@ fun ExposedDropdownMenuBoxSexo(/*sexoState: Int, */onValueChange: (String) -> Un
     val context = LocalContext.current
     val Edades = arrayOf("Masculino", "Femenino")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(Edades[0]) }
+    var selectedText by remember { mutableStateOf("Sexo") }
 
     Box(
         modifier = Modifier
@@ -112,7 +113,7 @@ fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (S
     val context = LocalContext.current
     val Edades = arrayOf("Ectomorfo", "Mesomorfo", "Endomorfo")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(Edades[0]) }
+    var selectedText by remember { mutableStateOf("Somatotipo") }
 
     Box(
         modifier = Modifier
@@ -152,9 +153,9 @@ fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (S
 @Composable
 fun ExposedDropdownMenuBoxAlergia(/*sexoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
-    val Edades = arrayOf("Lactosa", "Gluten", "Pescado", "Huevo")
+    val Edades = arrayOf("Lactosa", "Gluten")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember {mutableStateOf(Edades[0])}
+    var selectedText by remember {mutableStateOf("Intolerancia")}
 
     Box(
         modifier = Modifier

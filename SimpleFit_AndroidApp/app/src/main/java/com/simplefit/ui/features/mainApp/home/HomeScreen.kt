@@ -7,13 +7,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.simplefit.ui.features.mainApp.MainAppUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
+    mainAppUiState: MainAppUiState,
     homeUiState: HomeUiState,
-    onHomeEvent: (HomeEvent) -> Unit,
-    onNavigateToLogin: () -> Unit,
+    onHomeEvent: (HomeEvent) -> Unit
 
 ) {
     Surface(

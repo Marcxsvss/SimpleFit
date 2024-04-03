@@ -1,5 +1,6 @@
 login vm -> azureuser
 la contraseña es o "1234" o "XXXXXXXX"
+He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos, es posible que esto haya que quitarlo
 
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
 

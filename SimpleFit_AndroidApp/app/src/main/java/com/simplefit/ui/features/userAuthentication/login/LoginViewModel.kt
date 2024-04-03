@@ -71,7 +71,7 @@ class LoginViewModel @Inject constructor(
     suspend fun logearse(): Boolean {
         val usuario = usuarioUiState.toUsuario()
         val usuarioRepository = usuarioRepository.get(usuario.email)
-        if (usuarioRepository != null && usuarioRepository.contraseña == usuario.contraseña) return true
+        if (usuarioRepository != null && usuarioRepository.password == usuario.password) return true
         return false
     }
 

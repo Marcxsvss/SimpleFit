@@ -1,11 +1,19 @@
 package com.simplefit.ui.features.userAuthentication.profileInfoRegister.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldAltura
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPeso
 import com.pmdm.tienda.utilities.validacion.Validacion
@@ -17,15 +25,15 @@ import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
 @Composable
 fun RegisterProfileInfoForm(
     modifier: Modifier,
-    edadState: Int,
-    sexoState : String,
-    somatotipoState : String,
-    alergiaState : String,
-    alturaState : Int,
+    edadState: String,
+    sexoState: String,
+    somatotipoState: String,
+    alergiaState: String,
+    alturaState: String,
     validacionAltura: Validacion,
-    pesoState : Int,
+    pesoState: String,
     validacionPeso: Validacion,
-    onValueChangeEdad: (Int) -> Unit,
+    onValueChangeEdad: (String) -> Unit,
     onValueChangeSexo: (String) -> Unit,
     onValueChangeSomatotipo: (String) -> Unit,
     onValueChangeAlergia: (String) -> Unit,
@@ -33,7 +41,12 @@ fun RegisterProfileInfoForm(
     onValueChangePeso: (String) -> Unit,
     onClickGuardar: () -> Unit
 ) {
-    Column {
+    val scrollState = rememberScrollState()
+    Column(verticalArrangement=  Arrangement.Center,
+        horizontalAlignment =  Alignment.CenterHorizontally,
+        modifier = modifier.verticalScroll(scrollState)
+
+    ) {
 
 
         OutlinedTextFieldAltura(
@@ -70,6 +83,7 @@ fun RegisterProfileInfoForm(
 
 
         Button(
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickGuardar,
             modifier = Modifier
                 .fillMaxWidth()

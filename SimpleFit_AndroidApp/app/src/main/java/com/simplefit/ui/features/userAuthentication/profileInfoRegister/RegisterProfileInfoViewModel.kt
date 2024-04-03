@@ -17,21 +17,21 @@ class RegisterProfileInfoViewModel @Inject constructor(
     private val validadorRegisterProfileInfo: ValidadorRegisterProfileInfo,
     private val usuarioRepository: UsuarioRepository
 ) : ViewModel() {
+    var accountMail by mutableStateOf("")
     var perfilUsuarioUiState by mutableStateOf(RegisterProfileInfoUiState())
-        private set
     var validacionRegisterProfileInfoUiState by mutableStateOf(ValidacionRegisterProfileInfoUiState())
         private set
     var mostrarSnackBar by mutableStateOf(false)
     val onMostrarSnackBar: () -> Unit by mutableStateOf({
         mostrarSnackBar = !mostrarSnackBar
     })
+
 //    fun setUsuario(email : String)
 //    {
 //        perfilUsuarioUiState = perfilUsuarioUiState.copy(
 //            email = email
 //        )
 //    }
-
     fun onRegisterProfileInfoEvent(registerProfileInfoEvent: RegisterProfileInfoEvent) {
         when (registerProfileInfoEvent) {
             is RegisterProfileInfoEvent.EdadChanged -> {
@@ -79,15 +79,16 @@ class RegisterProfileInfoViewModel @Inject constructor(
                         perfilUsuarioUiState = perfilUsuarioUiState.copy(
                             estaRegistrado = true
                         )
-                        val usuario = usuarioRepository.get(perfilUsuarioUiState.email)?.let {
-                            it.copy(
-                                edad = perfilUsuarioUiState.edad.toString(),
-                                altura = perfilUsuarioUiState.altura.toString(),
-                                peso = perfilUsuarioUiState.peso.toString(),
-                                sexo = perfilUsuarioUiState.sexo,
-                                somatotipo = perfilUsuarioUiState.somatotipo,
-                                alergia = perfilUsuarioUiState.alergia)
-                        }
+                        perfilUsuarioUiState = perfilUsuarioUiState.copy(
+                            email = accountMail
+                        )
+                        val usuario = usuarioRepository.get(perfilUsuarioUiState.email)?.copy(
+                            edad = perfilUsuarioUiState.edad,
+                            altura = perfilUsuarioUiState.altura,
+                            peso = perfilUsuarioUiState.peso,
+                            sexo = perfilUsuarioUiState.sexo,
+                            somatotipo = perfilUsuarioUiState.somatotipo,
+                            alergia = perfilUsuarioUiState.alergia)
                         usuarioRepository.insert(usuario!!)
                         if (perfilUsuarioUiState.estaRegistrado) {
                             delay(1000)

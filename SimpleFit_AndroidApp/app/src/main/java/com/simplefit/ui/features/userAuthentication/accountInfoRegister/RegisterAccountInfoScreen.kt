@@ -50,6 +50,7 @@ fun RegisterAccountInfoScreen(
                     Font(resId = R.font.bayon_regular)
                 )
             )
+            Spacer(modifier = Modifier.fillMaxHeight(0.04f))
 
 
             RegisterAccountInfoForm(modifier = Modifier.fillMaxWidth(),
@@ -83,7 +84,7 @@ fun RegisterAccountInfoScreen(
         if (mostrarSnack) {
             var mensaje = ""
             if (validacionRegisterAccountInfoUiState.hayError) mensaje = validacionRegisterAccountInfoUiState.mensajeError ?: ""
-            else if (registerAccountInfoUiState.estaRegistrado) mensaje =
+            else if (!registerAccountInfoUiState.estaRegistrado) mensaje =
                 "Entrando a la APP con usuario ${registerAccountInfoUiState.email}"
             else mensaje = "Error, el email usuario ya está registrado"
             Snackbar(

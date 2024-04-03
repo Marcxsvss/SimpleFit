@@ -83,18 +83,15 @@ class RegisterAccountInfoViewModel @Inject constructor(
     }
 
     suspend fun registro(): Boolean {
-        if (nuevoUsuarioUiState != null) {
-            val usuario = nuevoUsuarioUiState.toUsuario()
-            if (usuarioRepository.get(usuario.email) == null) {
-                usuarioRepository.insert(usuario)
-                return true
-            } else {
-                return false
-            }
+        val usuario = nuevoUsuarioUiState.toUsuario()
+
+        return if(usuarioRepository.get(usuario.email)?.email == usuario.email) {
+            true
         } else {
-            // Manejar el caso en que nuevoUsuarioUiState es null
-            return false
+            usuarioRepository.insert(usuario)
+            false
         }
+
 
 
     }

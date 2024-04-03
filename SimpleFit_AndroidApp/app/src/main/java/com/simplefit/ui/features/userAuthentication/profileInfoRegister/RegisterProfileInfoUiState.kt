@@ -4,9 +4,9 @@ import com.simplefit.models.Usuario
 
 data class RegisterProfileInfoUiState(
     val email : String,
-    val edad: Int,
-    val altura : Int,
-    val peso : Int,
+    val edad: String,
+    val altura : String,
+    val peso : String,
     val sexo : String,
     val somatotipo : String,
     val alergia : String,
@@ -17,9 +17,9 @@ data class RegisterProfileInfoUiState(
 
     constructor() : this(
         email = "",
-        edad = 0,
-        altura=0,
-        peso = 0,
+        edad = "",
+        altura="",
+        peso = "",
         sexo="",
         somatotipo="",
         alergia="",

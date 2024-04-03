@@ -6,7 +6,7 @@ import com.simplefit.ui.features.userAuthentication.login.LoginUiState
 
 fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
     this.email,
-    this.contraseña,
+    this.password,
     false
 
 )

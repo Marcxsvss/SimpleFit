@@ -31,8 +31,8 @@ class UsuarioRepository @Inject constructor(
 //    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
 //        usuarioService.delete(email)
 //    }
-suspend fun get(email: String): Usuario =
-        withContext(Dispatchers.IO) { usuarioDao.get(email).toUsuario() }
+suspend fun get(email: String): Usuario? =
+        withContext(Dispatchers.IO) { usuarioDao.get(email)?.toUsuario() } //El problema está en cuando intento obtener un email que no existe
 
     suspend fun insert(usuario: Usuario) =
         withContext(Dispatchers.IO) { usuarioDao.insert(usuario.toUsuarioEntity()) }

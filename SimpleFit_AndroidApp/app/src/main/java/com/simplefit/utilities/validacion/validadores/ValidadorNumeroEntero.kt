@@ -6,7 +6,7 @@ import com.pmdm.tienda.utilities.validacion.Validador
 
 class ValidadorNumeroEntero(
     val rango: Range<Int> = Range(0, Int.MAX_VALUE),
-    val error: String = "Se espera un valor entero"
+    val error: String
 ) : Validador<String> {
     override fun valida(texto: String): Validacion {
         return object : Validacion {

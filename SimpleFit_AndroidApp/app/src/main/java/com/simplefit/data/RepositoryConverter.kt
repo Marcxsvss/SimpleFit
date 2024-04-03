@@ -21,7 +21,7 @@ fun UsuarioEntity.toUsuario(): Usuario = Usuario(
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     this.email,
     this.dni,
-    this.contraseña,
+    this.password,
     this.nombre,
     this.altura,
     this.peso,
@@ -58,7 +58,7 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,
     this.dni,
-    this.contraseña,
+    this.password,
     this.nombre,
     this.altura,
     this.peso,

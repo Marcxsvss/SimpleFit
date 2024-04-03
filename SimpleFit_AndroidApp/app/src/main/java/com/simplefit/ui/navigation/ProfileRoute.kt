@@ -15,12 +15,16 @@ const val ProfileRoute = "Profile"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.profileScreen(
     profileViewModel: ProfileViewModel,
-    mainAppViewModel: MainAppViewModel
+    mainAppViewModel: MainAppViewModel,
+    onNavigateToLogin: () -> Unit
 ) {
     composable(
         route = ProfileRoute
     ) {
-        ProfileScreen()
+        ProfileScreen(onNavigateToLogin  = onNavigateToLogin,
+            mainAppUiState = mainAppViewModel.UserUiState,
+            profileUiState = profileViewModel.profileUiState,
+            onProfileEvent = profileViewModel::onProfileEvent)
     }
 }
 fun NavController.navigateToProfile(navOptions: NavOptions? = null){

@@ -9,7 +9,7 @@ class ValidadorAltura(
     override fun valida(datos: String): Validacion {
         return object : Validacion {
             override val hayError: Boolean
-                get() = datos.toInt() in 140..220
+                get() = datos.toInt() in 140..220 //El problema esta en que si mete una letra rompe al pasar a int
             override val mensajeError: String
                 get() = error
         }
