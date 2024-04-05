@@ -14,7 +14,7 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "21",
             sexo = "H",
             somatotipo = "ectomorfo",
-            alergia = null
+            intolerancia = null
 
         ),
 //        UsuarioMock(

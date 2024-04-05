@@ -7,8 +7,7 @@ data class ProfileUiState(
     val peso : String,
     val sexo : String,
     val somatotipo : String,
-    val alergia : String,
-    val estaRegistrado : Boolean
+    val intolerancia : String
 ) {
 
 
@@ -20,7 +19,6 @@ data class ProfileUiState(
         peso = "",
         sexo="",
         somatotipo="",
-        alergia="",
-        estaRegistrado = false
+        intolerancia=""
     )
 }

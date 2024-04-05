@@ -37,7 +37,9 @@ CREATE TABLE `rutinas` (
   `duracion` int,
   `descripcion` varchar(255)
 );
+
 ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
+
 CREATE TABLE `dietas`(
   `dietaid` int PRIMARY KEY,
   `userid` varchar(255),
@@ -48,27 +50,11 @@ CREATE TABLE `dietas`(
   `lactosa` boolean,
   `gluten` boolean
 );
+
 ALTER TABLE `dietas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
 
-  -- CREATE TABLE `alimentos` (
-  --  `alimentoid` int PRIMARY KEY,
-   -- `Nombre` varchar(255),
-   -- `calorias` int,
-   -- `proteinas` int,
-   -- `grasas` int,
-   -- `carbohidratos` int,
-   -- `lactosa` boolean,
-   -- `gluten` boolean
- -- );
 
-CREATE TABLE `dietaalimento` (
-`dietaid` int,
-`userid` int,
-PRIMARY KEY (`dietaid`, `userid`)
-);
 
--- ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`dietaid`) REFERENCES `dietas` (`dietaid`);
--- ALTER TABLE `dietaalimento` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
 
 CREATE TABLE `rutinamaquina` (
   `rutinaid` int,

@@ -12,5 +12,5 @@ data class UsuarioApi(
     val edad : String,
     val sexo : String,
     val somatotipo : String,
-    val alergia : String?
+    val intolerancia : String?
 )

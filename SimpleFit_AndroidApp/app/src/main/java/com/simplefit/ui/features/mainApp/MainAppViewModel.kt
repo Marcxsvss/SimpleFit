@@ -13,8 +13,6 @@ class MainAppViewModel @Inject constructor(
 ) : ViewModel() {
     var userMail by mutableStateOf("")
         private set
-    var UserUiState by mutableStateOf(MainAppUiState())
-        private set
     fun setUsuario(email : String)
     {
         userMail = email

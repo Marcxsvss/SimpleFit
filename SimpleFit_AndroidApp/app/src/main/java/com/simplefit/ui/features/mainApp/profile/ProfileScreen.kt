@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,23 +22,24 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
-import com.simplefit.ui.features.mainApp.MainAppUiState
-import com.simplefit.ui.features.userAuthentication.profileInfoRegister.ProfileEvent
 import com.simplefit.ui.features.userAuthentication.profileInfoRegister.components.RegisterProfileInfoForm
-import kotlin.reflect.KFunction1
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileScreen(
+    mostrarSnack: Boolean,
+    onMostrarSnackBar: () -> Unit,
+    validacionProfileUiState: ValidacionProfileUiState,
     onNavigateToLogin: () -> Unit,
-    mainAppUiState: MainAppUiState,
     profileUiState: ProfileUiState,
-    onProfileEvent: KFunction1<ProfileEvent, Unit>
-)
-{
+    onProfileEvent: (ProfileEvent) -> Unit
+) {
+    val scope = rememberCoroutineScope()
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        Box(contentAlignment =  Alignment.TopCenter) {
+        Box(contentAlignment = Alignment.TopCenter) {
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -64,11 +67,11 @@ fun ProfileScreen(
                     edadState = profileUiState.edad,
                     sexoState = profileUiState.sexo,
                     somatotipoState = profileUiState.somatotipo,
-                    alergiaState = profileUiState.alergia,
+                    intoleranciaState = profileUiState.intolerancia,
                     alturaState = profileUiState.altura,
                     pesoState = profileUiState.peso,
-                    validacionAltura =  validacionprofileUiState.validacionAltura,
-                    validacionPeso = validacionprofileUiState.validacionPeso,
+                    validacionAltura = validacionProfileUiState.validacionAltura,
+                    validacionPeso = validacionProfileUiState.validacionPeso,
                     onValueChangeEdad = {
                         onProfileEvent(ProfileEvent.EdadChanged(it))
                     },
@@ -79,15 +82,36 @@ fun ProfileScreen(
                         onProfileEvent(ProfileEvent.SomatotipoChanged(it))
                     },
                     onValueChangeAlergia = {
-                        onProfileEvent(ProfileEvent.AlergiaChanged(it))
+                        onProfileEvent(ProfileEvent.IntoleranciaChanged(it))
                     },
                     onValueChangeAltura = {
                         onProfileEvent(ProfileEvent.AlturaChanged(it))
                     },
                     onValueChangePeso = {
                         onProfileEvent(ProfileEvent.PesoChanged(it))
-                    }
+                    },
                 )
+                {
+                    onProfileEvent(
+                        ProfileEvent.onClickGuardarPerfil
+                    )
+
+                    scope.launch {
+                        delay(1000)
+                        onMostrarSnackBar()
+                    }
+                }
+                Spacer(modifier = Modifier.fillMaxHeight(0.1f))
+            }
+            if (mostrarSnack) {
+                var mensaje = "Error"
+                if (validacionProfileUiState.hayError) mensaje = validacionProfileUiState.mensajeError ?: ""
+                else mensaje = "Error, los datos introducidos no son correctos"
+                Snackbar(
+                    modifier = Modifier.align(Alignment.BottomCenter)
+                ) {
+                    Text(text = mensaje)
+                }
             }
         }
     }

@@ -17,8 +17,8 @@ import androidx.compose.ui.unit.dp
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldAltura
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPeso
 import com.pmdm.tienda.utilities.validacion.Validacion
-import com.simplefit.ui.composables.ExposedDropdownMenuBoxAlergia
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
+import com.simplefit.ui.composables.ExposedDropdownMenuBoxIntolerancia
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSexo
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
 
@@ -28,7 +28,7 @@ fun RegisterProfileInfoForm(
     edadState: String,
     sexoState: String,
     somatotipoState: String,
-    alergiaState: String,
+    intoleranciaState: String,
     alturaState: String,
     validacionAltura: Validacion,
     pesoState: String,
@@ -44,51 +44,47 @@ fun RegisterProfileInfoForm(
     val scrollState = rememberScrollState()
     Column(verticalArrangement=  Arrangement.Center,
         horizontalAlignment =  Alignment.CenterHorizontally,
-        modifier = modifier.verticalScroll(scrollState)
+        modifier = Modifier
+            .verticalScroll(scrollState)
+            .padding(20.dp)
+            .padding(bottom = 56.dp)
 
     ) {
-
-
         OutlinedTextFieldAltura(
-            alturaState = alturaState.toString(),
+            alturaState = alturaState,
             validacionState = validacionAltura,
             onValueChange = onValueChangeAltura)
         OutlinedTextFieldPeso(
-            pesoState = pesoState.toString(),
+            pesoState = pesoState,
             validacionState = validacionPeso,
             onValueChange = onValueChangePeso)
-
         ExposedDropdownMenuBoxEdad(
             modifier = modifier,
-            //edadState = edadState,
+            edadState = edadState,
             onValueChange = onValueChangeEdad
         )
         ExposedDropdownMenuBoxSexo(
             modifier = modifier,
-            //sexoState = sexoState,
+            sexoState = sexoState,
             onValueChange = onValueChangeSexo
         )
         ExposedDropdownMenuBoxSomatotipo(
             modifier = modifier,
-            //sexoState = sexoState,
+            somatotipoState = somatotipoState,
             onValueChange = onValueChangeSomatotipo
         )
-        ExposedDropdownMenuBoxAlergia(
+        ExposedDropdownMenuBoxIntolerancia(
             modifier = modifier,
-            //sexoState = sexoState,
+            intoleranciaState = intoleranciaState,
             onValueChange = onValueChangeAlergia
         )
-
-
-
-
         Button(
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickGuardar,
             modifier = Modifier
                 .fillMaxWidth()
         ) {
-            Text("Sign Up")
+            Text("Guardar preferencias")
         }
     }
 }

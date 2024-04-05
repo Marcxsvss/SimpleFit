@@ -1,5 +1,6 @@
 package com.simplefit.ui.composables
 
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Home
@@ -15,13 +16,16 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.simplefit.ui.navigation.navigateToHome
 import com.simplefit.ui.navigation.navigateToHome2
 import com.simplefit.ui.navigation.navigateToProfile
 import com.simplefit.ui.navigation.navigateToRoutines
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,7 +65,7 @@ fun NavBar(
 
     var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
 
-    NavigationBar(containerColor = Color(0xFFdbc06d)) {
+    NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFdbc06d)) {
         listItemsIconButtons.forEachIndexed { index, button ->
             NavigationBarItem(
                 icon = { Icon(imageVector = button.icon, contentDescription = button.title) },

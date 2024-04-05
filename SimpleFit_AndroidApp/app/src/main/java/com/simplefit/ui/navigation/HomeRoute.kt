@@ -35,14 +35,12 @@ fun NavGraphBuilder.homeScreen(
         mainAppViewModel.setUsuario(email ?: "Email erroneo")
 
         HomeScreen(
-            mainAppUiState = mainAppViewModel.UserUiState,
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent)
     }
     composable(HomeRoute)
     {
         HomeScreen(
-            mainAppUiState = mainAppViewModel.UserUiState,
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent)
 

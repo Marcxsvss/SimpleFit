@@ -22,5 +22,5 @@ data class DatosUsuarioApi(
     @SerializedName("somatotipo")
     val somatotipo : String,
     @SerializedName("alergia")
-    val alergia : String?
+    val intolerancia : String?
 )

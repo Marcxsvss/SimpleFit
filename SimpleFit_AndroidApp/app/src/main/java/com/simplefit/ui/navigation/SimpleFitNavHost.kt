@@ -56,6 +56,7 @@ fun SimpleFitNavHost(
         registerProfileInfoScreen(
             registerProfileInfoViewModel = registerProfileViewModel,
             onNavigateToHome = { email ->
+                mainAppViewModel.setUsuario(email)
                 navController.navigateToHome(email)
             }
         )
@@ -65,8 +66,10 @@ fun SimpleFitNavHost(
         )
         routinesScreen(routinesViewModel = routinesViewModel,mainAppViewModel = mainAppViewModel)
         profileScreen(
-            profileViewModel = profileViewModel,mainAppViewModel = mainAppViewModel,
+            profileViewModel = profileViewModel,
+            mainAppViewModel = mainAppViewModel,
             onNavigateToLogin = {
+                mainAppViewModel.logOut()
                 navController.navigateToLogin()
             })
     }

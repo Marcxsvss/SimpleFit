@@ -15,7 +15,7 @@ fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.alergia
+    this.intolerancia
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
@@ -28,7 +28,7 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.alergia
+    this.intolerancia
 )
 
 
@@ -53,7 +53,7 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.alergia
+    this.intolerancia
 )
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,
@@ -65,7 +65,7 @@ fun Usuario.toUsuarioApi() = UsuarioApi(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.alergia
+    this.intolerancia
 )
 
 fun UsuarioApi.toUsuario() = Usuario(
@@ -78,6 +78,6 @@ fun UsuarioApi.toUsuario() = Usuario(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.alergia
+    this.intolerancia
 )
 //endregion

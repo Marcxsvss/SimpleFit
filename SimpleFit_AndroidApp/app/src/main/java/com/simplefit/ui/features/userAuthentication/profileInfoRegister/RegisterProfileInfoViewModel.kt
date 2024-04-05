@@ -88,7 +88,7 @@ class RegisterProfileInfoViewModel @Inject constructor(
                             peso = perfilUsuarioUiState.peso,
                             sexo = perfilUsuarioUiState.sexo,
                             somatotipo = perfilUsuarioUiState.somatotipo,
-                            alergia = perfilUsuarioUiState.alergia)
+                            intolerancia = perfilUsuarioUiState.alergia)
                         usuarioRepository.insert(usuario!!)
                         if (perfilUsuarioUiState.estaRegistrado) {
                             delay(1000)

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -65,7 +66,7 @@ fun RegisterProfileInfoScreen(
                 edadState = registerProfileInfoUiState.edad,
                 sexoState = registerProfileInfoUiState.sexo,
                 somatotipoState = registerProfileInfoUiState.somatotipo,
-                alergiaState = registerProfileInfoUiState.alergia,
+                intoleranciaState = registerProfileInfoUiState.alergia,
                 alturaState = registerProfileInfoUiState.altura,
                 pesoState = registerProfileInfoUiState.peso,
                 validacionAltura =  validacionRegisterProfileInfoUiState.validacionAltura,
@@ -96,23 +97,23 @@ fun RegisterProfileInfoScreen(
                 )
                 scope.launch {
                     delay(1000)
-                    //onMostrarSnackBar()
+                    onMostrarSnackBar()
                 }
             }
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
 
         }
-//        if (mostrarSnack) {
-//            var mensaje = ""
-//            if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
-//            else if (registerProfileInfoUiState.estaRegistrado) mensaje =
-//                "Entrando a la APP con usuario ${registerProfileInfoUiState.email}"
-//            else mensaje = "Error, el email usuario ya está registrado"
-//            Snackbar(
-//                modifier = Modifier.align(Alignment.BottomCenter)
-//            ) {
-//                Text(text = mensaje)
-//            }
-//        }
+        if (mostrarSnack) {
+            var mensaje = ""
+            if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
+            else if (registerProfileInfoUiState.estaRegistrado) mensaje =
+                "Entrando a la APP con usuario ${registerProfileInfoUiState.email}"
+            else mensaje = "Error, los datos introducidos no son correctos"
+            Snackbar(
+                modifier = Modifier.align(Alignment.BottomCenter)
+            ) {
+                Text(text = mensaje)
+            }
+        }
     }
 }

@@ -24,11 +24,12 @@ import com.simplefit.ui.theme.SimpleFitTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+fun ExposedDropdownMenuBoxEdad(edadState: String = "Edad", onValueChange: (String) -> Unit, modifier: Modifier) {
+
     val context = LocalContext.current
     val Edades = arrayOf("16-28", "28-45", "45-60", "60-X")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf("Edad") }
+    var selectedText by remember { mutableStateOf(edadState) }
 
     Box(
         modifier = Modifier
@@ -67,11 +68,11 @@ fun ExposedDropdownMenuBoxEdad(/*edadState: Int, */onValueChange: (String) -> Un
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxSexo(/*sexoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+fun ExposedDropdownMenuBoxSexo(sexoState: String = "Sexo", onValueChange: (String) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
     val Edades = arrayOf("Masculino", "Femenino")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf("Sexo") }
+    var selectedText by remember { mutableStateOf(sexoState) }
 
     Box(
         modifier = Modifier
@@ -109,11 +110,11 @@ fun ExposedDropdownMenuBoxSexo(/*sexoState: Int, */onValueChange: (String) -> Un
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+fun ExposedDropdownMenuBoxSomatotipo(somatotipoState: String = "Somatotipo", onValueChange: (String) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
-    val Edades = arrayOf("Ectomorfo", "Mesomorfo", "Endomorfo")
+    val edades = arrayOf("Ectomorfo", "Mesomorfo", "Endomorfo")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf("Somatotipo") }
+    var selectedText by remember { mutableStateOf(somatotipoState) }
 
     Box(
         modifier = Modifier
@@ -134,7 +135,7 @@ fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (S
                 expanded = expanded,
                 onDismissRequest = { expanded = false }
             ) {
-                Edades.forEach { item ->
+                edades.forEach { item ->
                     DropdownMenuItem(
                         text = { Text(text = item) },
                         onClick = {
@@ -151,11 +152,11 @@ fun ExposedDropdownMenuBoxSomatotipo(/*somatotipoState: Int, */onValueChange: (S
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExposedDropdownMenuBoxAlergia(/*sexoState: Int, */onValueChange: (String) -> Unit, modifier: Modifier) {
+fun ExposedDropdownMenuBoxIntolerancia(intoleranciaState: String = "Intolerancia",onValueChange: (String) -> Unit, modifier: Modifier) {
     val context = LocalContext.current
     val Edades = arrayOf("Lactosa", "Gluten")
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember {mutableStateOf("Intolerancia")}
+    var selectedText by remember {mutableStateOf(intoleranciaState)}
 
     Box(
         modifier = Modifier

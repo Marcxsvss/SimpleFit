@@ -8,5 +8,5 @@ sealed interface RegisterProfileInfoEvent {
     data class PesoChanged(val peso: String) : RegisterProfileInfoEvent
     data class AlergiaChanged(val alergia: String) : RegisterProfileInfoEvent
     data class  OnClickGuardarPerfil(val onNavigateHome:((correo:String)->Unit)?):RegisterProfileInfoEvent
-    data class  OnClickGuardarPerfil1(val onNavigateHome:((correo:String)->Unit)?):RegisterProfileInfoEvent
+
 }

@@ -21,10 +21,15 @@ fun NavGraphBuilder.profileScreen(
     composable(
         route = ProfileRoute
     ) {
-        ProfileScreen(onNavigateToLogin  = onNavigateToLogin,
-            mainAppUiState = mainAppViewModel.UserUiState,
+
+        ProfileScreen(
+            onNavigateToLogin  = onNavigateToLogin,
             profileUiState = profileViewModel.profileUiState,
-            onProfileEvent = profileViewModel::onProfileEvent)
+            onProfileEvent = profileViewModel::onProfileEvent,
+            validacionProfileUiState = profileViewModel.validacionProfileUiState,
+            onMostrarSnackBar = profileViewModel.onMostrarSnackBar,
+            mostrarSnack = profileViewModel.mostrarSnackBar,
+        )
     }
 }
 fun NavController.navigateToProfile(navOptions: NavOptions? = null){

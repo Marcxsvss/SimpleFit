@@ -12,7 +12,7 @@ import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 @TypeConverters(RoomConverters::class)
 @Database(
     entities = [UsuarioEntity::class],
-    version = 3
+    version = 4
 )
 abstract class SimpleFitDB : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
