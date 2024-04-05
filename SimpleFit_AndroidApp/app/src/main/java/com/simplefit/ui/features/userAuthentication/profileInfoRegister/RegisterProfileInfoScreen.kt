@@ -43,14 +43,7 @@ fun RegisterProfileInfoScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(20.dp)
         ) {
-            Text(
-                text = "SimpleFit",
-                color = Color(0xFFDAB338),
-                fontSize = 30.sp,
-                fontFamily = FontFamily(
-                    Font(resId = R.font.bayon_regular)
-                )
-            )
+
             Spacer(modifier = Modifier.fillMaxHeight(0.01f))
 
             Text(
@@ -59,7 +52,7 @@ fun RegisterProfileInfoScreen(
                 fontSize = 30.sp,
                 fontStyle = FontStyle.Italic
             )
-            Spacer(modifier = Modifier.fillMaxHeight(0.05f))
+
 
             RegisterProfileInfoForm(
                 modifier = Modifier.fillMaxWidth(),
@@ -106,8 +99,6 @@ fun RegisterProfileInfoScreen(
         if (mostrarSnack) {
             var mensaje = ""
             if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
-            else if (registerProfileInfoUiState.estaRegistrado) mensaje =
-                "Entrando a la APP con usuario ${registerProfileInfoUiState.email}"
             else mensaje = "Error, los datos introducidos no son correctos"
             Snackbar(
                 modifier = Modifier.align(Alignment.BottomCenter)

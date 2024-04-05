@@ -83,6 +83,7 @@ fun RegisterProfileInfoForm(
             onClick = onClickGuardar,
             modifier = Modifier
                 .fillMaxWidth()
+                .padding(top=50.dp)
         ) {
             Text("Guardar preferencias")
         }

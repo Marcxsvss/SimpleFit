@@ -1,5 +1,5 @@
 login vm -> azureuser
-la contraseña es o "1234" o "XXXXXXXX"
+la contraseña es o "1234"
 He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos, es posible que esto haya que quitarlo
 
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
@@ -13,8 +13,8 @@ y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te c
 <<<<<<< HEAD
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
 =======
-El problema ahora está en como guardo los datos de registerAccount en ProfileAccount para que lo cree finalmente en esta pantalla, y mirar como solucionar el error de los nulos.
-
+Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo, no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle el padding bottom para que haya mas espacio entre uno y otro 
+Mirar porque si me logeo con una cuenta creada por mi, no funciona, me dice que no existe.
 
 Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
 >>>>>>> 7edf29d5da22deb466ff8fb448b512efeaa535ae

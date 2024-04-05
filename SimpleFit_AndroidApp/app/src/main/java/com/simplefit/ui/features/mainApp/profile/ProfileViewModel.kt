@@ -11,13 +11,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     private val validadorProfile: ValidadorProfile,
     private val usuarioRepository: UsuarioRepository
 ) : ViewModel() {
-    
-    var accountMail by mutableStateOf("")
+
+    //var accountMail by mutableStateOf("")
+
     var profileUiState by mutableStateOf(ProfileUiState())
         private set
     var validacionProfileUiState by mutableStateOf(ValidacionProfileUiState())
@@ -28,31 +30,53 @@ class ProfileViewModel @Inject constructor(
         mostrarSnackBar = !mostrarSnackBar
     })
 
+    fun setUserEmail(email: String) {
+        profileUiState.email = email
+        viewModelScope.launch {
+            val usuario = usuarioRepository.get(email)
+            if (usuario != null) {
+                profileUiState = profileUiState.copy(
+                    edad = usuario.edad,
+                    altura = usuario.altura,
+                    peso = usuario.peso,
+                    sexo = usuario.sexo,
+                    somatotipo = usuario.somatotipo,
+                    intolerancia = usuario.intolerancia ?: ""
+                )
+            }
+        }
+    }
+
     fun onProfileEvent(profileEvent: ProfileEvent) {
         when (profileEvent) {
             is ProfileEvent.onClickLogOut -> {
 
             }
+
             is ProfileEvent.EdadChanged -> {
                 profileUiState = profileUiState.copy(
                     edad = profileEvent.edad
                 )
             }
+
             is ProfileEvent.IntoleranciaChanged -> {
                 profileUiState = profileUiState.copy(
                     intolerancia = profileEvent.intolerancia
                 )
             }
+
             is ProfileEvent.SexoChanged -> {
                 profileUiState = profileUiState.copy(
                     sexo = profileEvent.sexo
                 )
             }
+
             is ProfileEvent.SomatotipoChanged -> {
                 profileUiState = profileUiState.copy(
                     somatotipo = profileEvent.somatotipo
                 )
             }
+
             is ProfileEvent.PesoChanged -> {
                 profileUiState = profileUiState.copy(
                     peso = profileEvent.peso
@@ -61,6 +85,7 @@ class ProfileViewModel @Inject constructor(
                     validacionPeso = validadorProfile.validadorPeso.valida(profileEvent.peso)
                 )
             }
+
             is ProfileEvent.AlturaChanged -> {
                 profileUiState = profileUiState.copy(
                     altura = profileEvent.altura
@@ -84,7 +109,7 @@ class ProfileViewModel @Inject constructor(
                             somatotipo = profileUiState.somatotipo,
                             intolerancia = profileUiState.intolerancia
                         )
-                        //usuarioRepository.insert(usuario!!) Es un update
+                        usuarioRepository.update(usuario!!)
 
                     }
                 }
@@ -93,5 +118,4 @@ class ProfileViewModel @Inject constructor(
             else -> {}
         }
     }
-    
 }

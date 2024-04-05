@@ -11,10 +11,10 @@ class UsuarioDaoMock @Inject constructor() {
             nombre = "marcos",
             altura = "184",
             peso = "84",
-            edad = "21",
-            sexo = "H",
+            edad = "16-28",
+            sexo = "Masculino",
             somatotipo = "ectomorfo",
-            intolerancia = null
+            intolerancia = "Lactosa"
 
         ),
 //        UsuarioMock(

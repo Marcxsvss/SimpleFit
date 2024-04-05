@@ -10,7 +10,7 @@ data class RegisterProfileInfoUiState(
     val sexo : String,
     val somatotipo : String,
     val alergia : String,
-    val estaRegistrado : Boolean
+
 ) {
 
 
@@ -23,6 +23,6 @@ data class RegisterProfileInfoUiState(
         sexo="",
         somatotipo="",
         alergia="",
-        estaRegistrado = false
+
     )
 }

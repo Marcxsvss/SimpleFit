@@ -76,9 +76,7 @@ class RegisterProfileInfoViewModel @Inject constructor(
                     validacionRegisterProfileInfoUiState = validadorRegisterProfileInfo.valida(perfilUsuarioUiState)
                     if (!validacionRegisterProfileInfoUiState.hayError) {
 
-                        perfilUsuarioUiState = perfilUsuarioUiState.copy(
-                            estaRegistrado = true
-                        )
+
                         perfilUsuarioUiState = perfilUsuarioUiState.copy(
                             email = accountMail
                         )
@@ -89,11 +87,11 @@ class RegisterProfileInfoViewModel @Inject constructor(
                             sexo = perfilUsuarioUiState.sexo,
                             somatotipo = perfilUsuarioUiState.somatotipo,
                             intolerancia = perfilUsuarioUiState.alergia)
-                        usuarioRepository.insert(usuario!!)
-                        if (perfilUsuarioUiState.estaRegistrado) {
-                            delay(1000)
-                            registerProfileInfoEvent.onNavigateHome?.let { it(perfilUsuarioUiState.email) }
-                        }
+                        usuarioRepository.update(usuario!!)
+
+                        delay(1000)
+                        registerProfileInfoEvent.onNavigateHome?.let { it(perfilUsuarioUiState.email) }
+
                     }
                 }
             }

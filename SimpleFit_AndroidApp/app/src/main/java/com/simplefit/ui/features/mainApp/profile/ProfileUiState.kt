@@ -1,7 +1,7 @@
 package com.simplefit.ui.features.mainApp.profile
 
 data class ProfileUiState(
-    val email : String,
+    var email : String,
     val edad: String,
     val altura : String,
     val peso : String,

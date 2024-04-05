@@ -37,9 +37,9 @@ suspend fun get(email: String): Usuario? =
     suspend fun insert(usuario: Usuario) =
         withContext(Dispatchers.IO) { usuarioDao.insert(usuario.toUsuarioEntity()) }
 
-//    suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
-//        usuarioService.update(usuario.toUsuarioApi())
-//    }
+    suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
+      usuarioDao.update(usuario.toUsuarioEntity())
+    }
 //    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
 //        usuarioService.delete(email)
 //    }
