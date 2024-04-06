@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldDni
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
@@ -52,7 +53,7 @@ fun RegisterAccountInfoForm(
         Text(
             text = "PASSWORD",
             color = Color(0xFFDAB338),
-            fontSize = 30.sp,
+            fontSize = 20.sp,
             fontFamily = FontFamily(
                 Font(resId = R.font.bayon_regular)
             )

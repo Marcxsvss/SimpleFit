@@ -15,23 +15,7 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Masculino",
             somatotipo = "ectomorfo",
             intolerancia = "Lactosa"
-
         ),
-//        UsuarioMock(
-//            email = "carles",
-//            dni = "12323544Y",
-//            password = "1234"
-//        ),
-//        UsuarioMock(
-//            email = "sonia",
-//            dni = "12323544Y",
-//            password = "1234"
-//        ),
-//        UsuarioMock(
-//            email = "mohamed",
-//            dni = "12323544Y",
-//            password = "1234"
-//        ),
     )
 
     fun get(): MutableList<UsuarioMock> = users

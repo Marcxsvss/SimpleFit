@@ -30,6 +30,7 @@ class ProfileViewModel @Inject constructor(
         mostrarSnackBar = !mostrarSnackBar
     })
 
+
     fun setUserEmail(email: String) {
         profileUiState.email = email
         viewModelScope.launch {

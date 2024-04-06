@@ -18,11 +18,15 @@ class HomeViewModel @Inject constructor(
     var indexState by mutableStateOf(0)
     fun setUsuario(email : String)
     {
-
-        homeUiState = homeUiState.copy(
-            email = email
-        )
-
+        viewModelScope.launch {
+            val usuario = usuarioRepository.get(email)
+            if (usuario != null) {
+                homeUiState = homeUiState.copy(
+                    email = usuario.email,
+                    nombre = usuario.nombre
+                )
+            }
+        }
     }
     fun onHomeEvent(homeEvent: HomeEvent) {
         when (homeEvent) {
