@@ -6,7 +6,6 @@ import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 
 @Dao
 interface UsuarioDao {
-
     @Query("SELECT * FROM USUARIOS")
     suspend fun get(): List<UsuarioEntity>
 

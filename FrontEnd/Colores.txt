@@ -1,8 +1,8 @@
 Negro -> #000000
 Blanco -> #dddcd8
-Amarillo claro -> #dccea2
-Amarillo medio-> #dbc06d
-Amarillo oscuro-> #dab338
+Amarillo claro -> #dccea2 -> Color(0xFFDCCEA2)
+Amarillo medio-> #dbc06d -> Color(0xFFDBC06D)
+Amarillo oscuro-> #dab338 -> Color(0xFFDAB338)
 
 colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = Color(0xFFDAB338),

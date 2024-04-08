@@ -58,6 +58,7 @@ fun SimpleFitNavHost(
         registerProfileInfoScreen(
             registerProfileInfoViewModel = registerProfileViewModel,
             onNavigateToHome = { email ->
+                homeViewModel.setUsuario(email)
                 profileViewModel.setUserEmail(email)
                 navController.navigateToHome(email)
             }

@@ -12,6 +12,7 @@ y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te c
 ------------------------------------------------------------------------------------------------------------------
 <<<<<<< HEAD
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
+Posible ampliacion, añadir un box al final del home que sea para compartir con amigos la aplicacion
 =======
 Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo, no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle el padding bottom para que haya mas espacio entre uno y otro 
 Mirar porque si me logeo con una cuenta creada por mi, no funciona, me dice que no existe.

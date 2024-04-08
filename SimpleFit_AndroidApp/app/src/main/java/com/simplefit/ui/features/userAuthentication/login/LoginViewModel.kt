@@ -17,6 +17,10 @@ class LoginViewModel @Inject constructor(
     private val usuarioRepository: UsuarioRepository,
     private val validadorLogin: ValidadorLogin
 ) : ViewModel() {
+//    init {
+//        viewModelScope.launch { usuarioRepository.clearDatabase() }
+//
+//    }
 
     var usuarioUiState by mutableStateOf(LoginUiState())
         private set

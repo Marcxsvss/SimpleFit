@@ -10,6 +10,7 @@ import javax.inject.Inject
 class UsuarioRepository @Inject constructor(
     private val usuarioDao: UsuarioDao
 ) {
+
     init {
         //Para inicializar con datos la BD
 //        runBlocking {
@@ -19,7 +20,7 @@ class UsuarioRepository @Inject constructor(
 //        }
     }
 
-//    suspend fun get(email: String): Usuario? =
+    //    suspend fun get(email: String): Usuario? =
 //        withContext(Dispatchers.IO) { usuarioService.get(email).toUsuario() }
 //
 //    suspend fun insert(usuario: Usuario) =
@@ -31,14 +32,16 @@ class UsuarioRepository @Inject constructor(
 //    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
 //        usuarioService.delete(email)
 //    }
-suspend fun get(email: String): Usuario? =
-        withContext(Dispatchers.IO) { usuarioDao.get(email)?.toUsuario() } //El problema está en cuando intento obtener un email que no existe
+    suspend fun get(email: String): Usuario? =
+        withContext(Dispatchers.IO) {
+            usuarioDao.get(email)?.toUsuario()
+        } //El problema está en cuando intento obtener un email que no existe
 
     suspend fun insert(usuario: Usuario) =
         withContext(Dispatchers.IO) { usuarioDao.insert(usuario.toUsuarioEntity()) }
 
     suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
-      usuarioDao.update(usuario.toUsuarioEntity())
+        usuarioDao.update(usuario.toUsuarioEntity())
     }
 //    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
 //        usuarioService.delete(email)

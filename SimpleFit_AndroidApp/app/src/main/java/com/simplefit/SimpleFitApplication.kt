@@ -21,7 +21,7 @@ class SimpleFitApplication: Application (){
 
         runBlocking {
             if(UsuariosDaoEntity.count() == 0)
-                UsuariosDaoMock.get().forEach { UsuariosDaoEntity.insert(it.toUsuario().toUsuarioEntity())}
+                UsuariosDaoMock.get().forEach {UsuariosDaoEntity.insert(it.toUsuario().toUsuarioEntity())}
         }
     }
 }
