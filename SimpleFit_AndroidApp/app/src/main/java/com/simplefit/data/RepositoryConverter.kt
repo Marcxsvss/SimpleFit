@@ -19,16 +19,16 @@ fun UsuarioEntity.toUsuario(): Usuario = Usuario(
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
-    this.email,
-    this.dni,
-    this.password,
-    this.nombre,
-    this.altura,
-    this.peso,
-    this.edad,
-    this.sexo,
-    this.somatotipo,
-    this.intolerancia
+    email = this.email,
+    dni = this.dni,
+    password = this.password,
+    nombre = this.nombre,
+    altura = this.altura,
+    peso = this.peso,
+    edad = this.edad,
+    sexo = this.sexo,
+    somatotipo = this.somatotipo,
+    intolerancia = this.intolerancia
 )
 
 
@@ -44,16 +44,16 @@ fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
 
 //region UsuarioMock
 fun UsuarioMock.toUsuario(): Usuario = Usuario(
-    this.email,
-    this.dni,
-    this.contraseña,
-    this.nombre,
-    this.altura,
-    this.peso,
-    this.edad,
-    this.sexo,
-    this.somatotipo,
-    this.intolerancia
+    email = this.email,
+    dni = this.dni,
+    password = this.password,
+    nombre = this.nombre,
+    altura = this.altura,
+    peso = this.peso,
+    edad = this.edad,
+    sexo = this.sexo,
+    somatotipo = this.somatotipo,
+    intolerancia = this.intolerancia
 )
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,

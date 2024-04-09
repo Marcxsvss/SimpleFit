@@ -14,8 +14,8 @@ fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
 
 fun LoginUiState.toUsuario(): Usuario = Usuario(
     this.email,
-    this.password,
-"",
+    "",
+this.password,
 "",
 "",
 "",

@@ -7,7 +7,7 @@ class UsuarioDaoMock @Inject constructor() {
         UsuarioMock(
             email = "marcos@gmail.com",
             dni = "12323544Y",
-            contraseña = "12345678",
+            password = "12345678",
             nombre = "marcos",
             altura = "184",
             peso = "84",
