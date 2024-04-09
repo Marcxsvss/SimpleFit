@@ -3,6 +3,10 @@ la contraseña es o "1234"
 He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos, es posible que esto haya que quitarlo
 
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
+Quehacer
+---------
+
+
 
 Tareas
 -----------------
@@ -15,15 +19,25 @@ Añadir la autenticacion login con retrofit, todo está al final del pdf de retr
 Posible ampliacion, añadir un box al final del home que sea para compartir con amigos la aplicacion
 =======
 Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo, no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle el padding bottom para que haya mas espacio entre uno y otro 
-Mirar porque si me logeo con una cuenta creada por mi, no funciona, me dice que no existe.
 
 Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
->>>>>>> 7edf29d5da22deb466ff8fb448b512efeaa535ae
 Añadir rutinas y dietas por defecto, unas 20 rutinas y unas 20 dietas.
-Continuar configurando la maquina virtual, me he quedado por el 4.2 y probar el acceso desde workbench al Servidor de Azure, 
-apuntarme todas las posibles llamadas a la api.
+
+Apuntarme todas las posibles llamadas a la api.
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)
-Mirar como va lo de Azure, Decirle a carles que me envie el PDF con la explicacion
 Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
-Maquetar la UI de HOME,Lista de rutinas y dietas,Perfil de usuario.
-Una vez visto como va lo de Azure, ver como cojer los datos de Azure para la Aplicacion de android, creo que se usaba retrofit
+Maquetar la UI de Lista de rutinas,entreno del dia, dieta del dia, consejos, (Ampliazcion de compartir con amigos) y dietas.
+Ver como cojer los datos de Azure para la Aplicacion de android con Retrofit.
+
+Una vez terminada la App Android,
+
+Hacer la Apliacion de escritorio con Visual Studio
+---------------------------------------------------
+Tendrá un inicio de sesion, los administradores entraran con un usuario y contraseña y solo se podrán añadir nuevos administradores 
+desde dentro de la aplicacion y el unico que podrá crear administradores sera el director. 
+Los administradores podrán añádir dietas, rutinas, alimentos, eliminar usuarios etc.
+
+Tendrá una pantalla principal donde veremos todas las tablas, seleccionaremos la que queramos y todo estará ordenado, podremos aplicar filtros y habrá un buscador 
+para encontrar ocurrencias. busques lo que busques, buscará una coincidencia en todos los campos tanto nombre, dni, email.(Los que yo decida)
+Habrá un boton para eliminar (cualquier dato de las tablas), editar(cualquier dato de las tablas), otro para insertar(cualquier dato en cualquier tabla).
+
