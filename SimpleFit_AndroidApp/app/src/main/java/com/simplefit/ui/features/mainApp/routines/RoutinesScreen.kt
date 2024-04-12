@@ -31,21 +31,21 @@ import com.simplefit.R
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import com.simplefit.ui.composables.RutinasListItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun RoutinesScreen(
     rutinasState: List<RoutinesUiState>,
     rutinaSeleccionadaState: RoutinesUiState?,
-    onRutinaClicked: (RoutinesUiState) -> Unit,
-    onEditClicked: (RoutinesUiState) -> Unit,
-    onDeleteClicked: (RoutinesUiState) -> Unit,
-    onAddClicked: () -> Unit
+    onRutinaEvent: (RoutinesEvent) -> Unit,
 ) {
+    val scrollState = rememberScrollState()
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-
 
         Column(
             verticalArrangement = Arrangement.Center,
@@ -68,35 +68,59 @@ fun RoutinesScreen(
                 fontStyle = FontStyle.Italic
             )
             Spacer(modifier = Modifier.fillMaxHeight(0.05f))
-            Box(modifier = Modifier.fillMaxSize()) {
-                LazyColumn(
-                    contentPadding = PaddingValues(all = 4.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    items(
-                        rutinasState,
-                        key = { it.id }
-                    ) { contacto ->
-                        ContactoListItem(
-                            modifier = Modifier.animateItemPlacement(),
-                            contactoUiState = contacto,
-                            seleccionadoState = rutinaSeleccionadaState?.let { it.id == contacto.id }
-                                ?: false,
-                            onContactoClicked = onRutinaClicked,
-                            onEditClicked = onEditClicked,
-                            onDeleteClicked = onDeleteClicked
-                        )
+
+//            Column(
+//                verticalArrangement = Arrangement.Center,
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                modifier = Modifier
+//                    .verticalScroll(scrollState)
+//                    .padding(20.dp)
+//                    .padding(bottom = 56.dp)
+//
+//            ) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    LazyColumn(
+                        contentPadding = PaddingValues(all = 4.dp),
+                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        items(
+                            rutinasState,
+                            key = { it.id }
+                        ) { rutina ->
+                            RutinasListItem(
+                                modifier = Modifier.animateItemPlacement(),
+                                rutinaUiState = rutina,
+                                seleccionadoState = rutinaSeleccionadaState?.let { it.id == rutina.id }
+                                    ?: false,
+                                onRutinaClicked = {
+                                    onRutinaEvent(
+                                        RoutinesEvent.onRutinaClicked(
+                                            rutina.id
+                                        )
+                                    )
+                                },
+                                onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.id)) },
+                                onDeleteClicked = {
+                                    onRutinaEvent(
+                                        RoutinesEvent.onDeleteClicked(
+                                            rutina.id
+                                        )
+                                    )
+                                }
+                            )
+                        }
+                    }
+                    FloatingActionButton(
+                        modifier = Modifier
+                            .align(Alignment.BottomEnd)
+                            .padding(8.dp),
+                        onClick = { onRutinaEvent(RoutinesEvent.onAddClicked) }
+                    ) {
+                        Icon(imageVector = Icons.Default.Add, contentDescription = "Crear Plan")
                     }
                 }
-                FloatingActionButton(
-                    modifier = Modifier
-                        .align(Alignment.BottomEnd)
-                        .padding(8.dp),
-                    onClick = onAddClicked
-                ) {
-                    Icon(imageVector = Icons.Default.Add, contentDescription = "Crear Contacto")
-                }
-            }
+            //}
         }
+
     }
 }

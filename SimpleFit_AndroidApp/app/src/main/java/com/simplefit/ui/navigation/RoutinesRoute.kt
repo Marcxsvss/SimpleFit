@@ -6,6 +6,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
+import com.simplefit.ui.features.mainApp.routines.RoutinesEvent.onRutinaClicked
 import com.simplefit.ui.features.mainApp.routines.RoutinesScreen
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
 
@@ -18,7 +19,11 @@ fun NavGraphBuilder.routinesScreen(
     mainAppViewModel: MainAppViewModel,
 ) {
     composable(route = RoutinesRoute) {
-        RoutinesScreen()
+        RoutinesScreen( rutinasState = routinesViewModel.routinesList,
+            rutinaSeleccionadaState = routinesViewModel.routinesUiState,
+            onRutinaEvent = routinesViewModel::onRoutinesEvent
+        )
+
 
     }
 

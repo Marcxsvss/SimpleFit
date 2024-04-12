@@ -13,14 +13,30 @@ class RoutinesViewModel @Inject constructor(
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())
         private set
+    var routinesList by mutableStateOf(listOf<RoutinesUiState>())
+        private set
 
 
     fun onRoutinesEvent(routinesEvent: RoutinesEvent) {
         when (routinesEvent) {
-            is RoutinesEvent.onCreateNewRoutine -> {
+            is RoutinesEvent.onRutinaClicked -> {
 
             }
+            is RoutinesEvent.onAddClicked -> {
 
+            }
+            is RoutinesEvent.onVerClicked -> {
+
+            }
+            is RoutinesEvent.onCompartirClicked -> {
+
+            }
+            is RoutinesEvent.onDeleteClicked -> {
+
+            }
+            is RoutinesEvent.OnClickCrearRutina -> {
+
+            }
             else -> {}
         }
     }

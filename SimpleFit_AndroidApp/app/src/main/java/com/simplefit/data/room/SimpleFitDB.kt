@@ -7,15 +7,18 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.simplefit.data.room.usuario.UsuarioDao
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
+import com.simplefit.data.room.rutinas.RutinasDao
+import com.simplefit.data.room.rutinas.RutinasEntity
 
 
 @TypeConverters(RoomConverters::class)
 @Database(
-    entities = [UsuarioEntity::class],
-    version = 4
+    entities = [UsuarioEntity::class, RutinasEntity::class],
+    version = 5
 )
 abstract class SimpleFitDB : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
+    abstract fun rutinasDao(): RutinasDao
     companion object {
        @Volatile
        private var db: SimpleFitDB? = null

@@ -2,6 +2,7 @@ package com.simplefit.di
 
 import android.content.Context
 import com.pmdm.recetas.data.room.SimpleFitDB
+import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
 //import com.simplefit.data.services.usuario.UsuarioService
 import dagger.Module
@@ -57,8 +58,11 @@ class AppModule {
     @Provides
     @Singleton
     fun provideUsersDao(
-        // La Bd es inyectada por provideAgendaDatabase() y
-        // resuelto automáticamente por Hilt
         db: SimpleFitDB
     ) : UsuarioDao = db.usuarioDao()
+    @Provides
+    @Singleton
+    fun provideRoutinesDao(
+        db: SimpleFitDB
+    ) : RutinasDao = db.rutinasDao()
 }

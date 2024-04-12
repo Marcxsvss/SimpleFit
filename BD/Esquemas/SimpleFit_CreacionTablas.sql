@@ -35,7 +35,8 @@ CREATE TABLE `rutinas` (
   `nombre` varchar(255),
   `frecuencia` int,
   `duracion` int,
-  `descripcion` varchar(255)
+  `descripcion` varchar(255),
+  `objetivo` varchar(255)
 );
 
 ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);

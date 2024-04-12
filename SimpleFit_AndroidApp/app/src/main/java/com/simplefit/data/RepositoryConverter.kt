@@ -2,7 +2,10 @@ package com.simplefit.data
 
 import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
+import com.simplefit.data.mocks.RutinasMock
+import com.simplefit.data.room.rutinas.RutinasEntity
 import com.simplefit.data.services.usuario.UsuarioApi
+import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
 
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(
@@ -79,5 +82,28 @@ fun UsuarioApi.toUsuario() = Usuario(
     this.sexo,
     this.somatotipo,
     this.intolerancia
+)
+//endregion
+//region Rutina
+fun RutinasEntity.toRutina(): Rutinas = Rutinas(
+    this.id,
+    this.titulo,
+    this.descripcion,
+    this.objetivo,
+    this.frecuencia
+)
+fun RutinasMock.toRutina(): Rutinas = Rutinas(
+    this.id,
+    this.titulo,
+    this.descripcion,
+    this.objetivo,
+    this.frecuencia
+)
+fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
+    id = this.id,
+    titulo = this.titulo,
+    descripcion = this.descripcion,
+    objetivo = this.objetivo,
+    frecuencia = this.frecuencia
 )
 //endregion
