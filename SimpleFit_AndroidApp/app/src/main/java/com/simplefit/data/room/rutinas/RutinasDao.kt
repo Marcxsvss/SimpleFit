@@ -9,8 +9,8 @@ interface RutinasDao {
     @Query("SELECT * FROM rutinas")
     suspend fun get(): List<RutinasEntity>
 
-    @Query("SELECT * FROM rutinas WHERE id IN (:id)")
-    suspend fun get(id:Int): RutinasEntity
+    @Query("SELECT * FROM rutinas WHERE userId IN (:userId)")
+    suspend fun get(userId:Int): RutinasEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(rutina: RutinasEntity)

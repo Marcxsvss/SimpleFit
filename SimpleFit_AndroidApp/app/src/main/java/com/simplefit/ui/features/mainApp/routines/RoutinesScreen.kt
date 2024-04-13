@@ -119,7 +119,6 @@ fun RoutinesScreen(
                         Icon(imageVector = Icons.Default.Add, contentDescription = "Crear Plan")
                     }
                 }
-            //}
         }
 
     }
