@@ -3,7 +3,8 @@ package com.simplefit.ui.features.mainApp.routines
 import com.simplefit.models.Rutinas
 
 data class RoutinesUiState(
-    val id: Int,
+    val rutinaid: Int,
+    val userid : Int,
     val titulo : String,
     val descripcion : String,
     val objetivo : String,
@@ -14,9 +15,11 @@ data class RoutinesUiState(
 
     constructor() : this(
         0,
+        0,
         "",
         "",
         "",
         "",
         )
 }
+

@@ -4,8 +4,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
@@ -17,8 +20,9 @@ class RoutinesViewModel @Inject constructor(
     var routinesList by mutableStateOf(listOf<RoutinesUiState>())
         private set
 
-    fun setRoutinesList(routinesList: List<RoutinesUiState>) {
-        this.routinesList = routinesList
+    fun setRoutinesList(routines: List<RoutinesUiState>) {
+        viewModelScope.launch { routinesList = rutinasRepository.get(0).map { it.t } }
+
     }
     fun onRoutinesEvent(routinesEvent: RoutinesEvent) {
         when (routinesEvent) {

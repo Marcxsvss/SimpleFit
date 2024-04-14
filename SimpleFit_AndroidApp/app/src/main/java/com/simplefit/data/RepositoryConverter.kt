@@ -86,21 +86,24 @@ fun UsuarioApi.toUsuario() = Usuario(
 //endregion
 //region Rutina
 fun RutinasEntity.toRutina(): Rutinas = Rutinas(
-    this.id,
+    this.rutinaid,
+    this.userid,
     this.titulo,
     this.descripcion,
     this.objetivo,
     this.frecuencia
 )
 fun RutinasMock.toRutina(): Rutinas = Rutinas(
-    this.id,
+    this.rutinaid,
+    this.userid,
     this.titulo,
     this.descripcion,
     this.objetivo,
     this.frecuencia
 )
 fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
-    id = this.id,
+    rutinaid = this.rutinaid,
+    userid = this.userid,
     titulo = this.titulo,
     descripcion = this.descripcion,
     objetivo = this.objetivo,
