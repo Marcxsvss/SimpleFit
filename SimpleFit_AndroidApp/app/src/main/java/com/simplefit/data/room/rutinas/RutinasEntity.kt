@@ -11,8 +11,8 @@ data class RutinasEntity(
     @PrimaryKey
     @ColumnInfo(name="rutinaid")
     val rutinaid: Int,
-    @ColumnInfo(name="userId")
-    val userid : Int,
+    @ColumnInfo(name="userid")
+    val userid : String,
     @ColumnInfo(name="titulo")
     val titulo : String,
     @ColumnInfo(name="descripcion")

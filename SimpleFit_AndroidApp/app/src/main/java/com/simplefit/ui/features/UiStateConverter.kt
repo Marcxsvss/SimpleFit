@@ -1,6 +1,8 @@
 package com.simplefit.ui.features
 
+import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoUiState
 import com.simplefit.ui.features.userAuthentication.login.LoginUiState
 
@@ -35,6 +37,14 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     "",
     ""
+)
+fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
+    rutinaid = this.rutinaid,
+    userid = this.userid,
+    titulo = this.titulo,
+    descripcion = this.descripcion,
+    objetivo = this.objetivo,
+    frecuencia = this.frecuencia
 )
 
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()

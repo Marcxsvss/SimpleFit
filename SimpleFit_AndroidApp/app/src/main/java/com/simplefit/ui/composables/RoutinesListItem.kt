@@ -46,7 +46,7 @@ fun DatosRutina(
     titulo: String,
     descripcion: String,
     objetivo: String,
-    frecuencia: String
+    frecuencia: Int
 ) {
     Column(
         modifier = modifier,
@@ -69,7 +69,7 @@ fun DatosRutina(
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = frecuencia,
+                text = frecuencia.toString(),
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -144,7 +144,7 @@ fun RutinasListItem(
     onEditClicked: () -> Unit,
     onDeleteClicked: (Int) -> Unit
 ) = ElevatedCard(
-    onClick = { onRutinaClicked(rutinaUiState.id) },
+    onClick = { onRutinaClicked(rutinaUiState.rutinaid) },
     modifier = modifier.then(
         Modifier
             .fillMaxWidth()

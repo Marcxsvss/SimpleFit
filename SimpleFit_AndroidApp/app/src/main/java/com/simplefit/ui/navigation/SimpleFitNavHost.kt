@@ -37,11 +37,13 @@ fun SimpleFitNavHost(
         loginScreen(
             loginViewModel = loginViewModel,
             onNavigateToHome = { email ->
+                routinesViewModel.setRoutines()
                 navController.navigateToHome(email)
                 profileViewModel.setUserEmail(email)
                 homeViewModel.setUsuario(email)
             },
             onNavigateToRegister = {
+
                 navController.navigateToRegisterAccount()
             }
         )

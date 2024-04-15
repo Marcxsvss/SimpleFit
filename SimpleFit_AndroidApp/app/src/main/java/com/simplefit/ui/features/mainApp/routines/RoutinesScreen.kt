@@ -85,25 +85,25 @@ fun RoutinesScreen(
                     ) {
                         items(
                             rutinasState,
-                            key = { it.id }
+                            key = { it.rutinaid }
                         ) { rutina ->
                             RutinasListItem(
                                 modifier = Modifier.animateItemPlacement(),
                                 rutinaUiState = rutina,
-                                seleccionadoState = rutinaSeleccionadaState?.let { it.id == rutina.id }
+                                seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
                                     ?: false,
                                 onRutinaClicked = {
                                     onRutinaEvent(
                                         RoutinesEvent.onRutinaClicked(
-                                            rutina.id
+                                            rutina.rutinaid
                                         )
                                     )
                                 },
-                                onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.id)) },
+                                onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.rutinaid)) },
                                 onDeleteClicked = {
                                     onRutinaEvent(
                                         RoutinesEvent.onDeleteClicked(
-                                            rutina.id
+                                            rutina.rutinaid
                                         )
                                     )
                                 }

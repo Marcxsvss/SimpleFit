@@ -9,8 +9,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class RutinasRepository(private val rutinasDao: RutinasDao) {
-
+class RutinasRepository@Inject constructor(private val rutinasDao: RutinasDao)
+{
 
     suspend fun get(id: Int): List<Rutinas> =
         withContext(Dispatchers.IO) { rutinasDao.get().map { it.toRutina() } }

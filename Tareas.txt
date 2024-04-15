@@ -5,7 +5,7 @@ He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
 Quehacer
 ---------
-
+Poner el maximo de rutinas que se pueden crear en 5, hacer la ui, poner una bateria de 5 fotos o cambiar la ui de cada rutina
 
 
 Tareas

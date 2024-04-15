@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.data.toRutinasEntity
+import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,8 +22,10 @@ class RoutinesViewModel @Inject constructor(
     var routinesList by mutableStateOf(listOf<RoutinesUiState>())
         private set
 
-    fun setRoutinesList(routines: List<RoutinesUiState>) {
-        viewModelScope.launch { routinesList = rutinasRepository.get(0).map { it.t } }
+    fun setRoutines() {
+        viewModelScope.launch {
+            routinesList = rutinasRepository.get(0).map { it.toRutinasUiState() }
+        }
 
     }
     fun onRoutinesEvent(routinesEvent: RoutinesEvent) {

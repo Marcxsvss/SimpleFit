@@ -6,21 +6,24 @@ import javax.inject.Inject
 class RutinasDaoMock @Inject constructor(){
     private var rutinas = mutableListOf(
         RutinasMock(
-            id = 1,
+            rutinaid = 1,
+            userid = "marcos@gmail.com",
             titulo = "Rutina 1",
             descripcion = "Rutina de principiantes",
             objetivo = "Perdida de peso",
             frecuencia = 1,
         ),
         RutinasMock(
-            id = 2,
+            rutinaid = 2,
+            userid = "marcos@gmail.com",
             titulo = "Rutina 2",
             descripcion = "Rutina de intermedios",
             objetivo = "Hipertrofia",
             frecuencia = 2,
         ),
         RutinasMock(
-            id = 3,
+            rutinaid = 3,
+            userid = "marcos@gmail.com",
             titulo = "Rutina 3",
             descripcion = "Rutina de avanzados",
             objetivo = "Mantenimiento",
@@ -30,9 +33,10 @@ class RutinasDaoMock @Inject constructor(){
     )
 
     fun get(): MutableList<RutinasMock> = rutinas
-    fun get(id: Int): RutinasMock? = rutinas.find { u -> u.id == id }
+    fun get(userid: String): MutableList<RutinasMock> = rutinas
+    fun get(rutinaid: Int): RutinasMock? = rutinas.find { u -> u.rutinaid == rutinaid }
     fun update(rutina: RutinasMock) {
-        val position = rutinas.indexOf(get(rutina.id))
+        val position = rutinas.indexOf(get(rutina.rutinaid))
         rutinas[position] = rutina
     }
 }
