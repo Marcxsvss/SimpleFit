@@ -1,10 +1,12 @@
 package com.simplefit.ui.features.mainApp.routines
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,6 +35,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.RemoveRedEye
+import androidx.compose.material3.Snackbar
 import com.simplefit.ui.composables.RutinasListItem
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -45,6 +50,7 @@ fun RoutinesScreen(
     val scrollState = rememberScrollState()
     Surface(
         modifier = Modifier.fillMaxSize()
+
     ) {
 
         Column(
@@ -52,15 +58,6 @@ fun RoutinesScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(20.dp)
         ) {
-
-            Text(
-                text = "SimpleFit",
-                color = Color(0xFFDAB338),
-                fontSize = 30.sp,
-                fontFamily = FontFamily(
-                    Font(resId = R.font.bayon_regular)
-                )
-            )
             Text(
                 text = "RUTINAS Y DIETAS",
                 color = Color(0xFFDAB338),
@@ -68,57 +65,69 @@ fun RoutinesScreen(
                 fontStyle = FontStyle.Italic
             )
             Spacer(modifier = Modifier.fillMaxHeight(0.05f))
-
-//            Column(
-//                verticalArrangement = Arrangement.Center,
-//                horizontalAlignment = Alignment.CenterHorizontally,
-//                modifier = Modifier
-//                    .verticalScroll(scrollState)
-//                    .padding(20.dp)
-//                    .padding(bottom = 56.dp)
-//
-//            ) {
-                Box(modifier = Modifier.fillMaxSize()) {
-                    LazyColumn(
-                        contentPadding = PaddingValues(all = 4.dp),
-                        verticalArrangement = Arrangement.spacedBy(4.dp)
-                    ) {
-                        items(
-                            rutinasState,
-                            key = { it.rutinaid }
-                        ) { rutina ->
-                            RutinasListItem(
-                                modifier = Modifier.animateItemPlacement(),
-                                rutinaUiState = rutina,
-                                seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
-                                    ?: false,
-                                onRutinaClicked = {
-                                    onRutinaEvent(
-                                        RoutinesEvent.onRutinaClicked(
-                                            rutina.rutinaid
-                                        )
-                                    )
-                                },
-                                onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.rutinaid)) },
-                                onDeleteClicked = {
-                                    onRutinaEvent(
-                                        RoutinesEvent.onDeleteClicked(
-                                            rutina.rutinaid
-                                        )
-                                    )
-                                }
-                            )
-                        }
+            Row(modifier = Modifier.align(Alignment.End)) {
+                IconButton(onClick = { onRutinaEvent(RoutinesEvent.onAddClicked) }) {
+                    Icon(
+                        Icons.Filled.Add,
+                        contentDescription = "Añadir Plan de Entrenamiento/Alimenticio",
+                    )
+                }
+                if (rutinaSeleccionadaState!!.objetivo.isNotBlank()) {
+                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked(rutinaSeleccionadaState.rutinaid))})
+                    {
+                        Icon(
+                            tint = Color(0xFFDAB338),
+                            imageVector = Icons.Filled.Delete,
+                            contentDescription = "Eliminar Rutina",
+                        )
                     }
-                    FloatingActionButton(
-                        modifier = Modifier
-                            .align(Alignment.BottomEnd)
-                            .padding(8.dp),
-                        onClick = { onRutinaEvent(RoutinesEvent.onAddClicked) }
-                    ) {
-                        Icon(imageVector = Icons.Default.Add, contentDescription = "Crear Plan")
+//                    IconButton(onClick = { })
+//                    {
+//                        Icon(
+//                            tint = Color(0xFFDAB338),
+//                            imageVector = Icons.Filled.RemoveRedEye,
+//                            contentDescription = "Ver Rutina",
+//                        )
+//                    }
+                }
+
+            }
+
+            Box(modifier = Modifier.fillMaxSize()) {
+
+                LazyColumn(
+                    contentPadding = PaddingValues(all = 4.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    items(
+                        rutinasState,
+                        key = { it.rutinaid }
+                    ) { rutina ->
+                        RutinasListItem(
+                            modifier = Modifier.animateItemPlacement(),
+                            rutinaUiState = rutina,
+                            seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
+                                ?: false,
+                            onRutinaClicked = {
+                                onRutinaEvent(
+                                    RoutinesEvent.onRutinaClicked(
+                                        rutina.rutinaid
+                                    )
+                                )
+                            },
+                            onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.rutinaid)) },
+                            onDeleteClicked = {
+                                onRutinaEvent(
+                                    RoutinesEvent.onDeleteClicked(
+                                        rutina.rutinaid
+                                    )
+                                )
+                            }
+                        )
                     }
                 }
+
+            }
         }
 
     }

@@ -31,7 +31,7 @@ class RoutinesViewModel @Inject constructor(
     fun onRoutinesEvent(routinesEvent: RoutinesEvent) {
         when (routinesEvent) {
             is RoutinesEvent.onRutinaClicked -> {
-
+                routinesUiState = routinesList.find { it.rutinaid == routinesEvent.rutinaid }!!
             }
             is RoutinesEvent.onAddClicked -> {
 
@@ -43,6 +43,15 @@ class RoutinesViewModel @Inject constructor(
 
             }
             is RoutinesEvent.onDeleteClicked -> {
+                viewModelScope.launch {
+                    rutinasRepository.delete(routinesEvent.rutinaid)
+                    routinesList = routinesList.toMutableList().apply {
+                        remove(routinesList.find { it.rutinaid == routinesEvent.rutinaid })
+                    }
+                    routinesUiState = RoutinesUiState()
+                }
+
+
 
             }
             is RoutinesEvent.OnClickCrearRutina -> {

@@ -10,7 +10,7 @@ class RutinasDaoMock @Inject constructor(){
             userid = "marcos@gmail.com",
             titulo = "Rutina 1",
             descripcion = "Rutina de principiantes",
-            objetivo = "Perdida de peso",
+            objetivo = "Definicion",
             frecuencia = 1,
         ),
         RutinasMock(

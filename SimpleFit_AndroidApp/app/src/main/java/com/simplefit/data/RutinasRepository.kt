@@ -21,8 +21,8 @@ class RutinasRepository@Inject constructor(private val rutinasDao: RutinasDao)
     suspend fun update(rutina: Rutinas) = withContext(Dispatchers.IO) {
         rutinasDao.update(rutina.toRutinasEntity())
     }
-//    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
-//        usuarioService.delete(email)
-//    }
+    suspend fun delete(rutinaid: Int) = withContext(Dispatchers.IO) {
+        rutinasDao.delete(rutinaid)
+    }
 
 }

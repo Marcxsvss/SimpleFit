@@ -20,4 +20,7 @@ interface RutinasDao {
 
     @Query("SELECT COUNT(*) FROM rutinas")
     suspend fun count(): Int
+
+    @Query("DELETE FROM rutinas WHERE rutinaid IN (:rutinaid)")
+    suspend fun delete(rutinaid: Int)
 }
