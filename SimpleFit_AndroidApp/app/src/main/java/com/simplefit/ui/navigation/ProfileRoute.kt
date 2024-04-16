@@ -15,7 +15,6 @@ const val ProfileRoute = "Profile"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.profileScreen(
     profileViewModel: ProfileViewModel,
-    mainAppViewModel: MainAppViewModel,
     onNavigateToLogin: () -> Unit
 ) {
     composable(

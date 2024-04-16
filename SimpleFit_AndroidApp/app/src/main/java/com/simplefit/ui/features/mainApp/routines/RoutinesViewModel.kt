@@ -37,7 +37,7 @@ class RoutinesViewModel @Inject constructor(
 
             }
             is RoutinesEvent.onVerClicked -> {
-
+                routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
             is RoutinesEvent.onCompartirClicked -> {
 

@@ -1,10 +1,12 @@
 package com.simplefit.ui.features.mainApp.routines
 
+import com.simplefit.ui.features.userAuthentication.login.LoginEvent
+
 sealed interface RoutinesEvent {
     data class onRutinaClicked(val rutinaid: Int) : RoutinesEvent
-    data object onAddClicked : RoutinesEvent
+    data class onVerClicked(val onNavigateToVerRutina:((rutinaid:RoutinesUiState)->Unit)?) : RoutinesEvent
 
-    data class onVerClicked(val rutinaid: Int) : RoutinesEvent
+    data object onAddClicked : RoutinesEvent
 
     data class onDeleteClicked(val rutinaid: Int) : RoutinesEvent
 

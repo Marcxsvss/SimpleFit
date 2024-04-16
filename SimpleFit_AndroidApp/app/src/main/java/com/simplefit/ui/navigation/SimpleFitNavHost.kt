@@ -9,6 +9,7 @@ import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
+import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoViewModel
 import com.simplefit.ui.features.userAuthentication.login.LoginViewModel
 import com.simplefit.ui.features.userAuthentication.profileInfoRegister.RegisterProfileInfoViewModel
@@ -26,6 +27,7 @@ fun SimpleFitNavHost(
     val homeViewModel = hiltViewModel<HomeViewModel>()
     val routinesViewModel = hiltViewModel<RoutinesViewModel>()
     val profileViewModel = hiltViewModel<ProfileViewModel>()
+    val verRutinaViewModel = hiltViewModel<VerRutinaViewModel>()
 
     //val scope= rememberCoroutineScope()
     //Puedo cojer el email desde RegisterAccount y guardarlo en una variable que puedo crear aqui mismo y usarla mas adelante al hacer la navegacion al ProfileInfo y luego home
@@ -69,14 +71,19 @@ fun SimpleFitNavHost(
             mainAppViewModel = mainAppViewModel,
             homeViewModel = homeViewModel
         )
-        routinesScreen(routinesViewModel = routinesViewModel,mainAppViewModel = mainAppViewModel)
+        routinesScreen(routinesViewModel = routinesViewModel,
+            onNavigateToVerRutina = { rutinaUiState ->
+                verRutinaViewModel.setRutina(rutinaUiState)
+                navController.navigateToVerRutina(rutinaUiState)
+            }
+        )
         profileScreen(
             profileViewModel = profileViewModel,
-            mainAppViewModel = mainAppViewModel,
             onNavigateToLogin = {
                 mainAppViewModel.logOut()
                 navController.navigateToLogin()
             })
+        verRutinaScreen( verRutinaViewModel = verRutinaViewModel)
     }
 
 }

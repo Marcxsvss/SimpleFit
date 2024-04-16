@@ -46,6 +46,7 @@ fun RoutinesScreen(
     rutinasState: List<RoutinesUiState>,
     rutinaSeleccionadaState: RoutinesUiState?,
     onRutinaEvent: (RoutinesEvent) -> Unit,
+    onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null
 ) {
     val scrollState = rememberScrollState()
     Surface(
@@ -90,7 +91,6 @@ fun RoutinesScreen(
 //                        )
 //                    }
                 }
-
             }
 
             Box(modifier = Modifier.fillMaxSize()) {
@@ -104,6 +104,7 @@ fun RoutinesScreen(
                         key = { it.rutinaid }
                     ) { rutina ->
                         RutinasListItem(
+                            onVerRutinaClicked = {onRutinaEvent(RoutinesEvent.onVerClicked(onNavigateToVerRutina))},
                             modifier = Modifier.animateItemPlacement(),
                             rutinaUiState = rutina,
                             seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
@@ -115,7 +116,6 @@ fun RoutinesScreen(
                                     )
                                 )
                             },
-                            onEditClicked = { onRutinaEvent(RoutinesEvent.onVerClicked(rutina.rutinaid)) },
                             onDeleteClicked = {
                                 onRutinaEvent(
                                     RoutinesEvent.onDeleteClicked(

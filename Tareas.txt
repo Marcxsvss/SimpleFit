@@ -9,6 +9,8 @@ Poner el maximo de rutinas que se pueden crear en 5, hacer la ui, poner una bate
 Posibilidad de ampliacion, que me cree tres planes por defecto al registrarse, aumento de musculo, perdida de peso, mantenimiento.
 COmprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(UiState,listasy datos) vuelven a estar vacios.
 Posible ampliacion, que al pasar por encima del icono de cada rutina, te muestre como una camara para hacer una foto, al igual con la foto de perfil.
+Meter un boton en ver rutinas donde puedes quitar la seleccion de una rutina, es decir, que no salga con el color amarillo fuerte y se quite la papelera de borrar.
+Meter las bolitas de los dias de la semana en un componente para poder reutilizarlo y no repetir codigo.
 Tareas
 -----------------
 Si la base de datos se complica a la hora de que en la app de admins no se pueden añadir nuevas maquinas o 

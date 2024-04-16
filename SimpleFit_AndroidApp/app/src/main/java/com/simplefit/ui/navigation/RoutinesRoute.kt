@@ -8,6 +8,7 @@ import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesEvent.onRutinaClicked
 import com.simplefit.ui.features.mainApp.routines.RoutinesScreen
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
 
 const val RoutinesRoute = "Routines"
@@ -16,12 +17,14 @@ const val RoutinesRoute = "Routines"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.routinesScreen(
     routinesViewModel: RoutinesViewModel,
-    mainAppViewModel: MainAppViewModel,
+    onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null
+
 ) {
     composable(route = RoutinesRoute) {
         RoutinesScreen( rutinasState = routinesViewModel.routinesList,
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
-            onRutinaEvent = routinesViewModel::onRoutinesEvent
+            onRutinaEvent = routinesViewModel::onRoutinesEvent,
+            onNavigateToVerRutina = onNavigateToVerRutina
         )
 
 
