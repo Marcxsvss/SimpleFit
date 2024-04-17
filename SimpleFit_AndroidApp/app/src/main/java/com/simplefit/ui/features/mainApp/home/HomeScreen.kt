@@ -139,84 +139,36 @@ fun HomeScreen(
                     .align(Alignment.Start)
                     .padding(start = 18.dp)
             )
-            Box(modifier = Modifier
-                .width(380.dp)
-                .height(120.dp)
-                .border(
-                    width = 2.dp,
-                    color = Color(0xFFDCCEA2),
-                    shape = RoundedCornerShape(
-                        bottomEnd = 10.dp,
-                        bottomStart = 10.dp,
-                        topEnd = 10.dp,
-                        topStart = 10.dp
-                    )
-                ),
-                contentAlignment = Alignment.Center)
 
-            {
-                Row( // Los cuadraditos
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                )
-                {
-                    Box( //Ver Rutina
-                        Modifier
-                            .width(175.dp)
-                            .height(100.dp)
-                            .background(
-                                color = Color(0xFFDBC06D),
-                                shape = RoundedCornerShape(
-                                    bottomEnd = 10.dp,
-                                    bottomStart = 10.dp,
-                                    topEnd = 10.dp,
-                                    topStart = 10.dp
-                                )
-                            )
-                    ) {
-                        Row(modifier = Modifier.align(Alignment.Center)) {
-                            Icon(Icons.Filled.FitnessCenter, contentDescription = "Restaurante")
-                            Spacer(modifier = Modifier.width(5.dp))
-                            Text(
-                                text = "RUTINA",
-                                fontSize = 15.sp,
-                                textAlign = TextAlign.Center,
-                                color = Color.White,
-                                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                                fontStyle = FontStyle.Normal
-                            )
-                        }
-                    }
-                    Spacer(modifier = Modifier.width(12.dp))
-                    Box( //Ver Dieta
-                        Modifier
-                            .width(175.dp)
-                            .height(100.dp)
-                            .background(
-                                color = Color(0xFFDBC06D),
-                                shape = RoundedCornerShape(
-                                    bottomEnd = 10.dp,
-                                    bottomStart = 10.dp,
-                                    topEnd = 10.dp,
-                                    topStart = 10.dp
-                                )
-                            )
-                    ) {
-                        Row(modifier = Modifier.align(Alignment.Center)) {
-                            Icon(Icons.Filled.Restaurant, contentDescription = "Restaurante")
-                            Spacer(modifier = Modifier.width(5.dp))
-                            Text(
-                                text = "DIETA",
-                                fontSize = 15.sp,
-                                textAlign = TextAlign.Center,
-                                color = Color.White,
-                                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                                fontStyle = FontStyle.Normal
-                            )
-                        }
-                    }
+            Box( //Ver entrenamiento de hoy
+                Modifier
+                    .width(358.dp)
+                    .height(100.dp)
+                    .background(
+                        color = Color(0xFFDBC06D),
+                        shape = RoundedCornerShape(
+                            bottomEnd = 10.dp,
+                            bottomStart = 10.dp,
+                            topEnd = 10.dp,
+                            topStart = 10.dp
+                        )
+                    )
+            ) {
+                Row(modifier = Modifier.align(Alignment.Center)) {
+                    Icon(Icons.Filled.Groups, contentDescription = "Entrenamiento")
+                    Spacer(modifier = Modifier.width(5.dp))
+                    Text(
+                        text = "VER ENTRENAMIENTO",
+                        fontSize = 22.sp,
+                        textAlign = TextAlign.Center,
+                        color = Color.White,
+                        fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                        fontStyle = FontStyle.Normal
+                    )
                 }
             }
+
+
             Spacer(modifier = Modifier.height(18.dp))
             Box( //Frases motivacionales/consejos
                 Modifier
@@ -232,19 +184,12 @@ fun HomeScreen(
                         )
                     )
             ) {
-//            Text(text = "RECOMENDACIONES",
-//                fontSize = 20.sp,
-//                textAlign = TextAlign.Center,
-//                color = Color.White,
-//                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-//                fontStyle = FontStyle.Normal,
-//                modifier = Modifier.align(Alignment.Center))
                 Row(modifier = Modifier.align(Alignment.Center)) {
                     Icon(Icons.Filled.School, contentDescription = "consejos")
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(
                         text = "CONSEJOS",
-                        fontSize = 15.sp,
+                        fontSize = 22.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
                         fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
@@ -267,19 +212,12 @@ fun HomeScreen(
                         )
                     )
             ) {
-//            Text(text = "RECOMENDAR AMIGOS",
-//                fontSize = 20.sp,
-//                textAlign = TextAlign.Center,
-//                color = Color.White,
-//                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-//                fontStyle = FontStyle.Normal,
-//                modifier = Modifier.align(Alignment.Center))
                 Row(modifier = Modifier.align(Alignment.Center)) {
                     Icon(Icons.Filled.Groups, contentDescription = "AMIGOS")
                     Spacer(modifier = Modifier.width(5.dp))
                     Text(
                         text = "RECOMENDAR AMIGOS",
-                        fontSize = 15.sp,
+                        fontSize = 22.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
                         fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),

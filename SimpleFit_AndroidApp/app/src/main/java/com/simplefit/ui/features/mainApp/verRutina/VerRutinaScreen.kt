@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -30,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.ui.draw.clip
 import com.simplefit.ui.composables.RutinasListItem
@@ -56,10 +58,10 @@ fun RoutinesScreen(
         modifier = Modifier.fillMaxSize()
 
     ) {
-        Spacer(modifier = Modifier.height(12.dp))
         Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(top=15.dp)
         )
         {
             Row( //Las bolas de los dias de la semana
@@ -90,6 +92,37 @@ fun RoutinesScreen(
                     }
                 }
             }
+            Row()
+            {
+                Box( //Ver Rutina
+                    Modifier
+                        .width(175.dp)
+                        .height(100.dp)
+                        .background(
+                            color = Color(0xFFDBC06D),
+                            shape = RoundedCornerShape(
+                                bottomEnd = 10.dp,
+                                bottomStart = 10.dp,
+                                topEnd = 10.dp,
+                                topStart = 10.dp
+                            )
+                        ))
+                Box( //Ver Rutina
+                    Modifier
+                        .width(175.dp)
+                        .height(100.dp)
+                        .background(
+                            color = Color(0xFFDBC06D),
+                            shape = RoundedCornerShape(
+                                bottomEnd = 10.dp,
+                                bottomStart = 10.dp,
+                                topEnd = 10.dp,
+                                topStart = 10.dp
+                            )
+                        )
+                )
+            }
+
         }
     }
 }
