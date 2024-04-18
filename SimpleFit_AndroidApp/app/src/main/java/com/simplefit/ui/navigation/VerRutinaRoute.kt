@@ -11,7 +11,7 @@ import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.home.HomeScreen
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.mainApp.verRutina.RoutinesScreen
+import com.simplefit.ui.features.mainApp.verRutina.VerRoutinesScreen
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 
 const val VerRutinaRoute = "VerRutina"
@@ -34,7 +34,7 @@ fun NavGraphBuilder.verRutinaScreen(
 //        val email :String? = backStackEntry.arguments?.getString(HomeParameterName, "Email erroneo")
 //        mainAppViewModel.setUsuario(email ?: "Email erroneo")
 
-        RoutinesScreen(
+        VerRoutinesScreen(
             verRutinaState = verRutinaViewModel.verRutinaUiState,
             onVerRutinaEvent = verRutinaViewModel::onVerRoutinesEvent)
     }

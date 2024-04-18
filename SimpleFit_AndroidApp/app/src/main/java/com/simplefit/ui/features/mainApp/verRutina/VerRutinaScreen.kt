@@ -2,6 +2,7 @@ package com.simplefit.ui.features.mainApp.verRutina
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,19 +34,25 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.style.TextAlign
 import com.simplefit.ui.composables.RutinasListItem
 import java.util.Calendar
+
 fun obtenerDiaDeLaSemana(): String {
     val dias = arrayOf("D", "L", "M", "X", "J", "V", "S")
     val calendario = Calendar.getInstance()
     val diaDeLaSemana = calendario.get(Calendar.DAY_OF_WEEK)
     return dias[diaDeLaSemana - 1]
 }
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun RoutinesScreen(
+fun VerRoutinesScreen(
     verRutinaState: VerRutinaUiState,
+    //verRutinaSeleccionado : VerRutinaUiState?,
     onVerRutinaEvent: (VerRutinaEvent) -> Unit,
 
     ) {
@@ -58,71 +65,59 @@ fun RoutinesScreen(
         modifier = Modifier.fillMaxSize()
 
     ) {
-        Column(
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top=15.dp)
-        )
-        {
-            Row( //Las bolas de los dias de la semana
-                Modifier
-                    .height(55.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                repeat(diasDeLaSemana.size) { iteration ->
-                    val colorDeFondo =
-                        if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(
-                            0xFFDCCEA2
+        Column {
+
+
+            Column(
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(top = 15.dp)
+            )
+            {
+                Text(
+                    text = "Plan Entrenamiento",
+                    color = Color(0xFFDAB338),
+                    fontSize = 30.sp,
+                    fontStyle = FontStyle.Italic
+                )
+                Spacer(modifier = Modifier.height(15.dp))
+                Row( //Las bolas de los dias de la semana
+                    Modifier
+                        .height(55.dp)
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    repeat(diasDeLaSemana.size) { iteration ->
+                        val colorDeFondo =
+                            if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(
+                                0xFFDCCEA2
+                            )
+                        Box(
+                            modifier = Modifier
+                                .padding(2.dp)
+                                .clip(CircleShape)
+                                .background(colorDeFondo)
+                                .size(30.dp)
+                                .clickable { },
+                            contentAlignment = Alignment.Center,
                         )
-                    Box(
-                        modifier = Modifier
-                            .padding(2.dp)
-                            .clip(CircleShape)
-                            .background(colorDeFondo)
-                            .size(30.dp),
-                        contentAlignment = Alignment.Center,
-                    )
-                    {
-                        Text(
-                            text = diasDeLaSemana[iteration],
-                            color = Color.White,
-                            fontSize = 15.sp
-                        )
+                        {
+                            Text(
+                                text = diasDeLaSemana[iteration],
+                                color = Color.White,
+                                fontSize = 15.sp
+                            )
+                        }
                     }
                 }
-            }
-            Row()
-            {
-                Box( //Ver Rutina
-                    Modifier
-                        .width(175.dp)
-                        .height(100.dp)
-                        .background(
-                            color = Color(0xFFDBC06D),
-                            shape = RoundedCornerShape(
-                                bottomEnd = 10.dp,
-                                bottomStart = 10.dp,
-                                topEnd = 10.dp,
-                                topStart = 10.dp
-                            )
-                        ))
-                Box( //Ver Rutina
-                    Modifier
-                        .width(175.dp)
-                        .height(100.dp)
-                        .background(
-                            color = Color(0xFFDBC06D),
-                            shape = RoundedCornerShape(
-                                bottomEnd = 10.dp,
-                                bottomStart = 10.dp,
-                                topEnd = 10.dp,
-                                topStart = 10.dp
-                            )
-                        )
-                )
-            }
 
+
+            }
+            Column(modifier = Modifier.padding(start = 20.dp, end = 20.dp))
+            {
+                Text(text = "Pecho - Triceps", fontSize = 20.sp, textAlign = TextAlign.Start, color = Color(0xFFDAB338))
+                HorizontalDivider(thickness = 1.dp, color = Color(0xFFDAB338))
+            }
         }
     }
 }

@@ -47,7 +47,8 @@ fun ProfileScreen(
         modifier = Modifier.fillMaxSize()
     ) {
 
-        Box(contentAlignment = Alignment.TopEnd) {
+        Box(contentAlignment = Alignment.TopEnd)
+        {
             IconButton(onClick = { onNavigateToLogin() }) {
                 Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = "Cerrar sesión",
                 )
