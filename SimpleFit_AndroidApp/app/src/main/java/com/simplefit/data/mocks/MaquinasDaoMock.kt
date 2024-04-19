@@ -60,59 +60,224 @@ class MaquinasDaoMock @Inject constructor() {
             nombre = "Pull over polea alta",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "Ejercicio que focaliza el estimulo en el dorsal ancho, el cual aporta la amplitud a la espalda"
         ),
         MaquinasMock(
-            maquinaid = 7,
-            nombre = "Jalón prono",
+            maquinaid = 8,
+            nombre = "Jalón al pecho",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "Este ejercicio puede ser realizado con agarre prono, supino y neurtro, lo que nos permite trabajar de forma más completa la espalda"
         ),
         MaquinasMock(
-            maquinaid = 7,
-            nombre = "Jalón supino",
-            musculo = "Espalda",
-            imagen = "",
-            descripcion = ""
-        ),
-        MaquinasMock(
-            maquinaid = 7,
-            nombre = "Jalón neutro",
-            musculo = "Espalda",
-            imagen = "",
-            descripcion = ""
-        ),
-        MaquinasMock(
-            maquinaid = 7,
+            maquinaid = 9,
             nombre = "Dominadas",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "Trabaja toda la musculatura de la espalda e incluye biceps y antebrazos"
         ),
         MaquinasMock(
-            maquinaid = 7,
+            maquinaid = 10,
             nombre = "Remo Barra T",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "Este ejercicio se focaliza en la parte superior, la cual aporta densidad a la espalda"
         ),
         MaquinasMock(
-            maquinaid = 7,
+            maquinaid = 11,
             nombre = "Remo en Polea",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "Con este ejercicio puedes enfocar los distintos musculos de la espalda, dependiendo de la posición del cuerpo y el agarre"
         ),
         MaquinasMock(
-            maquinaid = 7,
+            maquinaid = 12,
             nombre = "Remo en Hammer",
             musculo = "Espalda",
             imagen = "",
-            descripcion = ""
+            descripcion = "La Hammer permite enfocar densidad y ampliud en el mismo movimiento"
         ),
 
-    )
+        MaquinasMock(
+            maquinaid = 13,
+            nombre = "Elevacion frontal polea",
+            musculo = "Deltoides anterior",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides anterior"
+        ),
+        MaquinasMock(
+            maquinaid = 14,
+            nombre = "Press militar macuernas",
+            musculo = "Deltoides anterior",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides anterior"
+        ),
+        MaquinasMock(
+            maquinaid = 15,
+            nombre = "Press militar multipower",
+            musculo = "Deltoides anterior",
+            imagen = "",
+            descripcion = "Ejercicio enfocado en trapecio y deltoides anterior, con la guia de la multipower"
+        ),
+        MaquinasMock(
+            maquinaid = 16,
+            nombre = "Elevacion lateral maquina",
+            musculo = "Deltoides lateral",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"
+        ),
+        MaquinasMock(
+            maquinaid = 17,
+            nombre = "Elevacion lateral polea unilateral",
+            musculo = "Deltoides lateral",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"
+        ),
+        MaquinasMock(
+            maquinaid = 18,
+            nombre = "elevacion lateral mancuernas",
+            musculo = "Deltoides lateral",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"
+        ),
+        MaquinasMock(
+            maquinaid = 19,
+            nombre = "Face pull polea",
+            musculo = "Deltoides posterior",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"
+        ),
+        MaquinasMock(
+            maquinaid = 20,
+            nombre = "Aperturas Invertidas en máquina contractora",
+            musculo = "Deltoides posterior",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"
+        ),
+        MaquinasMock(
+            maquinaid = 21,
+            nombre = "Extension triceps en polea",
+            musculo = "Triceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 22,
+            nombre = "Extension triceps unilateral polea",
+            musculo = "Triceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 23,
+            nombre = "Curl mancuerna",
+            musculo = "Biceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 24,
+            nombre = "Curl polea",
+            musculo = "Biceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 25,
+            nombre = "Curl barra Z",
+            musculo = "Biceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 26,
+            nombre = "Predicador Polea",
+            musculo = "Biceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el triceps"
+        ),
+        MaquinasMock(
+            maquinaid = 27,
+            nombre = "Extensión cuadriceps",
+            musculo = "Cuadriceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el cuadriceps"
+        ),
+        MaquinasMock(
+            maquinaid = 28,
+            nombre = "Sentadilla",
+            musculo = "Cuadriceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el cuadriceps"
+        ),
+        MaquinasMock(
+            maquinaid = 29,
+            nombre = "Haka",
+            musculo = "Cuadriceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el cuadriceps"
+        ),
+        MaquinasMock(
+            maquinaid = 30,
+            nombre = "Prensa",
+            musculo = "Cuadriceps",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el cuadriceps"
+        ),
+        MaquinasMock(
+            maquinaid = 31,
+            nombre = "Extension de tobillo",
+            musculo = "Gemelo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gemelo"
+        ),
+        MaquinasMock(
+            maquinaid = 32,
+            nombre = "Maquina gemelo",
+            musculo = "Gemelo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gemelo"
+        ),
+        MaquinasMock(
+            maquinaid = 33,
+            nombre = "Curl de femoral",
+            musculo = "Femoral",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el femoral"
+        ),
+        MaquinasMock(
+            maquinaid = 34,
+            nombre = "Hip trust",
+            musculo = "Gluteo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gluteo"
+        ),
+        MaquinasMock(
+            maquinaid = 35,
+            nombre = "Maquina de abduccion",
+            musculo = "Gluteo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gluteo"
+        ),
+        MaquinasMock(
+            maquinaid = 36,
+            nombre = "Patada en polea",
+            musculo = "Gluteo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gluteo"
+        ),
+        MaquinasMock(
+            maquinaid = 37,
+            nombre = "Sentadilla bulgara",
+            musculo = "Gluteo",
+            imagen = "",
+            descripcion = "Ejercicio que focaliza el estimulo en el gluteo"
+        ),
+
+
+        )
+
+
 
     fun get(): MutableList<MaquinasMock> = listaMaquinas
 

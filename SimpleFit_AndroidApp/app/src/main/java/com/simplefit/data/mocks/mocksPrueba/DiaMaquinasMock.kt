@@ -1,4 +1,4 @@
-package com.simplefit.data.mocks
+package com.simplefit.data.mocks.mocksPrueba
 
 data class DiaMaquinasMock(
     val diaid: Int,

@@ -1,4 +1,4 @@
-package com.simplefit.data.mocks
+package com.simplefit.data.mocks.mocksPrueba
 
 import javax.inject.Inject
 

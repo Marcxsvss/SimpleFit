@@ -1,4 +1,4 @@
-package com.simplefit.models
+package com.simplefit.models.modelsPrueba
 
 data class DiasSemana(
     val diaid : Int,

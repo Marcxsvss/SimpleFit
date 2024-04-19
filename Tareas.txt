@@ -11,6 +11,7 @@ COmprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(U
 Posible ampliacion, que al pasar por encima del icono de cada rutina, te muestre como una camara para hacer una foto, al igual con la foto de perfil.
 Meter un boton en ver rutinas donde puedes quitar la seleccion de una rutina, es decir, que no salga con el color amarillo fuerte y se quite la papelera de borrar.
 Meter las bolitas de los dias de la semana en un componente para poder reutilizarlo y no repetir codigo.
+Para asignar las maquinas a las rutinas, podemos hacer que coja 3,2 o 1 dependiendo del musculo, pero la primera la hardcodeare
 
 Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
 Cambiar color letras por un marron, y poner los iconos blancos
