@@ -1,8 +1,8 @@
-package com.simplefit.models
+package com.simplefit.data.mocks
 
 import java.sql.Blob
 
-data class Maquina (
+data class MaquinasMock(
     val maquinaid : Int,
     val nombre : String,
     val musculo : String,

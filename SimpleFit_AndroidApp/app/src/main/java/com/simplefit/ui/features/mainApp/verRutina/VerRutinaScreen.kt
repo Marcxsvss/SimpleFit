@@ -59,7 +59,7 @@ fun VerRoutinesScreen(
 
 
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
-    val diaActual = com.simplefit.ui.features.mainApp.home.obtenerDiaDeLaSemana()
+    val diaActual = obtenerDiaDeLaSemana()
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -110,13 +110,22 @@ fun VerRoutinesScreen(
                         }
                     }
                 }
-
-
             }
             Column(modifier = Modifier.padding(start = 20.dp, end = 20.dp))
             {
-                Text(text = "Pecho - Triceps", fontSize = 20.sp, textAlign = TextAlign.Start, color = Color(0xFFDAB338))
-                HorizontalDivider(thickness = 1.dp, color = Color(0xFFDAB338))
+                Text(
+                    text = "Pecho - Triceps",
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Start,
+                    color = Color(0xFFDAB338)
+                )
+                HorizontalDivider(
+                    modifier = Modifier.padding(bottom = 10.dp),
+                    thickness = 1.dp,
+                    color = Color(0xFFDAB338)
+                )
+                Text(text = "Press de banca 4x10", fontSize = 25.sp, textAlign = TextAlign.Start)
+
             }
         }
     }

@@ -4,9 +4,6 @@ CREATE DATABASE IF NOT EXISTS SimpleFit;
 USE SimpleFit;
 
 
-
-
-
 CREATE TABLE `users`(
   `dni` varchar(255) PRIMARY KEY,
   `nombre` varchar(255),
@@ -16,9 +13,7 @@ CREATE TABLE `users`(
   `edad` int,
   `altura` int,
   `peso` int,
-  `somatotipo` varchar(255),
-  `lactosa` boolean,
-  `gluten` boolean
+  `somatotipo` varchar(255)
 );
 
 CREATE TABLE `maquinas` (
@@ -40,21 +35,6 @@ CREATE TABLE `rutinas` (
 );
 
 ALTER TABLE `rutinas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
-
-CREATE TABLE `dietas`(
-  `dietaid` int PRIMARY KEY,
-  `userid` varchar(255),
-  `descripcion` longtext,
-  `nombre` varchar(255),
-  `objetivo` varchar(255),
-  `calorias` int,
-  `lactosa` boolean,
-  `gluten` boolean
-);
-
-ALTER TABLE `dietas` ADD FOREIGN KEY (`userid`) REFERENCES `users` (`dni`);
-
-
 
 
 CREATE TABLE `rutinamaquina` (

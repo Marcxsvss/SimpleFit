@@ -7,7 +7,6 @@ data class VerRutinaUiState(
     val descripcion : String,
     val objetivo : String,
     val frecuencia : Int,
-
     ) {
 
 
@@ -17,7 +16,6 @@ data class VerRutinaUiState(
         "",
         "",
         "",
-        0,
-        )
+        0)
 }
 
