@@ -16,7 +16,7 @@ data class MaquinasEntity(
     @ColumnInfo(name="musculo")
     val musculo : String,
     @ColumnInfo(name="imagen")
-    val imagen : String,
+    val imagen : String?,
     @ColumnInfo(name="descripcion")
     val descripcion: String,
 ) : Parcelable

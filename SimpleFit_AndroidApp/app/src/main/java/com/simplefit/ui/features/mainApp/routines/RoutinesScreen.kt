@@ -82,14 +82,6 @@ fun RoutinesScreen(
                             contentDescription = "Eliminar Rutina",
                         )
                     }
-//                    IconButton(onClick = { })
-//                    {
-//                        Icon(
-//                            tint = Color(0xFFDAB338),
-//                            imageVector = Icons.Filled.RemoveRedEye,
-//                            contentDescription = "Ver Rutina",
-//                        )
-//                    }
                 }
             }
 

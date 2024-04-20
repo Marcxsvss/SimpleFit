@@ -1,25 +1,27 @@
 package com.simplefit.data.room.maquinas
 
 import androidx.room.*
+import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
+import com.simplefit.models.Maquina
 
 
 @Dao
 interface MaquinasDao {
-    @Query("SELECT * FROM rutinas")
-    suspend fun get(): List<MaquinasEntity>
+    @Query("SELECT * FROM maquinas")
+    suspend fun get(): List<Maquina>
 
-    @Query("SELECT * FROM rutinas WHERE userid IN (:userid)")
-    suspend fun get(userid:String): List<MaquinasEntity>
+//    @Query("SELECT * FROM maquinas WHERE userid IN (:userid)")
+//    suspend fun get(): List<Maquina>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(rutina: MaquinasEntity)
+    suspend fun insert(maquina: MaquinasEntity)
 
     @Update
-    suspend fun update(rutina: MaquinasEntity)
+    suspend fun update(maquina: MaquinasEntity)
 
-    @Query("SELECT COUNT(*) FROM rutinas")
+    @Query("SELECT COUNT(*) FROM maquinas")
     suspend fun count(): Int
 
-    @Query("DELETE FROM rutinas WHERE rutinaid IN (:rutinaid)")
-    suspend fun delete(rutinaid: Int)
+    @Query("DELETE FROM maquinas WHERE maquinaid IN (:maquinaid)")
+    suspend fun delete(maquinaid: Int)
 }

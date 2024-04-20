@@ -2,9 +2,15 @@ package com.simplefit.data
 
 import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
+import com.simplefit.data.mocks.MaquinasMock
+import com.simplefit.data.mocks.RutinaMaquinaMock
 import com.simplefit.data.mocks.RutinasMock
+import com.simplefit.data.room.maquinas.MaquinasEntity
+import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
 import com.simplefit.data.room.rutinas.RutinasEntity
 import com.simplefit.data.services.usuario.UsuarioApi
+import com.simplefit.models.Maquina
+import com.simplefit.models.RutinaMaquina
 import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
 
@@ -108,5 +114,29 @@ fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
     descripcion = this.descripcion,
     objetivo = this.objetivo,
     frecuencia = this.frecuencia
+)
+fun MaquinasMock.toMaquina(): Maquina = Maquina(
+    maquinaid = this.maquinaid,
+    nombre = this.nombre,
+    musculo = this.musculo,
+    imagen = this.imagen,
+    descripcion = this.descripcion
+)
+fun Maquina.toMaquinaEntity(): MaquinasEntity = MaquinasEntity(
+    maquinaid = this.maquinaid,
+    nombre = this.nombre,
+    musculo = this.musculo,
+    imagen = this.imagen,
+    descripcion = this.descripcion
+)
+fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
+    rutinaid = this.rutinaid,
+    dia = this.dia,
+    maquinaid = this.maquinaid
+)
+fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEntity(
+    rutinaid = this.rutinaid,
+    dia = this.dia,
+    maquinaid = this.maquinaid
 )
 //endregion

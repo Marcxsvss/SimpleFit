@@ -1,7 +1,9 @@
 package com.simplefit.ui.features.mainApp.verRutina
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -37,7 +40,12 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
+import com.simplefit.R
 import com.simplefit.ui.composables.RutinasListItem
 import java.util.Calendar
 
@@ -54,7 +62,6 @@ fun VerRoutinesScreen(
     verRutinaState: VerRutinaUiState,
     //verRutinaSeleccionado : VerRutinaUiState?,
     onVerRutinaEvent: (VerRutinaEvent) -> Unit,
-
     ) {
 
 
@@ -75,7 +82,7 @@ fun VerRoutinesScreen(
             )
             {
                 Text(
-                    text = "Plan Entrenamiento",
+                    text = verRutinaState.titulo,
                     color = Color(0xFFDAB338),
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
@@ -98,7 +105,9 @@ fun VerRoutinesScreen(
                                 .clip(CircleShape)
                                 .background(colorDeFondo)
                                 .size(30.dp)
-                                .clickable { },
+                                .clickable {
+                                    onVerRutinaEvent(VerRutinaEvent.onCambiarDia(diasDeLaSemana[iteration]))
+                                },
                             contentAlignment = Alignment.Center,
                         )
                         {
@@ -111,22 +120,81 @@ fun VerRoutinesScreen(
                     }
                 }
             }
-            Column(modifier = Modifier.padding(start = 20.dp, end = 20.dp))
-            {
-                Text(
-                    text = "Pecho - Triceps",
-                    fontSize = 20.sp,
-                    textAlign = TextAlign.Start,
-                    color = Color(0xFFDAB338)
-                )
-                HorizontalDivider(
-                    modifier = Modifier.padding(bottom = 10.dp),
-                    thickness = 1.dp,
-                    color = Color(0xFFDAB338)
-                )
-                Text(text = "Press de banca 4x10", fontSize = 25.sp, textAlign = TextAlign.Start)
+            if (verRutinaState.descripcion != "Descanso") {
+                val musculo = verRutinaState.ejercicio[0].musculo
+                val musculo2 = verRutinaState.ejercicio.firstOrNull { it.musculo != musculo }
 
+                Column(modifier = Modifier.padding(start = 20.dp, end = 20.dp))
+                {
+                    Text(
+                        text = "$musculo - $musculo2",
+                        fontSize = 15.sp,
+                        textAlign = TextAlign.Start,
+                        color = Color(0xFFDAB338)
+                    )
+                    HorizontalDivider(
+                        modifier = Modifier.padding(bottom = 10.dp),
+                        thickness = 1.dp,
+                        color = Color(0xFFDAB338)
+                    )
+                    Box(modifier = Modifier.fillMaxSize())
+                    {
+                        LazyColumn(
+                            contentPadding = PaddingValues(5.dp),
+                            verticalArrangement = Arrangement.spacedBy(5.dp),
+                            modifier = Modifier.fillMaxHeight()
+                        ) {
+                            items(verRutinaState.ejercicio) { ejercicio ->
+                                Text(text = ejercicio.nombre)
+                            }
+                        }
+                    }
+
+                }
+            } else {
+                Column(modifier = Modifier.padding(start = 20.dp, end = 20.dp))
+                {
+                    Text(
+                        text = "Descanso",
+                        fontSize = 30.sp,
+                        textAlign = TextAlign.Start,
+                        color = Color(0xFFDAB338),
+                        fontFamily = FontFamily(
+                            Font(resId = R.font.bayon_regular)
+                        )
+                    )
+                    HorizontalDivider(
+                        modifier = Modifier.padding(bottom = 10.dp),
+                        thickness = 1.dp,
+                        color = Color(0xFFDAB338)
+                    )
+                    Text(
+                        text = "No hay ejercicios para hoy, asegúrate dormir y comer de forma saludable para la correcta recuperacion de tus músculos¡¡",
+                        fontSize = 18.sp,
+                        textAlign = TextAlign.Start,
+                        color = Color(0xFFDAB338),
+                        fontFamily = FontFamily(
+                            Font(resId = R.font.roboto_blackitalic)
+                        )
+
+                    )
+                    Image(
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .aspectRatio(ratio = 1f)
+                            .background(Color.White)
+                            .border(
+                                width = 1.dp,
+                                color = Color.White,
+                                shape = CircleShape
+                            ),
+                        contentScale = ContentScale.Crop,
+                        painter = painterResource(id = R.drawable.recuperacion),
+                        contentDescription = "Imagen objetivo"
+                    )
+                }
             }
+
         }
     }
 }

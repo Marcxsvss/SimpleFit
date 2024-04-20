@@ -15,6 +15,7 @@ Para asignar las maquinas a las rutinas, podemos hacer que coja 3,2 o 1 dependie
 
 Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
 Cambiar color letras por un marron, y poner los iconos blancos
+Podemos poner un alert dialog cuando se pulsa en un ejercicio que salgo una imagen y su descripcion
 
 Tareas
 -----------------
