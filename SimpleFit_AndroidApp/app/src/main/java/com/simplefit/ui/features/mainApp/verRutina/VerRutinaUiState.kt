@@ -7,7 +7,8 @@ data class VerRutinaUiState(
     val titulo : String,
     val descripcion : String,
     var ejercicio : List<Maquina>,
-    val frecuencia : Int,
+    val frecuencia : Int
+
     ) {
 
 
@@ -16,7 +17,8 @@ data class VerRutinaUiState(
         "",
         "Descanso",
         ejercicio = listOf(),
-        0
+        0,
+
     )
 }
 

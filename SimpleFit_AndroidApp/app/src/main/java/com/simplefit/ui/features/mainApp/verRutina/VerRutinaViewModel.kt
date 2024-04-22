@@ -23,10 +23,19 @@ class VerRutinaViewModel @Inject constructor(
 ) : ViewModel() {
     var verRutinaUiState by mutableStateOf(VerRutinaUiState())
         private set
+    var diaSeleccionado by mutableStateOf("L")
+
+    var mostrarDialog by mutableStateOf(false)
+
+    val onMostrarDialog: (Boolean) -> Unit by mutableStateOf({
+        mostrarDialog = it
+    })
     fun setRutina(rutina : RoutinesUiState)
     {
         viewModelScope.launch {
-            verRutinaUiState = rutina.toVerRutinaUiState()
+            var rutina2 = rutina.toVerRutinaUiState()
+            rutina2 = rutina2.copy(ejercicio = maquinasRepository.get(rutina.rutinaid,diaSeleccionado))
+            verRutinaUiState = rutina2
         }
     }
     fun onVerRoutinesEvent(verRoutinesEvent: VerRutinaEvent) {
@@ -36,7 +45,9 @@ class VerRutinaViewModel @Inject constructor(
             }
             is VerRutinaEvent.onCambiarDia -> {
                 viewModelScope.launch {
-                    verRutinaUiState.ejercicio =  maquinasRepository.get(verRutinaUiState.rutinaid, verRoutinesEvent.dia)
+                    diaSeleccionado = verRoutinesEvent.dia
+                    verRutinaUiState =  verRutinaUiState.copy(ejercicio = maquinasRepository.get(verRutinaUiState.rutinaid, verRoutinesEvent.dia))
+
                 }
 
             }

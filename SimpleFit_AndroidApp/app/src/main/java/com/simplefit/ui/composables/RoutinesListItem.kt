@@ -127,7 +127,8 @@ fun ContenidoPrincipalCardRutina(
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
     modifier: Modifier = Modifier,
-    onVerRutinaClicked : () -> Unit
+    onVerRutinaClicked : () -> Unit,
+    onRutinaClicked: (Int) -> Unit
 ) {
     Box(
         Modifier
@@ -197,12 +198,18 @@ fun ContenidoPrincipalCardRutina(
                 )
                 //Spacer(modifier = Modifier.width(12.dp))
                 //Text(modifier = Modifier.padding(top = 60.dp) ,text = "Ver más", style = MaterialTheme.typography.labelMedium, color = Color.White)
-                Box(modifier = Modifier.size(70.dp))
+                if(seleccionadoState)
                 {
-                    Icon(Icons.Filled.ArrowForwardIos, contentDescription = "Flecha Derecha", tint = Color.White,
-                        modifier = Modifier.padding(top = 28.dp, start = 25.dp)
-                        .clickable { onVerRutinaClicked() })
+                    Box(modifier = Modifier.size(70.dp))
+                    {
+                        Icon(Icons.Filled.ArrowForwardIos, contentDescription = "Flecha Derecha", tint = Color.White,
+                            modifier = Modifier.padding(top = 28.dp, start = 25.dp)
+                                .clickable { //onRutinaClicked(rutinaUiState.rutinaid)
+                                    onVerRutinaClicked()
+                                })
+                    }
                 }
+
 
             }
         }
@@ -241,7 +248,8 @@ fun RutinasListItem(
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
                 seleccionadoState = seleccionadoState,
-                onVerRutinaClicked = onVerRutinaClicked
+                onVerRutinaClicked = onVerRutinaClicked,
+                onRutinaClicked = onRutinaClicked
             )
             if (seleccionadoState)
                 AccionesRutina(

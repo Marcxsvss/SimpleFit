@@ -128,7 +128,7 @@ class MaquinasDaoMock @Inject constructor() {
         ),
         MaquinasMock(
             maquinaid = 17,
-            nombre = "Elevacion lateral polea unilateral",
+            nombre = "Elevacion polea unilateral",
             musculo = "Deltoides lateral",
             imagen = "",
             descripcion = "Ejercicio que focaliza el estimulo en el deltoides lateral"

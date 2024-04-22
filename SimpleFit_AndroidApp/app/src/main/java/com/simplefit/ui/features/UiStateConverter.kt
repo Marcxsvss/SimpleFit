@@ -49,10 +49,10 @@ fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,
-    titulo = "Plan de Entrenamiento",
-    descripcion = "Descanso",
+    titulo = this.titulo.ifBlank { "Plan de Entrenamiento" },
+    descripcion =if(this.descripcion.isBlank()) "Descanso" else this.descripcion,
     listOf(),
-    frecuencia = 0
+    frecuencia = this.frecuencia
 )
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()
 //

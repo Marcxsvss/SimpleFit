@@ -17,6 +17,8 @@ Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la se
 Cambiar color letras por un marron, y poner los iconos blancos
 Podemos poner un alert dialog cuando se pulsa en un ejercicio que salgo una imagen y su descripcion
 
+Problema, en elmodelo rutinas, hay que quitar user id y hacer otra tabla que relacione usuarios y rutinas ya que las rutinas ya estan creadas por defecto y una misma rutina puede estar en muchos usuarios
+
 Tareas
 -----------------
 Si la base de datos se complica a la hora de que en la app de admins no se pueden añadir nuevas maquinas o 

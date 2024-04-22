@@ -7,9 +7,6 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.MainAppViewModel
-import com.simplefit.ui.features.mainApp.home.HomeScreen
-import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.mainApp.verRutina.VerRoutinesScreen
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
@@ -36,7 +33,10 @@ fun NavGraphBuilder.verRutinaScreen(
 
         VerRoutinesScreen(
             verRutinaState = verRutinaViewModel.verRutinaUiState,
-            onVerRutinaEvent = verRutinaViewModel::onVerRoutinesEvent)
+            onVerRutinaEvent = verRutinaViewModel::onVerRoutinesEvent,
+            diaSeleccionado = verRutinaViewModel.diaSeleccionado,
+            onMostrarDialog = verRutinaViewModel.onMostrarDialog,
+            mostrarDialog = verRutinaViewModel.mostrarDialog)
     }
 
 }
