@@ -2,6 +2,8 @@ package com.simplefit.di
 
 import android.content.Context
 import com.pmdm.recetas.data.room.SimpleFitDB
+import com.simplefit.data.room.maquinas.MaquinasDao
+import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
 //import com.simplefit.data.services.usuario.UsuarioService
@@ -65,4 +67,14 @@ class AppModule {
     fun provideRoutinesDao(
         db: SimpleFitDB
     ) : RutinasDao = db.rutinasDao()
+    @Provides
+    @Singleton
+    fun provideMaquinasDao(
+        db: SimpleFitDB
+    ) : MaquinasDao = db.maquinasDao()
+    @Provides
+    @Singleton
+    fun provideRutinaMaquinaDao(
+        db: SimpleFitDB
+    ) : RutinaMaquinaDao = db.rutinaMaquinaDao()
 }
