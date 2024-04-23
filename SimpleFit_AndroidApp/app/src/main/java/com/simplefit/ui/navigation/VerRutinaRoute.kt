@@ -36,7 +36,8 @@ fun NavGraphBuilder.verRutinaScreen(
             onVerRutinaEvent = verRutinaViewModel::onVerRoutinesEvent,
             diaSeleccionado = verRutinaViewModel.diaSeleccionado,
             onMostrarDialog = verRutinaViewModel.onMostrarDialog,
-            mostrarDialog = verRutinaViewModel.mostrarDialog)
+            mostrarDialog = verRutinaViewModel.mostrarDialog,
+            maquinaUiState = verRutinaViewModel.maquinaUiState)
     }
 
 }

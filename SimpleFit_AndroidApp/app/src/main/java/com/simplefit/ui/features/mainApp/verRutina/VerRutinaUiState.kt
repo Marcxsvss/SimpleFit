@@ -6,7 +6,7 @@ data class VerRutinaUiState(
     val rutinaid: Int,
     val titulo : String,
     val descripcion : String,
-    var ejercicio : List<Maquina>,
+    var ejercicio : List<MaquinaUiState>,
     val frecuencia : Int
 
     ) {

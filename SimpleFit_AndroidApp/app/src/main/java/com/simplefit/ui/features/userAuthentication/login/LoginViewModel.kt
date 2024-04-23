@@ -5,7 +5,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.simplefit.data.MaquinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.data.mocks.MaquinasMock
+import com.simplefit.models.Maquina
+import com.simplefit.ui.features.mainApp.verRutina.MaquinaUiState
+import com.simplefit.ui.features.toMaquinaUiState
 import com.simplefit.ui.features.toUsuario
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -17,11 +22,6 @@ class LoginViewModel @Inject constructor(
     private val usuarioRepository: UsuarioRepository,
     private val validadorLogin: ValidadorLogin
 ) : ViewModel() {
-//    init {
-//        viewModelScope.launch { usuarioRepository.clearDatabase() }
-//
-//    }
-
     var usuarioUiState by mutableStateOf(LoginUiState())
         private set
     var validacionLoginUiState by mutableStateOf(ValidacionLoginUiState())
@@ -30,6 +30,8 @@ class LoginViewModel @Inject constructor(
     val onMostrarSnackBar: () -> Unit by mutableStateOf({
         mostrarSnackBar = !mostrarSnackBar
     })
+
+
 
     fun onLoginEvent(loginEvent: LoginEvent) {
         when (loginEvent) {

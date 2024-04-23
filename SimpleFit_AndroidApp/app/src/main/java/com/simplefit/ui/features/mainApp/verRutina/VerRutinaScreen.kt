@@ -35,12 +35,16 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
+import androidx.compose.material.icons.filled.Face2
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
@@ -61,13 +65,17 @@ fun obtenerDiaDeLaSemana(): String {
 @Composable
 fun VerRoutinesScreen(
     verRutinaState: VerRutinaUiState,
-    //verRutinaSeleccionado : VerRutinaUiState?,
     onVerRutinaEvent: (VerRutinaEvent) -> Unit,
     diaSeleccionado: String,
-    mostrarDialog : Boolean,
-    onMostrarDialog : (Boolean) -> Unit
+    mostrarDialog: Boolean,
+    onMostrarDialog: (Boolean) -> Unit,
+    maquinaUiState: MaquinaUiState
 ) {
 
+    val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
+    var painterFoto = remember(maquinaUiState.imagen) {
+        maquinaUiState.imagen?.let { BitmapPainter(it) } ?: imagenSinFoto
+    }
 
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
     val diaActual = obtenerDiaDeLaSemana()
@@ -76,26 +84,29 @@ fun VerRoutinesScreen(
         modifier = Modifier.fillMaxSize()
 
     ) {
-        if(mostrarDialog)
-        {
+        if (mostrarDialog) {
             AlertDialog(
-                onDismissRequest = { onMostrarDialog(false)},
+                onDismissRequest = { onMostrarDialog(false) },
                 title = {
-                    Text(text = "My Dialog")
+                    Text(text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,fontFamily = FontFamily(
+                        Font(resId = R.font.roboto_bolditalic)
+                    ),)
                 },
                 text = {
                     Column {
                         Image(
-                            painter = painterResource(id = R.drawable.definicion),
-                            contentDescription = "Ejercicio",
-                            modifier = Modifier.size(100.dp)
+                            modifier = Modifier.size(350.dp),
+                            painter = painterFoto,
+                            contentDescription = "Imagen ejercicio"
                         )
-                        Text("This is some text in the dialog.")
+                        Text(maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp, fontFamily = FontFamily(
+                            Font(resId = R.font.roboto_mediumitalic)
+                        ),)
                     }
                 },
                 confirmButton = {
                     Button(onClick = { onMostrarDialog(false) }) {
-                        Text("Ok")
+                        Text("OK")
                     }
                 }
             )
@@ -189,7 +200,9 @@ fun VerRoutinesScreen(
                             modifier = Modifier.fillMaxHeight()
                         ) {
                             items(verRutinaState.ejercicio) { ejercicio ->
-                                Row(Modifier.clickable { onMostrarDialog(true) })
+                                Row(Modifier.clickable {
+                                    onVerRutinaEvent(VerRutinaEvent.onClickEjercicio(ejercicio))
+                                })
                                 {
                                     Box(modifier = Modifier.width(300.dp))
                                     {

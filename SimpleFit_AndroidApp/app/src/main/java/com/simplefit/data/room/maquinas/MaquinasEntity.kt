@@ -15,7 +15,7 @@ data class MaquinasEntity(
     val nombre : String,
     @ColumnInfo(name="musculo")
     val musculo : String,
-    @ColumnInfo(name="imagen")
+    @ColumnInfo(name="imagen")//,typeAffinity = ColumnInfo.BLOB)
     val imagen : String?,
     @ColumnInfo(name="descripcion")
     val descripcion: String,

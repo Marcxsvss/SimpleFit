@@ -1,6 +1,9 @@
 package com.simplefit
 
 import android.app.Application
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.platform.LocalContext
+import com.pmdm.agenda.utilities.imagenes.Imagenes
 import com.pmdm.recetas.data.mocks.UsuarioDaoMock
 import com.simplefit.data.mocks.MaquinasDaoMock
 import com.simplefit.data.mocks.RutinaMaquinaDaoMock
@@ -41,6 +44,11 @@ class SimpleFitApplication: Application (){
     lateinit var RutinaMaquinaDaoEntity: RutinaMaquinaDao
 
     override fun onCreate() {
+
+        val bitmap = Imagenes.androidBitmapFromResourceId(R.drawable.curl_barra_z,this)
+        val b64 = Imagenes.bitmapToBase64(bitmap.asImageBitmap())
+        //val blob = Imagenes.base64ToBlob(b64)
+
         super.onCreate()
 
         runBlocking {

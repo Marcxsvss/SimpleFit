@@ -139,4 +139,5 @@ fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEn
     dia = this.dia,
     maquinaid = this.maquinaid
 )
+
 //endregion

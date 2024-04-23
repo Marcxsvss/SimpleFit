@@ -18,8 +18,15 @@ class MaquinasRepository @Inject constructor(
             maquinasDao.get().filter { it.maquinaid in rutinaMaquinaRepository.get(rutinaid, dia) }
         }
 
+
+suspend fun get(maquinaid : Int) : Maquina =
+    withContext(Dispatchers.IO)
+    {
+        maquinasDao.get(maquinaid)
     }
 
+
+}
 
 
 

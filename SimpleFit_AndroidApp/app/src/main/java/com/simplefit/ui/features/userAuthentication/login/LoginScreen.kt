@@ -1,5 +1,6 @@
 package com.simplefit.ui.features.userAuthentication.login
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -8,6 +9,13 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face2
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
@@ -21,6 +29,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -32,6 +42,8 @@ import com.pmdm.recetas.ui.composables.CircularImageFromResource
 import com.pmdm.recetas.ui.composables.TextNewAccount
 import com.pmdm.tienda.ui.features.login.components.LoginForm
 import com.simplefit.R
+import com.simplefit.ui.features.mainApp.verRutina.MaquinaUiState
+import com.simplefit.ui.features.mainApp.verRutina.obtenerDiaDeLaSemana
 import com.simplefit.ui.theme.Purple40
 import com.simplefit.ui.theme.SimpleFitTheme
 import kotlinx.coroutines.delay
@@ -119,23 +131,24 @@ fun LoginScreen(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    val loginViewModel: LoginViewModel = viewModel()
-    SimpleFitTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(
-            modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-        ) {
-
-            LoginScreen(usuarioUiState = loginViewModel.usuarioUiState,
-                validacionLoginUiState = loginViewModel.validacionLoginUiState,
-                onLoginEvent = loginViewModel::onLoginEvent,
-                mostrarSnack = false,
-                onNavigateToHome = {},
-                onMostrarSnackBar = {},
-                onNavigateToRegister = {})
-        }
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun LoginScreenPreview() {
+//    val loginViewModel: LoginViewModel = viewModel()
+//    SimpleFitTheme {
+//        // A surface container using the 'background' color from the theme
+//        Surface(
+//            modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+//        ) {
+//
+//            LoginScreen(usuarioUiState = loginViewModel.usuarioUiState,
+//                validacionLoginUiState = loginViewModel.validacionLoginUiState,
+//                onLoginEvent = loginViewModel::onLoginEvent,
+//                mostrarSnack = false,
+//                onNavigateToHome = {},
+//                onMostrarSnackBar = {},
+//                onNavigateToRegister = {},
+//                )
+//        }
+//    }
+//}

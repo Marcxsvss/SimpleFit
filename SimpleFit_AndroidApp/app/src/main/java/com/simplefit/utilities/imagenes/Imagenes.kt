@@ -13,11 +13,21 @@ import java.io.ByteArrayOutputStream
 
 class Imagenes {
     companion object {
-        fun base64ToAndroidBitmap(base64ImageString: String): Bitmap {
-            val decodedString: ByteArray? = Base64.decode(base64ImageString, Base64.DEFAULT)
-            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString!!.size)
+        fun base64ToAndroidBitmap(base64ImageString: String?): Bitmap? {
+//            val decodedString: ByteArray? = Base64.decode(base64ImageString, Base64.DEFAULT)
+//            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString!!.size)
+            if (base64ImageString == null || base64ImageString.isBlank()) {
+                return null
+            }
+
+            return try {
+                val decodedString = Base64.decode(base64ImageString, Base64.DEFAULT)
+                BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+            } catch (e: IllegalArgumentException) {
+                return null
+            }
         }
-        fun base64ToBitmap(base64ImageString: String) = base64ToAndroidBitmap(base64ImageString).asImageBitmap()
+        fun base64ToBitmap(base64ImageString: String) = base64ToAndroidBitmap(base64ImageString)?.asImageBitmap()
         fun androidBitmapToBase64(bitmap: Bitmap): String {
             val stream = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream)
@@ -40,9 +50,9 @@ class Imagenes {
             return null
         }
 
-        fun androidBitmapFromRerouceId(recurso: Int, context: Context): Bitmap =
-            BitmapFactory.decodeResource(context.resources, recurso)
 
+        fun androidBitmapFromResourceId(recurso: Int, context: Context): Bitmap =
+            BitmapFactory.decodeResource(context.resources, recurso)
         fun androidBitmapFromURI(uri: Uri, context: Context): Bitmap {
             val contextResolver = context.contentResolver
             val source = ImageDecoder.createSource(contextResolver, uri)

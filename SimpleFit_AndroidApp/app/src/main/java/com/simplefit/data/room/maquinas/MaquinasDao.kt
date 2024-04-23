@@ -9,6 +9,8 @@ import com.simplefit.models.Maquina
 interface MaquinasDao {
     @Query("SELECT * FROM maquinas")
     suspend fun get(): List<Maquina>
+    @Query("SELECT * FROM maquinas WHERE maquinaid IN (:maquinaid)")
+    suspend fun get(maquinaid : Int): Maquina
 
 //    @Query("SELECT * FROM maquinas WHERE userid IN (:userid)")
 //    suspend fun get(): List<Maquina>

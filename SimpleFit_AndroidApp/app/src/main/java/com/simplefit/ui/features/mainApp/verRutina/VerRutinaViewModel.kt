@@ -10,6 +10,7 @@ import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.models.Rutinas
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.toMaquinaUiState
 import com.simplefit.ui.features.toVerRutinaUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -30,11 +31,12 @@ class VerRutinaViewModel @Inject constructor(
     val onMostrarDialog: (Boolean) -> Unit by mutableStateOf({
         mostrarDialog = it
     })
+    var maquinaUiState by mutableStateOf(MaquinaUiState())
     fun setRutina(rutina : RoutinesUiState)
     {
         viewModelScope.launch {
             var rutina2 = rutina.toVerRutinaUiState()
-            rutina2 = rutina2.copy(ejercicio = maquinasRepository.get(rutina.rutinaid,diaSeleccionado))
+            rutina2 = rutina2.copy(ejercicio = maquinasRepository.get(rutina.rutinaid,diaSeleccionado).map { it.toMaquinaUiState() })
             verRutinaUiState = rutina2
         }
     }
@@ -46,10 +48,15 @@ class VerRutinaViewModel @Inject constructor(
             is VerRutinaEvent.onCambiarDia -> {
                 viewModelScope.launch {
                     diaSeleccionado = verRoutinesEvent.dia
-                    verRutinaUiState =  verRutinaUiState.copy(ejercicio = maquinasRepository.get(verRutinaUiState.rutinaid, verRoutinesEvent.dia))
+                    verRutinaUiState =  verRutinaUiState.copy(ejercicio = maquinasRepository.get(verRutinaUiState.rutinaid, verRoutinesEvent.dia).map { it.toMaquinaUiState() })
 
                 }
 
+            }
+            is VerRutinaEvent.onClickEjercicio -> {
+
+                maquinaUiState = verRoutinesEvent.ejercicio
+                mostrarDialog = true
             }
 
             else -> {}
