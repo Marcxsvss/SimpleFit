@@ -47,10 +47,9 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
 )
 fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
-    userid = this.userid,
     titulo = this.titulo,
     descripcion = this.descripcion,
-    objetivo = this.objetivo,
+    objetivo = "",
     frecuencia = this.frecuencia
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(

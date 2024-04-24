@@ -5,14 +5,17 @@ import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 import com.simplefit.data.mocks.MaquinasMock
 import com.simplefit.data.mocks.RutinaMaquinaMock
 import com.simplefit.data.mocks.RutinasMock
+import com.simplefit.data.mocks.UsuarioRutinaMock
 import com.simplefit.data.room.maquinas.MaquinasEntity
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
 import com.simplefit.data.room.rutinas.RutinasEntity
+import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
 import com.simplefit.data.services.usuario.UsuarioApi
 import com.simplefit.models.Maquina
 import com.simplefit.models.RutinaMaquina
 import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
+import com.simplefit.models.UsuarioRutina
 
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.email,
@@ -92,27 +95,21 @@ fun UsuarioApi.toUsuario() = Usuario(
 //endregion
 //region Rutina
 fun RutinasEntity.toRutina(): Rutinas = Rutinas(
-    this.rutinaid,
-    this.userid,
-    this.titulo,
-    this.descripcion,
-    this.objetivo,
-    this.frecuencia
+    rutinaid = this.rutinaid,
+    titulo = this.titulo,
+    descripcion = this.descripcion,
+    frecuencia = this.frecuencia
 )
 fun RutinasMock.toRutina(): Rutinas = Rutinas(
     this.rutinaid,
-    this.userid,
     this.titulo,
     this.descripcion,
-    this.objetivo,
     this.frecuencia
 )
 fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
     rutinaid = this.rutinaid,
-    userid = this.userid,
     titulo = this.titulo,
     descripcion = this.descripcion,
-    objetivo = this.objetivo,
     frecuencia = this.frecuencia
 )
 fun MaquinasMock.toMaquina(): Maquina = Maquina(
@@ -134,10 +131,29 @@ fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
     dia = this.dia,
     maquinaid = this.maquinaid
 )
+fun UsuarioRutinaMock.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
+    userid = this.userid,
+    rutinaid = this.rutinaid,
+    nombre = this.nombre,
+    objetivo = this.objetivo
+)
 fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEntity(
     rutinaid = this.rutinaid,
     dia = this.dia,
     maquinaid = this.maquinaid
 )
 
+fun UsuarioRutina.toUsuarioRutinaEntity() = UsuarioRutinaEntity(
+    userid = this.userid,
+    rutinaid = this.rutinaid,
+    nombre = this.nombre,
+    objetivo = this.objetivo
+)
+
+fun UsuarioRutinaEntity.toUsuarioRutina() = UsuarioRutina(
+    userid = this.userid,
+    rutinaid = this.rutinaid,
+    nombre = this.nombre,
+    objetivo = this.objetivo
+)
 //endregion

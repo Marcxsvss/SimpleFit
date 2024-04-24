@@ -5,26 +5,23 @@ He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
 Quehacer
 ---------
-Poner el maximo de rutinas que se pueden crear en 5, hacer la ui, poner una bateria de 5 fotos o cambiar la ui de cada rutina
-Posibilidad de ampliacion, que me cree tres planes por defecto al registrarse, aumento de musculo, perdida de peso, mantenimiento.
-COmprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(UiState,listasy datos) vuelven a estar vacios.
-Posible ampliacion, que al pasar por encima del icono de cada rutina, te muestre como una camara para hacer una foto, al igual con la foto de perfil.
+Poner el maximo de rutinas que se pueden crear en 4, cada IMAGEN IRA DEFINIDA POR EL OBJETIVO DEL USUARIO
+Comprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(UiState,listasy datos) vuelven a estar vacios.
+Meter los botones de home en un compinent para no repetir codigo
+
 Meter un boton en ver rutinas donde puedes quitar la seleccion de una rutina, es decir, que no salga con el color amarillo fuerte y se quite la papelera de borrar.
 Meter las bolitas de los dias de la semana en un componente para poder reutilizarlo y no repetir codigo.
 Para asignar las maquinas a las rutinas, podemos hacer que coja 3,2 o 1 dependiendo del musculo, pero la primera la hardcodeare
 
 Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
 Cambiar color letras por un marron, y poner los iconos blancos
-Podemos poner un alert dialog cuando se pulsa en un ejercicio que salgo una imagen y su descripcion
+Problema, en el modelo rutinas, hay que quitar user id y hacer otra tabla que relacione usuarios y rutinas ya que las rutinas ya estan creadas por defecto y una misma rutina puede estar en muchos usuarios
 
-Problema, en elmodelo rutinas, hay que quitar user id y hacer otra tabla que relacione usuarios y rutinas ya que las rutinas ya estan creadas por defecto y una misma rutina puede estar en muchos usuarios
-
+//////////
+Para los turnos partidos, primero mandar la nueva propuesta de proyecto a vicente, luego crear todas las rutinas, hacer la documentacion
+/////////
 Tareas
 -----------------
-Si la base de datos se complica a la hora de que en la app de admins no se pueden añadir nuevas maquinas o 
-alimentos ya que la configuracion seria muy complicada, podemos recurrir a crear rutinas y dietas ya creadas 
-y en base a tu perfil, que te ofrezca varias dietas y tu escoger la que mas te convenga
-------------------------------------------------------------------------------------------------------------------
 
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
 Posible ampliacion, añadir un box al final del home que sea para compartir con amigos la aplicacion
@@ -34,7 +31,7 @@ Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un c
 Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
 Añadir rutinas y dietas por defecto, unas 20 rutinas y unas 20 dietas.
 
-Apuntarme todas las posibles llamadas a la api.
+
 Añadir Datos a la base de datos(Alimentos, maquinas,etc)
 Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
 Maquetar la UI de Lista de rutinas,entreno del dia, dieta del dia, consejos, (Ampliazcion de compartir con amigos) y dietas.
@@ -42,7 +39,7 @@ Ver como cojer los datos de Azure para la Aplicacion de android con Retrofit.
 
 Una vez terminada la App Android,
 
-Hacer la Apliacion de escritorio con Visual Studio
+Hacer la ApliCacion de Administracion de usuarios, rutinas etc.
 ---------------------------------------------------
 Tendrá un inicio de sesion, los administradores entraran con un usuario y contraseña y solo se podrán añadir nuevos administradores 
 desde dentro de la aplicacion y el unico que podrá crear administradores sera el director. 
@@ -52,3 +49,21 @@ Tendrá una pantalla principal donde veremos todas las tablas, seleccionaremos l
 para encontrar ocurrencias. busques lo que busques, buscará una coincidencia en todos los campos tanto nombre, dni, email.(Los que yo decida)
 Habrá un boton para eliminar (cualquier dato de las tablas), editar(cualquier dato de las tablas), otro para insertar(cualquier dato en cualquier tabla).
 
+Ampliaciones
+-------------
+Posible ampliacion, que al pasar por encima del icono de cada rutina, te muestre como una camara para hacer una foto, al igual con la foto de perfil.
+
+
+AddRutina UI
+------------
+Las rutinas ya estarán definidas y al usuario se le mostrará una recomendacion
+
+primero tendrás una pantalla donde veras una seleccion de filtros y en base a esos filtros, el globito recomendado se llenará
+Habrán globitos, amarillos fuerte con un texto que tendrá otro globito blanco(Recomendado, todas)
+
+cuando ves una de las rutinas, abajo a la derecha tendrás un botón el cual guarda la rutina seleccionada
+
+
+se mostraran las rutinas en base a 
+filtros objetivo(en base a lo que quieras hacer, necesitaras mas o menos entreno, es decir, volumen, mas entreno, definicion, tenrás menos energia por lo que no te hará falta entrenar tanto)
+frecuencia-> dependiendo de cuantos dias quieras entrenar a la semana

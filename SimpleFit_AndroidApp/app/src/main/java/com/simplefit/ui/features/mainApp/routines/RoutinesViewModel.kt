@@ -21,10 +21,14 @@ class RoutinesViewModel @Inject constructor(
         private set
     var routinesList by mutableStateOf(listOf<RoutinesUiState>())
         private set
+    var userid by mutableStateOf("")
+    private set
+
 
     fun setRoutines(userid : String) {
+        this.userid = userid
         viewModelScope.launch {
-            routinesList = rutinasRepository.get(userid).map { it.toRutinasUiState() }
+            routinesList = rutinasRepository.get(userid)
         }
 
     }
@@ -34,7 +38,7 @@ class RoutinesViewModel @Inject constructor(
                 routinesUiState = routinesList.find { it.rutinaid == routinesEvent.rutinaid }!!
             }
             is RoutinesEvent.onAddClicked -> {
-
+                routinesEvent.onNavigateToAddRutina?.let { it(userid) }
             }
             is RoutinesEvent.onVerClicked -> {
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }

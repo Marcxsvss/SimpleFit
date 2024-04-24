@@ -35,6 +35,8 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.Font
@@ -44,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
+import com.simplefit.ui.composables.HomeButton
 import java.util.Calendar
 import java.util.Locale
 
@@ -139,92 +142,13 @@ fun HomeScreen(
                     .align(Alignment.Start)
                     .padding(start = 18.dp)
             )
-
-            Box( //Ver entrenamiento de hoy
-                Modifier
-                    .width(358.dp)
-                    .height(100.dp)
-                    .background(
-                        color = Color(0xFFDBC06D),
-                        shape = RoundedCornerShape(
-                            bottomEnd = 10.dp,
-                            bottomStart = 10.dp,
-                            topEnd = 10.dp,
-                            topStart = 10.dp
-                        )
-                    )
-            ) {
-                Row(modifier = Modifier.align(Alignment.Center)) {
-                    Icon(Icons.Filled.Groups, contentDescription = "Entrenamiento")
-                    Spacer(modifier = Modifier.width(5.dp))
-                    Text(
-                        text = "VER ENTRENAMIENTO",
-                        fontSize = 22.sp,
-                        textAlign = TextAlign.Center,
-                        color = Color.White,
-                        fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                        fontStyle = FontStyle.Normal
-                    )
-                }
-            }
-
-
+            HomeButton(texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3))
             Spacer(modifier = Modifier.height(18.dp))
-            Box( //Frases motivacionales/consejos
-                Modifier
-                    .width(358.dp)
-                    .height(100.dp)
-                    .background(
-                        color = Color(0xFFDBC06D),
-                        shape = RoundedCornerShape(
-                            bottomEnd = 10.dp,
-                            bottomStart = 10.dp,
-                            topEnd = 10.dp,
-                            topStart = 10.dp
-                        )
-                    )
-            ) {
-                Row(modifier = Modifier.align(Alignment.Center)) {
-                    Icon(Icons.Filled.School, contentDescription = "consejos")
-                    Spacer(modifier = Modifier.width(5.dp))
-                    Text(
-                        text = "CONSEJOS",
-                        fontSize = 22.sp,
-                        textAlign = TextAlign.Center,
-                        color = Color.White,
-                        fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                        fontStyle = FontStyle.Normal
-                    )
-                }
-            }
+            HomeButton(texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2))
             Spacer(modifier = Modifier.height(30.dp))
-            Box( //Recomendar a un amigo
-                Modifier
-                    .width(358.dp)
-                    .height(100.dp)
-                    .background(
-                        color = Color(0xFFDBC06D),
-                        shape = RoundedCornerShape(
-                            bottomEnd = 10.dp,
-                            bottomStart = 10.dp,
-                            topEnd = 10.dp,
-                            topStart = 10.dp
-                        )
-                    )
-            ) {
-                Row(modifier = Modifier.align(Alignment.Center)) {
-                    Icon(Icons.Filled.Groups, contentDescription = "AMIGOS")
-                    Spacer(modifier = Modifier.width(5.dp))
-                    Text(
-                        text = "RECOMENDAR AMIGOS",
-                        fontSize = 22.sp,
-                        textAlign = TextAlign.Center,
-                        color = Color.White,
-                        fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                        fontStyle = FontStyle.Normal
-                    )
-                }
-            }
+            HomeButton(texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background))
+
+
         }
     }
 

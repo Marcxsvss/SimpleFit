@@ -6,6 +6,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.simplefit.ui.features.mainApp.MainAppViewModel
+import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaViewModel
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
@@ -28,6 +29,8 @@ fun SimpleFitNavHost(
     val routinesViewModel = hiltViewModel<RoutinesViewModel>()
     val profileViewModel = hiltViewModel<ProfileViewModel>()
     val verRutinaViewModel = hiltViewModel<VerRutinaViewModel>()
+    val addRutinaViewModel = hiltViewModel<AddRutinaViewModel>()
+
 
     //val scope= rememberCoroutineScope()
     //Puedo cojer el email desde RegisterAccount y guardarlo en una variable que puedo crear aqui mismo y usarla mas adelante al hacer la navegacion al ProfileInfo y luego home
@@ -72,6 +75,10 @@ fun SimpleFitNavHost(
             homeViewModel = homeViewModel
         )
         routinesScreen(routinesViewModel = routinesViewModel,
+            onNavigateToAddRutina = { userid ->
+                addRutinaViewModel.setRutinas(userid)
+                navController.navigateToAddRutina(userid)
+            },
             onNavigateToVerRutina = { rutinaUiState ->
                 verRutinaViewModel.setRutina(rutinaUiState)
                 navController.navigateToVerRutina(rutinaUiState)
@@ -84,6 +91,7 @@ fun SimpleFitNavHost(
                 navController.navigateToLogin()
             })
         verRutinaScreen( verRutinaViewModel = verRutinaViewModel)
+        addRutinaScreen(addRutinaViewModel = addRutinaViewModel)
     }
 
 }

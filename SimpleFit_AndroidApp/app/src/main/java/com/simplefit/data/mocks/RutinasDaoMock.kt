@@ -7,26 +7,20 @@ class RutinasDaoMock @Inject constructor(){
     private var rutinas = mutableListOf(
         RutinasMock(
             rutinaid = 1,
-            userid = "marcos@gmail.com",
-            titulo = "Rutina 1",
-            descripcion = "Rutina de principiantes",
-            objetivo = "Definicion",
+            titulo = "Split Routine",
+            descripcion = "Es una forma común de dividir los grupos musculares a lo largo de la semana para darles tiempo para recuperarse y permitir un entrenamiento enfocado para cada grupo muscular. ",
             frecuencia = 1,
         ),
         RutinasMock(
             rutinaid = 2,
-            userid = "marcos@gmail.com",
-            titulo = "Rutina 2",
+            titulo = "BÁSICA COMPLETA",
             descripcion = "Rutina de intermedios",
-            objetivo = "Hipertrofia",
             frecuencia = 2,
         ),
         RutinasMock(
             rutinaid = 3,
-            userid = "marcos@gmail.com",
-            titulo = "Rutina 3",
+            titulo = "BÁSICO COMPLETO",
             descripcion = "Rutina de avanzados",
-            objetivo = "Mantenimiento",
             frecuencia = 1,
         ),
 

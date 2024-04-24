@@ -11,14 +11,10 @@ data class RutinasEntity(
     @PrimaryKey
     @ColumnInfo(name="rutinaid")
     val rutinaid: Int,
-    @ColumnInfo(name="userid")
-    val userid : String,
     @ColumnInfo(name="titulo")
     val titulo : String,
     @ColumnInfo(name="descripcion")
-    val descripcion: String,
-    @ColumnInfo(name="objetivo")
-    val objetivo : String,
+    val descripcion : String,
     @ColumnInfo(name="frecuencia")
     val frecuencia : Int
 ) : Parcelable

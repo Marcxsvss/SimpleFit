@@ -17,14 +17,16 @@ const val RoutinesRoute = "Routines"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.routinesScreen(
     routinesViewModel: RoutinesViewModel,
-    onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null
+    onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToAddRutina: ((userid: String) -> Unit)? = null
 
 ) {
     composable(route = RoutinesRoute) {
         RoutinesScreen( rutinasState = routinesViewModel.routinesList,
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
             onRutinaEvent = routinesViewModel::onRoutinesEvent,
-            onNavigateToVerRutina = onNavigateToVerRutina
+            onNavigateToVerRutina = onNavigateToVerRutina,
+            onNavigateToAddRutina = onNavigateToAddRutina
         )
 
 

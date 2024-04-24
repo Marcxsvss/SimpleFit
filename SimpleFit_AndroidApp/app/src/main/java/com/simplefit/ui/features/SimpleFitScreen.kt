@@ -15,6 +15,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.simplefit.ui.composables.NavBar
+import com.simplefit.ui.navigation.AddRutinaRoute
 import com.simplefit.ui.navigation.HomeRoute
 import com.simplefit.ui.navigation.ProfileRoute
 import com.simplefit.ui.navigation.LoginRoute
@@ -40,6 +41,7 @@ fun SimpleFitScreen() {
                 && iOpcionNevagacionSeleccionada.value != 4
                 && iOpcionNevagacionSeleccionada.value != 5
                 && iOpcionNevagacionSeleccionada.value != 6
+                && iOpcionNevagacionSeleccionada.value != 7
     }
 
     Scaffold(
@@ -69,6 +71,7 @@ private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
         RegisterAccountInfoRoute -> 4
         RegisterProfileInfoRoute -> 5
         VerRutinaRoute -> 6
+        AddRutinaRoute -> 7
 
         else -> 10
     }

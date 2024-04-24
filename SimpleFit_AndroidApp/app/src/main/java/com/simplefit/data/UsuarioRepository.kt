@@ -11,27 +11,6 @@ class UsuarioRepository @Inject constructor(
     private val usuarioDao: UsuarioDao
 ) {
 
-    init {
-        //Para inicializar con datos la BD
-//        runBlocking {
-//            proveedorUsuarios.insert(UsuarioEntity("pepe@gmail.com", "2347850239Y", "pepe1234"))
-//            proveedorUsuarios.insert(UsuarioEntity("juanjo@gmail.com", "467545631I","juanjo1234"))
-//            proveedorUsuarios.insert(UsuarioEntity("xusa@gmail.com","98967089O" ,"xusa1234"))
-//        }
-    }
-
-    //    suspend fun get(email: String): Usuario? =
-//        withContext(Dispatchers.IO) { usuarioService.get(email).toUsuario() }
-//
-//    suspend fun insert(usuario: Usuario) =
-//        withContext(Dispatchers.IO) { usuarioService.insert(usuario.toUsuarioApi()) }
-//
-//    suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
-//        usuarioService.update(usuario.toUsuarioApi())
-//    }
-//    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
-//        usuarioService.delete(email)
-//    }
     suspend fun get(email: String): Usuario? =
         withContext(Dispatchers.IO) {
             usuarioDao.get(email)?.toUsuario()

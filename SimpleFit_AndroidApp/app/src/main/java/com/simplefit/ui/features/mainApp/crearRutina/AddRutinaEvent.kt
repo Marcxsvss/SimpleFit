@@ -1,7 +1,9 @@
 package com.simplefit.ui.features.mainApp.crearRutina
 
-sealed interface CrearRutinaEvent {
-    data class onVolverAtras(val rutinaid: Int) : CrearRutinaEvent
+sealed interface AddRutinaEvent {
+    data class onVolverAtras(val rutinaid: Int) : AddRutinaEvent
+    data object onTodasClicked : AddRutinaEvent
+    data object onRecomendadasClicked : AddRutinaEvent
 //    data object onAddClicked : VerRutinasEvent
 //
 //    data class onVerClicked(val rutinaid: Int) : VerRutinasEvent

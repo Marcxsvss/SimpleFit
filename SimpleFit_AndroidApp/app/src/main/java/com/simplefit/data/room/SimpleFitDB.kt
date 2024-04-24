@@ -13,18 +13,21 @@ import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.rutinas.RutinasEntity
+import com.simplefit.data.room.usuarioRutina.UsuarioRutinaDao
+import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
 
 
 @TypeConverters(RoomConverters::class)
 @Database(
-    entities = [UsuarioEntity::class, RutinasEntity::class, MaquinasEntity::class, RutinaMaquinaEntity::class],
-    version = 10
+    entities = [UsuarioEntity::class, RutinasEntity::class, MaquinasEntity::class, RutinaMaquinaEntity::class, UsuarioRutinaEntity::class],
+    version = 11
 )
 abstract class SimpleFitDB : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
     abstract fun rutinasDao(): RutinasDao
     abstract fun rutinaMaquinaDao(): RutinaMaquinaDao
     abstract fun maquinasDao(): MaquinasDao
+    abstract fun usuarioRutinaDao(): UsuarioRutinaDao
     companion object {
        @Volatile
        private var db: SimpleFitDB? = null

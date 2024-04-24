@@ -46,7 +46,8 @@ fun RoutinesScreen(
     rutinasState: List<RoutinesUiState>,
     rutinaSeleccionadaState: RoutinesUiState?,
     onRutinaEvent: (RoutinesEvent) -> Unit,
-    onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null
+    onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToAddRutina : ((userid: String) -> Unit)? = null
 ) {
     val scrollState = rememberScrollState()
     Surface(
@@ -67,7 +68,7 @@ fun RoutinesScreen(
             )
             Spacer(modifier = Modifier.fillMaxHeight(0.05f))
             Row(modifier = Modifier.align(Alignment.End)) {
-                IconButton(onClick = { onRutinaEvent(RoutinesEvent.onAddClicked) }) {
+                IconButton(onClick = { onRutinaEvent(RoutinesEvent.onAddClicked(onNavigateToAddRutina))}) {
                     Icon(
                         Icons.Filled.Add,
                         contentDescription = "Añadir Plan de Entrenamiento/Alimenticio",

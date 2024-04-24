@@ -8,10 +8,12 @@ import com.pmdm.recetas.data.mocks.UsuarioDaoMock
 import com.simplefit.data.mocks.MaquinasDaoMock
 import com.simplefit.data.mocks.RutinaMaquinaDaoMock
 import com.simplefit.data.mocks.RutinasDaoMock
+import com.simplefit.data.mocks.UsuarioRutinaDaoMock
 import com.simplefit.data.room.maquinas.MaquinasDao
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
+import com.simplefit.data.room.usuarioRutina.UsuarioRutinaDao
 import com.simplefit.data.toMaquina
 import com.simplefit.data.toMaquinaEntity
 import com.simplefit.data.toRutina
@@ -20,6 +22,8 @@ import com.simplefit.data.toRutinaMaquinaEntity
 import com.simplefit.data.toRutinasEntity
 import com.simplefit.data.toUsuario
 import com.simplefit.data.toUsuarioEntity
+import com.simplefit.data.toUsuarioRutina
+import com.simplefit.data.toUsuarioRutinaEntity
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
@@ -43,11 +47,12 @@ class SimpleFitApplication: Application (){
     @Inject
     lateinit var RutinaMaquinaDaoEntity: RutinaMaquinaDao
 
-    override fun onCreate() {
+    @Inject
+    lateinit var UsuarioRutinaDaoMock: UsuarioRutinaDaoMock
+    @Inject
+    lateinit var UsuarioRutinaDaoEntity: UsuarioRutinaDao
 
-        val bitmap = Imagenes.androidBitmapFromResourceId(R.drawable.curl_barra_z,this)
-        val b64 = Imagenes.bitmapToBase64(bitmap.asImageBitmap())
-        //val blob = Imagenes.base64ToBlob(b64)
+    override fun onCreate() {
 
         super.onCreate()
 
@@ -64,6 +69,8 @@ class SimpleFitApplication: Application (){
             if(RutinaMaquinaDaoEntity.count() == 0)
                 RutinaMaquinaDaoMock.get().forEach {RutinaMaquinaDaoEntity.insert(it.toRutinaMaquina().toRutinaMaquinaEntity())}
 
+            if(UsuarioRutinaDaoEntity.count() == 0)
+                UsuarioRutinaDaoMock.get().forEach {UsuarioRutinaDaoEntity.insert(it.toUsuarioRutina().toUsuarioRutinaEntity())}
         }
     }
 }

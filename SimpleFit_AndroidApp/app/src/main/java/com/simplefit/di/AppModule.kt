@@ -6,6 +6,7 @@ import com.simplefit.data.room.maquinas.MaquinasDao
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
+import com.simplefit.data.room.usuarioRutina.UsuarioRutinaDao
 //import com.simplefit.data.services.usuario.UsuarioService
 import dagger.Module
 import dagger.Provides
@@ -77,4 +78,9 @@ class AppModule {
     fun provideRutinaMaquinaDao(
         db: SimpleFitDB
     ) : RutinaMaquinaDao = db.rutinaMaquinaDao()
+    @Provides
+    @Singleton
+    fun provideUsuarioRutinaDao(
+        db: SimpleFitDB
+    ) : UsuarioRutinaDao = db.usuarioRutinaDao()
 }
