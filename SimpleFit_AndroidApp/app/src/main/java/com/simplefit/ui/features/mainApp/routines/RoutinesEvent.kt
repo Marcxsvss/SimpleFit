@@ -10,8 +10,6 @@ sealed interface RoutinesEvent {
 
     data class onDeleteClicked(val rutinaid: Int) : RoutinesEvent
 
-    data class onCompartirClicked(val nombre: String) : RoutinesEvent
-
     data class  OnClickCrearRutina(val onNavigateProfile: () -> Unit): RoutinesEvent
 
 }

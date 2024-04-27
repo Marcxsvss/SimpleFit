@@ -3,8 +3,11 @@ Blanco -> #dddcd8
 Amarillo claro -> #dccea2 -> Color(0xFFDCCEA2)
 Amarillo medio-> #dbc06d -> Color(0xFFDBC06D)
 Amarillo oscuro-> #dab338 -> Color(0xFFDAB338)
-Rojo -> Color(0xFFFF6347)
-Verde -> Color(0xFF228B22)
+Marron -> #89602f -> Color(0xFF89602F)
+Marron claro -> #c29f6c -> Color(0xFFC29F6C)
+Verde oscuro -> #2e3f2d -> Color(0xFF2E3F2D)
+Verde claro -> #3c4932 -> Color(0xFF3C4932)
+
 
 colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = Color(0xFFDAB338),

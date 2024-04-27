@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -23,6 +24,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.ArrowForwardIos
@@ -65,14 +67,21 @@ import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 fun DatosRutina(
     modifier: Modifier = Modifier,
     titulo: String,
-    descripcion: String,
     objetivo: String,
-    frecuencia: Int
+    frecuencia: Int,
+    diasDescanso: Int,
+    dificultad: String
 ) {
     Column(
         modifier = modifier.then(
-            Modifier
-                .width(172.dp)),
+            if (objetivo.isNotBlank()) {
+                Modifier.width(172.dp)
+            } else {
+                Modifier
+                    .width(250.dp)
+                    .padding(start = 12.dp, top = 10.dp)
+            }
+        ),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start
     )
@@ -91,24 +100,25 @@ fun DatosRutina(
         Row()
         {
             Text(
-                text = objetivo + " | ",
+                text = if (objetivo.isNotBlank()) "$objetivo | " else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.secondary,
+                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 fontStyle = FontStyle.Normal
             )
 
 
             Text(
-                text = "Frecuencia $frecuencia",
+                text = "Frecuencia $frecuencia" + if(objetivo.isBlank()) " | Descanso $diasDescanso Dias | $dificultad" else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.secondary,
+                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                fontStyle = FontStyle.Normal
+                fontStyle = FontStyle.Normal,
+
             )
         }
 
@@ -127,11 +137,14 @@ fun ContenidoPrincipalCardRutina(
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
     modifier: Modifier = Modifier,
-    onVerRutinaClicked : () -> Unit,
-    onRutinaClicked: (Int) -> Unit
-) {
+    onVerRutinaClicked: () -> Unit? = {},
+
+    )
+{
     Box(
         Modifier
+            //.padding(10.dp)
+            .height(90.dp)
             .fillMaxWidth()
             .background(
                 color = if (seleccionadoState) Color(0xFFDAB338) else Color(0xFFDCCEA2),
@@ -160,51 +173,58 @@ fun ContenidoPrincipalCardRutina(
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
-                Box(
-                    modifier = Modifier
-                        .size(80.dp, 80.dp)
-                        .padding(8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    val imageResource = when (rutinaUiState.objetivo) {
-                        "Hipertrofia" -> R.drawable.hipertrofia
-                        "Definicion" -> R.drawable.definicion
-                        "Mantenimiento" -> R.drawable.mantenimiento
-                        // Añade más objetivos si es necesario
-                        else -> R.drawable.hipertrofia
-                    }
-                    Image(
+                if (rutinaUiState.objetivo.isNotBlank()) {
+                    Box(
                         modifier = Modifier
-                            .clip(CircleShape)
-                            .aspectRatio(ratio = 1f)
-                            .background(Color.White)
-                            .border(
-                                width = 1.dp,
-                                color = Color.White,
-                                shape = CircleShape
-                            ),
-                        contentScale = ContentScale.Crop,
-                        painter = painterResource(id = imageResource),
-                        contentDescription = "Imagen objetivo"
-                    )
+                            .size(80.dp, 80.dp)
+                            .padding(8.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        val imageResource = when (rutinaUiState.objetivo) {
+                            "Hipertrofia" -> R.drawable.hipertrofia
+                            "Definicion" -> R.drawable.definicion
+                            "Mantenimiento" -> R.drawable.mantenimiento
+                            // Añade más objetivos si es necesario
+                            else -> R.drawable.hipertrofia
+                        }
 
+                        Image(
+                            modifier = Modifier
+                                .clip(CircleShape)
+                                .aspectRatio(ratio = 1f)
+                                .background(Color.White)
+                                .border(
+                                    width = 1.dp,
+                                    color = Color.White,
+                                    shape = CircleShape
+                                ),
+                            contentScale = ContentScale.Crop,
+                            painter = painterResource(id = imageResource),
+                            contentDescription = "Imagen objetivo"
+                        )
+
+                    }
                 }
                 DatosRutina(
                     modifier = Modifier,
                     titulo = rutinaUiState.titulo,
-                    descripcion = rutinaUiState.descripcion,
                     objetivo = rutinaUiState.objetivo,
                     frecuencia = rutinaUiState.frecuencia,
+                    diasDescanso = rutinaUiState.diasDescanso,
+                    dificultad = rutinaUiState.dificultad
                 )
                 //Spacer(modifier = Modifier.width(12.dp))
                 //Text(modifier = Modifier.padding(top = 60.dp) ,text = "Ver más", style = MaterialTheme.typography.labelMedium, color = Color.White)
-                if(seleccionadoState)
-                {
+                if (seleccionadoState) {
                     Box(modifier = Modifier.size(70.dp))
                     {
-                        Icon(Icons.Filled.ArrowForwardIos, contentDescription = "Flecha Derecha", tint = Color.White,
-                            modifier = Modifier.padding(top = 28.dp, start = 25.dp)
-                                .clickable { //onRutinaClicked(rutinaUiState.rutinaid)
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowForwardIos,
+                            contentDescription = "Flecha Derecha",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .padding(top = 28.dp, start = 25.dp)
+                                .clickable {
                                     onVerRutinaClicked()
                                 })
                     }
@@ -218,8 +238,48 @@ fun ContenidoPrincipalCardRutina(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+fun RutinasListItem2(
+    onVerRutinaClicked: () -> Unit? = {},
+    modifier: Modifier = Modifier,
+    rutinaUiState: RoutinesUiState,
+    seleccionadoState: Boolean,
+    onRutinaClicked: (Int) -> Unit,
+
+
+    ) {
+
+
+    ElevatedCard(
+        onClick = { onRutinaClicked(rutinaUiState.rutinaid) },
+        modifier = modifier.then(
+            Modifier
+                .animateContentSize(
+                    animationSpec = tween(
+                        durationMillis = 300,
+                        easing = LinearOutSlowInEasing
+                    )
+                )
+                .padding(6.dp)
+        ),
+    ) {
+
+        val context = LocalContext.current
+
+        Row() {
+            ContenidoPrincipalCardRutina(
+                rutinaUiState = rutinaUiState,
+                seleccionadoState = seleccionadoState,
+                onVerRutinaClicked = onVerRutinaClicked
+            )
+        }
+    }
+
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun RutinasListItem(
-    onVerRutinaClicked : () -> Unit,
+    onVerRutinaClicked: () -> Unit,
     modifier: Modifier = Modifier,
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
@@ -248,12 +308,10 @@ fun RutinasListItem(
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
                 seleccionadoState = seleccionadoState,
-                onVerRutinaClicked = onVerRutinaClicked,
-                onRutinaClicked = onRutinaClicked
+                onVerRutinaClicked = onVerRutinaClicked
             )
             if (seleccionadoState)
                 AccionesRutina(
-
                     onDeleteClicked = onDeleteClicked,
                     onCompartirClicked = { }
                 )

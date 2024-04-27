@@ -50,7 +50,9 @@ fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
     titulo = this.titulo,
     descripcion = this.descripcion,
     objetivo = "",
-    frecuencia = this.frecuencia
+    frecuencia = this.frecuencia,
+    diasDescanso = this.diasDescanso,
+    dificultad = this.dificultad
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,

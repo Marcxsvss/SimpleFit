@@ -98,19 +98,25 @@ fun RutinasEntity.toRutina(): Rutinas = Rutinas(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
-    frecuencia = this.frecuencia
+    frecuencia = this.frecuencia,
+    diasDescanso = this.diasDescanso,
+    dificultad = this.dificultad
 )
 fun RutinasMock.toRutina(): Rutinas = Rutinas(
     this.rutinaid,
     this.titulo,
     this.descripcion,
-    this.frecuencia
+    this.frecuencia,
+    this.diasDescanso,
+    this.dificultad
 )
 fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
-    frecuencia = this.frecuencia
+    frecuencia = this.frecuencia,
+    diasDescanso = this.diasDescanso,
+    dificultad = this.dificultad
 )
 fun MaquinasMock.toMaquina(): Maquina = Maquina(
     maquinaid = this.maquinaid,

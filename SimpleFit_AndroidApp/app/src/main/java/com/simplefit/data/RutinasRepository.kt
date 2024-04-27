@@ -31,6 +31,9 @@ class RutinasRepository @Inject constructor(
                 rc.copy(objetivo = rutinasUserList.find { it.rutinaid == rc.rutinaid }!!.objetivo)
             }
         }
+    suspend fun get(): List<Rutinas> = withContext(Dispatchers.IO) {
+        rutinasDao.get().map { it.toRutina() }
+    }
 
 
     suspend fun update(rutina: Rutinas) = withContext(Dispatchers.IO) {

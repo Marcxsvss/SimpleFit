@@ -27,11 +27,18 @@ fun NavGraphBuilder.addRutinaScreen(
                 type = NavType.StringType
             }
         )) {
-        AddRutinaScreen(addRutinaState = addRutinaViewModel.addRutinaUiState, onAddRutinaEvent = addRutinaViewModel::onAddRutinaEvent)
+        AddRutinaScreen(
+            rutinasState = addRutinaViewModel.rutinasState,
+            rutinaSeleccionadaState = addRutinaViewModel.rutinaUiState,
+            onAddRutinaEvent = addRutinaViewModel::onAddRutinaEvent,
+            mostrarDialog = addRutinaViewModel.mostrarDialog,
+            onMostrarDialog = addRutinaViewModel.onMostrarDialog
+        )
     }
 
 }
-fun NavController.navigateToAddRutina(userid: String,navOptions: NavOptions? = null){
+
+fun NavController.navigateToAddRutina(userid: String, navOptions: NavOptions? = null) {
     val ruta = AddRutinaRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$userid", navOptions)

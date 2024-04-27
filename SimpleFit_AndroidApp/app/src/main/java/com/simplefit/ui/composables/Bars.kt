@@ -68,7 +68,7 @@ fun NavBar(
     NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFDAB338/*0xFFdbc06d*/)) {
         listItemsIconButtons.forEachIndexed { index, button ->
             NavigationBarItem(
-                icon = { Icon(imageVector = button.icon, contentDescription = button.title) },
+                icon = { Icon(imageVector = button.icon, contentDescription = button.title,tint = Color(0xFF3C4932)) },
                 label = { },
                 selected = selectedItem == index,
                 onClick = { button.onClick()

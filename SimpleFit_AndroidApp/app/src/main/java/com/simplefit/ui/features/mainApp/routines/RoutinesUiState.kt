@@ -8,6 +8,8 @@ data class RoutinesUiState(
     val descripcion : String,
     val objetivo : String,
     val frecuencia : Int,
+    val diasDescanso : Int,
+    val dificultad : String
 
     ) {
 
@@ -18,6 +20,8 @@ data class RoutinesUiState(
         "",
         "",
         0,
+        0,
+        ""
         )
 }
 

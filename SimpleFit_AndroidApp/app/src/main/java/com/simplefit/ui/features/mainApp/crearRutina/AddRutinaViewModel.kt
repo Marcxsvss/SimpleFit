@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,22 +20,54 @@ class AddRutinaViewModel @Inject constructor(
 ) : ViewModel() {
     var addRutinaUiState by mutableStateOf(AddRutinaUiState())
         private set
+    var rutinaUiState by mutableStateOf(RoutinesUiState())
+        private set
+    var rutinasState by mutableStateOf(listOf<RoutinesUiState>())
+        private set
     fun setRutinas(userid : String)
     {
         viewModelScope.launch {
-            addRutinaUiState = addRutinaUiState.copy(rutinas = rutinasRepository.get(userid))
+            //addRutinaUiState = addRutinaUiState.copy(rutinas = rutinasRepository.get(userid))
+            rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }
         }
     }
+    var mostrarDialog by mutableStateOf(false)
+
+    val onMostrarDialog: (Boolean) -> Unit by mutableStateOf({
+        mostrarDialog = it
+    })
     fun onAddRutinaEvent(addRutinaEvent: AddRutinaEvent) {
         when (addRutinaEvent) {
             is AddRutinaEvent.onVolverAtras -> {
-
+                addRutinaEvent.onNavigateToRutinas
             }
             is AddRutinaEvent.onTodasClicked -> {
+                viewModelScope.launch {
+                    rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }
+                }
 
             }
-            is AddRutinaEvent.onRecomendadasClicked -> {
+            is AddRutinaEvent.onFiltroClicked -> {
+                viewModelScope.launch {
+                    rutinasState = listOf()
+                    mostrarDialog = true
+                }
+            }
+            is AddRutinaEvent.onUnSelectClicked -> {
+                rutinaUiState = RoutinesUiState()
+            }
+            is AddRutinaEvent.onOrdenarPorFrecuencia -> {
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.frecuencia } }
+            }
+            is AddRutinaEvent.onOrdenarPorDificultad -> {
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.dificultad } }
 
+            }
+            is AddRutinaEvent.onOrdenarPorDescanso -> {
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.diasDescanso } }
+            }
+            is AddRutinaEvent.onRutinaClicked -> {
+                rutinaUiState = rutinasState.find { it.rutinaid == addRutinaEvent.rutinaid }!!
             }
 
             else -> {}
