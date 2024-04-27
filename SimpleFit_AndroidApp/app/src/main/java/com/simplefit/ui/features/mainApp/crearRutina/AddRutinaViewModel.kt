@@ -49,7 +49,6 @@ class AddRutinaViewModel @Inject constructor(
             }
             is AddRutinaEvent.onFiltroClicked -> {
                 viewModelScope.launch {
-                    rutinasState = listOf()
                     mostrarDialog = true
                 }
             }
@@ -68,6 +67,11 @@ class AddRutinaViewModel @Inject constructor(
             }
             is AddRutinaEvent.onRutinaClicked -> {
                 rutinaUiState = rutinasState.find { it.rutinaid == addRutinaEvent.rutinaid }!!
+            }
+            is AddRutinaEvent.onVerClicked -> {
+                addRutinaEvent.onNavigateToVerRutina?.let { it(rutinaUiState) }
+
+
             }
 
             else -> {}

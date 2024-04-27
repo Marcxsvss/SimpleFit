@@ -111,7 +111,7 @@ fun DatosRutina(
 
 
             Text(
-                text = "Frecuencia $frecuencia" + if(objetivo.isBlank()) " | Descanso $diasDescanso Dias | $dificultad" else "",
+                text = "Frecuencia $frecuencia" + if(objetivo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -127,7 +127,6 @@ fun DatosRutina(
 
 
 }
-
 @OptIn(ExperimentalLayoutApi::class)
 // Muestra la imagen del contacto, los datos del contacto y un perqueño
 // icono que tendrá una animación de rotación cuando el contacto esté
@@ -137,8 +136,7 @@ fun ContenidoPrincipalCardRutina(
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
     modifier: Modifier = Modifier,
-    onVerRutinaClicked: () -> Unit? = {},
-
+    onVerRutinaClicked: () -> Unit? = {}
     )
 {
     Box(
@@ -157,7 +155,6 @@ fun ContenidoPrincipalCardRutina(
             )
     )
     {
-
         Row(
             modifier = modifier.then(
                 Modifier
@@ -187,7 +184,6 @@ fun ContenidoPrincipalCardRutina(
                             // Añade más objetivos si es necesario
                             else -> R.drawable.hipertrofia
                         }
-
                         Image(
                             modifier = Modifier
                                 .clip(CircleShape)
@@ -202,7 +198,6 @@ fun ContenidoPrincipalCardRutina(
                             painter = painterResource(id = imageResource),
                             contentDescription = "Imagen objetivo"
                         )
-
                     }
                 }
                 DatosRutina(
@@ -243,9 +238,7 @@ fun RutinasListItem2(
     modifier: Modifier = Modifier,
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
-    onRutinaClicked: (Int) -> Unit,
-
-
+    onRutinaClicked: (Int) -> Unit
     ) {
 
 
@@ -265,7 +258,7 @@ fun RutinasListItem2(
 
         val context = LocalContext.current
 
-        Row() {
+        Row{
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
                 seleccionadoState = seleccionadoState,

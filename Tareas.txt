@@ -16,6 +16,8 @@ Para asignar las maquinas a las rutinas, podemos hacer que coja 3,2 o 1 dependie
 
 Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
 
+Al hacer el get en el viewmodel de rutinas y de de AddRutinas, al pasarlo a UiState, la funcion de paso debe tener un parametro estado, y si el get se ha hecho desde rutinas, el parametro estado sera Added, y si el get se hace desde Add, el parametro será unAdded, todo esto para que al navegar a verRutina, dependiendo si es para añadir o para hecharle un vistazo desde rutinas, si es desde añadir, saldrán dos botones uno de añadir rutina a rutinas y otro de volver, para volver a la pantalla de añadir rutinas, creo que en vez de pasarle rutinaid en la navegacion voy a tener que pasarle RutinaUiState ya que este contendrá la propiedad Estado.
+
 
 
 
