@@ -28,7 +28,7 @@ class AddRutinaViewModel @Inject constructor(
     {
         viewModelScope.launch {
             //addRutinaUiState = addRutinaUiState.copy(rutinas = rutinasRepository.get(userid))
-            rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }
+            rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }
         }
     }
     var mostrarDialog by mutableStateOf(false)
@@ -43,9 +43,8 @@ class AddRutinaViewModel @Inject constructor(
             }
             is AddRutinaEvent.onTodasClicked -> {
                 viewModelScope.launch {
-                    rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }
+                    rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }
                 }
-
             }
             is AddRutinaEvent.onFiltroClicked -> {
                 viewModelScope.launch {
@@ -56,22 +55,19 @@ class AddRutinaViewModel @Inject constructor(
                 rutinaUiState = RoutinesUiState()
             }
             is AddRutinaEvent.onOrdenarPorFrecuencia -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.frecuencia } }
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.frecuencia } }
             }
             is AddRutinaEvent.onOrdenarPorDificultad -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.dificultad } }
-
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.dificultad } }
             }
             is AddRutinaEvent.onOrdenarPorDescanso -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState() }.sortedBy { it.diasDescanso } }
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.diasDescanso } }
             }
             is AddRutinaEvent.onRutinaClicked -> {
                 rutinaUiState = rutinasState.find { it.rutinaid == addRutinaEvent.rutinaid }!!
             }
             is AddRutinaEvent.onVerClicked -> {
-                addRutinaEvent.onNavigateToVerRutina?.let { it(rutinaUiState) }
-
-
+                addRutinaEvent.onNavigateToVerRutina?.let {it(rutinaUiState)}
             }
 
             else -> {}

@@ -5,7 +5,7 @@ import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 sealed interface AddRutinaEvent {
     data class onVolverAtras (val onNavigateToRutinas:(()->Unit)?) : AddRutinaEvent
-    data class onVerClicked(val onNavigateToVerRutina:((rutinaid:RoutinesUiState)->Unit)?, var estado : String) : AddRutinaEvent
+    data class onVerClicked(val onNavigateToVerRutina:((rutinaid:RoutinesUiState)->Unit)?) : AddRutinaEvent
     data object onTodasClicked : AddRutinaEvent
 
     data object onUnSelectClicked : AddRutinaEvent

@@ -23,13 +23,13 @@ class RutinasRepository @Inject constructor(
     suspend fun get(userid: String): List<RoutinesUiState> =
         withContext(Dispatchers.IO)
         {
-            val rutinasUserList = usuarioRutinasRepository.get(userid)
-            val rutinas = rutinasDao.get().filter { r ->
-                r.rutinaid in rutinasUserList.map { it.rutinaid }
-            }.map { it.toRutina().toRutinasUiState() }
-            rutinas.map { rc ->
-                rc.copy(objetivo = rutinasUserList.find { it.rutinaid == rc.rutinaid }!!.objetivo)
-            }
+//            val rutinasUserList = usuarioRutinasRepository.get(userid)
+            rutinasDao.get().filter { r ->
+                r.rutinaid in usuarioRutinasRepository.get(userid).map { it.rutinaid }
+            }.map { it.toRutina().toRutinasUiState("Added") }
+//            rutinas.map { rc ->
+//                rc.copy(objetivo = rutinasUserList.find { it.rutinaid == rc.rutinaid }!!.objetivo)
+//            }
         }
     suspend fun get(): List<Rutinas> = withContext(Dispatchers.IO) {
         rutinasDao.get().map { it.toRutina() }

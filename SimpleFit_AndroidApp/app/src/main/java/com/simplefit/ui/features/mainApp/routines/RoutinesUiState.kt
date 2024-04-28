@@ -6,7 +6,6 @@ data class RoutinesUiState(
     val rutinaid: Int,
     val titulo : String,
     val descripcion : String,
-    val objetivo : String,
     val frecuencia : Int,
     val diasDescanso : Int,
     val dificultad : String,
@@ -17,7 +16,6 @@ data class RoutinesUiState(
 
     constructor() : this(
         0,
-        "",
         "",
         "",
         0,

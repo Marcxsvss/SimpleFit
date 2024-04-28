@@ -74,7 +74,7 @@ fun RoutinesScreen(
                         contentDescription = "Añadir Plan de Entrenamiento/Alimenticio",
                     )
                 }
-                if (rutinaSeleccionadaState!!.objetivo.isNotBlank()) {
+                if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
                     IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked(rutinaSeleccionadaState.rutinaid))})
                     {
                         Icon(

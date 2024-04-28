@@ -127,15 +127,37 @@ fun AddRutinaScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         )
         {
-            Text(
-                modifier = Modifier.padding(10.dp),
-                text = "AÑADIR RUTINA",
-                color = Color(0xFFDAB338),
-                fontSize = 30.sp,
-                fontFamily = FontFamily(
-                    Font(resId = R.font.roboto_blackitalic)
+            Row() {
+                Button(
+                    onClick = {  },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor
+                        = Color(0xFFDAB338)
+                    )
+                ) {
+                    Text("Volver")
+                }
+                Text(
+                    modifier = Modifier.padding(10.dp),
+                    text = "AÑADIR RUTINA",
+                    color = Color(0xFFDAB338),
+                    fontSize = 30.sp,
+                    fontFamily = FontFamily(
+                        Font(resId = R.font.roboto_blackitalic)
+                    )
                 )
-            )
+                Button(
+                    onClick = {  },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor
+                        = Color(0xFFDAB338)
+                    )
+                ) {
+                    Text("Añadir")
+                }
+
+            }
+
             Row()
             {
                 CloudButton(

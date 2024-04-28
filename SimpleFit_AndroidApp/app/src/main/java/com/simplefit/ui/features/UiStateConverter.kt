@@ -45,15 +45,14 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     ""
 )
-fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
+fun Rutinas.toRutinasUiState(estado : String): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
-    objetivo = "",
     frecuencia = this.frecuencia,
     diasDescanso = this.diasDescanso,
     dificultad = this.dificultad,
-    estado = "UnAdded"
+    estado = estado
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,

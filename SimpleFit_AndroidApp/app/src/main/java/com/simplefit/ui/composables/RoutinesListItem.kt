@@ -67,14 +67,13 @@ import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 fun DatosRutina(
     modifier: Modifier = Modifier,
     titulo: String,
-    objetivo: String,
     frecuencia: Int,
     diasDescanso: Int,
     dificultad: String
 ) {
     Column(
         modifier = modifier.then(
-            if (objetivo.isNotBlank()) {
+            if (titulo.isNotBlank()) {
                 Modifier.width(172.dp)
             } else {
                 Modifier
@@ -100,7 +99,7 @@ fun DatosRutina(
         Row()
         {
             Text(
-                text = if (objetivo.isNotBlank()) "$objetivo | " else "",
+                text = if (titulo.isNotBlank()) "$dificultad | " else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -111,7 +110,7 @@ fun DatosRutina(
 
 
             Text(
-                text = "Frecuencia $frecuencia" + if(objetivo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
+                text = "Frecuencia $frecuencia" + if(titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -170,17 +169,17 @@ fun ContenidoPrincipalCardRutina(
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
-                if (rutinaUiState.objetivo.isNotBlank()) {
+                if (rutinaUiState.descripcion.isNotBlank()) {
                     Box(
                         modifier = Modifier
                             .size(80.dp, 80.dp)
                             .padding(8.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        val imageResource = when (rutinaUiState.objetivo) {
-                            "Hipertrofia" -> R.drawable.hipertrofia
-                            "Definicion" -> R.drawable.definicion
-                            "Mantenimiento" -> R.drawable.mantenimiento
+                        val imageResource = when (rutinaUiState.dificultad) {
+                            "Intermedio" -> R.drawable.hipertrofia
+                            "Avanzado" -> R.drawable.definicion
+                            "Principiante" -> R.drawable.mantenimiento
                             // Añade más objetivos si es necesario
                             else -> R.drawable.hipertrofia
                         }
@@ -203,7 +202,6 @@ fun ContenidoPrincipalCardRutina(
                 DatosRutina(
                     modifier = Modifier,
                     titulo = rutinaUiState.titulo,
-                    objetivo = rutinaUiState.objetivo,
                     frecuencia = rutinaUiState.frecuencia,
                     diasDescanso = rutinaUiState.diasDescanso,
                     dificultad = rutinaUiState.dificultad
