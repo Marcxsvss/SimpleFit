@@ -8,19 +8,19 @@ class UsuarioRutinaDaoMock @Inject constructor() {
             userid = "marcos@gmail.com",
             rutinaid = 1,
             nombre = "Rutina 1",
-            objetivo = "Definicion"
+
         ),
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
             rutinaid = 2,
             nombre = "Rutina 2",
-            objetivo = "Hipertrofia"
+
         ),
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
             rutinaid = 3,
             nombre = "Rutina 3",
-            objetivo = "Mantenimiento"
+
         )
     )
 

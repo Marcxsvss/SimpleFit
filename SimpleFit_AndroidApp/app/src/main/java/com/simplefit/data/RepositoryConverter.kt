@@ -140,8 +140,7 @@ fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
 fun UsuarioRutinaMock.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
     userid = this.userid,
     rutinaid = this.rutinaid,
-    nombre = this.nombre,
-    objetivo = this.objetivo
+    nombre = this.nombre
 )
 fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEntity(
     rutinaid = this.rutinaid,
@@ -153,13 +152,11 @@ fun UsuarioRutina.toUsuarioRutinaEntity() = UsuarioRutinaEntity(
     userid = this.userid,
     rutinaid = this.rutinaid,
     nombre = this.nombre,
-    objetivo = this.objetivo
 )
 
 fun UsuarioRutinaEntity.toUsuarioRutina() = UsuarioRutina(
     userid = this.userid,
     rutinaid = this.rutinaid,
-    nombre = this.nombre,
-    objetivo = this.objetivo
+    nombre = this.nombre
 )
 //endregion

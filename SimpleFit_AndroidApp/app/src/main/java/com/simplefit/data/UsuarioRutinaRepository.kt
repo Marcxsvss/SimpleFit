@@ -12,7 +12,7 @@ class UsuarioRutinaRepository@Inject constructor(private val usuarioRutinaDao: U
         {
             usuarioRutinaDao.get(userid).map { it.toUsuarioRutina() }
         }
-    suspend fun insert(rutina: UsuarioRutina, userid: String) = withContext(Dispatchers.IO) {
+    suspend fun insert(rutina: UsuarioRutina) = withContext(Dispatchers.IO) {
         usuarioRutinaDao.insert(rutina.toUsuarioRutinaEntity())
     }
 }

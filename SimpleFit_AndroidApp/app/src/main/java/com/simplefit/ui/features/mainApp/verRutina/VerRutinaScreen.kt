@@ -38,6 +38,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
 import androidx.compose.material.icons.filled.Face2
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.mutableStateOf
@@ -52,6 +53,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import com.simplefit.R
 import com.simplefit.ui.composables.DescansoScreen
+import com.simplefit.ui.features.mainApp.routines.RoutinesEvent
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import java.util.Calendar
 
 fun obtenerDiaDeLaSemana(): String {
@@ -69,7 +72,9 @@ fun VerRoutinesScreen(
     diaSeleccionado: String,
     mostrarDialog: Boolean,
     onMostrarDialog: (Boolean) -> Unit,
-    maquinaUiState: MaquinaUiState
+    maquinaUiState: MaquinaUiState,
+    onNavigateToAddRutina: () -> Unit,
+    onNavigateToRutina: ((userid: String) -> Unit)? = null
 ) {
 
     val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
@@ -126,6 +131,38 @@ fun VerRoutinesScreen(
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
                 )
+                if(verRutinaState.estado == "UnAdded")
+                {
+                    Row(
+                        verticalAlignment =  Alignment.CenterVertically,
+                    )
+                    {
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onNavigateToAddRutina() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFFC29F6C)
+                            )
+                        ) {
+                            Text("Volver")
+                        }
+
+
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onVerRutinaEvent(VerRutinaEvent.onAddRutina(onNavigateToRutina)) },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFF89602F)
+                            )
+                        ) {
+                            Text("Añadir")
+                        }
+
+                    }
+                }
+                ///////////////
                 Spacer(modifier = Modifier.height(15.dp))
                 Row( //Las bolas de los dias de la semana
                     Modifier

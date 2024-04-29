@@ -127,36 +127,16 @@ fun AddRutinaScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         )
         {
-            Row() {
-                Button(
-                    onClick = {  },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor
-                        = Color(0xFFDAB338)
-                    )
-                ) {
-                    Text("Volver")
-                }
-                Text(
-                    modifier = Modifier.padding(10.dp),
-                    text = "AÑADIR RUTINA",
-                    color = Color(0xFFDAB338),
-                    fontSize = 30.sp,
-                    fontFamily = FontFamily(
-                        Font(resId = R.font.roboto_blackitalic)
-                    )
+            Text(
+                modifier = Modifier.padding(10.dp),
+                text = "AÑADIR RUTINA",
+                color = Color(0xFFDAB338),
+                fontSize = 30.sp,
+                fontFamily = FontFamily(
+                    Font(resId = R.font.roboto_blackitalic)
                 )
-                Button(
-                    onClick = {  },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor
-                        = Color(0xFFDAB338)
-                    )
-                ) {
-                    Text("Añadir")
-                }
+            )
 
-            }
 
             Row()
             {
@@ -164,7 +144,7 @@ fun AddRutinaScreen(
                     texto = "TODAS",
                     onTodasClicked = { onAddRutinaEvent(AddRutinaEvent.onTodasClicked) }
                 )
-                Spacer(modifier = Modifier.width(10.dp))
+                Spacer(modifier = Modifier.width(20.dp))
                 CloudButton(
                     texto = "FILTROS",
                     onFiltroClicked = { onAddRutinaEvent(AddRutinaEvent.onFiltroClicked) }

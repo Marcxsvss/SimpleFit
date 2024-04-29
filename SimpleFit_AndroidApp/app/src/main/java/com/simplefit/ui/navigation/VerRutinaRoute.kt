@@ -18,6 +18,8 @@ const val VerRutinaParameterName = "rutinaid"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.verRutinaScreen(
     verRutinaViewModel: VerRutinaViewModel,
+    onNavigateToAddRutina: () -> Unit,
+    onNavigateToRutina: ((userid: String) -> Unit)? = null
 ) {
     composable(
         route = "$VerRutinaRoute/{$VerRutinaParameterName}",
@@ -37,7 +39,9 @@ fun NavGraphBuilder.verRutinaScreen(
             diaSeleccionado = verRutinaViewModel.diaSeleccionado,
             onMostrarDialog = verRutinaViewModel.onMostrarDialog,
             mostrarDialog = verRutinaViewModel.mostrarDialog,
-            maquinaUiState = verRutinaViewModel.maquinaUiState)
+            maquinaUiState = verRutinaViewModel.maquinaUiState,
+            onNavigateToAddRutina = onNavigateToAddRutina,
+            onNavigateToRutina = onNavigateToRutina)
     }
 
 }

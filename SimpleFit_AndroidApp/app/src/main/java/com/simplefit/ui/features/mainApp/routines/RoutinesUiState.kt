@@ -1,7 +1,10 @@
 package com.simplefit.ui.features.mainApp.routines
 
+import android.os.Parcelable
 import com.simplefit.models.Rutinas
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class RoutinesUiState(
     val rutinaid: Int,
     val titulo : String,
@@ -9,9 +12,10 @@ data class RoutinesUiState(
     val frecuencia : Int,
     val diasDescanso : Int,
     val dificultad : String,
-    val estado : String
+    val estado : String,
+    val userid : String
 
-    ) {
+    ) : Parcelable {
 
 
     constructor() : this(
@@ -20,8 +24,9 @@ data class RoutinesUiState(
         "",
         0,
         0,
+        "",
+        "",
         ""
-        ,""
         )
 }
 

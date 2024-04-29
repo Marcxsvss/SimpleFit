@@ -15,20 +15,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddRutinaViewModel @Inject constructor(
-    private val usuarioRepository: UsuarioRepository,
     private val rutinasRepository: RutinasRepository
 ) : ViewModel() {
-    var addRutinaUiState by mutableStateOf(AddRutinaUiState())
-        private set
     var rutinaUiState by mutableStateOf(RoutinesUiState())
         private set
     var rutinasState by mutableStateOf(listOf<RoutinesUiState>())
         private set
+    var userid by mutableStateOf("")
+    private set
     fun setRutinas(userid : String)
     {
+        this.userid = userid
         viewModelScope.launch {
-            //addRutinaUiState = addRutinaUiState.copy(rutinas = rutinasRepository.get(userid))
-            rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }
+            rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }
         }
     }
     var mostrarDialog by mutableStateOf(false)
@@ -43,7 +42,7 @@ class AddRutinaViewModel @Inject constructor(
             }
             is AddRutinaEvent.onTodasClicked -> {
                 viewModelScope.launch {
-                    rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }
+                    rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }
                 }
             }
             is AddRutinaEvent.onFiltroClicked -> {
@@ -55,19 +54,20 @@ class AddRutinaViewModel @Inject constructor(
                 rutinaUiState = RoutinesUiState()
             }
             is AddRutinaEvent.onOrdenarPorFrecuencia -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.frecuencia } }
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }.sortedBy { it.frecuencia } }
             }
             is AddRutinaEvent.onOrdenarPorDificultad -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.dificultad } }
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }.sortedBy { it.dificultad } }
             }
             is AddRutinaEvent.onOrdenarPorDescanso -> {
-                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded") }.sortedBy { it.diasDescanso } }
+                viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }.sortedBy { it.diasDescanso } }
             }
             is AddRutinaEvent.onRutinaClicked -> {
                 rutinaUiState = rutinasState.find { it.rutinaid == addRutinaEvent.rutinaid }!!
             }
             is AddRutinaEvent.onVerClicked -> {
-                addRutinaEvent.onNavigateToVerRutina?.let {it(rutinaUiState)}
+                addRutinaEvent.onNavigateToVerRutina?.let { it(rutinaUiState) }
+
             }
 
             else -> {}

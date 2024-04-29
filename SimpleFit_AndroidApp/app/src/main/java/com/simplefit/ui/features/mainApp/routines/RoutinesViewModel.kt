@@ -14,7 +14,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
-    private val usuarioRepository: UsuarioRepository,
     private val rutinasRepository : RutinasRepository
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())
@@ -43,7 +42,7 @@ class RoutinesViewModel @Inject constructor(
             is RoutinesEvent.onVerClicked -> {
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
-            is RoutinesEvent.onDeleteClicked -> {
+            is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los rregistros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
                 viewModelScope.launch {
                     rutinasRepository.delete(routinesEvent.rutinaid)
                     routinesList = routinesList.toMutableList().apply {

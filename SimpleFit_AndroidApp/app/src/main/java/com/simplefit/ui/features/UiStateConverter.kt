@@ -7,6 +7,7 @@ import com.pmdm.agenda.utilities.imagenes.Imagenes
 import com.simplefit.models.Maquina
 import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
+import com.simplefit.models.UsuarioRutina
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.mainApp.verRutina.MaquinaUiState
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaUiState
@@ -45,21 +46,23 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     ""
 )
-fun Rutinas.toRutinasUiState(estado : String): RoutinesUiState = RoutinesUiState(
+fun Rutinas.toRutinasUiState(state : String,userid : String = ""): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
     frecuencia = this.frecuencia,
     diasDescanso = this.diasDescanso,
     dificultad = this.dificultad,
-    estado = estado
+    estado = state,
+    userid= userid
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo.ifBlank { "Plan de Entrenamiento" },
     descripcion =if(this.descripcion.isBlank()) "Descanso" else this.descripcion,
-    listOf(),
-    frecuencia = this.frecuencia
+    ejercicio = listOf(),
+    frecuencia = this.frecuencia,
+    estado = this.estado
 )
 fun Maquina.toMaquinaUiState() = MaquinaUiState(
     maquinaid = this.maquinaid,
@@ -68,6 +71,11 @@ fun Maquina.toMaquinaUiState() = MaquinaUiState(
     imagen = this.imagen?.let { Imagenes.base64ToBitmap(it) },
     musculo = this.musculo
 )
+fun VerRutinaUiState.toUsuarioRutina(userid : String) = UsuarioRutina(
+    userid = userid,
+    rutinaid = this.rutinaid,
+    nombre = this.titulo)
+
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()
 //
 //fun Usuario.toUsuarioUiState():LoginUiState= LoginUiState(login,password,true,likeds)
