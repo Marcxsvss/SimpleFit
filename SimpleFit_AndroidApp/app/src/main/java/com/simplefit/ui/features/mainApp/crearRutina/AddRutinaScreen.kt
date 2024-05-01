@@ -136,8 +136,6 @@ fun AddRutinaScreen(
                     Font(resId = R.font.roboto_blackitalic)
                 )
             )
-
-
             Row()
             {
                 CloudButton(
@@ -150,7 +148,7 @@ fun AddRutinaScreen(
                     onFiltroClicked = { onAddRutinaEvent(AddRutinaEvent.onFiltroClicked) }
                 )
             }
-            Box(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.fillMaxSize()){
                 LazyColumn(
                     contentPadding = PaddingValues(all = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(4.dp)
