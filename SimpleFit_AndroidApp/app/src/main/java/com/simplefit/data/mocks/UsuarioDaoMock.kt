@@ -14,7 +14,8 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "16-28",
             sexo = "Masculino",
             somatotipo = "ectomorfo",
-            intolerancia = "Lactosa"
+            intolerancia = "Lactosa",
+            rutinaState = 2
         ),
     )
 

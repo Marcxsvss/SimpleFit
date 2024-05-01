@@ -8,7 +8,7 @@ sealed interface RoutinesEvent {
 
     data class onAddClicked(val onNavigateToAddRutina:((userid:String)->Unit)?) : RoutinesEvent
 
-    data class onDeleteClicked(val rutinaid: Int) : RoutinesEvent
+    data object onDeleteClicked : RoutinesEvent
 
     data class  OnClickCrearRutina(val onNavigateProfile: () -> Unit): RoutinesEvent
 

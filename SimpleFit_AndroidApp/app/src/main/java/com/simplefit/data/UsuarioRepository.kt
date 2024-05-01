@@ -22,6 +22,10 @@ class UsuarioRepository @Inject constructor(
     suspend fun update(usuario: Usuario) = withContext(Dispatchers.IO) {
         usuarioDao.update(usuario.toUsuarioEntity())
     }
+    suspend fun updateRutinaState(userid: String, rutinaState: Int) = withContext(Dispatchers.IO) {
+        val usuario = usuarioDao.get(userid).copy(rutinaState = rutinaState)
+        usuarioDao.update(usuario)
+    }
 //    suspend fun delete(email: String) = withContext(Dispatchers.IO) {
 //        usuarioService.delete(email)
 //    }

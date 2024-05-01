@@ -31,10 +31,10 @@ class HomeViewModel @Inject constructor(
     fun onHomeEvent(homeEvent: HomeEvent) {
         when (homeEvent) {
 
-            is HomeEvent.onNavigateToScreen -> {
-                indexState = homeEvent.index
-            }
-            is HomeEvent.OnClickDailyCheck -> {
+//            is HomeEvent.onNavigateToScreen -> {
+//                indexState = homeEvent.index
+//            }
+            is HomeEvent.OnClickVerEntrenamiento -> {
                 viewModelScope.launch {
 
 

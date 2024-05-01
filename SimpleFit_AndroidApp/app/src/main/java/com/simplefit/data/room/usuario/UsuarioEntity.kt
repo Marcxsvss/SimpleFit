@@ -30,6 +30,8 @@ data class UsuarioEntity(
     @ColumnInfo(name="somatotipo")
     val somatotipo : String,
     @ColumnInfo(name="intolerancia")
-    val intolerancia : String?
+    val intolerancia : String?,
+    @ColumnInfo(name="rutinaState")
+    val rutinaState : Int?
 ) : Parcelable
 

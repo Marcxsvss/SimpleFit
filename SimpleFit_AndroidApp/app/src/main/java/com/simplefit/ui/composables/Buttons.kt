@@ -2,6 +2,7 @@ package com.simplefit.ui.composables
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
+import com.simplefit.ui.features.mainApp.home.HomeEvent
 
 @Composable
 fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked: () -> Unit? = {})
@@ -63,7 +65,7 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter)
+fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit )
 {
     Box( //Ver entrenamiento de hoy
         Modifier
@@ -82,6 +84,20 @@ fun HomeButton(texto : String,foto : Painter)
                     topStart = 10.dp
                 )
             )
+            .clickable {
+                if(texto == "VER ENTRENAMIENTO")
+                {
+                    onHomeEvent(HomeEvent.OnClickVerEntrenamiento("L"))
+                }
+                else if(texto == "CONSEJOS")
+                {
+
+                }
+                else
+                {
+                    //onHomeEvent(HomeEvent.)
+                }
+            }
     ) {
         Image(
             painter = foto,

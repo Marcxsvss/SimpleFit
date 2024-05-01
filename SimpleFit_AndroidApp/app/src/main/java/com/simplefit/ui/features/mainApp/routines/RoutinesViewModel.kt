@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.data.UsuarioRutinaRepository
 import com.simplefit.data.toRutinasEntity
 import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +15,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
-    private val rutinasRepository : RutinasRepository
+    private val rutinasRepository : RutinasRepository,
+    private val usuarioRutinaRepository: UsuarioRutinaRepository,
+    private val usuarioRepository: UsuarioRepository
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())
         private set
@@ -28,6 +31,7 @@ class RoutinesViewModel @Inject constructor(
         this.userid = userid
         viewModelScope.launch {
             routinesList = rutinasRepository.get(userid)
+            routinesUiState = RoutinesUiState()//igual hay que quitarlo
         }
 
     }
@@ -44,10 +48,12 @@ class RoutinesViewModel @Inject constructor(
             }
             is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los rregistros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
                 viewModelScope.launch {
-                    rutinasRepository.delete(routinesEvent.rutinaid)
-                    routinesList = routinesList.toMutableList().apply {
-                        remove(routinesList.find { it.rutinaid == routinesEvent.rutinaid })
-                    }
+                    usuarioRutinaRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
+//                    routinesList = routinesList.toMutableList().apply {
+//                        remove(routinesList.find { it.rutinaid == routinesUiState.rutinaid })
+//                    }
+                    routinesList = rutinasRepository.get(userid)
+                    usuarioRepository.updateRutinaState(userid,0)
                     routinesUiState = RoutinesUiState()
                 }
 

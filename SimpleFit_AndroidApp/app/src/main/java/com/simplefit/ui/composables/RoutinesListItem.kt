@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
+//import androidx.compose.foundation.layout.FlowColumnScopeInstance.align
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -69,7 +70,8 @@ fun DatosRutina(
     titulo: String,
     frecuencia: Int,
     diasDescanso: Int,
-    dificultad: String
+    dificultad: String,
+    estado : String
 ) {
     Column(
         modifier = modifier.then(
@@ -110,7 +112,7 @@ fun DatosRutina(
 
 
             Text(
-                text = "Frecuencia $frecuencia" + if(titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
+                text = "Frecuencia $frecuencia" + if (titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -118,14 +120,26 @@ fun DatosRutina(
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 fontStyle = FontStyle.Normal,
 
+                )
+        }
+        if (estado == "current") {
+            Text(
+                text = "ACTIVA",
+                color = Color(0xFF89602F),
+                fontSize = 15.sp,
+                fontStyle = FontStyle.Normal,
+                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                modifier = Modifier
+                    //.align(Alignment.Start)
+                    //.padding(bottom = 2.dp, start = 10.dp)
             )
         }
-
-        Spacer(modifier = Modifier.width(8.dp))
+        //Spacer(modifier = Modifier.width(8.dp))
     }
 
 
 }
+
 @OptIn(ExperimentalLayoutApi::class)
 // Muestra la imagen del contacto, los datos del contacto y un perqueño
 // icono que tendrá una animación de rotación cuando el contacto esté
@@ -136,11 +150,9 @@ fun ContenidoPrincipalCardRutina(
     seleccionadoState: Boolean,
     modifier: Modifier = Modifier,
     onVerRutinaClicked: () -> Unit? = {}
-    )
-{
+) {
     Box(
         Modifier
-            //.padding(10.dp)
             .height(90.dp)
             .fillMaxWidth()
             .background(
@@ -152,6 +164,8 @@ fun ContenidoPrincipalCardRutina(
                     topStart = 10.dp
                 )
             )
+
+//
     )
     {
         Row(
@@ -204,7 +218,8 @@ fun ContenidoPrincipalCardRutina(
                     titulo = rutinaUiState.titulo,
                     frecuencia = rutinaUiState.frecuencia,
                     diasDescanso = rutinaUiState.diasDescanso,
-                    dificultad = rutinaUiState.dificultad
+                    dificultad = rutinaUiState.dificultad,
+                    estado = rutinaUiState.estado
                 )
                 //Spacer(modifier = Modifier.width(12.dp))
                 //Text(modifier = Modifier.padding(top = 60.dp) ,text = "Ver más", style = MaterialTheme.typography.labelMedium, color = Color.White)
@@ -237,7 +252,7 @@ fun RutinasListItem2(
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
     onRutinaClicked: (Int) -> Unit
-    ) {
+) {
 
 
     ElevatedCard(
@@ -256,7 +271,7 @@ fun RutinasListItem2(
 
         val context = LocalContext.current
 
-        Row{
+        Row {
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
                 seleccionadoState = seleccionadoState,
@@ -275,10 +290,7 @@ fun RutinasListItem(
     rutinaUiState: RoutinesUiState,
     seleccionadoState: Boolean,
     onRutinaClicked: (Int) -> Unit,
-    onDeleteClicked: (Int) -> Unit
 ) {
-
-
     ElevatedCard(
         onClick = { onRutinaClicked(rutinaUiState.rutinaid) },
         modifier = modifier.then(
@@ -301,14 +313,9 @@ fun RutinasListItem(
                 seleccionadoState = seleccionadoState,
                 onVerRutinaClicked = onVerRutinaClicked
             )
-            if (seleccionadoState)
-                AccionesRutina(
-                    onDeleteClicked = onDeleteClicked,
-                    onCompartirClicked = { }
-                )
+
         }
     }
-
 }
 
 

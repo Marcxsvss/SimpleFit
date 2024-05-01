@@ -18,6 +18,8 @@ interface UsuarioDao {
     @Update
     suspend fun update(usuario: UsuarioEntity)
 
+
+
     @Query("SELECT COUNT(*) FROM usuarios")
     suspend fun count(): Int
 }

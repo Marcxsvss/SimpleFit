@@ -18,8 +18,9 @@ Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la se
 
 Al hacer el get en el viewmodel de rutinas y de de AddRutinas, al pasarlo a UiState, la funcion de paso debe tener un parametro estado, y si el get se ha hecho desde rutinas, el parametro estado sera Added, y si el get se hace desde Add, el parametro será unAdded, todo esto para que al navegar a verRutina, dependiendo si es para añadir o para hecharle un vistazo desde rutinas, si es desde añadir, saldrán dos botones uno de añadir rutina a rutinas y otro de volver, para volver a la pantalla de añadir rutinas, creo que en vez de pasarle rutinaid en la navegacion voy a tener que pasarle RutinaUiState ya que este contendrá la propiedad Estado.
 
+Hacer que al borrar la rutina que tienes seleccionada, se ponga la propiedad estado del usuario a 0, como que no tiene ninguna ya seleccionada.
 
-
+Meter el boton de descargar rutina para descragar la rutina que quieres.
 
 //////////
 Para los turnos partidos, primero mandar la nueva propuesta de proyecto a vicente, luego crear todas las rutinas, hacer la documentacion

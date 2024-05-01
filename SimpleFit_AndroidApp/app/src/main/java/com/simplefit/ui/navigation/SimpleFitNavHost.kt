@@ -91,8 +91,9 @@ fun SimpleFitNavHost(
                 navController.navigateToLogin()
             })
         verRutinaScreen( verRutinaViewModel = verRutinaViewModel,
-            onNavigateToAddRutina = {navController.navigateUp()},
-            onNavigateToRutina = {userid ->
+            onNavigateToPrevious = {navController.navigateUp()},
+            onNavigateToRutinas = {userid ->
+                routinesViewModel.setRoutines(userid)
                 navController.navigateToRoutines2(userid)
             })
 

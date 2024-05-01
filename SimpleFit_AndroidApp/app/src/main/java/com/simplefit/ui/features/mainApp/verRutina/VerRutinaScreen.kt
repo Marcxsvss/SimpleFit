@@ -73,8 +73,8 @@ fun VerRoutinesScreen(
     mostrarDialog: Boolean,
     onMostrarDialog: (Boolean) -> Unit,
     maquinaUiState: MaquinaUiState,
-    onNavigateToAddRutina: () -> Unit,
-    onNavigateToRutina: ((userid: String) -> Unit)? = null
+    onNavigateToPrevious: () -> Unit,
+    onNavigateToRutinas: ((userid: String) -> Unit)? = null
 ) {
 
     val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
@@ -139,25 +139,84 @@ fun VerRoutinesScreen(
                     {
                         Button(
                             modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToAddRutina() },
+                            onClick = { onNavigateToPrevious() },
                             colors = ButtonDefaults.buttonColors(
                                 containerColor
                                 = Color(0xFFC29F6C)
                             )
                         ) {
-                            Text("Volver")
+                            Text("VOLVER")
                         }
 
 
                         Button(
                             modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onAddRutina(onNavigateToRutina)) },
+                            onClick = { onVerRutinaEvent(VerRutinaEvent.onAddRutina(onNavigateToRutinas)) },
                             colors = ButtonDefaults.buttonColors(
                                 containerColor
                                 = Color(0xFF89602F)
                             )
                         ) {
-                            Text("Añadir")
+                            Text("AÑADIR")
+                        }
+
+                    }
+                }
+                else if(verRutinaState.estado == "current")
+                {
+                    Row(
+                        verticalAlignment =  Alignment.CenterVertically,
+                    )
+                    {
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onNavigateToPrevious() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFFC29F6C)
+                            )
+                        ) {
+                            Text("VOLVER")
+                        }
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onVerRutinaEvent(VerRutinaEvent.onDesactivarClicked(onNavigateToRutinas)) },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFF89602F)
+                            )
+                        ) {
+                            Text("DESACTIVAR")
+                        }
+                    }
+                }
+                else
+                {
+                    Row(
+                        verticalAlignment =  Alignment.CenterVertically,
+                    )
+                    {
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onNavigateToPrevious() },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFFC29F6C)
+                            )
+                        ) {
+                            Text("VOLVER")
+                        }
+
+
+                        Button(
+                            modifier = Modifier.padding(10.dp),
+                            onClick = { onVerRutinaEvent(VerRutinaEvent.onActivarClicked(onNavigateToRutinas)) },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor
+                                = Color(0xFF89602F)
+                            )
+                        ) {
+                            Text("ACTIVAR")
                         }
 
                     }

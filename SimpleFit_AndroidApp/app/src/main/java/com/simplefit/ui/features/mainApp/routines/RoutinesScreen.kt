@@ -75,7 +75,7 @@ fun RoutinesScreen(
                     )
                 }
                 if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
-                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked(rutinaSeleccionadaState.rutinaid))})
+                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked)})
                     {
                         Icon(
                             tint = Color(0xFFDAB338),
@@ -105,13 +105,6 @@ fun RoutinesScreen(
                             onRutinaClicked = {
                                 onRutinaEvent(
                                     RoutinesEvent.onRutinaClicked(
-                                        rutina.rutinaid
-                                    )
-                                )
-                            },
-                            onDeleteClicked = {
-                                onRutinaEvent(
-                                    RoutinesEvent.onDeleteClicked(
                                         rutina.rutinaid
                                     )
                                 )

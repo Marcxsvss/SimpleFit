@@ -60,7 +60,7 @@ fun NavController.navigateToRoutines(navOptions: NavOptions? = null) {
     this.navigate(RoutinesRoute, navOptions)
 }
 fun NavController.navigateToRoutines2(userid: String, navOptions: NavOptions? = null){
-  val ruta = RoutinesRoute
+    val ruta = RoutinesRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$userid", navOptions)
 }

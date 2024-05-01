@@ -21,8 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VerRutinaViewModel @Inject constructor(
-    //private val usuarioRepository: UsuarioRepository,
-    //private val rutinasRepository: RutinasRepository,
+    private val usuarioRepository: UsuarioRepository,
     private val usuarioRutinaRepository : UsuarioRutinaRepository,
     private val maquinasRepository : MaquinasRepository,
 ) : ViewModel() {
@@ -68,6 +67,19 @@ class VerRutinaViewModel @Inject constructor(
                     usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
                     verRoutinesEvent.onNavigateToAddRutina?.let { it(userid) }
 
+
+                }
+            }
+            is VerRutinaEvent.onActivarClicked -> {
+                viewModelScope.launch {
+                    usuarioRepository.updateRutinaState(userid,verRutinaUiState.rutinaid)
+                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
+                }
+            }
+            is VerRutinaEvent.onDesactivarClicked -> {
+                viewModelScope.launch {
+                    usuarioRepository.updateRutinaState(userid,0)
+                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
 
                 }
             }

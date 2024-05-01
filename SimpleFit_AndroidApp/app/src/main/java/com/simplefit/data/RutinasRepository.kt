@@ -13,23 +13,20 @@ import javax.inject.Inject
 
 class RutinasRepository @Inject constructor(
     private val rutinasDao: RutinasDao,
-    private val usuarioRutinasRepository: UsuarioRutinaRepository
+    private val usuarioRutinasRepository: UsuarioRutinaRepository,
+    private val usuarioDao: UsuarioDao
 ) {
-//    suspend fun get(userid: String): List<Rutinas> = //Lista de rutinas de un usuario
-//        withContext(Dispatchers.IO) {
-//
-//            rutinasDao.get().filter { r -> r.rutinaid in usuarioRutinasRepository.get(userid).map { it.rutinaid } }.map { it.toRutina() }
-//        }
+
     suspend fun get(userid: String): List<RoutinesUiState> =
         withContext(Dispatchers.IO)
         {
-//            val rutinasUserList = usuarioRutinasRepository.get(userid)
+            val rutinaState = usuarioDao.get(userid).rutinaState //rutinaState es el id de la rutina que el usuario tiene seleccionada
+
             rutinasDao.get().filter { r ->
-                r.rutinaid in usuarioRutinasRepository.get(userid).map { it.rutinaid }
-            }.map { it.toRutina().toRutinasUiState("Added") }
-//            rutinas.map { rc ->
-//                rc.copy(objetivo = rutinasUserList.find { it.rutinaid == rc.rutinaid }!!.objetivo)
-//            }
+                r.rutinaid in usuarioRutinasRepository.get(userid).map { it.rutinaid } //Solo se muestran las rutinas que el usuario tiene agregadas
+            }.map { if(rutinaState == it.rutinaid)it.toRutina().toRutinasUiState("current",userid)else it.toRutina().toRutinasUiState("Added",userid)}
+            //Si es la rutina que tiene actualmente en curso, su estado será current
+
         }
     suspend fun get(): List<Rutinas> = withContext(Dispatchers.IO) {
         rutinasDao.get().map { it.toRutina() }
@@ -40,8 +37,6 @@ class RutinasRepository @Inject constructor(
         rutinasDao.update(rutina.toRutinasEntity())
     }
 
-    suspend fun delete(rutinaid: Int) = withContext(Dispatchers.IO) {
-        rutinasDao.delete(rutinaid)
-    }
+
 
 }

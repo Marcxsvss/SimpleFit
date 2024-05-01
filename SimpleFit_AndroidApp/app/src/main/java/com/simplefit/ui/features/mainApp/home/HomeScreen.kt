@@ -95,8 +95,6 @@ fun HomeScreen(
                     fontFamily = FontFamily(Font(R.font.roboto_bold))
                 )
             }
-
-
         }
         Spacer(modifier = Modifier.height(12.dp))
         Column(
@@ -142,11 +140,11 @@ fun HomeScreen(
                     .align(Alignment.Start)
                     .padding(start = 18.dp)
             )
-            HomeButton(texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3))
+            HomeButton(texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3), onHomeEvent = onHomeEvent)
             Spacer(modifier = Modifier.height(18.dp))
-            HomeButton(texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2))
+            HomeButton(texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
             Spacer(modifier = Modifier.height(30.dp))
-            HomeButton(texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background))
+            HomeButton(texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background), onHomeEvent = onHomeEvent)
 
 
         }
