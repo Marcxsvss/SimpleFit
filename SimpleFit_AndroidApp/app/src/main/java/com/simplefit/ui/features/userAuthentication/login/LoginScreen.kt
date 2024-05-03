@@ -72,14 +72,12 @@ fun LoginScreen(
                     passwordState = usuarioUiState.password,
                     validacionLogin = validacionLoginUiState.validacionEmail,
                     validacionPassword = validacionLoginUiState.validacionPassword,
-                    recordarmeState = recordarmeState,
                     onValueChangeLogin = {
                         onLoginEvent(LoginEvent.EmailChanged(it))
                     },
                     onValueChangePassword = {
                         onLoginEvent(LoginEvent.PasswordChanged(it))
                     },
-                    onCheckedChanged = { recordarmeState = it },
                     onClickLogearse = {
                         onLoginEvent(LoginEvent.OnClickLogearse(onNavigateToHome))
                         onMostrarSnackBar()

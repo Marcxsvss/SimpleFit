@@ -22,10 +22,8 @@ fun LoginForm(
     validacionLogin: Validacion,
     passwordState: String,
     validacionPassword: Validacion,
-    recordarmeState: Boolean,
     onValueChangeLogin: (String) -> Unit,
     onValueChangePassword: (String) -> Unit,
-    onCheckedChanged: (Boolean) -> Unit,
     onClickLogearse: () -> Unit
 ) {
     Column {
@@ -44,13 +42,6 @@ fun LoginForm(
             validacionState = validacionPassword,
             onValueChange = onValueChangePassword
         )
-
-        CheckboxWithText(
-            label = "Recordarme",
-            checkedState = recordarmeState,
-            onCheckedChange = onCheckedChanged
-        )
-
         Button(
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickLogearse,
@@ -63,26 +54,26 @@ fun LoginForm(
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun LoginFormTest() {
-
-    var loginState by remember { mutableStateOf("") }
-    var passwordState by remember { mutableStateOf("") }
-    var recordarme by remember { mutableStateOf(false) }
-
-    SimpleFitTheme {
-        LoginForm(
-            modifier = Modifier.fillMaxWidth(),
-            loginState = loginState,
-            validacionLogin = object : Validacion {},
-            passwordState = passwordState,
-            validacionPassword = object : Validacion {},
-            recordarmeState = recordarme,
-            onValueChangeLogin = { loginState = it },
-            onValueChangePassword = { passwordState = it },
-            onCheckedChanged = { recordarme = !it },
-            onClickLogearse = {}
-        )
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun LoginFormTest() {
+//
+//    var loginState by remember { mutableStateOf("") }
+//    var passwordState by remember { mutableStateOf("") }
+//    var recordarme by remember { mutableStateOf(false) }
+//
+//    SimpleFitTheme {
+//        LoginForm(
+//            modifier = Modifier.fillMaxWidth(),
+//            loginState = loginState,
+//            validacionLogin = object : Validacion {},
+//            passwordState = passwordState,
+//            validacionPassword = object : Validacion {},
+//            recordarmeState = recordarme,
+//            onValueChangeLogin = { loginState = it },
+//            onValueChangePassword = { passwordState = it },
+//            onCheckedChanged = { recordarme = !it },
+//            onClickLogearse = {}
+//        )
+//    }
+//}

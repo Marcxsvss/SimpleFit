@@ -59,7 +59,6 @@ fun RegisterProfileInfoScreen(
                 edadState = registerProfileInfoUiState.edad,
                 sexoState = registerProfileInfoUiState.sexo,
                 somatotipoState = registerProfileInfoUiState.somatotipo,
-                intoleranciaState = registerProfileInfoUiState.alergia,
                 alturaState = registerProfileInfoUiState.altura,
                 pesoState = registerProfileInfoUiState.peso,
                 validacionAltura =  validacionRegisterProfileInfoUiState.validacionAltura,
@@ -72,9 +71,6 @@ fun RegisterProfileInfoScreen(
                 },
                 onValueChangeSomatotipo = {
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.SomatotipoChanged(it))
-                },
-                onValueChangeAlergia = {
-                    onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlergiaChanged(it))
                 },
                 onValueChangeAltura = {
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.AlturaChanged(it))

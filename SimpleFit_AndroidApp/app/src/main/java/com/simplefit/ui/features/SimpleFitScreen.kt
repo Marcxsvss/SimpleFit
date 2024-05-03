@@ -33,17 +33,14 @@ fun SimpleFitScreen() {
 
     val comportamientoAnteScrollInf = BottomAppBarDefaults.exitAlwaysScrollBehavior()
     val navController = rememberNavController()
+//    val entradaEnPilaDeNavegacionActuasState = navController.currentBackStackEntryAsState()
+//    var iOpcionNevagacionSeleccionada = derivedStateOf {
+//        iOpcionNavegacionSeleccionadaAPartirDeRuta(entradaEnPilaDeNavegacionActuasState.value?.destination?.route)
+//    }
     val entradaEnPilaDeNavegacionActuasState = navController.currentBackStackEntryAsState()
-    var iOpcionNevagacionSeleccionada = derivedStateOf {
-        iOpcionNavegacionSeleccionadaAPartirDeRuta(entradaEnPilaDeNavegacionActuasState.value?.destination?.route)
-    }
+    var iOpcionNevagacionSeleccionada = entradaEnPilaDeNavegacionActuasState.value?.destination?.route?.let { iOpcionNavegacionSeleccionadaAPartirDeRuta(it) } ?: 0
     var verNavegacion = derivedStateOf {
-        iOpcionNevagacionSeleccionada.value != 3
-                && iOpcionNevagacionSeleccionada.value != 4
-                && iOpcionNevagacionSeleccionada.value != 5
-                && iOpcionNevagacionSeleccionada.value != 6
-                && iOpcionNevagacionSeleccionada.value != 7
-                && iOpcionNevagacionSeleccionada.value != 8
+        iOpcionNevagacionSeleccionada !in 3..8
     }
 
     Scaffold(
@@ -53,8 +50,9 @@ fun SimpleFitScreen() {
         bottomBar = {
             if (verNavegacion.value)
                 NavBar(
+
                     navController = navController,
-                    currentIndex = iOpcionNevagacionSeleccionada.value
+                    currentIndex = iOpcionNevagacionSeleccionada
                 )
         },
         content = { innerPadding ->
@@ -76,6 +74,13 @@ private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
         AddRutinaRoute -> 7
         VerEntrenamientoRoute -> 8
 
-        else -> 10
+        else -> 0
     }
 }
+
+//        iOpcionNevagacionSeleccionada.value != 3
+//                && iOpcionNevagacionSeleccionada.value != 4
+//                && iOpcionNevagacionSeleccionada.value != 5
+//                && iOpcionNevagacionSeleccionada.value != 6
+//                && iOpcionNevagacionSeleccionada.value != 7
+//                && iOpcionNevagacionSeleccionada.value != 8

@@ -21,7 +21,8 @@ Al hacer el get en el viewmodel de rutinas y de de AddRutinas, al pasarlo a UiSt
 Hacer que al borrar la rutina que tienes seleccionada, se ponga la propiedad estado del usuario a 0, como que no tiene ninguna ya seleccionada.
 
 Meter el boton de descargar rutina para descragar la rutina que quieres.
-Porque no se abre el ver entrenamiento nada mas llegar pero si voy a otro sitio y vuelvo si????
+
+
 
 //////////
 Para los turnos partidos, primero mandar la nueva propuesta de proyecto a vicente, luego crear todas las rutinas, hacer la documentacion

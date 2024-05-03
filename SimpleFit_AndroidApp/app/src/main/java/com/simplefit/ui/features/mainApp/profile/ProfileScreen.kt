@@ -80,7 +80,6 @@ fun ProfileScreen(
                     edadState = profileUiState.edad,
                     sexoState = profileUiState.sexo,
                     somatotipoState = profileUiState.somatotipo,
-                    intoleranciaState = profileUiState.intolerancia,
                     alturaState = profileUiState.altura,
                     pesoState = profileUiState.peso,
                     validacionAltura = validacionProfileUiState.validacionAltura,
@@ -93,9 +92,6 @@ fun ProfileScreen(
                     },
                     onValueChangeSomatotipo = {
                         onProfileEvent(ProfileEvent.SomatotipoChanged(it))
-                    },
-                    onValueChangeAlergia = {
-                        onProfileEvent(ProfileEvent.IntoleranciaChanged(it))
                     },
                     onValueChangeAltura = {
                         onProfileEvent(ProfileEvent.AlturaChanged(it))

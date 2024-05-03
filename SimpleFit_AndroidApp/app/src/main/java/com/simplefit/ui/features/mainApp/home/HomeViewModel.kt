@@ -20,7 +20,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     var homeUiState by mutableStateOf(HomeUiState())
         private set
-    var rutinaUiState by mutableStateOf(RoutinesUiState())
+    var rutinaUiState : RoutinesUiState? by mutableStateOf(null)
         private set
 
     //var indexState by mutableStateOf(0)
@@ -39,9 +39,11 @@ class HomeViewModel @Inject constructor(
     }
     fun onHomeEvent(homeEvent: HomeEvent) {
         when (homeEvent) {
-
             is HomeEvent.onVerEntrenamientoClicked -> {
-                homeEvent.onNavigateToVerEntrenamiento?.let { it(rutinaUiState) }
+                if(rutinaUiState != null)
+                homeEvent.onNavigateToVerEntrenamiento(rutinaUiState!!)
+                else//Mostrar snackbar
+                    println("No hay rutina seleccionada")
 
             }
 

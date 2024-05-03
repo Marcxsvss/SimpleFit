@@ -66,7 +66,15 @@ fun ExposedDropdownMenuBoxEdad(
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
-                    modifier = Modifier.menuAnchor()
+                    modifier = Modifier.menuAnchor(),
+                    colors = TextFieldDefaults.colors(
+                        unfocusedIndicatorColor = Color(0xFFDAB338),
+                        focusedIndicatorColor = Color(0xFFDAB338),
+                        unfocusedContainerColor = Color.Transparent,
+                        focusedContainerColor = Color.Transparent
+
+                    )
+
                 )
 
                 ExposedDropdownMenu(
@@ -126,8 +134,14 @@ fun ExposedDropdownMenuBoxSexo(
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
-                    modifier = Modifier.menuAnchor()
-                )
+                    modifier = Modifier.menuAnchor(),
+                    colors = TextFieldDefaults.colors(
+                        unfocusedIndicatorColor = Color(0xFFDAB338),
+                        focusedIndicatorColor = Color(0xFFDAB338),
+                        unfocusedContainerColor = Color.Transparent,
+                        focusedContainerColor = Color.Transparent
+
+                    )                )
 
                 ExposedDropdownMenu(
                     expanded = expanded,
@@ -186,7 +200,14 @@ fun ExposedDropdownMenuBoxSomatotipo(
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
-                    modifier = Modifier.menuAnchor()
+                    modifier = Modifier.menuAnchor(),
+                    colors = TextFieldDefaults.colors(
+                        unfocusedIndicatorColor = Color(0xFFDAB338),
+                        focusedIndicatorColor = Color(0xFFDAB338),
+                        unfocusedContainerColor = Color.Transparent,
+                        focusedContainerColor = Color.Transparent
+
+                    )
                 )
 
                 ExposedDropdownMenu(
@@ -210,63 +231,6 @@ fun ExposedDropdownMenuBoxSomatotipo(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun ExposedDropdownMenuBoxIntolerancia(
-    intoleranciaState: String = "Intolerancia",
-    onValueChange: (String) -> Unit,
-    modifier: Modifier
-) {
-    val context = LocalContext.current
-    val Intolerancias = arrayOf("Lactosa", "Gluten")
-    var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(intoleranciaState) }
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 32.dp, end = 32.dp)
-    ) {
-        Column()
-        {
-            Text(
-                text = "Intolerancia",
-                color = Color(0xFFDAB338),
-                fontSize = 20.sp,
-                fontFamily = FontFamily(
-                    Font(resId = R.font.bayon_regular)
-                )
-            )
-            ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded })
-            {
-                TextField(
-                    value = if (selectedText.isNullOrBlank()) "Intolerancia" else selectedText,
-                    onValueChange = {},
-                    readOnly = true,
-                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
-                    modifier = Modifier.menuAnchor()
-                )
-
-                ExposedDropdownMenu(
-                    expanded = expanded,
-                    onDismissRequest = { expanded = false }
-                ) {
-                    Intolerancias.forEach { item ->
-                        DropdownMenuItem(
-                            text = { Text(text = item) },
-                            onClick = {
-                                selectedText = item
-                                onValueChange(item)
-                                expanded = false
-                                Toast.makeText(context, item, Toast.LENGTH_SHORT).show()
-                            }
-                        )
-                    }
-                }
-            }
-        }
-    }
-}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ExposedDropdownMenuBoxFrecuencia(

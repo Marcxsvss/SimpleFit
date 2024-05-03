@@ -18,7 +18,6 @@ import com.pmdm.recetas.ui.composables.OutlinedTextFieldAltura
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPeso
 import com.pmdm.tienda.utilities.validacion.Validacion
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
-import com.simplefit.ui.composables.ExposedDropdownMenuBoxIntolerancia
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSexo
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
 
@@ -28,7 +27,6 @@ fun RegisterProfileInfoForm(
     edadState: String,
     sexoState: String,
     somatotipoState: String,
-    intoleranciaState: String,
     alturaState: String,
     validacionAltura: Validacion,
     pesoState: String,
@@ -36,7 +34,6 @@ fun RegisterProfileInfoForm(
     onValueChangeEdad: (String) -> Unit,
     onValueChangeSexo: (String) -> Unit,
     onValueChangeSomatotipo: (String) -> Unit,
-    onValueChangeAlergia: (String) -> Unit,
     onValueChangeAltura: (String) -> Unit,
     onValueChangePeso: (String) -> Unit,
     onClickGuardar: () -> Unit
@@ -72,11 +69,6 @@ fun RegisterProfileInfoForm(
             modifier = modifier,
             somatotipoState = somatotipoState,
             onValueChange = onValueChangeSomatotipo
-        )
-        ExposedDropdownMenuBoxIntolerancia(
-            modifier = modifier,
-            intoleranciaState = intoleranciaState,
-            onValueChange = onValueChangeAlergia
         )
         Button(
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),

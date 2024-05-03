@@ -63,7 +63,7 @@ fun obtenerDiaDeLaSemana(): String {
 fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
-    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
 
     ) {
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
@@ -141,9 +141,9 @@ fun HomeScreen(
             )
             HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3), onHomeEvent = onHomeEvent,)
             Spacer(modifier = Modifier.height(18.dp))
-            HomeButton(texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
+            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
             Spacer(modifier = Modifier.height(30.dp))
-            HomeButton(texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background), onHomeEvent = onHomeEvent)
+            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background), onHomeEvent = onHomeEvent)
 
 
         }

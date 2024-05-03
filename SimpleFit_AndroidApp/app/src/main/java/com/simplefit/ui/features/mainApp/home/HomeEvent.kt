@@ -7,5 +7,5 @@ sealed interface HomeEvent {
     data class OnClickConsejos(val dia : String) : HomeEvent
     data class OnClickCompartir(val dia : String) : HomeEvent
     data class onNavigateToScreen(val index : Int) : HomeEvent
-    data class onVerEntrenamientoClicked(val onNavigateToVerEntrenamiento: ((RoutinesUiState) -> Unit)? = null) : HomeEvent
+    data class onVerEntrenamientoClicked(val onNavigateToVerEntrenamiento: ((RoutinesUiState) -> Unit)) : HomeEvent
 }

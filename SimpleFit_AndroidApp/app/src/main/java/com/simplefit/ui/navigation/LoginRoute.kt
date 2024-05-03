@@ -2,6 +2,7 @@ package com.simplefit.ui.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import com.simplefit.ui.features.userAuthentication.login.LoginScreen
 import com.simplefit.ui.features.userAuthentication.login.LoginViewModel
@@ -24,6 +25,8 @@ fun NavGraphBuilder.loginScreen(
             onNavigateToRegister = onNavigateToRegister)
     }
 }
-fun NavController.navigateToLogin() {
-    this.navigate(LoginRoute)
+fun NavController.navigateToLogin(navOptions: NavOptions? = null) {
+    this.popBackStack()
+    this.navigate(LoginRoute,navOptions)
 }
+

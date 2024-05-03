@@ -22,7 +22,7 @@ const val HomeParameterName = "email"
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
     mainAppViewModel: MainAppViewModel,
-    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
 
     ) {
     composable(
@@ -39,7 +39,8 @@ fun NavGraphBuilder.homeScreen(
 
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent)
+            onHomeEvent = homeViewModel::onHomeEvent,
+            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento)
     }
     composable(HomeRoute)
     {

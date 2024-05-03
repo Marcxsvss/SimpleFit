@@ -66,7 +66,7 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null)
+fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit))
 {
     Box( //Ver entrenamiento de hoy
         Modifier
