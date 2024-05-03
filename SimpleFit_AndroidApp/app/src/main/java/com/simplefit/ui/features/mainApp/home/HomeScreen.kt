@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import com.simplefit.ui.composables.HomeButton
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import java.util.Calendar
 import java.util.Locale
 
@@ -61,9 +62,10 @@ fun obtenerDiaDeLaSemana(): String {
 @Composable
 fun HomeScreen(
     homeUiState: HomeUiState,
-    onHomeEvent: (HomeEvent) -> Unit
+    onHomeEvent: (HomeEvent) -> Unit,
+    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null,
 
-) {
+    ) {
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
     val diaActual = obtenerDiaDeLaSemana()
     Column {
@@ -109,10 +111,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.Center
             ) {
                 repeat(diasDeLaSemana.size) { iteration ->
-                    val colorDeFondo =
-                        if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(
-                            0xFFDCCEA2
-                        )
+                    val colorDeFondo = if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(0xFFDCCEA2)
                     Box(
                         modifier = Modifier
                             .padding(2.dp)
@@ -140,7 +139,7 @@ fun HomeScreen(
                     .align(Alignment.Start)
                     .padding(start = 18.dp)
             )
-            HomeButton(texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3), onHomeEvent = onHomeEvent)
+            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3), onHomeEvent = onHomeEvent,)
             Spacer(modifier = Modifier.height(18.dp))
             HomeButton(texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
             Spacer(modifier = Modifier.height(30.dp))

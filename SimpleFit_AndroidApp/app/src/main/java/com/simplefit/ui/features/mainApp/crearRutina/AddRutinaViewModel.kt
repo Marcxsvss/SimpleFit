@@ -27,7 +27,7 @@ class AddRutinaViewModel @Inject constructor(
     {
         this.userid = userid
         viewModelScope.launch {
-            rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }
+            rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid)}
         }
     }
     var mostrarDialog by mutableStateOf(false)

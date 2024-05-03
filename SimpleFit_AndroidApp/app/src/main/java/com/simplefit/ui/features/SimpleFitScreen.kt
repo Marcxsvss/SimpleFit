@@ -23,6 +23,7 @@ import com.simplefit.ui.navigation.RegisterAccountInfoRoute
 import com.simplefit.ui.navigation.RegisterProfileInfoRoute
 import com.simplefit.ui.navigation.RoutinesRoute
 import com.simplefit.ui.navigation.SimpleFitNavHost
+import com.simplefit.ui.navigation.VerEntrenamientoRoute
 import com.simplefit.ui.navigation.VerRutinaRoute
 
 @SuppressLint("UnrememberedMutableState")//Para que no salte el error del remember en el derivedStateOf
@@ -42,6 +43,7 @@ fun SimpleFitScreen() {
                 && iOpcionNevagacionSeleccionada.value != 5
                 && iOpcionNevagacionSeleccionada.value != 6
                 && iOpcionNevagacionSeleccionada.value != 7
+                && iOpcionNevagacionSeleccionada.value != 8
     }
 
     Scaffold(
@@ -72,6 +74,7 @@ private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
         RegisterProfileInfoRoute -> 5
         VerRutinaRoute -> 6
         AddRutinaRoute -> 7
+        VerEntrenamientoRoute -> 8
 
         else -> 10
     }

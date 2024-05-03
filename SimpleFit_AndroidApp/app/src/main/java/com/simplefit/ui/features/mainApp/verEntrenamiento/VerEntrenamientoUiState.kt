@@ -1,14 +1,13 @@
-package com.simplefit.ui.features.mainApp.verRutina
+package com.simplefit.ui.features.mainApp.verEntrenamiento
 
 import com.simplefit.ui.features.mainApp.MaquinaUiState
 
-data class VerRutinaUiState(
+
+data class VerEntrenamientoUiState(
     val rutinaid: Int,
     val titulo : String,
     val descripcion : String,
-    var ejercicio : List<MaquinaUiState>,
-    val frecuencia : Int,
-    val estado : String = "Added"
+    var ejercicio : List<MaquinaUiState>
 
     ) {
 
@@ -18,7 +17,6 @@ data class VerRutinaUiState(
         "",
         "Descanso",
         ejercicio = listOf(),
-        0,
 
     )
 }

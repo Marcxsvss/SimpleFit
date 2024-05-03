@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -17,7 +20,10 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     var homeUiState by mutableStateOf(HomeUiState())
         private set
-    var indexState by mutableStateOf(0)
+    var rutinaUiState by mutableStateOf(RoutinesUiState())
+        private set
+
+    //var indexState by mutableStateOf(0)
     fun setUsuario(email : String)
     {
         viewModelScope.launch {
@@ -28,19 +34,15 @@ class HomeViewModel @Inject constructor(
                     nombre = usuario.nombre
                 )
             }
+            rutinaUiState = rutinasRepository.getRutina(usuario?.rutinaState).toRutinasUiState()
         }
     }
     fun onHomeEvent(homeEvent: HomeEvent) {
         when (homeEvent) {
 
-//            is HomeEvent.onNavigateToScreen -> {
-//                indexState = homeEvent.index
-//            }
-            is HomeEvent.OnClickVerEntrenamiento -> {
-                viewModelScope.launch {
+            is HomeEvent.onVerEntrenamientoClicked -> {
+                homeEvent.onNavigateToVerEntrenamiento?.let { it(rutinaUiState) }
 
-
-                }
             }
 
             else -> {}

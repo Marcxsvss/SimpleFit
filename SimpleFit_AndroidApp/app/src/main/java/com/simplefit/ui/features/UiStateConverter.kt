@@ -1,15 +1,13 @@
 package com.simplefit.ui.features
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Error
-import androidx.compose.ui.graphics.ImageBitmap
 import com.pmdm.agenda.utilities.imagenes.Imagenes
 import com.simplefit.models.Maquina
 import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
 import com.simplefit.models.UsuarioRutina
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.mainApp.verRutina.MaquinaUiState
+import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoUiState
+import com.simplefit.ui.features.mainApp.MaquinaUiState
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaUiState
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoUiState
 import com.simplefit.ui.features.userAuthentication.login.LoginUiState
@@ -32,7 +30,6 @@ this.password,
 "",
 "",
 "",
-"",
     null
 )
 fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
@@ -45,10 +42,9 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     "",
     "",
-    "",
     null
 )
-fun Rutinas.toRutinasUiState(state : String,userid : String = ""): RoutinesUiState = RoutinesUiState(
+fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
@@ -78,6 +74,12 @@ fun VerRutinaUiState.toUsuarioRutina(userid : String) = UsuarioRutina(
     rutinaid = this.rutinaid,
     nombre = this.titulo)
 
+fun RoutinesUiState.toVerEntrenamientoUiState() = VerEntrenamientoUiState(
+    rutinaid = this.rutinaid,
+    titulo = this.titulo,
+    descripcion = this.descripcion,
+    ejercicio = listOf()
+)
 //fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()
 //
 //fun Usuario.toUsuarioUiState():LoginUiState= LoginUiState(login,password,true,likeds)

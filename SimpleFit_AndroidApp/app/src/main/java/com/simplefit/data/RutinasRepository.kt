@@ -31,6 +31,9 @@ class RutinasRepository @Inject constructor(
     suspend fun get(): List<Rutinas> = withContext(Dispatchers.IO) {
         rutinasDao.get().map { it.toRutina() }
     }
+    suspend fun getRutina(rutinaid : Int?): Rutinas = withContext(Dispatchers.IO) {
+        rutinasDao.get(rutinaid).toRutina()
+    }
 
 
     suspend fun update(rutina: Rutinas) = withContext(Dispatchers.IO) {

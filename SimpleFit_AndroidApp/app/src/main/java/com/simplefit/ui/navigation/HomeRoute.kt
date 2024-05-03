@@ -11,6 +11,7 @@ import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.home.HomeScreen
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 
 const val HomeRoute = "Home"
@@ -20,8 +21,10 @@ const val HomeParameterName = "email"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
-    mainAppViewModel: MainAppViewModel
-) {
+    mainAppViewModel: MainAppViewModel,
+    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null,
+
+    ) {
     composable(
         route = "$HomeRoute/{$HomeParameterName}",
         arguments = listOf(
@@ -42,7 +45,8 @@ fun NavGraphBuilder.homeScreen(
     {
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent)
+            onHomeEvent = homeViewModel::onHomeEvent,
+            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento)
 
     }
 }

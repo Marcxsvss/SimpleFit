@@ -20,7 +20,7 @@ import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
 @TypeConverters(RoomConverters::class)
 @Database(
     entities = [UsuarioEntity::class, RutinasEntity::class, MaquinasEntity::class, RutinaMaquinaEntity::class, UsuarioRutinaEntity::class],
-    version = 14
+    version = 15
 )
 abstract class SimpleFitDB : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao

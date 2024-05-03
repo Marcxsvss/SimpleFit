@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
 import com.simplefit.ui.features.mainApp.home.HomeEvent
+import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 @Composable
 fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked: () -> Unit? = {})
@@ -65,7 +66,7 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit )
+fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null)
 {
     Box( //Ver entrenamiento de hoy
         Modifier
@@ -85,17 +86,14 @@ fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit )
                 )
             )
             .clickable {
-                if(texto == "VER ENTRENAMIENTO")
-                {
-                    onHomeEvent(HomeEvent.OnClickVerEntrenamiento("L"))
-                }
-                else if(texto == "CONSEJOS")
-                {
-
-                }
-                else
-                {
-                    //onHomeEvent(HomeEvent.)
+                when (texto) {
+                    "VER ENTRENAMIENTO" -> { onHomeEvent(HomeEvent.onVerEntrenamientoClicked(onNavigateToVerEntrenamiento)) }
+                    "CONSEJOS" -> {
+                        //onHomeEvent(HomeEvent.)
+                    }
+                    else -> {
+                        //onHomeEvent(HomeEvent.)
+                    }
                 }
             }
     ) {

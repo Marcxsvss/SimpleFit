@@ -42,7 +42,6 @@ class ProfileViewModel @Inject constructor(
                     peso = usuario.peso,
                     sexo = usuario.sexo,
                     somatotipo = usuario.somatotipo,
-                    intolerancia = usuario.intolerancia ?: ""
                 )
             }
         }
@@ -107,8 +106,7 @@ class ProfileViewModel @Inject constructor(
                             altura = profileUiState.altura,
                             peso = profileUiState.peso,
                             sexo = profileUiState.sexo,
-                            somatotipo = profileUiState.somatotipo,
-                            intolerancia = profileUiState.intolerancia
+                            somatotipo = profileUiState.somatotipo
                         )
                         usuarioRepository.update(usuario!!)
 

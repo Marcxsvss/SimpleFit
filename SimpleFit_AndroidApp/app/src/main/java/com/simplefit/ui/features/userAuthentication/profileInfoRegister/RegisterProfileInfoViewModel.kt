@@ -85,8 +85,7 @@ class RegisterProfileInfoViewModel @Inject constructor(
                             altura = perfilUsuarioUiState.altura,
                             peso = perfilUsuarioUiState.peso,
                             sexo = perfilUsuarioUiState.sexo,
-                            somatotipo = perfilUsuarioUiState.somatotipo,
-                            intolerancia = perfilUsuarioUiState.alergia)
+                            somatotipo = perfilUsuarioUiState.somatotipo)
                         usuarioRepository.update(usuario!!)
 
                         delay(1000)

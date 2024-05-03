@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.verRutina
+package com.simplefit.ui.features.mainApp
 
 import androidx.compose.ui.graphics.ImageBitmap
 import com.simplefit.models.Maquina

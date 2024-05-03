@@ -10,6 +10,7 @@ import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaViewModel
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
+import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoViewModel
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoViewModel
 import com.simplefit.ui.features.userAuthentication.login.LoginViewModel
@@ -30,6 +31,7 @@ fun SimpleFitNavHost(
     val profileViewModel = hiltViewModel<ProfileViewModel>()
     val verRutinaViewModel = hiltViewModel<VerRutinaViewModel>()
     val addRutinaViewModel = hiltViewModel<AddRutinaViewModel>()
+    val verEntrenamientoViewModel = hiltViewModel<VerEntrenamientoViewModel>()
 
 
     //val scope= rememberCoroutineScope()
@@ -72,7 +74,11 @@ fun SimpleFitNavHost(
         )
         homeScreen(
             mainAppViewModel = mainAppViewModel,
-            homeViewModel = homeViewModel
+            homeViewModel = homeViewModel,
+            onNavigateToVerEntrenamiento = { rutinaUiState ->
+                verEntrenamientoViewModel.setRutina(rutinaUiState)
+                navController.navigateToVerEntrenamiento(rutinaUiState)
+            }
         )
         routinesScreen(routinesViewModel = routinesViewModel,
             onNavigateToAddRutina = { userid ->
@@ -102,6 +108,8 @@ fun SimpleFitNavHost(
                 verRutinaViewModel.setRutina(rutinaUiState)
                 navController.navigateToVerRutina(rutinaUiState)
             })
+        verEntrenamientoScreen(verEntrenamientoViewModel = verEntrenamientoViewModel,
+            onNavigateToPrevious = {navController.navigateUp()})
     }
 
 }
