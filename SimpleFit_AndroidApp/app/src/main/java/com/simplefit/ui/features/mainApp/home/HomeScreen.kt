@@ -46,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
+import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import java.util.Calendar
@@ -63,7 +64,7 @@ fun obtenerDiaDeLaSemana(): String {
 fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
-    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
+    onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
 
     ) {
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
@@ -111,7 +112,10 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.Center
             ) {
                 repeat(diasDeLaSemana.size) { iteration ->
-                    val colorDeFondo = if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(0xFFDCCEA2)
+                    val colorDeFondo =
+                        if (diasDeLaSemana[iteration] == diaActual) Color(0xFFDAB338) else Color(
+                            0xFFDCCEA2
+                        )
                     Box(
                         modifier = Modifier
                             .padding(2.dp)
@@ -130,7 +134,7 @@ fun HomeScreen(
                 }
             }
             Text(
-                text = "HOY",
+                text = "CONSEJOS",
                 color = Color(0xFFDCCEA2),
                 fontSize = 20.sp,
                 fontStyle = FontStyle.Normal,
@@ -139,11 +143,34 @@ fun HomeScreen(
                     .align(Alignment.Start)
                     .padding(start = 18.dp)
             )
-            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "VER ENTRENAMIENTO", foto = painterResource(id = R.drawable.ver_entrenamiento_3), onHomeEvent = onHomeEvent,)
-            Spacer(modifier = Modifier.height(18.dp))
-            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
-            Spacer(modifier = Modifier.height(30.dp))
-            HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "RECOMENDAR AMIGOS", foto = painterResource(id = R.drawable.compartir_background), onHomeEvent = onHomeEvent)
+            HeaderConsejos(
+                modifier = Modifier,
+                consejos = listOf(
+                    "COMEME LOS HUEVOS",
+                    "MAMAME EL BICHO",
+                    "CANTO DE CABRONA",
+                    "HIJAE LA GRAN PUTA",
+                    "MALA CANALLA"
+                ),
+            )
+            Spacer(modifier = Modifier.height(25.dp))
+
+            HomeButton(
+                onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
+                texto = "VER ENTRENAMIENTO",
+                foto = painterResource(id = R.drawable.ver_entrenamiento_3),
+                onHomeEvent = onHomeEvent,
+            )
+
+
+            //HomeButton(onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,texto = "CONSEJOS", foto = painterResource(id = R.drawable.consejos_background_2), onHomeEvent = onHomeEvent)
+            Spacer(modifier = Modifier.height(25.dp))
+            HomeButton(
+                onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
+                texto = "RECOMENDAR AMIGOS",
+                foto = painterResource(id = R.drawable.compartir_background),
+                onHomeEvent = onHomeEvent
+            )
 
 
         }
