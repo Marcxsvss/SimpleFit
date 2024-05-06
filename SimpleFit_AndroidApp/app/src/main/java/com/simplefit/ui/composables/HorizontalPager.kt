@@ -67,7 +67,8 @@ fun ListConsejos(
                     topStart = 10.dp
                 )
             )
-    ) {
+    )
+    {
         Image(
             painter =  painterResource(id = R.drawable.consejos_background_2),
             contentDescription = "Fondo",
@@ -77,7 +78,7 @@ fun ListConsejos(
         )
 
         HorizontalPager(
-            modifier = modifier.fillMaxWidth().height(100.dp).padding(18.dp),
+            modifier = modifier.fillMaxWidth().height(100.dp),
             state = pagerState,
             verticalAlignment = Alignment.CenterVertically
         ) { page ->
@@ -88,7 +89,7 @@ fun ListConsejos(
                 ) {
                 Text(
                     text = consejos[page],
-                    fontSize = 22.sp,
+                    fontSize = 15.sp,
                     textAlign = TextAlign.Center,
                     color = Color.White,
                     fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
@@ -147,7 +148,7 @@ fun HeaderConsejos(
     }
 
     Column(
-        modifier = modifier.fillMaxWidth().height(150.dp).padding(18.dp),
+        modifier = modifier.fillMaxWidth().height(150.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

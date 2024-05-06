@@ -40,14 +40,16 @@ fun NavGraphBuilder.homeScreen(
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento)
+            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
+            consejos = homeViewModel.consejos)
     }
     composable(HomeRoute)
     {
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento)
+            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
+            consejos = homeViewModel.consejos)
 
     }
 }

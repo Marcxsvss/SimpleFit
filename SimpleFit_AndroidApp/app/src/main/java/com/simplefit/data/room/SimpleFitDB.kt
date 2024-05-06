@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.simplefit.data.room.usuario.UsuarioDao
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
+import com.simplefit.data.room.consejos.ConsejosDao
+import com.simplefit.data.room.consejos.ConsejosEntity
 import com.simplefit.data.room.maquinas.MaquinasDao
 import com.simplefit.data.room.maquinas.MaquinasEntity
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
@@ -19,8 +21,8 @@ import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
 
 @TypeConverters(RoomConverters::class)
 @Database(
-    entities = [UsuarioEntity::class, RutinasEntity::class, MaquinasEntity::class, RutinaMaquinaEntity::class, UsuarioRutinaEntity::class],
-    version = 15
+    entities = [UsuarioEntity::class, RutinasEntity::class, MaquinasEntity::class, RutinaMaquinaEntity::class, UsuarioRutinaEntity::class, ConsejosEntity::class],
+    version = 16
 )
 abstract class SimpleFitDB : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
@@ -28,6 +30,7 @@ abstract class SimpleFitDB : RoomDatabase() {
     abstract fun rutinaMaquinaDao(): RutinaMaquinaDao
     abstract fun maquinasDao(): MaquinasDao
     abstract fun usuarioRutinaDao(): UsuarioRutinaDao
+    abstract fun consejosDao(): ConsejosDao
     companion object {
        @Volatile
        private var db: SimpleFitDB? = null

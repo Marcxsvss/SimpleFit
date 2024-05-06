@@ -5,15 +5,19 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import com.pmdm.agenda.utilities.imagenes.Imagenes
 import com.pmdm.recetas.data.mocks.UsuarioDaoMock
+import com.simplefit.data.mocks.ConsejosDaoMock
 import com.simplefit.data.mocks.MaquinasDaoMock
 import com.simplefit.data.mocks.RutinaMaquinaDaoMock
 import com.simplefit.data.mocks.RutinasDaoMock
 import com.simplefit.data.mocks.UsuarioRutinaDaoMock
+import com.simplefit.data.room.consejos.ConsejosDao
 import com.simplefit.data.room.maquinas.MaquinasDao
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaDao
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
 import com.simplefit.data.room.usuarioRutina.UsuarioRutinaDao
+import com.simplefit.data.toConsejo
+import com.simplefit.data.toConsejoEntity
 import com.simplefit.data.toMaquina
 import com.simplefit.data.toMaquinaEntity
 import com.simplefit.data.toRutina
@@ -46,11 +50,14 @@ class SimpleFitApplication: Application (){
     lateinit var RutinaMaquinaDaoMock: RutinaMaquinaDaoMock
     @Inject
     lateinit var RutinaMaquinaDaoEntity: RutinaMaquinaDao
-
     @Inject
     lateinit var UsuarioRutinaDaoMock: UsuarioRutinaDaoMock
     @Inject
     lateinit var UsuarioRutinaDaoEntity: UsuarioRutinaDao
+    @Inject
+    lateinit var ConsejosDaoMock: ConsejosDaoMock
+    @Inject
+    lateinit var ConsejosDaoEntity: ConsejosDao
 
     override fun onCreate() {
 
@@ -71,6 +78,9 @@ class SimpleFitApplication: Application (){
 
             if(UsuarioRutinaDaoEntity.count() == 0)
                 UsuarioRutinaDaoMock.get().forEach {UsuarioRutinaDaoEntity.insert(it.toUsuarioRutina().toUsuarioRutinaEntity())}
+
+            if(ConsejosDaoEntity.count() == 0)
+                ConsejosDaoMock.get().forEach {ConsejosDaoEntity.insert(it.toConsejo().toConsejoEntity())}
         }
     }
 }

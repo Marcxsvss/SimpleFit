@@ -3,50 +3,24 @@ la contraseña es o "1234"
 He puesto la clase usuario y usuarioEntity que todos los campos puedan ser nulos, es posible que esto haya que quitarlo
 
 Para conectar con mysql usamos las siguientes credenciales: uremoto, contraseña -> 1234
-Quehacer
+
+Tareas
 ---------
 Poner el maximo de rutinas que se pueden crear en 4, cada IMAGEN IRA DEFINIDA POR EL OBJETIVO DEL USUARIO
 Comprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(UiState,listasy datos) vuelven a estar vacios.
-Meter los botones de home en un component para no repetir codigo
 Meter la lazycolumn de rutinas y de añadir rutina en un componente para no repetir codigo
-
 Meter un boton en ver rutinas donde puedes quitar la seleccion de una rutina, es decir, que no salga con el color amarillo fuerte y se quite la papelera de borrar.
 Meter las bolitas de los dias de la semana en un componente para poder reutilizarlo y no repetir codigo.
-Para asignar las maquinas a las rutinas, podemos hacer que coja 3,2 o 1 dependiendo del musculo, pero la primera la hardcodeare
-
 Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
-
-Al hacer el get en el viewmodel de rutinas y de de AddRutinas, al pasarlo a UiState, la funcion de paso debe tener un parametro estado, y si el get se ha hecho desde rutinas, el parametro estado sera Added, y si el get se hace desde Add, el parametro será unAdded, todo esto para que al navegar a verRutina, dependiendo si es para añadir o para hecharle un vistazo desde rutinas, si es desde añadir, saldrán dos botones uno de añadir rutina a rutinas y otro de volver, para volver a la pantalla de añadir rutinas, creo que en vez de pasarle rutinaid en la navegacion voy a tener que pasarle RutinaUiState ya que este contendrá la propiedad Estado.
-
-Hacer que al borrar la rutina que tienes seleccionada, se ponga la propiedad estado del usuario a 0, como que no tiene ninguna ya seleccionada.
-
-Meter el boton de descargar rutina para descragar la rutina que quieres.
-
-
-
-//////////
-Para los turnos partidos, primero mandar la nueva propuesta de proyecto a vicente, luego crear todas las rutinas, hacer la documentacion
-/////////
-Tareas
------------------
-
+Completar BBDD tanto datos como conexion y .war, hacer la documentacion
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
-Posible ampliacion, añadir un box al final del home que sea para compartir con amigos la aplicacion
-=======
-Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo, no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle el padding bottom para que haya mas espacio entre uno y otro 
-
-Mirar en el archivo php variables, como pongo las claves primarias de dietaalimento y rutinamaquina
-Añadir rutinas y dietas por defecto, unas 20 rutinas y unas 20 dietas.
-
-
-Añadir Datos a la base de datos(Alimentos, maquinas,etc)
+Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo,
+no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle
+el padding bottom para que haya mas espacio entre uno y otro 
 Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
-Maquetar la UI de Lista de rutinas,entreno del dia, dieta del dia, consejos, (Ampliazcion de compartir con amigos) y dietas.
 Ver como cojer los datos de Azure para la Aplicacion de android con Retrofit.
 
-Una vez terminada la App Android,
-
-Hacer la ApliCacion de Administracion de usuarios, rutinas etc.
+Aplicacion de Administracion de usuarios, rutinas etc.
 ---------------------------------------------------
 Tendrá un inicio de sesion, los administradores entraran con un usuario y contraseña y solo se podrán añadir nuevos administradores 
 desde dentro de la aplicacion y el unico que podrá crear administradores sera el director. 
@@ -58,19 +32,10 @@ Habrá un boton para eliminar (cualquier dato de las tablas), editar(cualquier d
 
 Ampliaciones
 -------------
-Posible ampliacion, que al pasar por encima del icono de cada rutina, te muestre como una camara para hacer una foto, al igual con la foto de perfil.
 Posible ampliacion, meter entrenamientos de calistenia, cardio, hipertrofia, hiit... esto sería para meter un filtro mas en la pestaña de añadir rutinas
-
-AddRutina UI
-------------
-Las rutinas ya estarán definidas y al usuario se le mostrará una recomendacion
-
-primero tendrás una pantalla donde veras una seleccion de filtros y en base a esos filtros, el globito recomendado se llenará
-Habrán globitos, amarillos fuerte con un texto que tendrá otro globito blanco(Recomendado, todas)
-
-cuando ves una de las rutinas, abajo a la derecha tendrás un botón el cual guarda la rutina seleccionada
+Posible ampliacion, añadir un box al final del home que sea para compartir con amigos la aplicacion
 
 
-se mostraran las rutinas en base a 
-filtros objetivo(en base a lo que quieras hacer, necesitaras mas o menos entreno, es decir, volumen, mas entreno, definicion, tenrás menos energia por lo que no te hará falta entrenar tanto)
-frecuencia-> dependiendo de cuantos dias quieras entrenar a la semana
+
+
+

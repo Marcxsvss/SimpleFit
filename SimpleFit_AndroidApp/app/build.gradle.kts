@@ -81,6 +81,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    //Hilt
     implementation("com.google.dagger:hilt-android:2.44")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     ksp("com.google.dagger:hilt-compiler:2.48")
@@ -96,10 +97,12 @@ dependencies {
     implementation("androidx.room:room-paging:$roomVersion")
     //para pasar lista de objetos a campos den Room
     implementation ("com.google.code.gson:gson:2.8.9")
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
-//    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-//    implementation("com.squareup.okhttp3:logging-interceptor:4.2.2")
+    //Retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.2.2")
 
 }
 

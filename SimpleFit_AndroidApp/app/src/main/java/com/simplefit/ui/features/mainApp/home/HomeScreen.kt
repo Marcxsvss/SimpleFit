@@ -45,6 +45,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kinoyamboladmin.ui.features.movieform.ImageSelector
 import com.simplefit.R
 import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
@@ -65,6 +66,7 @@ fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
     onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
+    consejos: List<String>
 
     ) {
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
@@ -73,30 +75,36 @@ fun HomeScreen(
         Box(
             Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(170.dp)
                 .background(
                     color = Color(0xFFDBC06D),
                     shape = RoundedCornerShape(bottomEnd = 40.dp, bottomStart = 40.dp)
                 )
         ) {
-            Column(
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.Start,
-                modifier = Modifier.padding(40.dp)
-            ) {
-                Text(
-                    text = "Hola,\n",
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    fontStyle = FontStyle.Normal
-                )
-                Text(
-                    text = homeUiState.nombre.replaceFirstChar { it.uppercase(Locale.getDefault()) },
-                    color = Color.White,
-                    fontSize = 30.sp,
-                    fontStyle = FontStyle.Normal,
-                    fontFamily = FontFamily(Font(R.font.roboto_bold))
-                )
+            Row()
+            {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.Start,
+                    modifier = Modifier.padding(start = 50.dp,40.dp)
+                ) {
+                    Text(
+                        text = "Hola,\n",
+                        color = Color.White,
+                        fontSize = 20.sp,
+                        fontStyle = FontStyle.Normal
+                    )
+                    Text(
+                        text = homeUiState.nombre.replaceFirstChar { it.uppercase(Locale.getDefault()) },
+                        color = Color.White,
+                        fontSize = 30.sp,
+                        fontStyle = FontStyle.Normal,
+                        fontFamily = FontFamily(Font(R.font.roboto_bold))
+                    )
+                }
+                ImageSelector(modifier = Modifier.padding(start = 100.dp,top = 30.dp),image = null, label = "") {
+
+                }
             }
         }
         Spacer(modifier = Modifier.height(12.dp))
@@ -133,27 +141,21 @@ fun HomeScreen(
                     }
                 }
             }
-            Text(
-                text = "CONSEJOS",
-                color = Color(0xFFDCCEA2),
-                fontSize = 20.sp,
-                fontStyle = FontStyle.Normal,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                modifier = Modifier
-                    .align(Alignment.Start)
-                    .padding(start = 18.dp)
-            )
+//            Text(
+//                text = "CONSEJOS",
+//                color = Color(0xFFDCCEA2),
+//                fontSize = 20.sp,
+//                fontStyle = FontStyle.Normal,
+//                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+//                modifier = Modifier
+//                    .align(Alignment.Start)
+//                    .padding(start = 18.dp)
+//            )
             HeaderConsejos(
                 modifier = Modifier,
-                consejos = listOf(
-                    "COMEME LOS HUEVOS",
-                    "MAMAME EL BICHO",
-                    "CANTO DE CABRONA",
-                    "HIJAE LA GRAN PUTA",
-                    "MALA CANALLA"
-                ),
+                consejos = consejos
             )
-            Spacer(modifier = Modifier.height(25.dp))
+            //Spacer(modifier = Modifier.height(25.dp))
 
             HomeButton(
                 onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
