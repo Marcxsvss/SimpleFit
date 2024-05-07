@@ -1,18 +1,17 @@
-package com.simplefit.data.services.usuario
+package com.simplefit.data.services.usuariorutina
 
 import android.util.Log
 import com.simplefit.data.services.ApiServicesException
 import javax.inject.Inject
 
-class UsuarioServiceImplementation @Inject constructor(
-    private val usuarioService: UsuarioService
+class UsuarioRutinaServiceImplementation @Inject constructor(
+    private val usuarioRutinaService: UsuarioRutinaService
 ) {
     private val logTag: String = "OkHttp"
-
-    suspend fun get(email: String): UsuarioApi {
+    suspend fun get(email: String): List<UsuarioRutinaApi> {
         val mensajeError = "No se han podido obtener el usuario con email = $email"
         try {
-            val response = usuarioService.usuario(email)
+            val response = usuarioRutinaService.usuarioRutina(email)
             if (response.isSuccessful) {
                 Log.d(logTag, response.toString())
                 val dato = response.body()
@@ -27,10 +26,10 @@ class UsuarioServiceImplementation @Inject constructor(
             throw ApiServicesException(mensajeError)
         }
     }
-    suspend fun insert(usuario: UsuarioApi) {
+    suspend fun insert(usuario: UsuarioRutinaApi) {
         val mensajeError ="No se ha podido añadir el usuario"
         try {
-            val response = usuarioService.insert(usuario)
+            val response = usuarioRutinaService.insert(usuario)
             if (response.isSuccessful) {
                 Log.d(logTag, response.toString())
                 // Aquí response.body() es un objeto de tipo RespuestaApi
@@ -47,18 +46,12 @@ class UsuarioServiceImplementation @Inject constructor(
         }
     }
 
-    suspend fun update(usuario: UsuarioApi) {
-        //Tendré que hacer otro update para la actualizacion dela rutina
-        //Tambien puedo hacer un get del usuario con el email, meterle en
-        // codigo elrutina state correspondiente y ya hacer el update normal
-        // con UsuarioApi, entonces solo tendriamos un update
-        val mensajeError = "No se ha podido actualizar el usuario"
+    suspend fun delete(userid: String,rutinaid : Int) {
+        val mensajeError = "No se ha podido borrar el contacto"
         try {
-            val response = usuarioService.update(usuario)
+            val response = usuarioRutinaService.delete(userid,rutinaid)
             if (response.isSuccessful) {
                 Log.d(logTag, response.toString())
-                // Aquí response.body() es un objeto de tipo RespuestaApi
-                // que simplemente logeamos si no es null.
                 Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")
             } else {
                 val body = response.errorBody()?.string()

@@ -11,15 +11,15 @@ interface UsuarioService {
 
     @GET("usuarios/{email}")
     @Headers("Accept: application/json", "Content-Type: application/json")
-    suspend fun usuario(@Path("email") email: String): Response<List<UsuarioApi>>
+    suspend fun usuario(@Path("email") email: String): Response<UsuarioApi>
 
     @POST("usuarios")
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun insert(@Body u : UsuarioApi): Response<RespuestaApi>
 
-    @PUT("usuarios/{email}")
+    @PUT("usuarios")
     @Headers("Accept: application/json", "Content-Type: application/json")
-    suspend fun update(@Body email : String, @Body u2 : UsuarioApi): Response<RespuestaApi>
+    suspend fun update(@Body u2 : UsuarioApi): Response<RespuestaApi>
 
     @DELETE("usuarios/{email}")
     @Headers("Accept: application/json", "Content-Type: application/json")
