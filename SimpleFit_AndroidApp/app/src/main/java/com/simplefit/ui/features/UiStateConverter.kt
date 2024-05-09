@@ -71,8 +71,7 @@ fun Maquina.toMaquinaUiState() = MaquinaUiState(
 )
 fun VerRutinaUiState.toUsuarioRutina(userid : String) = UsuarioRutina(
     userid = userid,
-    rutinaid = this.rutinaid,
-    nombre = this.titulo)
+    rutinaid = this.rutinaid)
 
 fun RoutinesUiState.toVerEntrenamientoUiState() = VerEntrenamientoUiState(
     rutinaid = this.rutinaid,

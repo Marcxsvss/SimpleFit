@@ -16,11 +16,10 @@
 	
 	// TABLAS Y SU CLAVE
 	$tablas = array();
-	$tablas["alimentos"]="alimentoid";
-	$tablas["dietaalimento"]="alimentoid";//Aqui como lo hago??
-	$tablas["dietas"]="dietaid";
 	$tablas["maquinas"]="maquinaid";
-	$tablas["rutinamaquina"]="rutinaid";
+	$tablas["rutinamaquina"] = array("rutinaid", "maquinaid");
 	$tablas["rutinas"]="rutinaid";
-	$tablas["users"]="dni";
+	$tablas["usuarios"]="dni";
+	$tablas["usuariorutina"]=array("rutinaid", "userid");
+	$tablas["consejos"]="consejoid";
 	

@@ -10,8 +10,6 @@ data class UsuarioRutinaEntity(
     @ColumnInfo(name="userid")
     val userid : String,
     @ColumnInfo(name="rutinaid")
-    val rutinaid : Int,
-    @ColumnInfo(name="nombre")
-    val nombre: String
+    val rutinaid : Int
 ) : Parcelable
 

@@ -5,6 +5,6 @@ data class RutinasApi (
     val titulo : String,
     val descripcion : String,
     val frecuencia : Int,
-    val diasDescanso : Int,
+    val diasdescanso : Int,
     val dificultad : String
 )

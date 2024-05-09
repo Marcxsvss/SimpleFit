@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class UsuarioApi(
     val email: String,
-    val contraseña: String,
+    val password: String,
     val dni: String,
     val nombre : String,
     val altura : String,
@@ -12,5 +12,5 @@ data class UsuarioApi(
     val edad : String,
     val sexo : String,
     val somatotipo : String,
-    val rutinaState : Int?
+    val rutinastate : Int?
 )

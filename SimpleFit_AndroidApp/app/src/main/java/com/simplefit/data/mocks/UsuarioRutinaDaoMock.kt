@@ -6,20 +6,20 @@ class UsuarioRutinaDaoMock @Inject constructor() {
     private var usuarioRutina = mutableListOf(
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
-            rutinaid = 1,
-            nombre = "Rutina 1",
+            rutinaid = 1
+
 
         ),
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
-            rutinaid = 2,
-            nombre = "Rutina 2",
+            rutinaid = 2
+
 
         ),
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
-            rutinaid = 3,
-            nombre = "Rutina 3",
+            rutinaid = 3
+
 
         )
     )

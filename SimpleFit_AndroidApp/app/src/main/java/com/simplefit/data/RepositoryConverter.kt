@@ -90,14 +90,14 @@ fun Usuario.toUsuarioApi() = UsuarioApi(
 fun UsuarioApi.toUsuario() = Usuario(
     this.email,
     this.dni,
-    this.contraseña,
+    this.password,
     this.nombre,
     this.altura,
     this.peso,
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinaState
+    this.rutinastate
 )
 //endregion
 //region Rutina
@@ -146,8 +146,7 @@ fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
 )
 fun UsuarioRutinaMock.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
     userid = this.userid,
-    rutinaid = this.rutinaid,
-    nombre = this.nombre
+    rutinaid = this.rutinaid
 )
 fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEntity(
     rutinaid = this.rutinaid,
@@ -157,14 +156,12 @@ fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEn
 
 fun UsuarioRutina.toUsuarioRutinaEntity() = UsuarioRutinaEntity(
     userid = this.userid,
-    rutinaid = this.rutinaid,
-    nombre = this.nombre,
+    rutinaid = this.rutinaid
 )
 
 fun UsuarioRutinaEntity.toUsuarioRutina() = UsuarioRutina(
     userid = this.userid,
-    rutinaid = this.rutinaid,
-    nombre = this.nombre
+    rutinaid = this.rutinaid
 )
 fun ConsejosMock.toConsejo(): Consejo = Consejo(
     consejoid = this.consejoid,
@@ -205,7 +202,7 @@ fun RutinasApi.toRutina(): Rutinas = Rutinas(
     titulo = this.titulo,
     descripcion = this.descripcion,
     frecuencia = this.frecuencia,
-    diasDescanso = this.diasDescanso,
+    diasDescanso = this.diasdescanso,
     dificultad = this.dificultad
 )
 fun Rutinas.toRutinaApi(): RutinasApi = RutinasApi(
@@ -213,15 +210,13 @@ fun Rutinas.toRutinaApi(): RutinasApi = RutinasApi(
     titulo = this.titulo,
     descripcion = this.descripcion,
     frecuencia = this.frecuencia,
-    diasDescanso = this.diasDescanso,
+    diasdescanso = this.diasDescanso,
     dificultad = this.dificultad)
 fun UsuarioRutina.toUsuarioRutinaApi(): UsuarioRutinaApi = UsuarioRutinaApi(
     userid = this.userid,
-    rutinaid = this.rutinaid,
-    nombre = this.nombre
+    rutinaid = this.rutinaid
 )
 fun UsuarioRutinaApi.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
     userid = this.userid,
-    rutinaid = this.rutinaid,
-    nombre = this.nombre
+    rutinaid = this.rutinaid
 )
