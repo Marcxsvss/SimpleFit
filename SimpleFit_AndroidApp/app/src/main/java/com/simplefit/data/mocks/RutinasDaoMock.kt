@@ -10,7 +10,7 @@ class RutinasDaoMock @Inject constructor(){
             titulo = "Split Routine",
             descripcion = "Es una forma común de dividir los grupos musculares a lo largo de la semana para darles tiempo para recuperarse y permitir un entrenamiento enfocado para cada grupo muscular. ",
             frecuencia = 1,
-            diasDescanso = 3,
+            diasdescanso = 3,
             dificultad = "Intermedio"
         ),
         RutinasMock(
@@ -18,7 +18,7 @@ class RutinasDaoMock @Inject constructor(){
             titulo = "BÁSICA COMPLETA",
             descripcion = "Rutina de intermedios",
             frecuencia = 2,
-            diasDescanso = 2,
+            diasdescanso = 2,
             dificultad = "Principiante"
         ),
         RutinasMock(
@@ -26,7 +26,7 @@ class RutinasDaoMock @Inject constructor(){
             titulo = "BÁSICO COMPLETO",
             descripcion = "Rutina de avanzados",
             frecuencia = 1,
-            diasDescanso = 1,
+            diasdescanso = 1,
             dificultad = "Avanzado"
         ),
 
