@@ -114,7 +114,7 @@ fun RutinasMock.toRutina(): Rutinas = Rutinas(
     this.titulo,
     this.descripcion,
     this.frecuencia,
-    this.diasDescanso,
+    this.diasdescanso,
     this.dificultad
 )
 fun Rutinas.toRutinasEntity(): RutinasEntity = RutinasEntity(
