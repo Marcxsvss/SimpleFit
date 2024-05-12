@@ -14,3 +14,21 @@ En en engranaje tendremos nuestros datos para personalizar peso, altura, objetiv
 
 -----------------------------------
 La dieta estará basada en el objetivo
+
+Admin App
+---------
+
+Te logeas y en home te saldrán distintos cuadraditos, usuarios, rutinas, rutinamaquina y consejos, 
+en la pantalla de usuarios saldrán todos los usuarios y un filtro para buscar nombre o id, filtros y tal. Puedo decir que esa informacion es para sacar estadisticas y tal, para ver cuantos ectomorfos hay y esas vainas,
+en la pantalla rutinas saldran todas las rutinas y podrás buscarla por nombre y filtrar por frecuencia y tal.
+en la pantalla consejos, podrás ver 
+
+
+
+Ampliacion
+----------
+en rutina maquina, igual es mucho lio, pero deberia dejar asociar a una rutina las maquinas que queramos, igual esta funcion la dejo para ampliacion.
+como ampliacion dejaré maquinas, 
+
+
+
