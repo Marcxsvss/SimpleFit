@@ -17,6 +17,7 @@ CREATE TABLE `usuarios`(
   `somatotipo` varchar(255),
   `rutinastate` int
 );
+select * from usuarios;
 
 CREATE TABLE `maquinas` (
   `maquinaid` int PRIMARY KEY,
@@ -25,7 +26,7 @@ CREATE TABLE `maquinas` (
   `imagen` longtext,
   `descripcion` varchar(255)
 );
-
+select * from maquinas;
 CREATE TABLE `rutinas` (
   `rutinaid` int PRIMARY KEY,
   `titulo` varchar(255),
@@ -34,28 +35,30 @@ CREATE TABLE `rutinas` (
   `diasdescanso` int,
   `dificultad` varchar(255)
 );
-
+select * from rutinas;
 
 CREATE TABLE `consejos` (
   `consejoid` int PRIMARY KEY,
   `consejo` varchar(255)
 );
-
+select * from rutinas;
 CREATE TABLE `rutinamaquina` (
   `rutinaid` int,
   `maquinaid` int,
-  PRIMARY KEY (`rutinaid`, `maquinaid`)
+  `dia` varchar(255),
+  PRIMARY KEY (`rutinaid`, `maquinaid`, `dia`)
 );
-
 ALTER TABLE `rutinamaquina` ADD FOREIGN KEY (`rutinaid`) REFERENCES `rutinas` (`rutinaid`);
-
 ALTER TABLE `rutinamaquina` ADD FOREIGN KEY (`maquinaid`) REFERENCES `maquinas` (`maquinaid`);
+
+select * from rutinamaquina;
 
 CREATE TABLE `usuariorutina` (
   `userid` varchar(255),
   `rutinaid` int,
   PRIMARY KEY (`userid`, `rutinaid`)
 );
+select * from usuariorutina;
 
 ALTER TABLE `usuariorutina` ADD FOREIGN KEY (`userid`) REFERENCES `usuarios` (`email`);
 

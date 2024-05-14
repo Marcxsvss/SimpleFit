@@ -40,7 +40,7 @@ class UsuarioRepository @Inject constructor(
     }
 
     suspend fun updateRutinaState(userid: String, rutinaState: Int) = withContext(Dispatchers.IO) {
-        val usuario = usuarioServiceImplementation.get(userid).copy(rutinaState = rutinaState)
+        val usuario = usuarioServiceImplementation.get(userid).copy(rutinastate = rutinaState)
         usuarioServiceImplementation.update(usuario)
     }
 
