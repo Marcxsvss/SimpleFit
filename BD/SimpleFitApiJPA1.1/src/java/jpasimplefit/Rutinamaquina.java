@@ -21,6 +21,7 @@ import jakarta.persistence.Table;
 @Table(name = "rutinamaquina")
 @NamedQueries({
     @NamedQuery(name = "Rutinamaquina.findAll", query = "SELECT r FROM Rutinamaquina r"),
+    @NamedQuery(name = "Rutinamaquina.findMaquinas", query = "SELECT r.maquinaid FROM Rutinamaquina r WHERE r.rutinamaquinaPK.rutinaid = :rutinaid AND r.rutinamaquinaPK.dia = :dia"),
     @NamedQuery(name = "Rutinamaquina.findByRutinaid", query = "SELECT r FROM Rutinamaquina r WHERE r.rutinamaquinaPK.rutinaid = :rutinaid"),
     @NamedQuery(name = "Rutinamaquina.findByMaquinaid", query = "SELECT r FROM Rutinamaquina r WHERE r.rutinamaquinaPK.maquinaid = :maquinaid"),
     @NamedQuery(name = "Rutinamaquina.findByDia", query = "SELECT r FROM Rutinamaquina r WHERE r.rutinamaquinaPK.dia = :dia")})

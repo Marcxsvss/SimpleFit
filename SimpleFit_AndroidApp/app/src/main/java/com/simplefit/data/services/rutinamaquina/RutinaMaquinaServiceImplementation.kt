@@ -27,5 +27,4 @@ class RutinaMaquinaServiceImplementation @Inject constructor(
             throw ApiServicesException(mensajeError)
         }
     }
-
 }

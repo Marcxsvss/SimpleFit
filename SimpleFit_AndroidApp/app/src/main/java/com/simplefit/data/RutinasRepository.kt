@@ -38,7 +38,7 @@ class RutinasRepository @Inject constructor(
     suspend fun get(userid: String): List<RoutinesUiState> =
         withContext(Dispatchers.IO)
         {
-            val rutinaState = usuarioServiceImplementation.get(userid).rutinaState //rutinaState es el id de la rutina que el usuario tiene seleccionada
+            val rutinaState = usuarioServiceImplementation.get(userid).rutinastate //rutinaState es el id de la rutina que el usuario tiene seleccionada
             rutinasServiceImplementation.get().filter { r ->
                 r.rutinaid in usuarioRutinaServiceImplementation.get(userid).map { it.rutinaid } //Solo se muestran las rutinas que el usuario tiene agregadas
             }.map { if(rutinaState == it.rutinaid)it.toRutina().toRutinasUiState("current",userid)else it.toRutina().toRutinasUiState("Added",userid)}

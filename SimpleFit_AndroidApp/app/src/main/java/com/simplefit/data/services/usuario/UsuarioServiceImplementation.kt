@@ -48,10 +48,6 @@ class UsuarioServiceImplementation @Inject constructor(
     }
 
     suspend fun update(usuario: UsuarioApi) {
-        //Tendré que hacer otro update para la actualizacion de la rutina
-        //Tambien puedo hacer un get del usuario con el email, meterle en
-        // codigo elrutina state correspondiente y ya hacer el update normal
-        // con UsuarioApi, entonces solo tendriamos un update
         val mensajeError = "No se ha podido actualizar el usuario"
         try {
             val response = usuarioService.update(usuario)

@@ -76,18 +76,8 @@ public class ServiceRESTConsejos {
         }
         return response;
     }
-    /*
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
-*/
-    /**
-     * PUT method for updating or creating an instance of ServiceRESTConsejos
-     * @param content representation for the resource
-     */
+
+
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content) {

@@ -4,6 +4,8 @@
  */
 package sersimplefit;
 
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.Consumes;
@@ -12,6 +14,11 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import java.util.HashMap;
+import java.util.List;
+import jpasimplefit.Usuarios;
+import jpasimplefit.UsuariosJpaController;
 
 /**
  * REST Web Service
@@ -30,22 +37,8 @@ public class ServiceRESTUsuarioRutina {
     public ServiceRESTUsuarioRutina() {
     }
 
-    /**
-     * Retrieves representation of an instance of sersimplefit.ServiceRESTUsuarioRutina
-     * @return an instance of java.lang.String
-     */
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * PUT method for updating or creating an instance of ServiceRESTUsuarioRutina
-     * @param content representation for the resource
-     */
-    @PUT
+    
+    
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content) {
     }
