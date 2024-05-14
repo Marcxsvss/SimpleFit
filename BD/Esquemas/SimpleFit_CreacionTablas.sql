@@ -17,7 +17,7 @@ CREATE TABLE `usuarios`(
   `somatotipo` varchar(255),
   `rutinastate` int
 );
-select * from usuarios;
+
 
 CREATE TABLE `maquinas` (
   `maquinaid` int PRIMARY KEY,
