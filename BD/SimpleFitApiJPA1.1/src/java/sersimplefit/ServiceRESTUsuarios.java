@@ -124,7 +124,7 @@ public class ServiceRESTUsuarios {
         return response;
     }
 
-    @POST
+    /*@POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response post(Usuarios usu) {
@@ -168,8 +168,8 @@ public class ServiceRESTUsuarios {
             }
         }
         return response;
-    }
-
+    }*/
+/*
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -220,10 +220,6 @@ public class ServiceRESTUsuarios {
             }
         }
         return response;
-    }
+    }*/
 
-    @PUT
-    @Consumes(jakarta.ws.rs.core.MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
-    }
 }
