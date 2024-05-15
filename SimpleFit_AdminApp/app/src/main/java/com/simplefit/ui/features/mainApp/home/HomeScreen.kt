@@ -46,10 +46,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kinoyamboladmin.ui.features.movieform.ImageSelector
-import com.simplefit.R
 import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefitAdmin.R
 import java.util.Calendar
 import java.util.Locale
 

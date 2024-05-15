@@ -47,10 +47,6 @@ class SimpleFitAdminApplication: Application (){
     @Inject
     lateinit var RutinaMaquinaDaoEntity: RutinaMaquinaDao
     @Inject
-    lateinit var UsuarioRutinaDaoMock: UsuarioRutinaDaoMock
-    @Inject
-    lateinit var UsuarioRutinaDaoEntity: UsuarioRutinaDao
-    @Inject
     lateinit var ConsejosDaoMock: ConsejosDaoMock
     @Inject
     lateinit var ConsejosDaoEntity: ConsejosDao
@@ -72,8 +68,6 @@ class SimpleFitAdminApplication: Application (){
             if(RutinaMaquinaDaoEntity.count() == 0)
                 RutinaMaquinaDaoMock.get().forEach {RutinaMaquinaDaoEntity.insert(it.toRutinaMaquina().toRutinaMaquinaEntity())}
 
-            if(UsuarioRutinaDaoEntity.count() == 0)
-                UsuarioRutinaDaoMock.get().forEach {UsuarioRutinaDaoEntity.insert(it.toUsuarioRutina().toUsuarioRutinaEntity())}
 
             if(ConsejosDaoEntity.count() == 0)
                 ConsejosDaoMock.get().forEach {ConsejosDaoEntity.insert(it.toConsejo().toConsejoEntity())}

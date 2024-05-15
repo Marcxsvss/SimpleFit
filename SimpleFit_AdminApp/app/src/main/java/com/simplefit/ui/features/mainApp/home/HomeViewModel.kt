@@ -43,17 +43,13 @@ class HomeViewModel @Inject constructor(
             consejos = ConsejosRepository.get()
         }
     }
-    fun onHomeEvent(homeEvent: HomeEvent) {
-        when (homeEvent) {
-            is HomeEvent.onVerEntrenamientoClicked -> {
-                if(rutinaUiState != null)
-                homeEvent.onNavigateToVerEntrenamiento(rutinaUiState!!)
-                else//Mostrar snackbar
-                    println("No hay rutina seleccionada")
-
-            }
-
-            else -> {}
-        }
-    }
+//    fun onHomeEvent(homeEvent: HomeEvent) {
+//        when (homeEvent) {
+//            is HomeEvent.onUsuariosClicked -> {
+//
+//            }
+//
+//            else -> {}
+//        }
+//    }
 }

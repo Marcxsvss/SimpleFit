@@ -35,59 +35,59 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class AppModule {
 
-    @Provides
-    @Singleton
-    fun provideOkHttpClient() : OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
-
-        val timeout = 10L
-        return OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .connectTimeout(timeout, TimeUnit.SECONDS)
-            .readTimeout(timeout, TimeUnit.SECONDS)
-            .writeTimeout(timeout, TimeUnit.SECONDS)
-            .build()
-    }
-    @Provides
-    @Singleton
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient
-    ) : Retrofit = Retrofit.Builder()
-        .client(okHttpClient)
-        .baseUrl("http://10.0.2.2/simplefit/") //Todavia no creado y añadido a tomcat y phpmyadmin
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    @Provides
-    @Singleton
-    fun provideUsuarioService(
-        retrofit: Retrofit
-    ) : UsuarioService = retrofit.create(UsuarioService::class.java)
-    @Provides
-    @Singleton
-    fun provideConsejoService(
-        retrofit: Retrofit
-    ) : ConsejosService = retrofit.create(ConsejosService::class.java)
-    @Provides
-    @Singleton
-    fun provideMaquinaService(
-        retrofit: Retrofit
-    ) : MaquinaService = retrofit.create(MaquinaService::class.java)
-    @Provides
-    @Singleton
-    fun provideRutinaService(
-        retrofit: Retrofit
-    ) : RutinasService = retrofit.create(RutinasService::class.java)
-    @Provides
-    @Singleton
-    fun provideRutinaMaquinaService(
-        retrofit: Retrofit
-    ) : RutinaMaquinaService = retrofit.create(RutinaMaquinaService::class.java)
-    @Provides
-    @Singleton
-    fun provideUsuarioRutinaService(
-        retrofit: Retrofit
-    ) : UsuarioRutinaService = retrofit.create(UsuarioRutinaService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideOkHttpClient() : OkHttpClient {
+//        val loggingInterceptor = HttpLoggingInterceptor()
+//        loggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
+//
+//        val timeout = 10L
+//        return OkHttpClient.Builder()
+//            .addInterceptor(loggingInterceptor)
+//            .connectTimeout(timeout, TimeUnit.SECONDS)
+//            .readTimeout(timeout, TimeUnit.SECONDS)
+//            .writeTimeout(timeout, TimeUnit.SECONDS)
+//            .build()
+//    }
+//    @Provides
+//    @Singleton
+//    fun provideRetrofit(
+//        okHttpClient: OkHttpClient
+//    ) : Retrofit = Retrofit.Builder()
+//        .client(okHttpClient)
+//        .baseUrl("http://10.0.2.2/simplefit/") //Todavia no creado y añadido a tomcat y phpmyadmin
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//    @Provides
+//    @Singleton
+//    fun provideUsuarioService(
+//        retrofit: Retrofit
+//    ) : UsuarioService = retrofit.create(UsuarioService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideConsejoService(
+//        retrofit: Retrofit
+//    ) : ConsejosService = retrofit.create(ConsejosService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideMaquinaService(
+//        retrofit: Retrofit
+//    ) : MaquinaService = retrofit.create(MaquinaService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideRutinaService(
+//        retrofit: Retrofit
+//    ) : RutinasService = retrofit.create(RutinasService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideRutinaMaquinaService(
+//        retrofit: Retrofit
+//    ) : RutinaMaquinaService = retrofit.create(RutinaMaquinaService::class.java)
+//    @Provides
+//    @Singleton
+//    fun provideUsuarioRutinaService(
+//        retrofit: Retrofit
+//    ) : UsuarioRutinaService = retrofit.create(UsuarioRutinaService::class.java)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Provides
     @Singleton
