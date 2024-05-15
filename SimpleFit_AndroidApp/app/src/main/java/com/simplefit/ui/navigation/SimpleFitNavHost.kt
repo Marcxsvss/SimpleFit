@@ -5,7 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaViewModel
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
 import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
@@ -25,7 +24,6 @@ fun SimpleFitNavHost(
     val loginViewModel = hiltViewModel<LoginViewModel>()
     val accountViewModel = hiltViewModel<RegisterAccountInfoViewModel>()
     val registerProfileViewModel = hiltViewModel<RegisterProfileInfoViewModel>()
-    val mainAppViewModel = hiltViewModel<MainAppViewModel>()
     val homeViewModel = hiltViewModel<HomeViewModel>()
     val routinesViewModel = hiltViewModel<RoutinesViewModel>()
     val profileViewModel = hiltViewModel<ProfileViewModel>()
@@ -73,7 +71,6 @@ fun SimpleFitNavHost(
             }
         )
         homeScreen(
-            mainAppViewModel = mainAppViewModel,
             homeViewModel = homeViewModel,
             onNavigateToVerEntrenamiento = { rutinaUiState ->
                 verEntrenamientoViewModel.setRutina(rutinaUiState)
@@ -93,7 +90,6 @@ fun SimpleFitNavHost(
         profileScreen(
             profileViewModel = profileViewModel,
             onNavigateToLogin = {
-                mainAppViewModel.logOut()
                 navController.navigateToLogin()
             })
         verRutinaScreen( verRutinaViewModel = verRutinaViewModel,
