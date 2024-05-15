@@ -7,10 +7,6 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.MainAppViewModel
-import com.simplefit.ui.features.mainApp.home.HomeScreen
-import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
-import com.simplefit.ui.features.mainApp.routines.RoutinesEvent.onRutinaClicked
 import com.simplefit.ui.features.mainApp.routines.RoutinesScreen
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel

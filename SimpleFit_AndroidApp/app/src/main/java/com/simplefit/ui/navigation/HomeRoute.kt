@@ -7,10 +7,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.home.HomeScreen
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
-import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 
@@ -21,7 +19,6 @@ const val HomeParameterName = "email"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
-    mainAppViewModel: MainAppViewModel,
     onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
 
     ) {
@@ -34,8 +31,7 @@ fun NavGraphBuilder.homeScreen(
         )
     ) {
     backStackEntry ->
-       val email :String? = backStackEntry.arguments?.getString(HomeParameterName, "Email erroneo")
-        mainAppViewModel.setUsuario(email ?: "Email erroneo")
+
 
         HomeScreen(
             homeUiState = homeViewModel.homeUiState,

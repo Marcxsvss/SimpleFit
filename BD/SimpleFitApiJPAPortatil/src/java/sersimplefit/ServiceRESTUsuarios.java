@@ -8,7 +8,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
-import jakarta.websocket.server.PathParam;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.Produces;
@@ -43,9 +43,10 @@ public class ServiceRESTUsuarios {
     }
 
     @GET
-    @Path("{email}")
+    @Path("{mail}")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getOne(@PathParam("email") String email) {
+    public Response getOne(@PathParam("mail") String email) {
         EntityManagerFactory emf = null;
 
         HashMap<String, String> mensaje = new HashMap<>();
@@ -78,10 +79,10 @@ public class ServiceRESTUsuarios {
             }
         } catch (Exception ex) {
             statusResul = Response.Status.BAD_REQUEST;
-            mensaje.put("mensaje", "Error al procesar la petición");
+            mensaje.put("mensaje", ex.getMessage());
             response = Response
                     .status(statusResul)
-                    .entity(ex.getMessage())
+                    .entity(mensaje)
                     .build();
         } finally {
             if (emf != null) {

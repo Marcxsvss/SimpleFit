@@ -59,12 +59,6 @@ class ProfileViewModel @Inject constructor(
                 )
             }
 
-            is ProfileEvent.IntoleranciaChanged -> {
-                profileUiState = profileUiState.copy(
-                    intolerancia = profileEvent.intolerancia
-                )
-            }
-
             is ProfileEvent.SexoChanged -> {
                 profileUiState = profileUiState.copy(
                     sexo = profileEvent.sexo
