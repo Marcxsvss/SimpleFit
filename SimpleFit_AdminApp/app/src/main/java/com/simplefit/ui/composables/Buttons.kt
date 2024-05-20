@@ -25,7 +25,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -33,10 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simplefit.R
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
-import com.simplefit.ui.features.mainApp.home.HomeEvent
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefitAdmin.R
 
 @Composable
 fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked: () -> Unit? = {})
@@ -66,18 +62,14 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit))
+fun HomeButton(texto : String,onNavigateTo :() -> Unit)
 {
-    Box( //Ver entrenamiento de hoy
+    Box(
         Modifier
             .width(358.dp)
             .height(100.dp)
             .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(Color.Transparent, Color.Transparent),
-                    startY = 0.0f,
-                    endY = Float.POSITIVE_INFINITY
-                ),
+                color = Color(0xFFDAB338),
                 shape = RoundedCornerShape(
                     bottomEnd = 10.dp,
                     bottomStart = 10.dp,
@@ -85,25 +77,15 @@ fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, 
                     topStart = 10.dp
                 )
             )
-            .clickable {
-                when (texto) {
-                    "VER ENTRENAMIENTO" -> { onHomeEvent(HomeEvent.onVerEntrenamientoClicked(onNavigateToVerEntrenamiento)) }
-                    "CONSEJOS" -> {
-                        //onHomeEvent(HomeEvent.)
-                    }
-                    else -> {
-                        //onHomeEvent(HomeEvent.)
-                    }
-                }
-            }
+            .clickable { onNavigateTo() }
     ) {
-        Image(
-            painter = foto,
-            contentDescription = "Fondo",
-            modifier = Modifier.fillMaxSize()
-                .clip(RoundedCornerShape(10.dp)),
-            contentScale = ContentScale.Crop
-        )
+//        Image(
+//            painter = foto,
+//            contentDescription = "Fondo",
+//            modifier = Modifier.fillMaxSize()
+//                .clip(RoundedCornerShape(10.dp)),
+//            contentScale = ContentScale.Crop
+//        )
         Row(modifier = Modifier.align(Alignment.Center)) {
             Spacer(modifier = Modifier.width(5.dp))
             Text(

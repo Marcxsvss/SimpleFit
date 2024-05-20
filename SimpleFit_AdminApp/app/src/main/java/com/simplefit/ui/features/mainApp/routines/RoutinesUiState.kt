@@ -12,8 +12,6 @@ data class RoutinesUiState(
     val frecuencia : Int,
     val diasDescanso : Int,
     val dificultad : String,
-    val estado : String,
-    val userid : String
 
     ) : Parcelable {
 
@@ -25,8 +23,6 @@ data class RoutinesUiState(
         0,
         0,
         "",
-        "",
-        ""
         )
 }
 

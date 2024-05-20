@@ -26,7 +26,6 @@ import com.simplefit.models.UsuarioRutina
 
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.email,
-    this.dni,
     this.password,
     this.nombre,
     this.altura,
@@ -34,12 +33,12 @@ fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinaState
+    this.rutinaState,
+    this.cargo
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     email = this.email,
-    dni = this.dni,
     password = this.password,
     nombre = this.nombre,
     altura = this.altura,
@@ -47,7 +46,8 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     edad = this.edad,
     sexo = this.sexo,
     somatotipo = this.somatotipo,
-    rutinaState = this.rutinaState
+    rutinaState = this.rutinaState,
+    cargo = this.cargo
 )
 
 
@@ -64,7 +64,6 @@ fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
 //region UsuarioMock
 fun UsuarioMock.toUsuario(): Usuario = Usuario(
     email = this.email,
-    dni = this.dni,
     password = this.password,
     nombre = this.nombre,
     altura = this.altura,
@@ -72,11 +71,11 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
     edad = this.edad,
     sexo = this.sexo,
     somatotipo = this.somatotipo,
-    rutinaState = this.rutinaState
+    rutinaState = this.rutinaState,
+    cargo = this.cargo
 )
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,
-    this.dni,
     this.password,
     this.nombre,
     this.altura,
@@ -84,12 +83,13 @@ fun Usuario.toUsuarioApi() = UsuarioApi(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinaState
+    this.rutinaState,
+    this.cargo
+
 )
 
 fun UsuarioApi.toUsuario() = Usuario(
     this.email,
-    this.dni,
     this.password,
     this.nombre,
     this.altura,
@@ -97,7 +97,8 @@ fun UsuarioApi.toUsuario() = Usuario(
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinastate
+    this.rutinastate,
+    this.acceso
 )
 //endregion
 //region Rutina

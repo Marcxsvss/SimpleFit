@@ -1,6 +1,6 @@
 package com.simplefit.data.services
 
-//import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerializedName
 
 //data class DatosUsuarioApi(
 //    @SerializedName("email")

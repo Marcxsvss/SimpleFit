@@ -58,7 +58,7 @@ class LoginViewModel @Inject constructor(
                         )
                         if (usuarioUiState.estaLogeado) {
                             delay(1000)
-                            loginEvent.onNavigateTienda?.let { it(usuarioUiState.email) }
+                            loginEvent.onNavigateHome?.let { it(usuarioUiState.email) }
                         }
                     }
                 }
@@ -72,7 +72,7 @@ class LoginViewModel @Inject constructor(
     suspend fun logearse(): Boolean {
         val usuario = usuarioUiState.toUsuario()
         val usuarioRepository = usuarioRepository.get(usuario.email)
-        return usuarioRepository != null && usuarioRepository.password == usuario.password
+        return usuarioRepository != null && usuarioRepository.password == usuario.password && usuarioRepository.acceso == 1
     }
 
     fun iniciaUsuario(correo: String?) {

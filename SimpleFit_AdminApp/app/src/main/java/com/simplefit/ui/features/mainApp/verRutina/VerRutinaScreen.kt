@@ -44,7 +44,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
-import com.simplefit.R
+import com.simplefitAdmin.R
 import com.simplefit.ui.composables.DescansoScreen
 import com.simplefit.ui.features.mainApp.MaquinaUiState
 import java.util.Calendar
@@ -75,7 +75,6 @@ fun VerRoutinesScreen(
     }
 
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
-    val diaActual = obtenerDiaDeLaSemana()
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -85,9 +84,12 @@ fun VerRoutinesScreen(
             AlertDialog(
                 onDismissRequest = { onMostrarDialog(false) },
                 title = {
-                    Text(text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,fontFamily = FontFamily(
-                        Font(resId = R.font.roboto_bolditalic)
-                    ),)
+                    Text(
+                        text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,
+                        fontFamily = FontFamily(
+                            Font(resId = R.font.roboto_bolditalic)
+                        ),
+                    )
                 },
                 text = {
                     Column {
@@ -96,9 +98,12 @@ fun VerRoutinesScreen(
                             painter = painterFoto,
                             contentDescription = "Imagen ejercicio"
                         )
-                        Text(maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp, fontFamily = FontFamily(
-                            Font(resId = R.font.roboto_mediumitalic)
-                        ),)
+                        Text(
+                            maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp,
+                            fontFamily = FontFamily(
+                                Font(resId = R.font.roboto_mediumitalic)
+                            ),
+                        )
                     }
                 },
                 confirmButton = {
@@ -123,95 +128,15 @@ fun VerRoutinesScreen(
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
                 )
-                if(verRutinaState.estado == "UnAdded")
-                {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
+                Button(
+                    modifier = Modifier.padding(10.dp),
+                    onClick = { onNavigateToPrevious() },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor
+                        = Color(0xFFC29F6C)
                     )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
-                        }
-
-
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onAddRutina(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("AÑADIR")
-                        }
-
-                    }
-                }
-                else if(verRutinaState.estado == "current")
-                {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
-                    )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
-                        }
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onDesactivarClicked(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("DESACTIVAR")
-                        }
-                    }
-                }
-                else
-                {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
-                    )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
-                        }
-
-
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onActivarClicked(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("ACTIVAR")
-                        }
-
-                    }
+                ) {
+                    Text("VOLVER")
                 }
                 ///////////////
                 Spacer(modifier = Modifier.height(15.dp))

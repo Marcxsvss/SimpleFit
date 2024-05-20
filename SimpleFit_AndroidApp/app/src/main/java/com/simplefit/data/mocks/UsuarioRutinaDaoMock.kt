@@ -23,14 +23,9 @@ class UsuarioRutinaDaoMock @Inject constructor() {
 
         )
     )
-
     fun get(): MutableList<UsuarioRutinaMock> = usuarioRutina
     fun get(userid: String): MutableList<UsuarioRutinaMock> = usuarioRutina
-//    fun get(rutinaid: Int): RutinasMock? = rutinas.find { u -> u.rutinaid == rutinaid }
-//    fun update(rutina: RutinasMock) {
-//        val position = rutinas.indexOf(get(rutina.rutinaid))
-//        rutinas[position] = rutina
-//    }
+
 }
 
 

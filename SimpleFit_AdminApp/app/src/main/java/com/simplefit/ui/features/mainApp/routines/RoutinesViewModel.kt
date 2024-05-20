@@ -5,65 +5,80 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.simplefit.data.RutinaMaquinaRepository
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.data.UsuarioRutinaRepository
 import com.simplefit.data.toRutinasEntity
+import com.simplefit.ui.features.mainApp.users.UsersEvent
+import com.simplefit.ui.features.mainApp.users.UsersUiState
 import com.simplefit.ui.features.toRutinasUiState
+import com.simplefit.ui.features.toUsuarioUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.util.Locale
 import javax.inject.Inject
+
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
-    private val rutinasRepository : RutinasRepository,
+    private val rutinasRepository: RutinasRepository,
     private val usuarioRutinaRepository: UsuarioRutinaRepository,
-    private val usuarioRepository: UsuarioRepository
+    private val rutinaMaquinaRepository: RutinaMaquinaRepository,
+
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())
         private set
     var routinesList by mutableStateOf(listOf<RoutinesUiState>())
         private set
-    var userid by mutableStateOf("")
-    private set
+    var busquedaState by mutableStateOf("")
+    var mostrarDialog by mutableStateOf(false)
 
-
-    fun setRoutines(userid : String) {
-        this.userid = userid
+    val onMostrarDialog: (Boolean) -> Unit by mutableStateOf({
+        mostrarDialog = it
+    })
+    fun setRoutines() {
         viewModelScope.launch {
-            routinesList = rutinasRepository.get(userid)
-            routinesUiState = RoutinesUiState()//igual hay que quitarlo
+            routinesList = rutinasRepository.get().map { it.toRutinasUiState() }
+            routinesUiState = RoutinesUiState()
         }
 
     }
+
     fun onRoutinesEvent(routinesEvent: RoutinesEvent) {
         when (routinesEvent) {
             is RoutinesEvent.onRutinaClicked -> {
                 routinesUiState = routinesList.find { it.rutinaid == routinesEvent.rutinaid }!!
             }
-            is RoutinesEvent.onAddClicked -> {
-                routinesEvent.onNavigateToAddRutina?.let { it(userid) }
-            }
+
             is RoutinesEvent.onVerClicked -> {
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
-            is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los rregistros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
+
+            is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los registros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
                 viewModelScope.launch {
-                    usuarioRutinaRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
-//                    routinesList = routinesList.toMutableList().apply {
-//                        remove(routinesList.find { it.rutinaid == routinesUiState.rutinaid })
-//                    }
-                    routinesList = rutinasRepository.get(userid)
-                    usuarioRepository.updateRutinaState(userid,0)
+                    rutinasRepository.delete(routinesUiState.rutinaid)
+                    routinesList = rutinasRepository.get().map { it.toRutinasUiState() }
                     routinesUiState = RoutinesUiState()
                 }
-
-
-
             }
-            is RoutinesEvent.OnClickCrearRutina -> {
 
+            is RoutinesEvent.onCancelClicked -> {
+                routinesUiState = RoutinesUiState()
             }
+
+            is RoutinesEvent.onSearchChanged -> {
+                busquedaState = routinesEvent.texto
+                viewModelScope.launch {
+                    routinesList = rutinasRepository.get().map { it.toRutinasUiState() }.filter {
+                        it.dificultad.lowercase(Locale.ROOT).contains(routinesEvent.texto) ||
+                                it.rutinaid.toString().contains(routinesEvent.texto) ||
+                                it.titulo.lowercase(Locale.ROOT).contains(routinesEvent.texto)
+                    }
+                }
+            }
+
             else -> {}
         }
+
     }
 }

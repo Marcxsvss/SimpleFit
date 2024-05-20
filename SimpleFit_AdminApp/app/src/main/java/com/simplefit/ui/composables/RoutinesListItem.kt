@@ -61,9 +61,71 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simplefit.R
+import com.simplefitAdmin.R
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.users.UsersEvent
+import com.simplefit.ui.features.mainApp.users.UsersUiState
 
+@Composable
+fun DatosUsuario(
+    modifier: Modifier = Modifier,
+    email: String,
+    nombre: String,
+    acceso : Int,
+) {
+    Column(
+        modifier = modifier.then(
+//            if (titulo.isNotBlank()) {
+//                Modifier.width(172.dp)
+//            } else {
+            Modifier
+                .width(250.dp)
+                .padding(start = 12.dp, top = 10.dp)
+            //}
+        ),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.Start
+    )
+    {
+        Text(
+            modifier = modifier.padding(top = 7.dp),
+            text = email,
+            style = MaterialTheme.typography.labelMedium,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            color = Color.White,
+            fontSize = 20.sp,
+            fontFamily = FontFamily(Font(R.font.roboto_medium)),
+            fontStyle = FontStyle.Normal
+        )
+        Row()
+        {
+            Text(
+                text = "$nombre | ",
+                style = MaterialTheme.typography.labelMedium,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                fontStyle = FontStyle.Normal
+            )
+
+            Text(
+                text = if(acceso == 1) "Administrador" else "Usuario",
+                style = MaterialTheme.typography.labelMedium,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                fontStyle = FontStyle.Normal,
+
+                )
+        }
+
+    }
+
+
+}
 @Composable
 fun DatosRutina(
     modifier: Modifier = Modifier,
@@ -71,12 +133,12 @@ fun DatosRutina(
     frecuencia: Int,
     diasDescanso: Int,
     dificultad: String,
-    estado : String
+    rutinaid : Int
 ) {
     Column(
         modifier = modifier.then(
             if (titulo.isNotBlank()) {
-                Modifier.width(172.dp)
+                Modifier.width(200.dp)
             } else {
                 Modifier
                     .width(250.dp)
@@ -87,17 +149,31 @@ fun DatosRutina(
         horizontalAlignment = Alignment.Start
     )
     {
-        Text(
-            modifier = modifier.padding(top = 7.dp),
-            text = titulo,
-            style = MaterialTheme.typography.labelMedium,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            color = Color.White,
-            fontSize = 20.sp,
-            fontFamily = FontFamily(Font(R.font.roboto_medium)),
-            fontStyle = FontStyle.Normal
-        )
+        Row(modifier = Modifier.padding(bottom = 5.dp)) {
+            Text(
+                modifier = modifier.padding(top = 7.dp),
+                text = "ID: $rutinaid  |  ",
+                style = MaterialTheme.typography.labelMedium,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = Color.White,//MaterialTheme.colorScheme.secondary,
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                fontStyle = FontStyle.Normal
+            )
+            Text(
+                modifier = modifier.padding(top = 7.dp),
+                text = titulo,
+                style = MaterialTheme.typography.labelMedium,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = Color.White,
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.roboto_medium)),
+                fontStyle = FontStyle.Normal
+            )
+        }
+
         Row()
         {
             Text(
@@ -122,28 +198,13 @@ fun DatosRutina(
 
                 )
         }
-        if (estado == "current") {
-            Text(
-                text = "ACTIVA",
-                color = Color(0xFF89602F),
-                fontSize = 15.sp,
-                fontStyle = FontStyle.Normal,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                modifier = Modifier
-                    //.align(Alignment.Start)
-                    //.padding(bottom = 2.dp, start = 10.dp)
-            )
-        }
-        //Spacer(modifier = Modifier.width(8.dp))
+
     }
 
 
 }
 
 @OptIn(ExperimentalLayoutApi::class)
-// Muestra la imagen del contacto, los datos del contacto y un perqueño
-// icono que tendrá una animación de rotación cuando el contacto esté
-// seleccionado.
 @Composable
 fun ContenidoPrincipalCardRutina(
     rutinaUiState: RoutinesUiState,
@@ -173,6 +234,73 @@ fun ContenidoPrincipalCardRutina(
                 Modifier
                     .wrapContentHeight()
                     .fillMaxWidth()
+                    .padding(start = 20.dp, top = 15.dp)
+            ),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Usa FlowRow para que la imagen se superponga a los datos
+            // de contacto cuando no haya suficiente espacio para ambos
+            FlowRow(
+                horizontalArrangement = Arrangement.Center
+            ) {
+                DatosRutina(
+                    modifier = Modifier,
+                    rutinaid = rutinaUiState.rutinaid,
+                    titulo = rutinaUiState.titulo,
+                    frecuencia = rutinaUiState.frecuencia,
+                    diasDescanso = rutinaUiState.diasDescanso,
+                    dificultad = rutinaUiState.dificultad
+                )
+
+                if (seleccionadoState) {
+                    Box(modifier = Modifier.size(70.dp))
+                    {
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowForwardIos,
+                            contentDescription = "Flecha Derecha",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .padding(top = 18.dp, start = 40.dp)
+                                .clickable {
+                                    onVerRutinaClicked()
+                                })
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun ContenidoCardUsuario(
+    userUiState: UsersUiState,
+    seleccionadoState: Boolean,
+    modifier: Modifier = Modifier,
+    onVerUserClicked: () -> Unit? = {}
+) {
+    Box(
+        Modifier
+            .height(90.dp)
+            .fillMaxWidth()
+            .background(
+                color = if (seleccionadoState) Color(0xFFDAB338) else Color(0xFFDCCEA2),
+                shape = RoundedCornerShape(
+                    bottomEnd = 10.dp,
+                    bottomStart = 10.dp,
+                    topEnd = 10.dp,
+                    topStart = 10.dp
+                )
+            )
+    )
+    {
+        Row(
+            modifier = modifier.then(
+                Modifier
+                    .wrapContentHeight()
+                    .fillMaxWidth()
                     .padding(5.dp)
             ),
             verticalAlignment = Alignment.CenterVertically,
@@ -183,60 +311,35 @@ fun ContenidoPrincipalCardRutina(
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
-                if (rutinaUiState.descripcion.isNotBlank()) {
-                    Box(
-                        modifier = Modifier
-                            .size(80.dp, 80.dp)
-                            .padding(8.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        val imageResource = when (rutinaUiState.dificultad) {
-                            "Intermedio" -> R.drawable.hipertrofia
-                            "Avanzado" -> R.drawable.definicion
-                            "Principiante" -> R.drawable.mantenimiento
-                            // Añade más objetivos si es necesario
-                            else -> R.drawable.hipertrofia
-                        }
-                        Image(
-                            modifier = Modifier
-                                .clip(CircleShape)
-                                .aspectRatio(ratio = 1f)
-                                .background(Color.White)
-                                .border(
-                                    width = 1.dp,
-                                    color = Color.White,
-                                    shape = CircleShape
-                                ),
-                            contentScale = ContentScale.Crop,
-                            painter = painterResource(id = imageResource),
-                            contentDescription = "Imagen objetivo"
-                        )
-                    }
-                }
-                DatosRutina(
+//                if (rutinaUiState.descripcion.isNotBlank()) {
+//                    Box(
+//                        modifier = Modifier
+//                            .size(80.dp, 80.dp)
+//                            .padding(8.dp),
+//                        contentAlignment = Alignment.Center
+//                    ) {
+//                        Image(
+//                            modifier = Modifier
+//                                .clip(CircleShape)
+//                                .aspectRatio(ratio = 1f)
+//                                .background(Color.White)
+//                                .border(
+//                                    width = 1.dp,
+//                                    color = Color.White,
+//                                    shape = CircleShape
+//                                ),
+//                            contentScale = ContentScale.Crop,
+//                            painter = painterResource(id = imageResource),
+//                            contentDescription = "Imagen objetivo"
+//                        )
+//                    }
+//                }
+                DatosUsuario(
                     modifier = Modifier,
-                    titulo = rutinaUiState.titulo,
-                    frecuencia = rutinaUiState.frecuencia,
-                    diasDescanso = rutinaUiState.diasDescanso,
-                    dificultad = rutinaUiState.dificultad,
-                    estado = rutinaUiState.estado
+                    email = userUiState.email,
+                    nombre = userUiState.nombre,
+                    acceso = userUiState.acceso,
                 )
-                //Spacer(modifier = Modifier.width(12.dp))
-                //Text(modifier = Modifier.padding(top = 60.dp) ,text = "Ver más", style = MaterialTheme.typography.labelMedium, color = Color.White)
-                if (seleccionadoState) {
-                    Box(modifier = Modifier.size(70.dp))
-                    {
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowForwardIos,
-                            contentDescription = "Flecha Derecha",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .padding(top = 28.dp, start = 25.dp)
-                                .clickable {
-                                    onVerRutinaClicked()
-                                })
-                    }
-                }
 
 
             }
@@ -313,7 +416,41 @@ fun RutinasListItem(
                 seleccionadoState = seleccionadoState,
                 onVerRutinaClicked = onVerRutinaClicked
             )
+        }
+    }
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun UsersListItem(
+    onVerUserClicked: () -> Unit,
+    modifier: Modifier = Modifier,
+    userUiState: UsersUiState,
+    seleccionadoState: Boolean,
+    onUserClicked: (String) -> Unit,
+) {
+    ElevatedCard(
+        onClick = { onUserClicked(userUiState.email)
+                  onVerUserClicked()},
+        modifier = modifier.then(
+            Modifier
+                .animateContentSize(
+                    animationSpec = tween(
+                        durationMillis = 300,
+                        easing = LinearOutSlowInEasing
+                    )
+                )
+                .padding(6.dp)
+        ),
+    ) {
 
+        val context = LocalContext.current
+
+        Row() {
+            ContenidoCardUsuario(
+                userUiState = userUiState,
+                seleccionadoState = seleccionadoState,
+                onVerUserClicked = onVerUserClicked
+            )
         }
     }
 }

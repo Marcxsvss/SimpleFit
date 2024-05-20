@@ -12,5 +12,8 @@ interface RutinasService {
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun rutina(@Path("rutinaid") rutinaid : Int?): Response<RutinasApi>
     //Todavía no se como voy a hacer el get completo como hago con room
+    @DELETE("rutinas/{rutinaid}")
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    suspend fun delete(@Path("rutinaid") rutinaid: Int): Response<RespuestaApi>
 
 }

@@ -1,23 +1,22 @@
- DROP DATABASE Simplefit;
+-- DROP DATABASE SimpleFit;
 -- Crea la base de datos si no existe
-CREATE DATABASE IF NOT EXISTS SimpleFit;
+CREATE DATABASE IF NOT EXISTS simplefit;
 -- Seleccionar la base de datos recién creada
-USE SimpleFit;
+USE simplefit;
 
 
 CREATE TABLE `usuarios`(
   `email` varchar(255) PRIMARY KEY,
   `password` varchar(255),
-  `dni` varchar(255) UNIQUE NOT NULL,
   `nombre` varchar(255),
   `altura` varchar(255),
   `peso` varchar(255),
   `edad` varchar(255),
   `sexo` varchar(255),
   `somatotipo` varchar(255),
-  `rutinastate` int
+  `rutinastate` int,
+  `acceso` int
 );
-
 
 CREATE TABLE `maquinas` (
   `maquinaid` int PRIMARY KEY,

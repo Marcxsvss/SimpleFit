@@ -1,0 +1,1 @@
+La ui es muy similar en ambas aplicaciones para permitir que el administrador se adapte rapidamente a las funcionalidades de ambas.

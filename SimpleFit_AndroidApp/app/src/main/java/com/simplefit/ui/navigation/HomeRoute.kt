@@ -30,10 +30,8 @@ fun NavGraphBuilder.homeScreen(
             }
         )
     ) {
-    backStackEntry ->
 
-
-        HomeScreen(
+    HomeScreen(
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent,
             onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
@@ -49,7 +47,7 @@ fun NavGraphBuilder.homeScreen(
 
     }
 }
-fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null){
+fun NavController.navigateToHome(email: String? = null,navOptions: NavOptions? = null){
     val ruta = HomeRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$email", navOptions)

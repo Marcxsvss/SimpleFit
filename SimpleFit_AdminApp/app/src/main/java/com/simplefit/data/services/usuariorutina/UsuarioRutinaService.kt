@@ -13,7 +13,10 @@ interface UsuarioRutinaService {
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun insert(@Body u : UsuarioRutinaApi): Response<RespuestaApi>
 
-    @DELETE("usuariorutina/{userid}/{rutinaid}")
+    @DELETE("usuariorutina/{userid}/")
     @Headers("Accept: application/json", "Content-Type: application/json")
-    suspend fun delete(@Path("userid") userid: String,@Path("rutinaid") rutinaid: Int): Response<RespuestaApi>
+    suspend fun deleteUserRoutines(@Path("userid") userid: String): Response<RespuestaApi>
+    @DELETE("usuariorutina/{rutinaid}")
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    suspend fun deleteRoutinesFromUsers(@Path("rutinaid") rutinaid: Int): Response<RespuestaApi>
 }

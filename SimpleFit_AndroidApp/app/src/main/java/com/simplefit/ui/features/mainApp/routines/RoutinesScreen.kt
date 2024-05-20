@@ -61,7 +61,7 @@ fun RoutinesScreen(
             modifier = Modifier.padding(20.dp)
         ) {
             Text(
-                text = "RUTINAS Y DIETAS",
+                text = "RUTINAS",
                 color = Color(0xFFDAB338),
                 fontSize = 30.sp,
                 fontStyle = FontStyle.Italic

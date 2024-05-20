@@ -63,13 +63,11 @@ class VerRutinaViewModel @Inject constructor(
             is VerRutinaEvent.onAddRutina -> {
                 viewModelScope.launch {
                     usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
-                    verRoutinesEvent.onNavigateToAddRutina?.let { it(userid) }
-
-
+                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
                 }
             }
             is VerRutinaEvent.onActivarClicked -> {
-                viewModelScope.launch {
+                viewModelScope.launch {//Hacer que se actualice el entrenamiento en home
                     usuarioRepository.updateRutinaState(userid,verRutinaUiState.rutinaid)
                     verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
                 }

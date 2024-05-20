@@ -11,6 +11,3 @@ INSERT INTO rutinamaquina(rutinaid,maquinaid,dia) VALUES
 (2,1,'L'),(2,7,'L'),(2,4,'L'),(2,24,'L'),(2,25,'L'),(2,26,'M'),(2,9,'M'),(2,8,'M'),(2,11,'M'),(2,28,'M'),(2,29,'M'),(2,32,'J'),(2,33,'J'),(2,34,'J'),(2,30,'J'),(2,38,'J'),(2,17,'V'),(2,20,'V'),(2,23,'V'),(2,14,'V') -- Bro split
 ; -- 15,21
 
-select * from rutinas;
-select * from maquinas;
-select * from rutinamaquina ORDER BY rutinaid ASC,dia ASC;

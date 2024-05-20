@@ -32,17 +32,21 @@ fun RegisterAccountInfoForm(
     validacionEmail: Validacion,
     passwordState: String,
     validacionPassword: Validacion,
-    dniState : String,
-    validacionDni: Validacion,
     nombreState : String,
     validacionNombre: Validacion,
     onValueChangeEmail: (String) -> Unit,
     onValueChangePassword: (String) -> Unit,
-    onValueChangeDni: (String) -> Unit,
     onValueChangeNombre : (String) -> Unit,
     onClickRegistrarse: () -> Unit
 ) {
     Column {
+        OutlinedTextFieldNombre(
+            modifier = modifier,
+            label = "Nombre",
+            nombreState = nombreState,
+            validacionState = validacionNombre,
+            onValueChange = onValueChangeNombre
+        )
         OutlinedTextFieldEmail(
             modifier = modifier,
             label = "Email",
@@ -65,27 +69,7 @@ fun RegisterAccountInfoForm(
             validacionState = validacionPassword,
             onValueChange = onValueChangePassword
         )
-        OutlinedTextFieldPassword(
-            modifier = modifier,
-            label = "Repite Contraseña",
-            passwordState = passwordState,
-            validacionState = validacionPassword,
-            onValueChange = onValueChangePassword
-        )
-        OutlinedTextFieldDni(
-            modifier = modifier,
-            label = "DNI",
-            dniState = dniState,
-            validacionState = validacionDni,
-            onValueChange = onValueChangeDni
-        )
-        OutlinedTextFieldNombre(
-            modifier = modifier,
-            label = "Nombre",
-            nombreState = nombreState,
-            validacionState = validacionNombre,
-            onValueChange = onValueChangeNombre
-        )
+
 
 
 
@@ -117,16 +101,13 @@ fun RegisterFormTest() {
             emailState = emailState,
             validacionEmail = object : Validacion {},
             passwordState = passwordState,
-            dniState = dniState,
-            validacionDni = object : Validacion {},
             validacionPassword = object : Validacion {},
             nombreState = nombreState,
             validacionNombre = object : Validacion {},
             onValueChangeEmail = { emailState = it },
             onValueChangePassword = { passwordState = it },
-            onValueChangeDni = { dniState = it },
             onValueChangeNombre = { nombreState = it },
-            onClickRegistrarse = {}
+            onClickRegistrarse = {},
         )
     }
 }

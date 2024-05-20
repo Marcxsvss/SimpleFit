@@ -66,6 +66,60 @@ fun AddRutinaScreen(
         modifier = Modifier.fillMaxSize()
 
     ) {
+        Column(
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
+        {
+            Text(
+                modifier = Modifier.padding(10.dp),
+                text = "AÑADIR RUTINA",
+                color = Color(0xFFDAB338),
+                fontSize = 30.sp,
+                fontFamily = FontFamily(
+                    Font(resId = R.font.roboto_blackitalic)
+                )
+            )
+            Row()
+            {
+                CloudButton(
+                    texto = "TODAS",
+                    onTodasClicked = { onAddRutinaEvent(AddRutinaEvent.onTodasClicked) }
+                )
+                Spacer(modifier = Modifier.width(20.dp))
+                CloudButton(
+                    texto = "FILTROS",
+                    onFiltroClicked = { onAddRutinaEvent(AddRutinaEvent.onFiltroClicked) }
+                )
+            }
+            Box(modifier = Modifier.fillMaxSize()){
+                LazyColumn(
+                    contentPadding = PaddingValues(all = 20.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    items(
+                        rutinasState,
+                        key = { it.rutinaid }
+                    ) { rutina ->
+                        RutinasListItem2(
+                            onVerRutinaClicked = {onAddRutinaEvent(AddRutinaEvent.onVerClicked(onNavigateToVerRutina))},
+                            modifier = Modifier.animateItemPlacement(),
+                            rutinaUiState = rutina,
+                            seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
+                                ?: false,
+                            onRutinaClicked = {
+                                onAddRutinaEvent(AddRutinaEvent.onRutinaClicked(rutina.rutinaid))
+                            },
+
+                            //onUnSelectClicked = {onAddRutinaEvent(AddRutinaEvent.onUnSelectClicked)},
+                        )
+                    }
+                }
+
+            }
+
+
+        }
         if (mostrarDialog) {
             AlertDialog(
                 onDismissRequest = { onMostrarDialog(false) },
@@ -121,60 +175,6 @@ fun AddRutinaScreen(
                     }
                 }
             )
-        }
-        Column(
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        )
-        {
-            Text(
-                modifier = Modifier.padding(10.dp),
-                text = "AÑADIR RUTINA",
-                color = Color(0xFFDAB338),
-                fontSize = 30.sp,
-                fontFamily = FontFamily(
-                    Font(resId = R.font.roboto_blackitalic)
-                )
-            )
-            Row()
-            {
-                CloudButton(
-                    texto = "TODAS",
-                    onTodasClicked = { onAddRutinaEvent(AddRutinaEvent.onTodasClicked) }
-                )
-                Spacer(modifier = Modifier.width(20.dp))
-                CloudButton(
-                    texto = "FILTROS",
-                    onFiltroClicked = { onAddRutinaEvent(AddRutinaEvent.onFiltroClicked) }
-                )
-            }
-            Box(modifier = Modifier.fillMaxSize()){
-                LazyColumn(
-                    contentPadding = PaddingValues(all = 20.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    items(
-                        rutinasState,
-                        key = { it.rutinaid }
-                    ) { rutina ->
-                        RutinasListItem2(
-                            onVerRutinaClicked = {onAddRutinaEvent(AddRutinaEvent.onVerClicked(onNavigateToVerRutina))},
-                            modifier = Modifier.animateItemPlacement(),
-                            rutinaUiState = rutina,
-                            seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }
-                                ?: false,
-                            onRutinaClicked = {
-                                onAddRutinaEvent(AddRutinaEvent.onRutinaClicked(rutina.rutinaid))
-                            },
-
-                            //onUnSelectClicked = {onAddRutinaEvent(AddRutinaEvent.onUnSelectClicked)},
-                        )
-                    }
-                }
-
-            }
-
-
         }
 
 

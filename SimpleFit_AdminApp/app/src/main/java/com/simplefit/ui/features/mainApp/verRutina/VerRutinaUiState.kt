@@ -8,7 +8,6 @@ data class VerRutinaUiState(
     val descripcion : String,
     var ejercicio : List<MaquinaUiState>,
     val frecuencia : Int,
-    val estado : String = "Added"
 
     ) {
 

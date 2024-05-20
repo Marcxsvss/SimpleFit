@@ -23,7 +23,7 @@
     -->
 
     <application
-        android:name=".SimpleFitAdminApplication"
+        android:name="com.simplefit.SimpleFitAdminApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

@@ -6,6 +6,7 @@ import com.simplefit.data.mocks.ConsejosMock
 import com.simplefit.data.mocks.MaquinasMock
 import com.simplefit.data.mocks.RutinaMaquinaMock
 import com.simplefit.data.mocks.RutinasMock
+import com.simplefit.data.mocks.UsuarioRutinaMock
 import com.simplefit.data.room.consejos.ConsejosEntity
 import com.simplefit.data.room.maquinas.MaquinasEntity
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
@@ -25,21 +26,19 @@ import com.simplefit.models.UsuarioRutina
 
 fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.email,
-    this.dni,
     this.password,
-    this.cargo,
     this.nombre,
     this.altura,
     this.peso,
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinaState
+    this.rutinaState,
+    this.acceso
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     email = this.email,
-    dni = this.dni,
     password = this.password,
     nombre = this.nombre,
     altura = this.altura,
@@ -48,7 +47,7 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     sexo = this.sexo,
     somatotipo = this.somatotipo,
     rutinaState = this.rutinaState,
-    cargo = this.cargo
+    acceso = this.acceso
 )
 
 
@@ -65,7 +64,6 @@ fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
 //region UsuarioMock
 fun UsuarioMock.toUsuario(): Usuario = Usuario(
     email = this.email,
-    dni = this.dni,
     password = this.password,
     nombre = this.nombre,
     altura = this.altura,
@@ -74,35 +72,33 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
     sexo = this.sexo,
     somatotipo = this.somatotipo,
     rutinaState = this.rutinaState,
-    cargo = this.cargo
+    acceso = this.acceso
 )
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,
-    this.dni,
     this.password,
-    this.cargo,
     this.nombre,
     this.altura,
     this.peso,
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinaState
+    this.rutinaState,
+    this.acceso
 
 )
 
 fun UsuarioApi.toUsuario() = Usuario(
     this.email,
-    this.dni,
     this.password,
-    this.cargo,
     this.nombre,
     this.altura,
     this.peso,
     this.edad,
     this.sexo,
     this.somatotipo,
-    this.rutinastate
+    this.rutinastate,
+    this.acceso
 )
 //endregion
 //region Rutina
@@ -143,6 +139,10 @@ fun Maquina.toMaquinaEntity(): MaquinasEntity = MaquinasEntity(
     musculo = this.musculo,
     imagen = this.imagen,
     descripcion = this.descripcion
+)
+fun UsuarioRutinaMock.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
+    userid = this.userid,
+    rutinaid = this.rutinaid
 )
 fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
     rutinaid = this.rutinaid,

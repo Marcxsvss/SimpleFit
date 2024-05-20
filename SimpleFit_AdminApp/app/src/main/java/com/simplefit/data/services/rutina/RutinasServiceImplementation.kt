@@ -44,5 +44,22 @@ class RutinasServiceImplementation @Inject constructor(
             throw ApiServicesException(mensajeError)
         }
     }
+    suspend fun delete(rutinaidid: Int) {
+        val mensajeError = "No se ha podido borrar la rutina"
+        try {
+            val response = rutinasService.delete(rutinaidid)
+            if (response.isSuccessful) {
+                Log.d(logTag, response.toString())
+                Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")
+            } else {
+                val body = response.errorBody()?.string()
+                Log.e(logTag, "$mensajeError (código ${response.code()}): $this\n${body}")
+                throw ApiServicesException(mensajeError)
+            }
+        } catch (e: Exception) {
+            Log.e(logTag, "Error: ${e.localizedMessage}")
+            throw ApiServicesException(mensajeError)
+        }
+    }
 
 }

@@ -43,7 +43,7 @@ fun RegisterAccountInfoScreen(
             modifier = Modifier.padding(20.dp)
         ) {
             Text(
-                text = "SimpleFit",
+                text = "REGISTRO",
                 color = Color(0xFFDAB338),
                 fontSize = 30.sp,
                 fontFamily = FontFamily(
@@ -56,11 +56,9 @@ fun RegisterAccountInfoScreen(
             RegisterAccountInfoForm(modifier = Modifier.fillMaxWidth(),
                 emailState = registerAccountInfoUiState.email,
                 passwordState = registerAccountInfoUiState.password,
-                dniState = registerAccountInfoUiState.dni,
                 nombreState = registerAccountInfoUiState.nombre,
                 validacionEmail = validacionRegisterAccountInfoUiState.validacionEmail,
                 validacionPassword = validacionRegisterAccountInfoUiState.validacionPassword,
-                validacionDni = validacionRegisterAccountInfoUiState.validacionDni,
                 validacionNombre = validacionRegisterAccountInfoUiState.validacionNombre,
                 onValueChangeEmail = {
                     onRegisterAccountInfoEvent(RegisterAccountInfoEvent.EmailChanged(it))
@@ -68,7 +66,6 @@ fun RegisterAccountInfoScreen(
                 onValueChangePassword = {
                     onRegisterAccountInfoEvent(RegisterAccountInfoEvent.PasswordChanged(it))
                 },
-                onValueChangeDni = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.DniChanged(it)) },
                 onValueChangeNombre = { onRegisterAccountInfoEvent(RegisterAccountInfoEvent.NombreChanged(it)) },
                 onClickRegistrarse = {
                     onRegisterAccountInfoEvent(RegisterAccountInfoEvent.OnClickRegistrarse(onNavigateToRegisterProfileInfo))
@@ -77,7 +74,8 @@ fun RegisterAccountInfoScreen(
                         delay(4000)
                         onMostrarSnackBar()
                     }
-                })
+                }
+                )
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
 
         }

@@ -6,8 +6,8 @@ import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
 import com.simplefit.models.UsuarioRutina
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoUiState
 import com.simplefit.ui.features.mainApp.MaquinaUiState
+import com.simplefit.ui.features.mainApp.users.UsersUiState
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaUiState
 import com.simplefit.ui.features.userAuthentication.login.LoginUiState
 
@@ -17,30 +17,50 @@ fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
     false
 
 )
-
+fun UsersUiState.toUsuario(): Usuario = Usuario(
+    email = this.email,
+    password=this.password,
+    nombre = this.nombre,
+    altura = this.altura,
+    peso = this.peso,
+    edad = this.edad,
+    sexo = this.sexo,
+    somatotipo = this.somatotipo,
+    rutinaState = this.rutinaState,
+    acceso = this.acceso
+)
 
 fun LoginUiState.toUsuario(): Usuario = Usuario(
     this.email,
-    "",
 this.password,
 "",
 "",
 "",
 "",
 "",
-"",
-    null
+    "",
+    rutinaState = null,
+    acceso = 0
 )
-
-fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
+fun Usuario.toUsuarioUiState(): UsersUiState = UsersUiState(
+    this.email,
+    this.password,
+    this.nombre,
+    this.altura,
+    this.peso,
+    this.edad,
+    this.sexo,
+    this.somatotipo,
+    this.rutinaState,
+    this.acceso
+)
+fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
     frecuencia = this.frecuencia,
     diasDescanso = this.diasDescanso,
     dificultad = this.dificultad,
-    estado = state,
-    userid= userid
 )
 fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,
@@ -48,7 +68,6 @@ fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     descripcion =if(this.descripcion.isBlank()) "Descanso" else this.descripcion,
     ejercicio = listOf(),
     frecuencia = this.frecuencia,
-    estado = this.estado
 )
 fun Maquina.toMaquinaUiState() = MaquinaUiState(
     maquinaid = this.maquinaid,
@@ -60,16 +79,3 @@ fun Maquina.toMaquinaUiState() = MaquinaUiState(
 fun VerRutinaUiState.toUsuarioRutina(userid : String) = UsuarioRutina(
     userid = userid,
     rutinaid = this.rutinaid)
-
-fun RoutinesUiState.toVerEntrenamientoUiState() = VerEntrenamientoUiState(
-    rutinaid = this.rutinaid,
-    titulo = this.titulo,
-    descripcion = this.descripcion,
-    ejercicio = listOf()
-)
-//fun MutableList<Recipe>.toRecipeUiState() = this.map { it.toRecipeUiState() }.toMutableList()
-//
-//fun Usuario.toUsuarioUiState():LoginUiState= LoginUiState(login,password,true,likeds)
-//fun LoginUiState.toUsuario() = Usuario(this.login, this.password,this.likeds)
-//
-//?.let { Imagenes.base64ToBitmap(it) }

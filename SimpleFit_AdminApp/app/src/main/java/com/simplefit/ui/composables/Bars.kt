@@ -23,64 +23,58 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.simplefit.ui.navigation.navigateToHome
 import com.simplefit.ui.navigation.navigateToHome2
-import com.simplefit.ui.navigation.navigateToProfile
 import com.simplefit.ui.navigation.navigateToRoutines
 
 
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun NavBar(
-    navController: NavController,
-    currentIndex: Int = 0
-) {
-    @Immutable
-    data class ItemIconButton(
-        val icon: ImageVector,
-        val description: String? = null,
-        val title: String,
-        val onClick: () -> Unit
-    )
-
-    val listItemsIconButtons:List<ItemIconButton> = listOf(
-        ItemIconButton(
-            icon = Icons.Filled.Home,
-            description = "home",
-            title = "Home",
-            onClick = { navController.navigateToHome2() }
-        ),
-        ItemIconButton(
-            icon = Icons.AutoMirrored.Filled.List,
-            description = "list",
-            title = "List",
-            onClick = { navController.navigateToRoutines() }
-        ),
-        ItemIconButton(
-            icon = Icons.Filled.Person,
-            description = "profile",
-            title = "Profile",
-            onClick = { navController.navigateToProfile() }
-        )
-    )
-
-    var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
-
-    NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFDAB338/*0xFFdbc06d*/)) {
-        listItemsIconButtons.forEachIndexed { index, button ->
-            NavigationBarItem(
-                icon = { Icon(imageVector = button.icon, contentDescription = button.title,tint = Color(0xFF3C4932)) },
-                label = { },
-                selected = selectedItem == index,
-                onClick = { button.onClick()
-                    selectedItem = index}
-            )
-        }
-    }
-}
-
-@Preview
-@Composable
-fun NavBarPreview()
-{
-    //NavBar(0, {})
-}
+//@OptIn(ExperimentalMaterial3Api::class)
+//@Composable
+//fun NavBar(
+//    navController: NavController,
+//    currentIndex: Int = 0
+//) {
+//    @Immutable
+//    data class ItemIconButton(
+//        val icon: ImageVector,
+//        val description: String? = null,
+//        val title: String,
+//        val onClick: () -> Unit
+//    )
+//
+//    val listItemsIconButtons:List<ItemIconButton> = listOf(
+//        ItemIconButton(
+//            icon = Icons.Filled.Home,
+//            description = "home",
+//            title = "Home",
+//            onClick = { navController.navigateToHome2() }
+//        ),
+//        ItemIconButton(
+//            icon = Icons.AutoMirrored.Filled.List,
+//            description = "list",
+//            title = "List",
+//            onClick = { navController.navigateToRoutines() }
+//        ),
+//
+//    )
+//
+//    var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
+//
+//    NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFDAB338/*0xFFdbc06d*/)) {
+//        listItemsIconButtons.forEachIndexed { index, button ->
+//            NavigationBarItem(
+//                icon = { Icon(imageVector = button.icon, contentDescription = button.title,tint = Color(0xFF3C4932)) },
+//                label = { },
+//                selected = selectedItem == index,
+//                onClick = { button.onClick()
+//                    selectedItem = index}
+//            )
+//        }
+//    }
+//}
+//
+//@Preview
+//@Composable
+//fun NavBarPreview()
+//{
+//    //NavBar(0, {})
+//}

@@ -22,7 +22,6 @@ fun Usuario.toLoginUiState(): LoginUiState = LoginUiState(
 
 fun LoginUiState.toUsuario(): Usuario = Usuario(
     this.email,
-    "",
 this.password,
 "",
 "",
@@ -30,11 +29,11 @@ this.password,
 "",
 "",
 "",
-    null
+    null,
+    0
 )
 fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     this.email,
-    this.dni,
     this.password,
     this.nombre,
     "",
@@ -42,7 +41,8 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     "",
     "",
-    null
+    null,
+    0
 )
 fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,

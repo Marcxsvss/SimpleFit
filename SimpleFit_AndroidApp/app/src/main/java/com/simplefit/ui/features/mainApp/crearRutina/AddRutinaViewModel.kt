@@ -67,7 +67,6 @@ class AddRutinaViewModel @Inject constructor(
             }
             is AddRutinaEvent.onVerClicked -> {
                 addRutinaEvent.onNavigateToVerRutina?.let { it(rutinaUiState) }
-
             }
 
             else -> {}

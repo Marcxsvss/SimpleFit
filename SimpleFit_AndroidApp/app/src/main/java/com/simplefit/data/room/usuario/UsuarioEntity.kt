@@ -13,8 +13,6 @@ data class UsuarioEntity(
     @PrimaryKey
     @ColumnInfo(name="email")
     val email: String,
-    @ColumnInfo(name="dni")
-    val dni : String,
     @ColumnInfo(name="password")
     val password: String,
     @ColumnInfo(name="nombre")
@@ -30,6 +28,8 @@ data class UsuarioEntity(
     @ColumnInfo(name="somatotipo")
     val somatotipo : String,
     @ColumnInfo(name="rutinaState")
-    val rutinaState : Int?
+    val rutinaState : Int?,
+    @ColumnInfo(name="acceso")
+    val cargo : Int
 ) : Parcelable
 

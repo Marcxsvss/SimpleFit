@@ -3,8 +3,6 @@ package com.simplefit.ui.composables
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenuItem
@@ -24,10 +22,8 @@ import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.simplefit.R
-import com.simplefit.ui.theme.SimpleFitTheme
+import com.simplefitAdmin.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,7 +52,7 @@ fun ExposedDropdownMenuBoxEdad(
                 color = Color(0xFFDAB338),
                 fontSize = 20.sp,
                 fontFamily = FontFamily(
-                    Font(resId = R.font.bayon_regular)
+                    Font(resId =R.font.bayon_regular )
                 )
             )
             ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded })

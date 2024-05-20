@@ -2,7 +2,6 @@ package com.simplefit.models
 
 data class Usuario(
     val email: String,
-    val dni: String,
     val password: String,
     val nombre : String,
     val altura : String,
@@ -10,6 +9,7 @@ data class Usuario(
     val edad : String,
     val sexo : String,
     val somatotipo : String,
-    val rutinaState : Int?
+    val rutinaState : Int?,
+    val cargo : Int
 
 )

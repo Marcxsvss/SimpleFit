@@ -29,28 +29,26 @@ class RegisterAccountInfoViewModel @Inject constructor(
     fun onRegisterAccountInfoEvent(registerAccountInfoEvent: RegisterAccountInfoEvent) {
         when (registerAccountInfoEvent) {
             is RegisterAccountInfoEvent.EmailChanged -> {
-                nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
-                    email = registerAccountInfoEvent.email
-                )
-                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
-                    validacionEmail = validadorRegisterAccountInfo.validadorEmail.valida(registerAccountInfoEvent.email)
-                )
-            }
+                viewModelScope.launch {
 
+                        nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
+                            email = registerAccountInfoEvent.email
+                        )
+                        validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
+
+                            validacionEmail = validadorRegisterAccountInfo.validadorEmail.valida(registerAccountInfoEvent.email)
+
+
+                        )
+                   }
+
+            }
             is RegisterAccountInfoEvent.PasswordChanged -> {
                 nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
                     password = registerAccountInfoEvent.password
                 )
                 validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
                     validacionPassword = validadorRegisterAccountInfo.validadorPassword.valida(registerAccountInfoEvent.password)
-                )
-            }
-            is RegisterAccountInfoEvent.DniChanged -> {
-                nuevoUsuarioUiState = nuevoUsuarioUiState.copy(
-                    dni = registerAccountInfoEvent.dni
-                )
-                validacionRegisterAccountInfoUiState = validacionRegisterAccountInfoUiState.copy(
-                    validacionDni = validadorRegisterAccountInfo.validadorDni.valida(registerAccountInfoEvent.dni)
                 )
             }
             is RegisterAccountInfoEvent.NombreChanged -> {

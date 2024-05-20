@@ -46,10 +46,27 @@ class UsuarioRutinaServiceImplementation @Inject constructor(
         }
     }
 
-    suspend fun delete(userid: String,rutinaid : Int) {
-        val mensajeError = "No se ha podido borrar el contacto"
+    suspend fun deleteUserRoutines(userid: String) {
+        val mensajeError = "No se han podido borrar la relacion del usuario con las rutinas"
         try {
-            val response = usuarioRutinaService.delete(userid,rutinaid)
+            val response = usuarioRutinaService.deleteUserRoutines(userid)
+            if (response.isSuccessful) {
+                Log.d(logTag, response.toString())
+                Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")
+            } else {
+                val body = response.errorBody()?.string()
+                Log.e(logTag, "$mensajeError (código ${response.code()}): $this\n${body}")
+                throw ApiServicesException(mensajeError)
+            }
+        } catch (e: Exception) {
+            Log.e(logTag, "Error: ${e.localizedMessage}")
+            throw ApiServicesException(mensajeError)
+        }
+    }
+    suspend fun deleteRoutinesFromUsers(rutinaid: Int) {
+        val mensajeError = "No se han podido borrar la relacion del usuario con las rutinas"
+        try {
+            val response = usuarioRutinaService.deleteRoutinesFromUsers(rutinaid)
             if (response.isSuccessful) {
                 Log.d(logTag, response.toString())
                 Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")

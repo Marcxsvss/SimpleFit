@@ -52,28 +52,3 @@ fun LoginForm(
         }
     }
 }
-
-
-//@Preview(showBackground = true)
-//@Composable
-//fun LoginFormTest() {
-//
-//    var loginState by remember { mutableStateOf("") }
-//    var passwordState by remember { mutableStateOf("") }
-//    var recordarme by remember { mutableStateOf(false) }
-//
-//    SimpleFitTheme {
-//        LoginForm(
-//            modifier = Modifier.fillMaxWidth(),
-//            loginState = loginState,
-//            validacionLogin = object : Validacion {},
-//            passwordState = passwordState,
-//            validacionPassword = object : Validacion {},
-//            recordarmeState = recordarme,
-//            onValueChangeLogin = { loginState = it },
-//            onValueChangePassword = { passwordState = it },
-//            onCheckedChanged = { recordarme = !it },
-//            onClickLogearse = {}
-//        )
-//    }
-//}

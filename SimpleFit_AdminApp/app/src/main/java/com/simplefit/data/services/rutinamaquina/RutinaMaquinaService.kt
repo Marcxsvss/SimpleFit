@@ -10,5 +10,8 @@ interface RutinaMaquinaService {
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun rutinaMaquina(@Path("rutinaid") rutinaid: Int,@Path("dia") dia: String): Response<MaquinasDiaRutinaApi>
 
+    @DELETE("rutinamaquina/{rutinaid}")
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    suspend fun delete(@Path("rutinaid") rutinaid: Int): Response<RespuestaApi>
 
 }

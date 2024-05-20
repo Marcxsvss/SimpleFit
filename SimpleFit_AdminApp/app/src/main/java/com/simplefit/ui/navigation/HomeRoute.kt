@@ -7,11 +7,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.MainAppViewModel
 import com.simplefit.ui.features.mainApp.home.HomeScreen
-import com.simplefit.ui.features.mainApp.home.HomeViewModel
-import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 
 const val HomeRoute = "Home"
@@ -20,9 +16,9 @@ const val HomeParameterName = "email"
 // Definimos un método de extensión de NavGraphBuilder para poder
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.homeScreen(
-    homeViewModel: HomeViewModel,
-    mainAppViewModel: MainAppViewModel,
-    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
+    onNavigateToUsuarios: () -> Unit,
+    onNavigateToConsejos: () -> Unit,
+    onNavigateToRutinas: () -> Unit,
 
     ) {
     composable(
@@ -33,31 +29,29 @@ fun NavGraphBuilder.homeScreen(
             }
         )
     ) {
-    backStackEntry ->
-       val email :String? = backStackEntry.arguments?.getString(HomeParameterName, "Email erroneo")
-        mainAppViewModel.setUsuario(email ?: "Email erroneo")
-
         HomeScreen(
-            homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
-            consejos = homeViewModel.consejos)
+            onNavigateToUsuarios = onNavigateToUsuarios,
+            onNavigateToRutinas = onNavigateToRutinas,
+            onNavigateToConsejos = onNavigateToConsejos
+        )
     }
     composable(HomeRoute)
     {
         HomeScreen(
-            homeUiState = homeViewModel.homeUiState,
-            onHomeEvent = homeViewModel::onHomeEvent,
-            onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
-            consejos = homeViewModel.consejos)
+            onNavigateToUsuarios = onNavigateToUsuarios,
+            onNavigateToRutinas = onNavigateToRutinas,
+            onNavigateToConsejos = onNavigateToConsejos
+        )
 
     }
 }
-fun NavController.navigateToHome(email: String,navOptions: NavOptions? = null){
+
+fun NavController.navigateToHome(email: String, navOptions: NavOptions? = null) {
     val ruta = HomeRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$email", navOptions)
 }
-fun NavController.navigateToHome2(navOptions: NavOptions? = null){
+
+fun NavController.navigateToHome2(navOptions: NavOptions? = null) {
     this.navigate(HomeRoute, navOptions)
 }

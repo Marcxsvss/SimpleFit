@@ -56,7 +56,7 @@ fun LoginScreen(
 //                    idImageResource = R.drawable.simplefit_logo, contentDescription = "Imagen Login"
 //                )
                 Text(
-                    text = "SimpleFit",
+                    text = "SIMPLEFIT ADMIN",
                     color = Color(0xFFDAB338),
                     fontSize = 30.sp,
                     fontFamily = FontFamily(

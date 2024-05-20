@@ -25,7 +25,10 @@ class LoginViewModel @Inject constructor(
     val onMostrarSnackBar: () -> Unit by mutableStateOf({
         mostrarSnackBar = !mostrarSnackBar
     })
-
+    fun logout() {
+        mostrarSnackBar = false
+        usuarioUiState = LoginUiState()
+    }
 
 
     fun onLoginEvent(loginEvent: LoginEvent) {
@@ -75,15 +78,9 @@ class LoginViewModel @Inject constructor(
         return usuarioRepository != null && usuarioRepository.password == usuario.password
     }
 
-    fun iniciaUsuario(correo: String?) {
-        if (correo != null) usuarioUiState = LoginUiState(correo, "", false)
-        else usuarioUiState = LoginUiState()
-        mostrarSnackBar = false
-    }
 
-    fun clearLogin() {
-        usuarioUiState = LoginUiState()
-    }
+
+
 
 
 }

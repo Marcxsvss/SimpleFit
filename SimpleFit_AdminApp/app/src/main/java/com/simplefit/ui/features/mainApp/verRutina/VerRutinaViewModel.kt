@@ -19,12 +19,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VerRutinaViewModel @Inject constructor(
-    private val usuarioRepository: UsuarioRepository,
-    private val usuarioRutinaRepository : UsuarioRutinaRepository,
     private val maquinasRepository : MaquinasRepository,
 ) : ViewModel() {
-    var userid by mutableStateOf("")
-        private set
     var verRutinaUiState by mutableStateOf(VerRutinaUiState())
         private set
     var diaSeleccionado by mutableStateOf("L")
@@ -38,7 +34,6 @@ class VerRutinaViewModel @Inject constructor(
     fun setRutina(rutina : RoutinesUiState)
     {
         viewModelScope.launch {
-            userid = rutina.userid
             var rutina2 = rutina.toVerRutinaUiState()
             rutina2 = rutina2.copy(ejercicio = maquinasRepository.get(rutina.rutinaid,diaSeleccionado).map { it.toMaquinaUiState() })
             verRutinaUiState = rutina2
@@ -60,27 +55,7 @@ class VerRutinaViewModel @Inject constructor(
                 maquinaUiState = verRoutinesEvent.ejercicio
                 mostrarDialog = true
             }
-            is VerRutinaEvent.onAddRutina -> {
-                viewModelScope.launch {
-                    usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
-                    verRoutinesEvent.onNavigateToAddRutina?.let { it(userid) }
 
-
-                }
-            }
-            is VerRutinaEvent.onActivarClicked -> {
-                viewModelScope.launch {
-                    usuarioRepository.updateRutinaState(userid,verRutinaUiState.rutinaid)
-                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
-                }
-            }
-            is VerRutinaEvent.onDesactivarClicked -> {
-                viewModelScope.launch {
-                    usuarioRepository.updateRutinaState(userid,0)
-                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
-
-                }
-            }
 
 
             else -> {}

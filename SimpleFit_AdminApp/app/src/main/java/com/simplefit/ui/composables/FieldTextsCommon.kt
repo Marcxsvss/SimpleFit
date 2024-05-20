@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Scale
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.TextFields
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -46,7 +47,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pmdm.tienda.utilities.validacion.Validacion
-import com.simplefit.R
+import com.simplefitAdmin.R
 
 
 @Composable
@@ -94,7 +95,7 @@ fun OutlinedTextFieldWithErrorState(
     enabled:Boolean=true,
     textoPista: String = "",
     leadingIcon: @Composable (() -> Unit)? = null,
-    validacionState: Validacion,
+    validacionState: Validacion? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
     keyboardActions: KeyboardActions = KeyboardActions(),
     onValueChange: (String) -> Unit
@@ -132,12 +133,12 @@ fun OutlinedTextFieldWithErrorState(
 //            else textoState
 //        ) },
                 keyboardOptions = keyboardOptions,
-                supportingText = {
-                    if (validacionState.hayError) {
-                        Text(text = validacionState.mensajeError!!)
-                    }
-                },
-                isError = validacionState.hayError,
+//                supportingText = {
+//                    if (validacionState!!.hayError) {
+//                        Text(text = validacionState.mensajeError!!)
+//                    }
+//                },
+//                isError = validacionState!!.hayError,
                 keyboardActions = keyboardActions,
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = Color(0xFFDAB338),
@@ -248,75 +249,6 @@ fun OutlinedTextFieldPassword(
     )
 }
 
-@Composable
-fun TextFieldPhone(
-    modifier: Modifier = Modifier,
-    label: String = "Teléfono",
-    telefonoState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit
-) {
-    TextFieldWithErrorState(
-        modifier = modifier,
-        label = label,
-        textoState = telefonoState,
-        textoPista = "999 99 99 99",
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.Phone,
-                contentDescription = "Teléfono"
-            )
-        },
-        validacionState = validacionState,
-        onValueChange = {
-            var text = it
-            if (!validacionState.hayError) {
-                try {
-                    text = PhoneNumberUtils.formatNumber(it, "ES")
-                } catch (e: Exception) {
-
-                }
-            }
-            onValueChange(text)
-        }
-    )
-}
-
-@Composable
-fun OutlinedTextFieldPhone(
-    modifier: Modifier = Modifier,
-    label: String = "Teléfono",
-    telefonoState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit
-) {
-    OutlinedTextFieldWithErrorState(
-        modifier = modifier,
-        label = label,
-        textoState = telefonoState,
-        textoPista = "999999999",
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.Phone,
-                contentDescription = "Teléfono"
-            )
-        },
-        validacionState = validacionState,
-        onValueChange = {
-            var text = it
-            if (!validacionState.hayError) {
-                try {
-                    text = PhoneNumberUtils.formatNumber(it, "ES")
-                } catch (e: Exception) {
-
-                }
-            }
-            onValueChange(text)
-        }
-    )
-}
 
 @Composable
 fun TextFieldEmail(
@@ -483,3 +415,30 @@ fun OutlinedTextFieldPeso(
     )
 }
 
+@Composable
+fun OutlinedTextFieldSearch(
+    modifier: Modifier = Modifier,
+    enabled: Boolean=true,
+    label: String = "",
+    busquedaState: String,
+    onValueChange: (String) -> Unit,
+)
+{
+    OutlinedTextFieldWithErrorState(
+        modifier = modifier,
+        label = label,
+        enabled=enabled,
+        textoState = busquedaState,
+        textoPista = "Buscar",
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.Search,
+                contentDescription = "Busca",
+                tint = Color(0xFFDAB338)
+            )
+        },
+
+        onValueChange = onValueChange
+    )
+}

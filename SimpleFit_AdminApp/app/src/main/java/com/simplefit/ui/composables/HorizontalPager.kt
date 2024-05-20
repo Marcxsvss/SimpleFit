@@ -38,7 +38,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simplefit.R
+import com.simplefitAdmin.R
 import com.simplefit.ui.features.mainApp.home.HomeEvent
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -29,34 +29,11 @@ fun NavGraphBuilder.routinesScreen(
             onNavigateToVerRutina = onNavigateToVerRutina,
             onNavigateToAddRutina = onNavigateToAddRutina
         )
-
-
     }
-    composable(
-        route = "$RoutinesRoute/{$RoutinesParameterName}",
-        arguments = listOf(
-            navArgument(RoutinesParameterName) {
-                type = NavType.StringType
-            }
-        )
-    ) {
-        RoutinesScreen( rutinasState = routinesViewModel.routinesList,
-            rutinaSeleccionadaState = routinesViewModel.routinesUiState,
-            onRutinaEvent = routinesViewModel::onRoutinesEvent,
-            onNavigateToVerRutina = onNavigateToVerRutina,
-            onNavigateToAddRutina = onNavigateToAddRutina
-        )
-
-    }
-
 
 }
 
 fun NavController.navigateToRoutines(navOptions: NavOptions? = null) {
     this.navigate(RoutinesRoute, navOptions)
 }
-fun NavController.navigateToRoutines2(userid: String, navOptions: NavOptions? = null){
-    val ruta = RoutinesRoute
-    Log.d("Navegacion", "Navegando a $ruta")
-    this.navigate("$ruta/$userid", navOptions)
-}
+
