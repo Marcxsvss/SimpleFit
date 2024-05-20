@@ -1,8 +1,12 @@
 @startuml
-
 :user: --> (login)
 (login)--|> (home)
 (login)--|> (register)
+(perfil) --|> (home)
+(perfil) --|> (rutinas)
+(rutinas) --|> (home)
+(rutinas) --|> (perfil)
+
 
 (register) --|> (home)
 
@@ -11,8 +15,10 @@
 
 (rutinas) --|> (seleccionarrutinaañadida)
 (seleccionarrutinaañadida) --|> (eliminarrutina)
-(seleccionarrutinaañadida) --|> (seleccionardia)
-(seleccionardia) --|> (verejercicio)
+(seleccionarrutinaañadida) --|> (verrutina)
+(verrutina) --|> (activar)
+(activar) --|> (rutinas)
+
 
 (rutinas) --|> (añadirrutina)
 (añadirrutina) --|> (verrutinas)
@@ -37,8 +43,8 @@
 
 "seleccionar rutina" as (seleccionarrutinaañadida)
 "eliminar rutina" as (eliminarrutina)
-"seleccionar dia" as (seleccionardia)
-"ver ejercicio" as (verejercicio)
+"ver rutina y ejercicios" as (verrutina)
+"Activar" as (activar)
 
 
 
@@ -54,6 +60,4 @@
 "logout" as (logout)
 
 "register" as (register)
-
-
 @enduml
