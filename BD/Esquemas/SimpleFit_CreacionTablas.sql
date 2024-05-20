@@ -18,6 +18,7 @@ CREATE TABLE `usuarios`(
   `acceso` int
 );
 
+
 CREATE TABLE `maquinas` (
   `maquinaid` int PRIMARY KEY,
   `nombre` varchar(255),
