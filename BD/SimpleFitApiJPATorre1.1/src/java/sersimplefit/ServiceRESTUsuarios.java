@@ -274,19 +274,19 @@ public class ServiceRESTUsuarios {
         HashMap<String, String> mensaje = new HashMap<>();
         Response response;
         Status statusResul;
-        Usuarios usu;
+        List<Usuarios> usu;
         try {
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             EntityManager em = emf.createEntityManager();
             UsuariosJpaController dao = new UsuariosJpaController(emf);
             TypedQuery<Usuarios> consultaRegistros
                     = em.createNamedQuery("Usuarios.findByEmail", Usuarios.class);
-            usu = consultaRegistros.setParameter("email", email).getSingleResult();
+            usu = consultaRegistros.setParameter("email", email).getResultList();
             
 
-            if (usu == null) {
+            if (usu.size() == 0) {
                 statusResul = Response.Status.NOT_FOUND;
-                mensaje.put("mensaje", "No existe libro con email " + email);
+                mensaje.put("mensaje", "No usuario con email " + email);
                 response = Response
                         .status(statusResul)
                         .entity(mensaje)
@@ -294,7 +294,7 @@ public class ServiceRESTUsuarios {
             } else {
                 dao.destroy(email);
                 statusResul = Response.Status.OK;
-                mensaje.put("mensaje", "Libro con ID " + email + " eliminado");
+                mensaje.put("mensaje", "Usuario con ID " + email + " eliminado");
                 response = Response
                         .status(statusResul)
                         .entity(mensaje)

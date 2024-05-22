@@ -11,24 +11,10 @@ Comprobar y arreglar si cuando haces logout desde profile, todos los viewmodel(U
 Meter la lazycolumn de rutinas y de añadir rutina en un componente para no repetir codigo
 Meter un boton en ver rutinas donde puedes quitar la seleccion de una rutina, es decir, que no salga con el color amarillo fuerte y se quite la papelera de borrar.
 Meter las bolitas de los dias de la semana en un componente para poder reutilizarlo y no repetir codigo.
-Poner boton de descargar plan dieta y entrenamiento al lado de los dias de la semana en verRutina
-Completar BBDD tanto datos como conexion y .war, hacer la documentacion
 Añadir la autenticacion login con retrofit, todo está al final del pdf de retrofit en aules
 Mejorar el ExposedDropDownMenuBox de edad sexo somatotipo para que solo sea un componente y lo llave al mismo,
 no repetir codigo, se solucionaria pasandole el array por parametro y creando un label para el "titulo" y cambiarle
 el padding bottom para que haya mas espacio entre uno y otro 
-Terminar el ServiceRest de la aplicacion en java para los datos que vamos a necesitar
-Ver como cojer los datos de Azure para la Aplicacion de android con Retrofit.
-
-Aplicacion de Administracion de usuarios, rutinas etc.
----------------------------------------------------
-Tendrá un inicio de sesion, los administradores entraran con un usuario y contraseña y solo se podrán añadir nuevos administradores 
-desde dentro de la aplicacion y el unico que podrá crear administradores sera el director. 
-Los administradores podrán añádir dietas, rutinas, alimentos, eliminar usuarios etc.
-
-Tendrá una pantalla principal donde veremos todas las tablas, seleccionaremos la que queramos y todo estará ordenado, podremos aplicar filtros y habrá un buscador 
-para encontrar ocurrencias. busques lo que busques, buscará una coincidencia en todos los campos tanto nombre, dni, email.(Los que yo decida)
-Habrá un boton para eliminar (cualquier dato de las tablas), editar(cualquier dato de las tablas), otro para insertar(cualquier dato en cualquier tabla).
 
 Ampliaciones
 -------------
@@ -38,4 +24,12 @@ Posible ampliacion, añadir un box al final del home que sea para compartir con 
 
 
 
-
+/*RutinamaquinaJpaController dao2 = new RutinamaquinaJpaController(emf);
+            Query query = em.createNamedQuery("Rutinamaquina.findByRutinaidAndDia");
+            query.setParameter("rutinaid", rutinaid);
+            List<RutinamaquinaPK> rutinamaquinapklist = query.getResultList();*/
+            /*for(RutinamaquinaPK rtp : rutinamaquinapklist)
+                {
+                    dao2.destroy(rtp);
+                }*/
+            

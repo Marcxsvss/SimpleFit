@@ -41,7 +41,8 @@ fun NavGraphBuilder.verRutinaScreen(
             mostrarDialog = verRutinaViewModel.mostrarDialog,
             maquinaUiState = verRutinaViewModel.maquinaUiState,
             onNavigateToPrevious = onNavigateToPrevious,
-            onNavigateToRutinas = onNavigateToRutinas)
+            onNavigateToRutinas = onNavigateToRutinas,
+            mostrarSnack = verRutinaViewModel.mostrarSnack)
     }
 
 }

@@ -1,51 +1,32 @@
 package com.simplefit.ui.features.mainApp.home
 
-import android.widget.LinearLayout
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FitnessCenter
-import androidx.compose.material.icons.filled.Groups
-import androidx.compose.material.icons.filled.People
-import androidx.compose.material.icons.filled.Restaurant
-import androidx.compose.material.icons.filled.School
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kinoyamboladmin.ui.features.movieform.ImageSelector
+import com.simplefit.ui.composables.ImageSelector
 import com.simplefit.R
 import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
@@ -66,7 +47,8 @@ fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
     onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
-    consejos: List<String>
+    consejos: List<String>,
+    onChangePhoto: (ImageBitmap) -> Unit
 
     ) {
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
@@ -102,9 +84,8 @@ fun HomeScreen(
                         fontFamily = FontFamily(Font(R.font.roboto_bold))
                     )
                 }
-                ImageSelector(modifier = Modifier.padding(start = 100.dp,top = 30.dp),image = null, label = "") {
+                ImageSelector(modifier = Modifier.padding(start = 100.dp,top = 30.dp),image = homeUiState.foto, label = "",onChangePhoto = onChangePhoto)
 
-                }
             }
         }
         Spacer(modifier = Modifier.height(12.dp))

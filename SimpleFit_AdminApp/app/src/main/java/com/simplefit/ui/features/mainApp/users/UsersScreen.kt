@@ -220,7 +220,7 @@ fun UsersScreen(
                         onUsersEvent(UsersEvent.onCargoChanged(usuarioSeleccionadoState!!))
                         onMostrarDialog(false)
                     }) {
-                        Text(if (usuarioSeleccionadoState!!.acceso == 0) "Dar Administrador" else "Quitar Administrador")
+                        Text(if (usuarioSeleccionadoState!!.acceso == 1) "Quitar Administrador" else "Dar Administrador")
                     }
                     Button(onClick = { onMostrarDialog(false) }) {
                         Text("OK")

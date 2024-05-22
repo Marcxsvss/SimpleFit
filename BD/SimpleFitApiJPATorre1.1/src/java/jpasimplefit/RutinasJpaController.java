@@ -196,6 +196,7 @@ public class RutinasJpaController implements Serializable {
             }
         }
     }
+    
 
     public List<Rutinas> findRutinasEntities() {
         return findRutinasEntities(true, -1, -1);
@@ -242,5 +243,5 @@ public class RutinasJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

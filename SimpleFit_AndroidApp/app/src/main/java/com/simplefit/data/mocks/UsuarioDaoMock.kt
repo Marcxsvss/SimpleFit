@@ -14,7 +14,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Masculino",
             somatotipo = "ectomorfo",
             rutinaState = 2,
-            cargo = 1
+            cargo = 1,
+            foto = null
         ),
         UsuarioMock(
             email = "ana@hotmail.com",
@@ -25,8 +26,9 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "18-30",
             sexo = "Femenino",
             somatotipo = "mesomorfo",
-            rutinaState = 1,
-            cargo = 2
+            rutinaState = 9,
+            cargo = 2,
+            foto = null
         ),
         UsuarioMock(
             email = "pablo@yahoo.com",
@@ -38,7 +40,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Masculino",
             somatotipo = "endomorfo",
             rutinaState = 3,
-            cargo = 1
+            cargo = 1,
+            foto = null
         ),
 
         UsuarioMock(
@@ -51,7 +54,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Femenino",
             somatotipo = "ectomorfo",
             rutinaState = 2,
-            cargo = 3
+            cargo = 3,
+            foto = null
         ),
 
         UsuarioMock(
@@ -63,8 +67,9 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "24-36",
             sexo = "Masculino",
             somatotipo = "mesomorfo",
-            rutinaState = 1,
-            cargo = 2
+            rutinaState = 7,
+            cargo = 2,
+            foto = null
         ),
 
         UsuarioMock(
@@ -77,7 +82,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Femenino",
             somatotipo = "endomorfo",
             rutinaState = 3,
-            cargo = 1
+            cargo = 1,
+            foto = null
         ),
 
         UsuarioMock(
@@ -90,7 +96,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Masculino",
             somatotipo = "ectomorfo",
             rutinaState = 2,
-            cargo = 3
+            cargo = 3,
+            foto = null
         ),
 
         UsuarioMock(
@@ -102,8 +109,9 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "18-30",
             sexo = "Femenino",
             somatotipo = "mesomorfo",
-            rutinaState = 1,
-            cargo = 2
+            rutinaState = 5,
+            cargo = 2,
+            foto = null
         ),
 
         UsuarioMock(
@@ -116,7 +124,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Masculino",
             somatotipo = "endomorfo",
             rutinaState = 3,
-            cargo = 1
+            cargo = 1,
+            foto = null
         ),
 
         UsuarioMock(
@@ -129,7 +138,8 @@ class UsuarioDaoMock @Inject constructor() {
             sexo = "Femenino",
             somatotipo = "ectomorfo",
             rutinaState = 2,
-            cargo = 3
+            cargo = 3,
+            foto = null
         ),
 
         UsuarioMock(
@@ -141,8 +151,9 @@ class UsuarioDaoMock @Inject constructor() {
             edad = "24-36",
             sexo = "Masculino",
             somatotipo = "mesomorfo",
-            rutinaState = 1,
-            cargo = 2
+            rutinaState = 2,
+            cargo = 2,
+            foto = null
         )
     )
 

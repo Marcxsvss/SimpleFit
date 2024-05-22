@@ -16,8 +16,10 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import jpasimplefit.Rutinamaquina;
 import jpasimplefit.RutinamaquinaJpaController;
 import jpasimplefit.RutinamaquinaPK;
 import jpasimplefit.Rutinas;
@@ -27,11 +29,12 @@ import jpasimplefit.UsuariosJpaController;
 
 @Path("rutinas")
 public class ServiceRESTRutinas {
+
     private static final String PERSISTENCE_UNIT = "SimpleFitApiJPATorre1.1PU";
-    
-   
+
     public ServiceRESTRutinas() {
     }
+
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,8 +48,6 @@ public class ServiceRESTRutinas {
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             RutinasJpaController dao = new RutinasJpaController(emf);
             rutina = dao.findRutinas(id);
-            
-           
 
             if (rutina == null) {
                 statusResul = Response.Status.NOT_FOUND;
@@ -76,6 +77,7 @@ public class ServiceRESTRutinas {
         }
         return response;
     }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAll() {
@@ -114,28 +116,20 @@ public class ServiceRESTRutinas {
         }
         return response;
     }
-    @DELETE
-    @Path("{rutinaid}/delete")
+
+    /*@Path("/delete/{rutinaid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("rutinaid") int rutinaid) {
         EntityManagerFactory emf = null;
         HashMap<String, String> mensaje = new HashMap<>();
         Response response;
         Response.Status statusResul;
-        Rutinas rutina;
         try {
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             EntityManager em = emf.createEntityManager();
-            RutinamaquinaJpaController dao2 = new RutinamaquinaJpaController(emf);
-            Query query = em.createNamedQuery("Rutinamaquina.findByRutinaidAndDia");
-            query.setParameter("rutinaid", rutinaid);
-            List<RutinamaquinaPK> rutinamaquinapklist = query.getResultList();
-            
-            RutinasJpaController dao = new RutinasJpaController(emf);
-            TypedQuery<Rutinas> consultaRegistros
-                    = em.createNamedQuery("Usuarios.findByEmail", Rutinas.class);
-            rutina = consultaRegistros.setParameter("rutinaid", rutinaid).getSingleResult();
-            
+
+            RutinasJpaController rutinasController = new RutinasJpaController(emf);
+            Rutinas rutina = rutinasController.findRutinas(rutinaid);
 
             if (rutina == null) {
                 statusResul = Response.Status.NOT_FOUND;
@@ -145,13 +139,16 @@ public class ServiceRESTRutinas {
                         .entity(mensaje)
                         .build();
             } else {
-                for(RutinamaquinaPK rtp : rutinamaquinapklist)
-                {
-                    dao2.destroy(rtp);
+                // Eliminamos todos los registros en la tabla Rutinamaquina asociados a esta rutina
+                List<Rutinamaquina> rutinamaquinaList = (List<Rutinamaquina>) rutina.getRutinamaquinaCollection();
+                for (Rutinamaquina rutinamaquina : rutinamaquinaList) {
+                    em.remove(em.merge(rutinamaquina));
                 }
-                dao.destroy(rutinaid);
+
+                // Ahora podemos eliminar la rutina
+                rutinasController.destroy(rutinaid);
                 statusResul = Response.Status.OK;
-                mensaje.put("mensaje", "Libro con ID " + rutinaid + " eliminado");
+                mensaje.put("mensaje", "Rutina con ID " + rutinaid + " eliminada correctamente");
                 response = Response
                         .status(statusResul)
                         .entity(mensaje)
@@ -159,7 +156,57 @@ public class ServiceRESTRutinas {
             }
         } catch (Exception ex) {
             statusResul = Response.Status.BAD_REQUEST;
-            mensaje.put("mensaje", "Error al procesar la petición");
+            mensaje.put("mensaje", "Error al procesar la petición: " + ex.getMessage());
+            response = Response
+                    .status(statusResul)
+                    .entity(mensaje)
+                    .build();
+        } finally {
+            if (emf != null) {
+                emf.close();
+            }
+        }
+        return response;
+    }*/
+    @DELETE
+    @Path("/delete/{rutinaid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete(@PathParam("rutinaid") int rutinaid) {
+        EntityManagerFactory emf = null;
+        HashMap<String, String> mensaje = new HashMap<>();
+        Response response;
+        Response.Status statusResul;
+        List<Rutinas> rutina;
+        try {
+            emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+            EntityManager em = emf.createEntityManager();
+            
+            RutinasJpaController dao = new RutinasJpaController(emf);
+            TypedQuery<Rutinas> consultaRegistros
+                    = em.createNamedQuery("Rutinas.findByRutinaid", Rutinas.class);
+            rutina = consultaRegistros.setParameter("rutinaid", rutinaid).getResultList();
+            
+
+            if (rutina.size() == 0) {
+                statusResul = Response.Status.NOT_FOUND;
+                mensaje.put("mensaje", "No existe rutina con id " + rutinaid);
+                response = Response
+                        .status(statusResul)
+                        .entity(mensaje)
+                        .build();
+            } else {
+                
+                dao.destroy(rutinaid);
+                statusResul = Response.Status.OK;
+                mensaje.put("mensaje", "Rutina con ID " + rutinaid + " eliminado");
+                response = Response
+                        .status(statusResul)
+                        .entity(mensaje)
+                        .build();
+            }
+        } catch (Exception ex) {
+            statusResul = Response.Status.BAD_REQUEST;
+            mensaje.put("mensaje", "Error al procesar la petición" + ex.getLocalizedMessage() + ex.getMessage());
             response = Response
                     .status(statusResul)
                     .entity(mensaje)
@@ -172,6 +219,4 @@ public class ServiceRESTRutinas {
         return response;
     }
 
-
-    
 }

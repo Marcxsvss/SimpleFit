@@ -3,6 +3,7 @@ package com.simplefit.ui.features.mainApp.home
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.ConsejosRepository
@@ -28,6 +29,11 @@ class HomeViewModel @Inject constructor(
         private set
     var consejos : List<String> = listOf()
 
+    fun onChangePhoto(ImageBitmap: ImageBitmap) {
+        homeUiState = homeUiState.copy(
+            foto = ImageBitmap
+        )
+    }
     //var indexState by mutableStateOf(0)
     fun setUsuario(email : String)
     {
@@ -52,6 +58,7 @@ class HomeViewModel @Inject constructor(
                     println("No hay rutina seleccionada")
 
             }
+
 
             else -> {}
         }

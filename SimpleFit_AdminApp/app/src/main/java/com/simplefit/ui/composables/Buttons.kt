@@ -99,9 +99,3 @@ fun HomeButton(texto : String,onNavigateTo :() -> Unit)
         }
     }
 }
-@Preview
-@Composable
-fun CloudButtonPreview()
-{
-    CloudButton("TODAS")
-}

@@ -30,7 +30,8 @@ this.password,
 "",
 "",
     null,
-    0
+    cargo = 0,
+    foto = null
 )
 fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     this.email,
@@ -42,7 +43,8 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     "",
     null,
-    0
+    0,
+    null
 )
 fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,

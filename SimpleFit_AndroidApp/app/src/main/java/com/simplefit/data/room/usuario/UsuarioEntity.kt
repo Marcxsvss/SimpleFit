@@ -30,6 +30,9 @@ data class UsuarioEntity(
     @ColumnInfo(name="rutinaState")
     val rutinaState : Int?,
     @ColumnInfo(name="acceso")
-    val cargo : Int
+    val cargo : Int,
+    @ColumnInfo(name="foto")
+    val foto : String?
+
 ) : Parcelable
 

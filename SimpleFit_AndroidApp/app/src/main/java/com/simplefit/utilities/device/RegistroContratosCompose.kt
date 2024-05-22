@@ -22,8 +22,15 @@ import java.util.Date
 
 // Uso:
 //      slectorDeImagenes.launch("image/*")
+fun compartirEnlace(context: Context, enlace: String) {
+    val compartirIntent = Intent(Intent.ACTION_SEND)
+    compartirIntent.type = "text/plain"
+    compartirIntent.putExtra(Intent.EXTRA_TEXT, enlace)
+    context.startActivity(Intent.createChooser(compartirIntent, "Compartir enlace a través de:"))
+}
+
 @Composable
-fun ResgitroSelectorDeImagenesConGetContent(
+fun resgitroSelectorDeImagenesConGetContent(
     onFotoCambiada: (ImageBitmap) -> Unit
 ): ManagedActivityResultLauncher<String, Uri?> {
     val context = LocalContext.current

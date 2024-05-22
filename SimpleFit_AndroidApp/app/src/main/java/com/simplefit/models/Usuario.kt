@@ -10,6 +10,7 @@ data class Usuario(
     val sexo : String,
     val somatotipo : String,
     val rutinaState : Int?,
-    val cargo : Int
+    val cargo : Int,
+    val foto : String?
 
 )

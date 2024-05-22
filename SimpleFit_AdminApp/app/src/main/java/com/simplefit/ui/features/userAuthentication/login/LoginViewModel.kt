@@ -75,15 +75,6 @@ class LoginViewModel @Inject constructor(
         return usuarioRepository != null && usuarioRepository.password == usuario.password && usuarioRepository.acceso == 1
     }
 
-    fun iniciaUsuario(correo: String?) {
-        if (correo != null) usuarioUiState = LoginUiState(correo, "", false)
-        else usuarioUiState = LoginUiState()
-        mostrarSnackBar = false
-    }
-
-    fun clearLogin() {
-        usuarioUiState = LoginUiState()
-    }
 
 
 }

@@ -1,0 +1,42 @@
+@startuml
+:user: --> (login)
+(login)--|> (home)
+
+(rutinas) --|> (home)
+(usuarios) --|> (home)
+
+(home) --|> (rutinas)
+(rutinas) --|> (buscarutina)
+(buscarutina) --|> (seleccionarrutina)
+(seleccionarrutina) --|> (eliminarrutina)
+(seleccionarrutina) --|> (verrutina)
+(seleccionarrutina) --|>(quitarseleccion)
+
+(home) --|> (usuarios)
+(usuarios) --|> (buscausuario)
+(buscausuario) --|> (seleccionausuario)
+(seleccionausuario) --|> (editar)
+(seleccionausuario) --|> (eliminarusuario)
+(seleccionausuario) --|> (quitarseleccion)
+
+
+
+"Buscar Usuario" as (buscausuario)
+"seleccionar usuario" as (seleccionausuario)
+"ver y editar usuario" as (editar)
+"eliminar" as (eliminarusuario)
+"Quitar seleccion" as (quitarseleccion)
+
+"login" as (login) 
+"home" as (home) 
+"rutinas" as (rutinas)
+"usuarios" as (usuarios)
+
+"Buscar Rutina" as (buscarutina)
+"seleccionar rutina" as (seleccionarrutina)
+"eliminar rutina" as (eliminarrutina)
+"ver rutina y ejercicios" as (verrutina)
+
+
+
+@enduml 

@@ -23,7 +23,7 @@ interface UsuarioService {
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun update(@Body u2 : UsuarioApi): Response<RespuestaApi>
 
-    @DELETE("usuarios/{email}")
+    @DELETE("usuarios/delete/{email}")
     @Headers("Accept: application/json", "Content-Type: application/json")
     suspend fun delete(@Path("email") email: String): Response<RespuestaApi>
 }

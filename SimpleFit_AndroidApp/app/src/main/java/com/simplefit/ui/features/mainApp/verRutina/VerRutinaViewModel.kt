@@ -34,6 +34,9 @@ class VerRutinaViewModel @Inject constructor(
     val onMostrarDialog: (Boolean) -> Unit by mutableStateOf({
         mostrarDialog = it
     })
+    var mostrarSnack by mutableStateOf("")
+
+
     var maquinaUiState by mutableStateOf(MaquinaUiState())
     fun setRutina(rutina : RoutinesUiState)
     {
@@ -62,8 +65,21 @@ class VerRutinaViewModel @Inject constructor(
             }
             is VerRutinaEvent.onAddRutina -> {
                 viewModelScope.launch {
-                    usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
-                    verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
+                    if (verRutinaUiState.toUsuarioRutina(userid).rutinaid in usuarioRutinaRepository.get(userid).map{it.rutinaid})
+                    {
+                        mostrarSnack = if(mostrarSnack == "") {
+                            "Ya tienes esta rutina"
+                        } else {
+                            ""
+                        }
+                    }
+                    else
+                    {
+                        usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
+                        verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
+
+                    }
+
                 }
             }
             is VerRutinaEvent.onActivarClicked -> {

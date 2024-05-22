@@ -34,7 +34,9 @@ fun UsuarioEntity.toUsuario(): Usuario = Usuario(
     this.sexo,
     this.somatotipo,
     this.rutinaState,
-    this.cargo
+    this.cargo,
+    this.foto
+
 )
 
 fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
@@ -47,7 +49,8 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     sexo = this.sexo,
     somatotipo = this.somatotipo,
     rutinaState = this.rutinaState,
-    cargo = this.cargo
+    cargo = this.cargo,
+    foto = this.foto
 )
 
 
@@ -72,7 +75,8 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
     sexo = this.sexo,
     somatotipo = this.somatotipo,
     rutinaState = this.rutinaState,
-    cargo = this.cargo
+    cargo = this.cargo,
+    foto = this.foto
 )
 fun Usuario.toUsuarioApi() = UsuarioApi(
     this.email,
@@ -84,7 +88,8 @@ fun Usuario.toUsuarioApi() = UsuarioApi(
     this.sexo,
     this.somatotipo,
     this.rutinaState,
-    this.cargo
+    this.cargo,
+    this.foto
 
 )
 
@@ -98,7 +103,8 @@ fun UsuarioApi.toUsuario() = Usuario(
     this.sexo,
     this.somatotipo,
     this.rutinastate,
-    this.acceso
+    this.acceso,
+    this.foto
 )
 //endregion
 //region Rutina

@@ -37,6 +37,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Snackbar
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.BitmapPainter
@@ -66,7 +67,9 @@ fun VerRoutinesScreen(
     onMostrarDialog: (Boolean) -> Unit,
     maquinaUiState: MaquinaUiState,
     onNavigateToPrevious: () -> Unit,
-    onNavigateToRutinas: ((userid: String) -> Unit)? = null
+    onNavigateToRutinas: ((userid: String) -> Unit)? = null,
+    mostrarSnack: String,
+
 ) {
 
     val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
@@ -331,6 +334,14 @@ fun VerRoutinesScreen(
                 }
             } else {
                 DescansoScreen()
+            }
+            if (mostrarSnack.isNotBlank()) {
+
+                Snackbar(
+                    modifier = Modifier
+                ) {
+                    Text(text = mostrarSnack)
+                }
             }
 
         }
