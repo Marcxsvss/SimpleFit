@@ -32,11 +32,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
+import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Face2
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.BitmapPainter
@@ -86,48 +88,31 @@ fun VerEntrenamientoScreen(
         modifier = Modifier.fillMaxSize()
 
     ) {
-        if (mostrarDialog) {
-            AlertDialog(
-                onDismissRequest = { onMostrarDialog(false) },
-                title = {
-                    Text(
-                        text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,
-                        fontFamily = FontFamily(
-                            Font(resId = R.font.roboto_bolditalic)
-                        ),
-                    )
-                },
-                text = {
-                    Column {
-                        Image(
-                            modifier = Modifier.size(350.dp),
-                            painter = painterFoto,
-                            contentDescription = "Imagen ejercicio"
-                        )
-                        Text(
-                            maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp,
-                            fontFamily = FontFamily(
-                                Font(resId = R.font.roboto_mediumitalic)
-                            ),
-                        )
-                    }
-                },
-                confirmButton = {
-                    Button(onClick = { onMostrarDialog(false) }) {
-                        Text("OK")
-                    }
-                }
-            )
-        }
+
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
+
             Text(
-                modifier = Modifier.padding(top = 10.dp),
+                modifier = Modifier.padding(10.dp),
                 text = verEntrenamientoState.titulo.uppercase(),
                 color = Color(0xFFDAB338),
                 fontSize = 30.sp,
-                fontStyle = FontStyle.Italic
+                fontFamily = FontFamily(
+                    Font(resId = R.font.roboto_blackitalic)
+                )
             )
-            Spacer(modifier = Modifier.height(15.dp))
+            Button(
+                modifier = Modifier.padding(5.dp),
+                onClick = { onNavigateToPrevious() },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor
+                    = Color(0xFFC29F6C)
+                )
+            ) {
+                Text("VOLVER")
+            }
+
+            //Spacer(modifier = Modifier.height(15.dp))
             Text(
                 text = diaActual,
                 color = Color(0xFF89602F),
@@ -172,7 +157,11 @@ fun VerEntrenamientoScreen(
                             modifier = Modifier.fillMaxHeight()
                         ) {
                             items(verEntrenamientoState.ejercicio) { ejercicio ->
-                                Row(Modifier.clickable { onVerEntrenamientoEvent(VerEntrenamientoEvent.onClickEjercicio(ejercicio)) })
+                                Row(Modifier.clickable {
+                                    onVerEntrenamientoEvent(
+                                        VerEntrenamientoEvent.onClickEjercicio(ejercicio)
+                                    )
+                                })
                                 {
                                     Box(modifier = Modifier.width(300.dp))
                                     {
@@ -214,7 +203,39 @@ fun VerEntrenamientoScreen(
             } else {
                 DescansoScreen()
             }
-
+        }
+        if (mostrarDialog) {
+            AlertDialog(
+                onDismissRequest = { onMostrarDialog(false) },
+                title = {
+                    Text(
+                        text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,
+                        fontFamily = FontFamily(
+                            Font(resId = R.font.roboto_bolditalic)
+                        ),
+                    )
+                },
+                text = {
+                    Column {
+                        Image(
+                            modifier = Modifier.size(350.dp),
+                            painter = painterFoto,
+                            contentDescription = "Imagen ejercicio"
+                        )
+                        Text(
+                            maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp,
+                            fontFamily = FontFamily(
+                                Font(resId = R.font.roboto_mediumitalic)
+                            ),
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(onClick = { onMostrarDialog(false) }) {
+                        Text("OK")
+                    }
+                }
+            )
         }
     }
 }

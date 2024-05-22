@@ -1,5 +1,7 @@
 package com.pmdm.recetas.data.mocks
 
+import android.net.Uri
+
 data class UsuarioMock(
     val email: String,
     val password: String,

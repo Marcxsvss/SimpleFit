@@ -1,14 +1,17 @@
 package com.simplefit.ui.features.mainApp.home
 
+import android.net.Uri
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pmdm.agenda.utilities.imagenes.Imagenes
 import com.simplefit.data.ConsejosRepository
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
+import com.simplefit.models.Usuario
 import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.toRutinasUiState
@@ -29,23 +32,42 @@ class HomeViewModel @Inject constructor(
         private set
     var consejos : List<String> = listOf()
 
-    fun onChangePhoto(ImageBitmap: ImageBitmap) {
+
+    fun onChangePhoto(image: ImageBitmap?) {
         homeUiState = homeUiState.copy(
-            foto = ImageBitmap
+            foto = image
         )
+        usuario = usuario.copy(foto =  Imagenes.bitmapToBase64(image!!))
+        viewModelScope.launch { usuarioRepository.update(usuario) }
     }
-    //var indexState by mutableStateOf(0)
+    var mostrarSnackBar by mutableStateOf(false)
+    val onMostrarSnackBar: () -> Unit by mutableStateOf({
+        mostrarSnackBar = !mostrarSnackBar
+    })
+    var usuario by mutableStateOf(Usuario())
+        private set
     fun setUsuario(email : String)
     {
         viewModelScope.launch {
-            val usuario = usuarioRepository.get(email)
+
+            usuario = usuarioRepository.get(email)!!
             if (usuario != null) {
                 homeUiState = homeUiState.copy(
                     email = usuario.email,
-                    nombre = usuario.nombre
+                    nombre = usuario.nombre,
+                    foto = if (usuario.foto != null) Imagenes.base64ToBitmap(usuario.foto!!) else null
                 )
+                if(usuario.rutinaState != null && usuario.rutinaState != 0)
+                {
+                    rutinaUiState = rutinasRepository.getRutina(usuario.rutinaState).toRutinasUiState()
+                }
+                else
+                {
+                    rutinaUiState = null
+                }
+
             }
-            rutinaUiState = rutinasRepository.getRutina(usuario?.rutinaState).toRutinasUiState()
+
             consejos = ConsejosRepository.get()
         }
     }
@@ -53,10 +75,13 @@ class HomeViewModel @Inject constructor(
         when (homeEvent) {
             is HomeEvent.onVerEntrenamientoClicked -> {
                 if(rutinaUiState != null)
-                homeEvent.onNavigateToVerEntrenamiento(rutinaUiState!!)
-                else//Mostrar snackbar
-                    println("No hay rutina seleccionada")
+                    homeEvent.onNavigateToVerEntrenamiento?.let { it(rutinaUiState!!) }
+                else
+                    mostrarSnackBar = !mostrarSnackBar
 
+            }
+            is HomeEvent.OnCambiarfoto -> {
+                onChangePhoto(homeEvent.image)
             }
 
 

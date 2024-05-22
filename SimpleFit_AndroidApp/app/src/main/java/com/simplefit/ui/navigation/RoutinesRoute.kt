@@ -1,6 +1,7 @@
 package com.simplefit.ui.navigation
 
 import android.util.Log
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -22,7 +23,10 @@ fun NavGraphBuilder.routinesScreen(
     onNavigateToAddRutina: ((userid: String) -> Unit)? = null
 
 ) {
+
     composable(route = RoutinesRoute) {
+
+
         RoutinesScreen( rutinasState = routinesViewModel.routinesList,
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
             onRutinaEvent = routinesViewModel::onRoutinesEvent,

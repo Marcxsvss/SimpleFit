@@ -191,10 +191,9 @@ fun ContenidoPrincipalCardRutina(
                         contentAlignment = Alignment.Center
                     ) {
                         val imageResource = when (rutinaUiState.dificultad) {
-                            "Intermedio" -> R.drawable.hipertrofia
-                            "Avanzado" -> R.drawable.definicion
+                            "Intermedia" -> R.drawable.hipertrofia
+                            "Avanzada" -> R.drawable.definicion
                             "Principiante" -> R.drawable.mantenimiento
-                            // Añade más objetivos si es necesario
                             else -> R.drawable.hipertrofia
                         }
                         Image(

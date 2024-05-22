@@ -5,11 +5,14 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -35,6 +38,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material3.Snackbar
@@ -47,7 +51,7 @@ fun RoutinesScreen(
     rutinaSeleccionadaState: RoutinesUiState?,
     onRutinaEvent: (RoutinesEvent) -> Unit,
     onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
-    onNavigateToAddRutina : ((userid: String) -> Unit)? = null
+    onNavigateToAddRutina: ((userid: String) -> Unit)? = null
 ) {
     val scrollState = rememberScrollState()
     Surface(
@@ -60,27 +64,54 @@ fun RoutinesScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(20.dp)
         ) {
-            Text(
-                text = "RUTINAS",
-                color = Color(0xFFDAB338),
-                fontSize = 30.sp,
-                fontStyle = FontStyle.Italic
+
+
+            Row(
+                horizontalArrangement = Arrangement.End,
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
             )
-            Spacer(modifier = Modifier.fillMaxHeight(0.05f))
-            Row(modifier = Modifier.align(Alignment.End)) {
-                IconButton(onClick = { onRutinaEvent(RoutinesEvent.onAddClicked(onNavigateToAddRutina))}) {
+            {
+
+                Text(
+                    text = "RUTINAS",
+                    color = Color(0xFFDAB338),
+                    fontSize = 30.sp,
+                    fontStyle = FontStyle.Italic
+                )
+                IconButton(onClick = {
+                    onRutinaEvent(
+                        RoutinesEvent.onAddClicked(
+                            onNavigateToAddRutina
+                        )
+                    )
+                }, modifier = Modifier.padding(start = 70.dp)) {
                     Icon(
                         Icons.Filled.Add,
                         contentDescription = "Añadir Plan de Entrenamiento/Alimenticio",
                     )
                 }
+
+            }
+
+
+            Spacer(modifier = Modifier.fillMaxHeight(0.05f))
+            Row(modifier = Modifier.align(Alignment.End).height(30.dp)) {
                 if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
-                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked)})
+                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked) })
                     {
                         Icon(
                             tint = Color(0xFFDAB338),
                             imageVector = Icons.Filled.Delete,
                             contentDescription = "Eliminar Rutina",
+                        )
+                    }
+                    IconButton(onClick = { onRutinaEvent(RoutinesEvent.onCancelClicked) })
+                    {
+                        Icon(
+                            tint = Color(0xFFDAB338),
+                            imageVector = Icons.Filled.Cancel,
+                            contentDescription = "Cancelar"
                         )
                     }
                 }
@@ -97,7 +128,13 @@ fun RoutinesScreen(
                         key = { it.rutinaid }
                     ) { rutina ->
                         RutinasListItem(
-                            onVerRutinaClicked = {onRutinaEvent(RoutinesEvent.onVerClicked(onNavigateToVerRutina))},
+                            onVerRutinaClicked = {
+                                onRutinaEvent(
+                                    RoutinesEvent.onVerClicked(
+                                        onNavigateToVerRutina
+                                    )
+                                )
+                            },
                             modifier = Modifier.animateItemPlacement(),
                             rutinaUiState = rutina,
                             seleccionadoState = rutinaSeleccionadaState?.let { it.rutinaid == rutina.rutinaid }

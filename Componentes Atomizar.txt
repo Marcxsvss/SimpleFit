@@ -1,0 +1,7 @@
+-Row con la felcha ArrowBack IOS 
+-botones de volver, añadir que están el verRutina/verEntrenamiento
+
+-Cambiar todos los nombres al español y dejarlos todos iguales (routines-rutinas-Add-crear-user-Usuario....)
+
+-Poner las fotos del biceps dependiendo si es avanzada intermedia o klk
+Borrar las fotos de AddRutina

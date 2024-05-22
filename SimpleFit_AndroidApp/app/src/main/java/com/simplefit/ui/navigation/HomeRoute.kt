@@ -19,7 +19,7 @@ const val HomeParameterName = "email"
 // usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
-    onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit),
+    onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
 
     ) {
     composable(
@@ -31,12 +31,14 @@ fun NavGraphBuilder.homeScreen(
         )
     ) {
 
-    HomeScreen(
+        HomeScreen(
             homeUiState = homeViewModel.homeUiState,
             onHomeEvent = homeViewModel::onHomeEvent,
             onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
             consejos = homeViewModel.consejos,
-            onChangePhoto = homeViewModel::onChangePhoto)
+            mostrarSnack = homeViewModel.mostrarSnackBar,
+            onMostrarSnackbar = homeViewModel.onMostrarSnackBar
+        )
     }
     composable(HomeRoute)
     {
@@ -45,16 +47,19 @@ fun NavGraphBuilder.homeScreen(
             onHomeEvent = homeViewModel::onHomeEvent,
             onNavigateToVerEntrenamiento = onNavigateToVerEntrenamiento,
             consejos = homeViewModel.consejos,
-            onChangePhoto = homeViewModel::onChangePhoto
+            mostrarSnack = homeViewModel.mostrarSnackBar,
+            onMostrarSnackbar = homeViewModel.onMostrarSnackBar
         )
 
     }
 }
-fun NavController.navigateToHome(email: String? = null,navOptions: NavOptions? = null){
+
+fun NavController.navigateToHome(email: String? = null, navOptions: NavOptions? = null) {
     val ruta = HomeRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$email", navOptions)
 }
-fun NavController.navigateToHome2(navOptions: NavOptions? = null){
+
+fun NavController.navigateToHome2(navOptions: NavOptions? = null) {
     this.navigate(HomeRoute, navOptions)
 }

@@ -1,5 +1,7 @@
 package com.simplefit.models
 
+import android.net.Uri
+
 data class Usuario(
     val email: String,
     val password: String,
@@ -13,4 +15,18 @@ data class Usuario(
     val cargo : Int,
     val foto : String?
 
-)
+){
+    constructor() : this(
+        email = "",
+        password = "",
+        nombre = "",
+        altura = "",
+        peso = "",
+        edad = "",
+        sexo = "",
+        somatotipo = "",
+        rutinaState = 0,
+        cargo = 0,
+        foto = null
+    )
+}

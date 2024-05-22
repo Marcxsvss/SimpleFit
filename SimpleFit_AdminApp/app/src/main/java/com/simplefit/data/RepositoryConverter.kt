@@ -2,17 +2,14 @@ package com.simplefit.data
 
 import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
-import com.simplefit.data.mocks.ConsejosMock
 import com.simplefit.data.mocks.MaquinasMock
 import com.simplefit.data.mocks.RutinaMaquinaMock
 import com.simplefit.data.mocks.RutinasMock
 import com.simplefit.data.mocks.UsuarioRutinaMock
-import com.simplefit.data.room.consejos.ConsejosEntity
 import com.simplefit.data.room.maquinas.MaquinasEntity
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
 import com.simplefit.data.room.rutinas.RutinasEntity
 import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
-import com.simplefit.data.services.consejo.ConsejosApi
 import com.simplefit.data.services.maquina.MaquinasApi
 import com.simplefit.data.services.rutina.RutinasApi
 import com.simplefit.data.services.usuario.UsuarioApi
@@ -164,26 +161,11 @@ fun UsuarioRutinaEntity.toUsuarioRutina() = UsuarioRutina(
     userid = this.userid,
     rutinaid = this.rutinaid
 )
-fun ConsejosMock.toConsejo(): Consejo = Consejo(
-    consejoid = this.consejoid,
-    consejo = this.consejo
-)
-fun Consejo.toConsejoEntity(): ConsejosEntity = ConsejosEntity(
-    consejoid = this.consejoid,
-    consejo = this.consejo
-)
+
 //endregion
 
 //Region
 
-fun ConsejosApi.toConsejo(): Consejo = Consejo(
-    consejoid = this.consejoid,
-    consejo = this.consejo
-)
-fun Consejo.toConsejosApi(): ConsejosApi = ConsejosApi(
-    consejoid = this.consejoid,
-    consejo = this.consejo
-)
 fun MaquinasApi.toMaquina(): Maquina = Maquina(
     maquinaid = this.maquinaid,
     nombre = this.nombre,

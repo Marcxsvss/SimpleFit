@@ -1,5 +1,6 @@
 package com.simplefit.data
 
+import android.net.Uri
 import com.pmdm.recetas.data.mocks.UsuarioMock
 import com.pmdm.tienda.data.room.cliente.UsuarioEntity
 import com.simplefit.data.mocks.ConsejosMock
@@ -54,7 +55,6 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
 )
 
 
-fun List<UsuarioEntity>.toRecipe() = this.map { it.toUsuario() }.toMutableList()
 
 //region usuarioEntity
 

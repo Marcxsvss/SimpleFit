@@ -1,5 +1,6 @@
 package com.simplefit.data.services.usuario
 
+import android.net.Uri
 import com.google.gson.annotations.SerializedName
 
 data class UsuarioApi(

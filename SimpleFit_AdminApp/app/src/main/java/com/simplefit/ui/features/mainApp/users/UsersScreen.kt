@@ -1,23 +1,18 @@
 package com.simplefit.ui.features.mainApp.users
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
@@ -30,21 +25,16 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldSearch
-import com.simplefit.ui.composables.RutinasListItem
 import com.simplefit.ui.composables.UsersListItem
-import com.simplefit.ui.features.mainApp.routines.RoutinesEvent
 import com.simplefitAdmin.R
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -67,18 +57,18 @@ fun UsersScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(20.dp)
         ) {
-            Row(horizontalArrangement =  Arrangement.Start,modifier = Modifier.fillMaxWidth()) {
+            Row(horizontalArrangement = Arrangement.Start, modifier = Modifier.fillMaxWidth()) {
 
                 IconButton(onClick = { onNavigateUp() })
                 {
                     Icon(
                         tint = Color(0xFFDAB338),
                         imageVector = Icons.Filled.ArrowBackIosNew,
-                        contentDescription = "Editar Usuario"
+                        contentDescription = "Volver atras"
                     )
                 }
                 Text(
-                    modifier = Modifier.padding(start = 50.dp,top = 6.dp),
+                    modifier = Modifier.padding(start = 50.dp, top = 6.dp),
                     text = "USUARIOS",
                     color = Color(0xFFDAB338),
                     fontSize = 30.sp,
@@ -184,11 +174,6 @@ fun UsersScreen(
                 },
                 text = {
                     Column {
-//                        Image(
-//                            modifier = Modifier.size(350.dp),
-//                            painter = painterFoto,
-//                            contentDescription = "Imagen ejercicio"
-//                        )
                         Text(
                             "Email: " + usuarioSeleccionadoState!!.email,
                             color = Color(0xFFDAB338),

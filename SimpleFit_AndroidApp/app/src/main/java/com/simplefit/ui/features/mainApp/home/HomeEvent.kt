@@ -5,8 +5,9 @@ import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 
 sealed interface HomeEvent {
-    data class OnCambiarfoto(val onFotoCambiada: (ImageBitmap) -> Unit) : HomeEvent
+    data class OnCambiarfoto(val image: ImageBitmap) : HomeEvent
 
     //data class OnClickCompartir(val dia : String) : HomeEvent
-    data class onVerEntrenamientoClicked(val onNavigateToVerEntrenamiento: ((RoutinesUiState) -> Unit)) : HomeEvent
+    data class onVerEntrenamientoClicked(val onNavigateToVerEntrenamiento: ((RoutinesUiState) -> Unit)?) : HomeEvent
+
 }

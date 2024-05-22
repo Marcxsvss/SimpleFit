@@ -42,9 +42,9 @@ fun SimpleFitNavHost(
         loginScreen(
             loginViewModel = loginViewModel,
             onNavigateToHome = { email ->
-                //routinesViewModel.setRoutines(email)
+                routinesViewModel.setRoutines(email)
                 navController.navigateToHome(email)
-                //profileViewModel.setUserEmail(email)
+                profileViewModel.setUserEmail(email)
                 homeViewModel.setUsuario(email)
             },
             onNavigateToRegister = {
@@ -56,6 +56,9 @@ fun SimpleFitNavHost(
             registerAccountInfoViewModel = accountViewModel,
             onNavigateToRegisterProfileInfo = { email ->
                 registerProfileViewModel.accountMail = email
+                routinesViewModel.setRoutines(email)
+                profileViewModel.setUserEmail(email)
+                homeViewModel.setUsuario(email)
                 navController.navigateToRegisterProfile(email)
             },
             onNavigateToLogin = {
@@ -91,6 +94,7 @@ fun SimpleFitNavHost(
             profileViewModel = profileViewModel,
             onNavigateToLogin = {
                 loginViewModel.logout()
+
                 navController.navigateToLogin()
             })
         verRutinaScreen( verRutinaViewModel = verRutinaViewModel,
@@ -105,7 +109,8 @@ fun SimpleFitNavHost(
             onNavigateToVerRutina = { rutinaUiState ->
                 verRutinaViewModel.setRutina(rutinaUiState)
                 navController.navigateToVerRutina(rutinaUiState)
-            })
+            },
+            onNavigateUp = {navController.navigateUp()})
         verEntrenamientoScreen(verEntrenamientoViewModel = verEntrenamientoViewModel,
             onNavigateToPrevious = {navController.navigateUp()})
     }

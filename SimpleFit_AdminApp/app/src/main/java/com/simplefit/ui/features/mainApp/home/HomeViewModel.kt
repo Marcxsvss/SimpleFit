@@ -5,11 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simplefit.data.ConsejosRepository
-import com.simplefit.data.RutinasRepository
-import com.simplefit.data.UsuarioRepository
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -38,6 +38,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Snackbar
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.BitmapPainter
@@ -48,14 +49,9 @@ import androidx.compose.ui.text.style.TextAlign
 import com.simplefit.R
 import com.simplefit.ui.composables.DescansoScreen
 import com.simplefit.ui.features.mainApp.MaquinaUiState
+import kotlinx.coroutines.delay
 import java.util.Calendar
 
-fun obtenerDiaDeLaSemana(): String {
-    val dias = arrayOf("D", "L", "M", "X", "J", "V", "S")
-    val calendario = Calendar.getInstance()
-    val diaDeLaSemana = calendario.get(Calendar.DAY_OF_WEEK)
-    return dias[diaDeLaSemana - 1]
-}
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -68,49 +64,22 @@ fun VerRoutinesScreen(
     maquinaUiState: MaquinaUiState,
     onNavigateToPrevious: () -> Unit,
     onNavigateToRutinas: ((userid: String) -> Unit)? = null,
-    mostrarSnack: String,
+    mostrarSnack: Boolean,
+    onMostrarSnackbar: () -> Unit
 
-) {
+    ) {
 
     val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
     var painterFoto = remember(maquinaUiState.imagen) {
         maquinaUiState.imagen?.let { BitmapPainter(it) } ?: imagenSinFoto
     }
-
     val diasDeLaSemana = arrayOf("L", "M", "X", "J", "V", "S", "D")
-    val diaActual = obtenerDiaDeLaSemana()
 
     Surface(
         modifier = Modifier.fillMaxSize()
 
     ) {
-        if (mostrarDialog) {
-            AlertDialog(
-                onDismissRequest = { onMostrarDialog(false) },
-                title = {
-                    Text(text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,fontFamily = FontFamily(
-                        Font(resId = R.font.roboto_bolditalic)
-                    ),)
-                },
-                text = {
-                    Column {
-                        Image(
-                            modifier = Modifier.size(350.dp),
-                            painter = painterFoto,
-                            contentDescription = "Imagen ejercicio"
-                        )
-                        Text(maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp, fontFamily = FontFamily(
-                            Font(resId = R.font.roboto_mediumitalic)
-                        ),)
-                    }
-                },
-                confirmButton = {
-                    Button(onClick = { onMostrarDialog(false) }) {
-                        Text("OK")
-                    }
-                }
-            )
-        }
+
         Column {
 
 
@@ -126,97 +95,94 @@ fun VerRoutinesScreen(
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
                 )
-                if(verRutinaState.estado == "UnAdded")
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                )
                 {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
-                    )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
+                    Button(
+                        modifier = Modifier.padding(10.dp),
+                        onClick = { onNavigateToPrevious() },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor
+                            = Color(0xFFC29F6C)
+                        )
+                    ) {
+                        Text("VOLVER")
+                    }
+                    when (verRutinaState.estado) {
+                        "UnAdded" -> {
+                            Button(
+                                modifier = Modifier.padding(10.dp),
+                                onClick = {
+                                    onVerRutinaEvent(
+                                        VerRutinaEvent.onAddRutina(
+                                            onNavigateToRutinas
+                                        )
+                                    )
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor
+                                    = Color(0xFF89602F)
+                                )
+                            ) {
+                                Text("AÑADIR")
+                            }
                         }
 
-
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onAddRutina(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("AÑADIR")
+                        "current" -> {
+                            Button(
+                                modifier = Modifier.padding(10.dp),
+                                onClick = {
+                                    onVerRutinaEvent(
+                                        VerRutinaEvent.onDesactivarClicked(
+                                            onNavigateToRutinas
+                                        )
+                                    )
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor
+                                    = Color(0xFF89602F)
+                                )
+                            ) {
+                                Text("DESACTIVAR")
+                            }
                         }
 
+                        else -> {
+                            Button(
+                                modifier = Modifier.padding(10.dp),
+                                onClick = {
+                                    onVerRutinaEvent(
+                                        VerRutinaEvent.onActivarClicked(
+                                            onNavigateToRutinas
+                                        )
+                                    )
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor
+                                    = Color(0xFF89602F)
+                                )
+                            ) {
+                                Text("ACTIVAR")
+                            }
+                        }
                     }
                 }
-                else if(verRutinaState.estado == "current")
-                {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
-                    )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
+                Box(modifier = Modifier.clickable { if (mostrarSnack) onMostrarSnackbar() }) {
+                    // Aquí va el resto de tu interfaz de usuario
+
+                    LaunchedEffect(mostrarSnack) {
+                        if (mostrarSnack) {
+                            delay(3000L)
+                            onMostrarSnackbar()
                         }
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onDesactivarClicked(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("DESACTIVAR")
+                    }
+                    if (mostrarSnack) {
+                        Snackbar(containerColor = Color(0xFF89602F)) {
+                            Text(text = "Ya tienes esta rutina en tu lista")
                         }
                     }
                 }
-                else
-                {
-                    Row(
-                        verticalAlignment =  Alignment.CenterVertically,
-                    )
-                    {
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onNavigateToPrevious() },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFFC29F6C)
-                            )
-                        ) {
-                            Text("VOLVER")
-                        }
-
-
-                        Button(
-                            modifier = Modifier.padding(10.dp),
-                            onClick = { onVerRutinaEvent(VerRutinaEvent.onActivarClicked(onNavigateToRutinas)) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor
-                                = Color(0xFF89602F)
-                            )
-                        ) {
-                            Text("ACTIVAR")
-                        }
-
-                    }
-                }
-                ///////////////
                 Spacer(modifier = Modifier.height(15.dp))
                 Row( //Las bolas de los dias de la semana
                     Modifier
@@ -232,7 +198,7 @@ fun VerRoutinesScreen(
 
                         Box(
                             modifier = Modifier
-                                .padding(2.dp)
+                                .padding(10.dp)
                                 .clip(CircleShape)
                                 .background(colorDeFondo)
                                 .size(30.dp)
@@ -335,15 +301,41 @@ fun VerRoutinesScreen(
             } else {
                 DescansoScreen()
             }
-            if (mostrarSnack.isNotBlank()) {
 
-                Snackbar(
-                    modifier = Modifier
-                ) {
-                    Text(text = mostrarSnack)
+
+        }
+        if (mostrarDialog) {
+            AlertDialog(
+                onDismissRequest = { onMostrarDialog(false) },
+                title = {
+                    Text(
+                        text = maquinaUiState.nombre, color = Color(0xFFDAB338), fontSize = 28.sp,
+                        fontFamily = FontFamily(
+                            Font(resId = R.font.roboto_bolditalic)
+                        ),
+                    )
+                },
+                text = {
+                    Column {
+                        Image(
+                            modifier = Modifier.size(350.dp),
+                            painter = painterFoto,
+                            contentDescription = "Imagen ejercicio"
+                        )
+                        Text(
+                            maquinaUiState.descripcion, color = Color(0xFFDAB338), fontSize = 20.sp,
+                            fontFamily = FontFamily(
+                                Font(resId = R.font.roboto_mediumitalic)
+                            ),
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(onClick = { onMostrarDialog(false) }) {
+                        Text("OK")
+                    }
                 }
-            }
-
+            )
         }
     }
 }

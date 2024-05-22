@@ -46,23 +46,19 @@ class RoutinesViewModel @Inject constructor(
             is RoutinesEvent.onVerClicked -> {
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
-            is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los rregistros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
+            is RoutinesEvent.onDeleteClicked -> {
                 viewModelScope.launch {
                     usuarioRutinaRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
-//                    routinesList = routinesList.toMutableList().apply {
-//                        remove(routinesList.find { it.rutinaid == routinesUiState.rutinaid })
-//                    }
                     routinesList = rutinasRepository.get(userid)
-                    usuarioRepository.updateRutinaState(userid,0)
+                    if(usuarioRepository.get(userid)?.rutinaState == routinesUiState.rutinaid)
+                        usuarioRepository.updateRutinaState(userid, 0) //Corregir que al borrar la rutina activa no se actualiza entrenamiento.
                     routinesUiState = RoutinesUiState()
                 }
-
-
-
             }
-            is RoutinesEvent.OnClickCrearRutina -> {
-
+            is RoutinesEvent.onCancelClicked -> {
+                routinesUiState = RoutinesUiState()
             }
+
             else -> {}
         }
     }

@@ -7,8 +7,6 @@ class UsuarioRutinaDaoMock @Inject constructor() {
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
             rutinaid = 1
-
-
         ),
         UsuarioRutinaMock(
             userid = "marcos@gmail.com",
