@@ -1,3 +1,0 @@
-Apuntes para documentacion,
-Hablas de que he usado jpa por el control de errores que puedo realizar, por la sencillez de creacion de clases , de los servicios, he usado mysql ya que puedo usar claves primarias y una gran relacion de tarbas de forma sencilla y ordenada
-Preguntarle al chat gpt beneficios y desvcentajas para implementarlas en mi proyecto.

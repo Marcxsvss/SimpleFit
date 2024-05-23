@@ -1,0 +1,24 @@
+package com.simplefit.ui.features.mainApp.verRutina
+
+import com.simplefit.ui.features.mainApp.MaquinaUiState
+
+data class VerRutinaUiState(
+    val rutinaid: Int,
+    val titulo : String,
+    val descripcion : String,
+    var ejercicio : List<MaquinaUiState>,
+    val frecuencia : Int,
+
+    ) {
+
+
+    constructor() : this(
+        0,
+        "",
+        "Descanso",
+        ejercicio = listOf(),
+        0,
+
+    )
+}
+

@@ -15,7 +15,8 @@ CREATE TABLE `usuarios`(
   `sexo` varchar(255),
   `somatotipo` varchar(255),
   `rutinastate` int,
-  `acceso` int
+  `acceso` int,
+  `foto` longtext
 );
 
 

@@ -44,7 +44,7 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     "",
     null,
     0,
-    null
+    this.foto
 )
 fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,
