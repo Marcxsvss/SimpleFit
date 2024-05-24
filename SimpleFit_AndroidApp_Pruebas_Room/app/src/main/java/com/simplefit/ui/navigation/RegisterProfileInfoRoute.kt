@@ -33,8 +33,7 @@ fun NavGraphBuilder.registerProfileInfoScreen(
             onMostrarSnackBar = registerProfileInfoViewModel.onMostrarSnackBar,
             validacionRegisterProfileInfoUiState = registerProfileInfoViewModel.validacionRegisterProfileInfoUiState,
             onRegisterProfileInfoEvent = registerProfileInfoViewModel::onRegisterProfileInfoEvent,
-            onNavigateToHome = onNavigateToHome,
-            emailState = email ?: "Email erroneo"
+            onNavigateToHome = onNavigateToHome
         )
     }
 }

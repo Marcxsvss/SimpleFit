@@ -53,8 +53,6 @@ fun RoutinesScreen(
     rutinaSeleccionadaState: RoutinesUiState?,
     onRutinaEvent: (RoutinesEvent) -> Unit,
     onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
-    mostrarDialog: Boolean,
-    onMostrarDialog: (Boolean) -> Unit,
     busquedaState: String,
     onNavigateUp : () -> Unit
 

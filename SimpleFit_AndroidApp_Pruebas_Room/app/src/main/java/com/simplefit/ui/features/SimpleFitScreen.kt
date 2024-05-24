@@ -73,10 +73,3 @@ private fun iOpcionNavegacionSeleccionadaAPartirDeRuta(route: String?): Int {
         else -> 0
     }
 }
-
-//        iOpcionNevagacionSeleccionada.value != 3
-//                && iOpcionNevagacionSeleccionada.value != 4
-//                && iOpcionNevagacionSeleccionada.value != 5
-//                && iOpcionNevagacionSeleccionada.value != 6
-//                && iOpcionNevagacionSeleccionada.value != 7
-//                && iOpcionNevagacionSeleccionada.value != 8

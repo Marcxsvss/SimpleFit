@@ -1,7 +1,6 @@
 package com.simplefit.ui.features.mainApp.routines
 
 import android.os.Parcelable
-import com.simplefit.models.Rutinas
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

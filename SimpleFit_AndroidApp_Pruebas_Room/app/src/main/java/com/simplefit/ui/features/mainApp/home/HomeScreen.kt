@@ -161,7 +161,7 @@ fun HomeScreen(
         }
         LaunchedEffect(mostrarSnack) {
             if (mostrarSnack) {
-                delay(3000L)
+                delay(1000L)
                 onMostrarSnackbar()
             }
         }
@@ -175,7 +175,4 @@ fun HomeScreen(
         }
 
     }
-
-
-    //0xFFDAB338
 }

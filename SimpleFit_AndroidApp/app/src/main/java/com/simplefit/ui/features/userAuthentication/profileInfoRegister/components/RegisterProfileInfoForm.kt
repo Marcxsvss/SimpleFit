@@ -82,29 +82,3 @@ fun RegisterProfileInfoForm(
     }
 }
 
-
-//@Preview(showBackground = true)
-//@Composable
-//fun RegisterFormTest() {
-//
-//    var nombreState by remember { mutableStateOf("") }
-//    var edadState by remember { mutableStateOf(0) }
-//    var sexoState by remember { mutableStateOf("") }
-//    var recordarme by remember { mutableStateOf(false) }
-//
-//    SimpleFitTheme {
-//        RegisterProfileInfoForm(
-//            modifier = Modifier.fillMaxWidth(),
-//            nombreState = nombreState,
-//            validacionNombre = object : Validacion {},
-//            edadState = edadState,
-//            sexoState = sexoState,
-//            validacionDni = object : Validacion {},
-//            validacionPassword = object : Validacion {},
-//            onValueChangeEmail = { emailState = it },
-//            onValueChangePassword = { passwordState = it },
-//            onValueChangeDni = { dniState = it },
-//            onClickRegistrarse = {}
-//        )
-//    }
-//}

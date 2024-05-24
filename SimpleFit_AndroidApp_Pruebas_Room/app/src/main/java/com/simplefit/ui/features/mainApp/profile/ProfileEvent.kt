@@ -10,8 +10,4 @@ sealed interface ProfileEvent {
     object onClickGuardarPerfil : ProfileEvent
 
 
-
-    //Añadir los eventos necesarios
-
-
 }

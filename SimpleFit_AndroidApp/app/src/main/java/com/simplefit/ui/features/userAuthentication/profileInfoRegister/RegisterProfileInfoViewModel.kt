@@ -26,12 +26,6 @@ class RegisterProfileInfoViewModel @Inject constructor(
         mostrarSnackBar = !mostrarSnackBar
     })
 
-//    fun setUsuario(email : String)
-//    {
-//        perfilUsuarioUiState = perfilUsuarioUiState.copy(
-//            email = email
-//        )
-//    }
     fun onRegisterProfileInfoEvent(registerProfileInfoEvent: RegisterProfileInfoEvent) {
         when (registerProfileInfoEvent) {
             is RegisterProfileInfoEvent.EdadChanged -> {

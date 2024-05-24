@@ -195,7 +195,6 @@ public class ServiceRESTRutinas {
                         .entity(mensaje)
                         .build();
             } else {
-                
                 dao.destroy(rutinaid);
                 statusResul = Response.Status.OK;
                 mensaje.put("mensaje", "Rutina con ID " + rutinaid + " eliminado");

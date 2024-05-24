@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.data.UsuarioRutinaRepository
-import com.simplefit.data.toRutinasEntity
 import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -25,13 +24,16 @@ class RoutinesViewModel @Inject constructor(
         private set
     var userid by mutableStateOf("")
     private set
-
+    var mostrarSnackBar by mutableStateOf(false)
+    val onMostrarSnackBar: () -> Unit by mutableStateOf({
+        mostrarSnackBar = !mostrarSnackBar
+    })
 
     fun setRoutines(userid : String) {
         this.userid = userid
         viewModelScope.launch {
             routinesList = rutinasRepository.get(userid)
-            routinesUiState = RoutinesUiState()//igual hay que quitarlo
+            routinesUiState = RoutinesUiState()
         }
 
     }
@@ -48,11 +50,15 @@ class RoutinesViewModel @Inject constructor(
             }
             is RoutinesEvent.onDeleteClicked -> {
                 viewModelScope.launch {
-                    usuarioRutinaRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
-                    routinesList = rutinasRepository.get(userid)
                     if(usuarioRepository.get(userid)?.rutinaState == routinesUiState.rutinaid)
-                        usuarioRepository.updateRutinaState(userid, 0) //Corregir que al borrar la rutina activa no se actualiza entrenamiento.
-                    routinesUiState = RoutinesUiState()
+                        onMostrarSnackBar()
+                    else
+                    {
+                        usuarioRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
+                        routinesList = rutinasRepository.get(userid)
+                        routinesUiState = RoutinesUiState()
+                    }
+
                 }
             }
             is RoutinesEvent.onCancelClicked -> {

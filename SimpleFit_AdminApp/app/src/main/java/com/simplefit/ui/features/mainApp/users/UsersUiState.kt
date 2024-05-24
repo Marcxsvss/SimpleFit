@@ -14,7 +14,8 @@ data class UsersUiState(
     val sexo: String,
     val somatotipo: String,
     val rutinaState: Int?,
-    val acceso: Int
+    val acceso: Int,
+    val foto: String?
 
 ) : Parcelable {
 
@@ -29,7 +30,8 @@ data class UsersUiState(
         "",
         "",
         0,
-        0
+        0,
+        ""
 
     )
 }

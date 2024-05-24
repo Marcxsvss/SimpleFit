@@ -15,8 +15,7 @@ import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 const val HomeRoute = "Home"
 const val HomeParameterName = "email"
 
-// Definimos un método de extensión de NavGraphBuilder para poder
-// usarlo en el contexto de nuestro NavHost
+
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
     onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),

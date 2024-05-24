@@ -7,13 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinaMaquinaRepository
 import com.simplefit.data.RutinasRepository
-import com.simplefit.data.UsuarioRepository
 import com.simplefit.data.UsuarioRutinaRepository
-import com.simplefit.data.toRutinasEntity
-import com.simplefit.ui.features.mainApp.users.UsersEvent
-import com.simplefit.ui.features.mainApp.users.UsersUiState
 import com.simplefit.ui.features.toRutinasUiState
-import com.simplefit.ui.features.toUsuarioUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.util.Locale
@@ -22,8 +17,6 @@ import javax.inject.Inject
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
     private val rutinasRepository: RutinasRepository,
-    private val usuarioRutinaRepository: UsuarioRutinaRepository,
-    private val rutinaMaquinaRepository: RutinaMaquinaRepository,
 
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())
@@ -54,7 +47,7 @@ class RoutinesViewModel @Inject constructor(
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
 
-            is RoutinesEvent.onDeleteClicked -> {//Solucionar este delete, tiene que borrar solo los registros que asocian la rutina al usuario, es decir, la tabla UsuarioRutina
+            is RoutinesEvent.onDeleteClicked -> {
                 viewModelScope.launch {
                     rutinasRepository.delete(routinesUiState.rutinaid)
                     routinesList = rutinasRepository.get().map { it.toRutinasUiState() }

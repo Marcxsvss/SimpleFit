@@ -7,12 +7,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.pmdm.recetas.ui.composables.CheckboxWithText
+
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPassword
 import com.pmdm.tienda.utilities.validacion.Validacion
-import com.simplefit.ui.theme.SimpleFitTheme
 
 
 @Composable

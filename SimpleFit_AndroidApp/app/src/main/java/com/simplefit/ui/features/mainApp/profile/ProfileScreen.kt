@@ -73,6 +73,16 @@ fun ProfileScreen(
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
                 )
+                if (mostrarSnack) {
+                    var mensaje = "Error"
+                    if (validacionProfileUiState.hayError) mensaje = validacionProfileUiState.mensajeError ?: ""
+                    else mensaje = "Datos Guardados"
+                    Snackbar(
+
+                    ) {
+                        Text(text = mensaje)
+                    }
+                }
                 Spacer(modifier = Modifier.fillMaxHeight(0.05f))
 
                 RegisterProfileInfoForm(
@@ -106,22 +116,15 @@ fun ProfileScreen(
                     )
 
                     scope.launch {
-                        delay(1000)
                         onMostrarSnackBar()
+                        delay(2000)
+                        onMostrarSnackBar()
+
                     }
                 }
                 Spacer(modifier = Modifier.fillMaxHeight(0.1f))
             }
-            if (mostrarSnack) {
-                var mensaje = "Error"
-                if (validacionProfileUiState.hayError) mensaje = validacionProfileUiState.mensajeError ?: ""
-                else mensaje = "Error, los datos introducidos no son correctos"
-                Snackbar(
-                    modifier = Modifier.align(Alignment.BottomCenter)
-                ) {
-                    Text(text = mensaje)
-                }
-            }
+
         }
     }
 }

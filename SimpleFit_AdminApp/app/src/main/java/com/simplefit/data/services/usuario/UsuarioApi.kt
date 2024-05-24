@@ -13,4 +13,5 @@ data class UsuarioApi(
     val somatotipo : String,
     val rutinastate : Int?,
     val acceso : Int,
+    val foto : String?
 )

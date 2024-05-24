@@ -46,7 +46,6 @@ import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import com.simplefit.models.Rutinas
 import com.simplefit.ui.composables.CloudButton
-import com.simplefit.ui.composables.ExposedDropdownMenuBoxFrecuencia
 import com.simplefit.ui.composables.RutinasListItem
 import com.simplefit.ui.composables.RutinasListItem2
 import com.simplefit.ui.features.mainApp.routines.RoutinesEvent
@@ -148,7 +147,6 @@ fun AddRutinaScreen(
                 },
                 text = {
                     Column {
-                        //Cuando pulse un botón tiene que ponerse con este color Color(0xFF89602F)
                         Button(
                             onClick = { onAddRutinaEvent(AddRutinaEvent.onOrdenarPorFrecuencia) },
                             colors = ButtonDefaults.buttonColors(
@@ -195,10 +193,4 @@ fun AddRutinaScreen(
 
 
     }
-}
-
-@Preview
-@Composable
-fun CrearRutinaPreview() {
-    //CrearRutinaScreen()
 }

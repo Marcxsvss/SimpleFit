@@ -41,10 +41,8 @@ fun LoginScreen(
     onNavigateToRegister: () -> Unit
 ) {
 
-//    var mensaje by remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
 
-    var recordarmeState by remember { mutableStateOf(false) }
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -54,9 +52,6 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(20.dp)
             ) {
-//                CircularImageFromResource(
-//                    idImageResource = R.drawable.simplefit_logo, contentDescription = "Imagen Login"
-//                )
                 Text(
                     text = "SimpleFit",
                     color = Color(0xFFDAB338),
@@ -110,24 +105,3 @@ fun LoginScreen(
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun LoginScreenPreview() {
-//    val loginViewModel: LoginViewModel = viewModel()
-//    SimpleFitTheme {
-//        // A surface container using the 'background' color from the theme
-//        Surface(
-//            modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-//        ) {
-//
-//            LoginScreen(usuarioUiState = loginViewModel.usuarioUiState,
-//                validacionLoginUiState = loginViewModel.validacionLoginUiState,
-//                onLoginEvent = loginViewModel::onLoginEvent,
-//                mostrarSnack = false,
-//                onNavigateToHome = {},
-//                onMostrarSnackBar = {},
-//                onNavigateToRegister = {},
-//                )
-//        }
-//    }
-//}

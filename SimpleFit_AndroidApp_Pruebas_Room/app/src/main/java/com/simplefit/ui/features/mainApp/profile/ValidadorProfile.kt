@@ -12,10 +12,10 @@ class ValidadorProfile  @Inject constructor() : Validador<ProfileUiState> {
     var validadorPeso =
         ValidadorCompuesto<String>()
             .add(ValidadorTextoNoVacio("El peso no puede estar vacío"))
-            .add(ValidadorNumeroEntero(rango = Range(35, 150),error = "El peso debe estar entre 35 y 150 kg"))
+            .add(ValidadorNumeroEntero(rango = Range(0, 500),error = "El peso debe estar entre 0 y 500 kg"))
     var validadorAltura = ValidadorCompuesto<String>()
             .add(ValidadorTextoNoVacio("La altura no puede estar vacía"))
-            .add(ValidadorNumeroEntero(Range(140, 220),error = "La altura debe estar entre 140 y 220 cm"))
+            .add(ValidadorNumeroEntero(Range(0, 300),error = "La altura debe estar entre 0 y 300 cm"))
 
 
     override fun valida(datos: ProfileUiState): ValidacionProfileUiState {

@@ -14,7 +14,6 @@ import com.simplefit.ui.features.userAuthentication.login.LoginViewModel
 
 @Composable
 fun SimpleFitNavHost(
-    //innerPadding: PaddingValues,
     navController: NavHostController
 ) {
 
@@ -43,7 +42,6 @@ fun SimpleFitNavHost(
                 usersViewModel.setUsers()
                 navController.navigateToUsers()
                                    },
-            onNavigateToConsejos = { navController.navigateToConsejos() },
             onNavigateToRutinas = {
                 routinesViewModel.setRoutines()
                 navController.navigateToRoutines() },

@@ -32,9 +32,9 @@ fun RegisterProfileInfoScreen(
     validacionRegisterProfileInfoUiState: ValidacionRegisterProfileInfoUiState,
     onRegisterProfileInfoEvent: (RegisterProfileInfoEvent) -> Unit,
     onNavigateToHome: ((correo: String) -> Unit)? = null,
-    emailState: String
+
 ) {
-    //Este email tiene que llegar desde AccountInfoRegister
+
 
     val scope = rememberCoroutineScope()
     Box() {
@@ -78,6 +78,7 @@ fun RegisterProfileInfoScreen(
                 onValueChangePeso = {
                     onRegisterProfileInfoEvent(RegisterProfileInfoEvent.PesoChanged(it))
                 }
+
             ) {
                 onRegisterProfileInfoEvent(
                     RegisterProfileInfoEvent.OnClickGuardarPerfil(

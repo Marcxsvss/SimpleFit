@@ -1,4 +1,4 @@
--- DROP DATABASE SimpleFit;
+-- DROP DATABASE simplefit;
 -- Crea la base de datos si no existe
 CREATE DATABASE IF NOT EXISTS simplefit;
 -- Seleccionar la base de datos recién creada

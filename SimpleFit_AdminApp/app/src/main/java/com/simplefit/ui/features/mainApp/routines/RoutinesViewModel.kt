@@ -9,7 +9,6 @@ import com.simplefit.data.RutinaMaquinaRepository
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.data.UsuarioRutinaRepository
-import com.simplefit.data.toRutinasEntity
 import com.simplefit.ui.features.mainApp.users.UsersEvent
 import com.simplefit.ui.features.mainApp.users.UsersUiState
 import com.simplefit.ui.features.toRutinasUiState

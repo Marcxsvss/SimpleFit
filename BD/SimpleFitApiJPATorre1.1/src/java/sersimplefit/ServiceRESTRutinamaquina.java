@@ -33,23 +33,23 @@ public class ServiceRESTRutinamaquina {
         HashMap<String, String> mensaje = new HashMap<>();
         Response response;
         Response.Status statusResul;
-        //List<Integer> ruti;
+       
         try {
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             EntityManager em = emf.createEntityManager();
             Query query = em.createNamedQuery("Rutinamaquina.findByRutinaidAndDia");
             query.setParameter("rutinaid", rutinaid);
             query.setParameter("dia", dia);
-            List<Integer> maquinaIds = query.getResultList();
+            List<Integer> maquinaIds = query.getResultList(); //Nos devuelve una lista de enteros que corresponderán a la id de
 
-            if (maquinaIds == null) {
+            if (maquinaIds == null) { //Si no devuelve nada, nos infromará de que no existe ninguna rutina con ese id
                 statusResul = Response.Status.NOT_FOUND;
                 mensaje.put("mensaje", "No existe rutina con ID " + rutinaid);
                 response = Response
                         .status(statusResul)
                         .entity(mensaje)
                         .build();
-            } else {
+            } else { //En caso de que devuelva registros, recojerá los datos.
                 statusResul = Response.Status.OK;
                 response = Response
                         .status(statusResul)

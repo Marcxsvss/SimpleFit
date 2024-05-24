@@ -45,8 +45,6 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kinoyamboladmin.ui.features.movieform.ImageSelector
-import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefitAdmin.R
@@ -59,7 +57,6 @@ import java.util.Locale
 fun HomeScreen(
     onNavigateToUsuarios: () -> Unit,
     onNavigateToRutinas: () -> Unit,
-    onNavigateToConsejos: () -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -84,17 +81,6 @@ fun HomeScreen(
             onNavigateTo = onNavigateToRutinas,
             texto = "RUTINAS",
         )
-//        Spacer(modifier = Modifier.height(25.dp))
-//        HomeButton(
-//            onNavigateTo = onNavigateToConsejos,
-//            texto = "CONSEJOS",
-//
-//        )
-//        Spacer(modifier = Modifier.height(25.dp))
-//        HomeButton(
-//            onNavigateTo = {  },
-//            texto = "MAQUINAS",
-//        )
 
     }
 }

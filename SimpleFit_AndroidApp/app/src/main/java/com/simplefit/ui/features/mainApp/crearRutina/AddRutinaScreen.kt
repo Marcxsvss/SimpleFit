@@ -196,9 +196,3 @@ fun AddRutinaScreen(
 
     }
 }
-
-@Preview
-@Composable
-fun CrearRutinaPreview() {
-    //CrearRutinaScreen()
-}

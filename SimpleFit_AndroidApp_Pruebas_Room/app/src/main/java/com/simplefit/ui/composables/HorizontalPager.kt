@@ -153,7 +153,7 @@ fun HeaderConsejos(
         verticalArrangement = Arrangement.Center
     ) {
         ListConsejos(
-            modifier = Modifier,//.weight(0.9f),
+            modifier = Modifier,
             pagerState = pagerState,
             consejos = consejos
         )

@@ -14,8 +14,7 @@ import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 const val VerRutinaRoute = "VerRutina"
 const val VerRutinaParameterName = "rutinaid"
 
-// Definimos un método de extensión de NavGraphBuilder para poder
-// usarlo en el contexto de nuestro NavHost
+
 fun NavGraphBuilder.verRutinaScreen(
     verRutinaViewModel: VerRutinaViewModel,
     onNavigateToPrevious: () -> Unit,
@@ -29,9 +28,7 @@ fun NavGraphBuilder.verRutinaScreen(
             }
         )
     ) {
-//            backStackEntry ->
-//        val email :String? = backStackEntry.arguments?.getString(HomeParameterName, "Email erroneo")
-//        mainAppViewModel.setUsuario(email ?: "Email erroneo")
+
 
         VerRoutinesScreen(
             verRutinaState = verRutinaViewModel.verRutinaUiState,

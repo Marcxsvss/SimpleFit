@@ -84,7 +84,6 @@ class HomeViewModel @Inject constructor(
                 onChangePhoto(homeEvent.image)
             }
 
-
             else -> {}
         }
     }

@@ -176,6 +176,4 @@ fun HomeScreen(
 
     }
 
-
-    //0xFFDAB338
 }

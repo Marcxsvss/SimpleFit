@@ -81,7 +81,7 @@ class VerRutinaViewModel @Inject constructor(
                 }
             }
             is VerRutinaEvent.onActivarClicked -> {
-                viewModelScope.launch {//Hacer que se actualice el entrenamiento en home
+                viewModelScope.launch {
                     usuarioRepository.updateRutinaState(userid,verRutinaUiState.rutinaid)
                     verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
                 }

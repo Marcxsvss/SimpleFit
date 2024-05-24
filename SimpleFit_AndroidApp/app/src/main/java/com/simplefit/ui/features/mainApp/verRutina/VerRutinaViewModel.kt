@@ -67,13 +67,13 @@ class VerRutinaViewModel @Inject constructor(
             }
             is VerRutinaEvent.onAddRutina -> {
                 viewModelScope.launch {
-                    if (verRutinaUiState.rutinaid in usuarioRutinaRepository.get(userid).map{it.rutinaid})
+                    if (usuarioRepository.getRutinas(userid)?.contains(verRutinaUiState.rutinaid) == true)
                     {
                         mostrarSnackBar = !mostrarSnackBar
                     }
                     else
                     {
-                        usuarioRutinaRepository.insert(verRutinaUiState.toUsuarioRutina(userid))
+                        usuarioRepository.insertRutina(userid,verRutinaUiState.rutinaid)
                         verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
 
                     }
@@ -81,7 +81,7 @@ class VerRutinaViewModel @Inject constructor(
                 }
             }
             is VerRutinaEvent.onActivarClicked -> {
-                viewModelScope.launch {//Hacer que se actualice el entrenamiento en home
+                viewModelScope.launch {
                     usuarioRepository.updateRutinaState(userid,verRutinaUiState.rutinaid)
                     verRoutinesEvent.onNavigateToRutinas?.let { it(userid) }
                 }

@@ -32,14 +32,6 @@ fun IconCamera(
         modifier = modifier
             .size(96.dp)
             .padding(4.dp),
-//            .clip(CircleShape)
-//            .border(
-//                border = BorderStroke(
-//                    width = 1.dp,
-//                    color = OutlinedTextFieldDefaults.colors().unfocusedLeadingIconColor
-//                ),
-//                shape = CircleShape,
-//           ),
             contentAlignment = Alignment.Center
     ) {
         Icon(
@@ -57,15 +49,6 @@ fun ImageSelector(
     selectImageBitmap: ImageBitmap? = null,
     onImageChanged: (ImageBitmap) -> Unit
 ) {
-   //var selectedImageUri by remember { mutableStateOf<Uri?>(null) }
-//    val photopickerLauncher = rememberLauncherForActivityResult(
-//        contract = ActivityResultContracts.PickVisualMedia(),
-//        onResult = { uri ->
-//            if (uri != null) {
-//                onImageSelected(uri)
-//            }
-//        }
-//    )
     val photopickerLauncher = resgitroSelectorDeImagenesConGetContent { imagebitmap ->
         onImageChanged(imagebitmap)
     }
@@ -97,11 +80,6 @@ fun ImageSelector(
                 verticalArrangement = Arrangement.Center
             ) {
                 IconCamera()
-//            Text(
-//                text = label,
-//                color = OutlinedTextFieldDefaults.colors().unfocusedLabelColor,
-//                fontSize = MaterialTheme.typography.labelLarge.fontSize
-//            )
             }
         }
 

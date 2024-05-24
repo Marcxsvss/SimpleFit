@@ -4,3 +4,5 @@
 -Cambiar todos los nombres al español y dejarlos todos iguales (routines-rutinas-Add-crear-user-Usuario....)
 
 - Igual esta en los alter table, que no me permiten borrar la relacion sin borrar el original, es decir, alomejor no puedo borrar una rutina sin borrar una maquina.
+
+Si tengo tiempo, añadir un icono de cargando... hasta que traiga la peticion, para que el usuario no se quede esperandola nada y lo de la foto

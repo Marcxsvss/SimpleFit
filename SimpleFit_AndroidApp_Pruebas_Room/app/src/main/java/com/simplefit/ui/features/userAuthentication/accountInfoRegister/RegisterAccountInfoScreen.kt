@@ -18,7 +18,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pmdm.recetas.ui.composables.CircularImageFromResource
 import com.simplefit.R
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.components.RegisterAccountInfoForm
 import kotlinx.coroutines.delay

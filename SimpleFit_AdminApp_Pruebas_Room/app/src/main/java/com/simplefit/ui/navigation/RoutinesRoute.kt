@@ -21,8 +21,6 @@ fun NavGraphBuilder.routinesScreen(
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
             onRutinaEvent = routinesViewModel::onRoutinesEvent,
             onNavigateToVerRutina = onNavigateToVerRutina,
-            mostrarDialog = routinesViewModel.mostrarDialog,
-            onMostrarDialog = routinesViewModel.onMostrarDialog,
             busquedaState = routinesViewModel.busquedaState,
             onNavigateUp = onNavigateUp
         )

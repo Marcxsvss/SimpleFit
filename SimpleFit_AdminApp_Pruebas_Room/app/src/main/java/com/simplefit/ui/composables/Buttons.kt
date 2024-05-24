@@ -35,33 +35,6 @@ import androidx.compose.ui.unit.sp
 import com.simplefitAdmin.R
 
 @Composable
-fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked: () -> Unit? = {})
-{
-    Button(
-        onClick = {if(texto == "TODAS") onTodasClicked() else onFiltroClicked()},
-        colors = ButtonColors(
-            containerColor = Color(0xFFDBC06D),
-            contentColor = Color.White,
-            disabledContainerColor =  Color.White,
-            disabledContentColor = Color.White
-        ),
-
-    )
-    {
-        Text(
-            text = texto,
-            color = Color.White,
-            fontSize = 15.sp,
-            textAlign = TextAlign.Center,
-            fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-            fontStyle = FontStyle.Normal
-        )
-        if(texto == "FILTROS")
-            Icon(Icons.Filled.FilterList, contentDescription = "Filtro",modifier = Modifier.padding(start=8.dp))
-    }
-
-}
-@Composable
 fun HomeButton(texto : String,onNavigateTo :() -> Unit)
 {
     Box(
@@ -79,13 +52,6 @@ fun HomeButton(texto : String,onNavigateTo :() -> Unit)
             )
             .clickable { onNavigateTo() }
     ) {
-//        Image(
-//            painter = foto,
-//            contentDescription = "Fondo",
-//            modifier = Modifier.fillMaxSize()
-//                .clip(RoundedCornerShape(10.dp)),
-//            contentScale = ContentScale.Crop
-//        )
         Row(modifier = Modifier.align(Alignment.Center)) {
             Spacer(modifier = Modifier.width(5.dp))
             Text(

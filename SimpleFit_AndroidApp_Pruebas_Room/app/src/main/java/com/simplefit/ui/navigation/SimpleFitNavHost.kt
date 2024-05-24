@@ -32,8 +32,6 @@ fun SimpleFitNavHost(
     val verEntrenamientoViewModel = hiltViewModel<VerEntrenamientoViewModel>()
 
 
-    //val scope= rememberCoroutineScope()
-    //Puedo cojer el email desde RegisterAccount y guardarlo en una variable que puedo crear aqui mismo y usarla mas adelante al hacer la navegacion al ProfileInfo y luego home
     NavHost(
         navController = navController,
         startDestination = LoginRoute

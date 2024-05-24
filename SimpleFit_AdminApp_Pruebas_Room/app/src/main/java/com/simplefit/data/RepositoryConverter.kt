@@ -10,11 +10,6 @@ import com.simplefit.data.room.maquinas.MaquinasEntity
 import com.simplefit.data.room.rutinaMaquina.RutinaMaquinaEntity
 import com.simplefit.data.room.rutinas.RutinasEntity
 import com.simplefit.data.room.usuarioRutina.UsuarioRutinaEntity
-import com.simplefit.data.services.maquina.MaquinasApi
-import com.simplefit.data.services.rutina.RutinasApi
-import com.simplefit.data.services.usuario.UsuarioApi
-import com.simplefit.data.services.usuariorutina.UsuarioRutinaApi
-import com.simplefit.models.Consejo
 import com.simplefit.models.Maquina
 import com.simplefit.models.RutinaMaquina
 import com.simplefit.models.Rutinas
@@ -47,18 +42,6 @@ fun Usuario.toUsuarioEntity(): UsuarioEntity = UsuarioEntity(
     acceso = this.acceso
 )
 
-
-fun List<UsuarioEntity>.toRecipe() = this.map { it.toUsuario() }.toMutableList()
-
-//region usuarioEntity
-
-fun List<UsuarioEntity>.toUsuarios(): List<Usuario> =
-    this.map { it.toUsuario() }
-
-
-//endregion
-
-//region UsuarioMock
 fun UsuarioMock.toUsuario(): Usuario = Usuario(
     email = this.email,
     password = this.password,
@@ -71,34 +54,6 @@ fun UsuarioMock.toUsuario(): Usuario = Usuario(
     rutinaState = this.rutinaState,
     acceso = this.acceso
 )
-fun Usuario.toUsuarioApi() = UsuarioApi(
-    this.email,
-    this.password,
-    this.nombre,
-    this.altura,
-    this.peso,
-    this.edad,
-    this.sexo,
-    this.somatotipo,
-    this.rutinaState,
-    this.acceso
-
-)
-
-fun UsuarioApi.toUsuario() = Usuario(
-    this.email,
-    this.password,
-    this.nombre,
-    this.altura,
-    this.peso,
-    this.edad,
-    this.sexo,
-    this.somatotipo,
-    this.rutinastate,
-    this.acceso
-)
-//endregion
-//region Rutina
 fun RutinasEntity.toRutina(): Rutinas = Rutinas(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
@@ -141,6 +96,10 @@ fun UsuarioRutinaMock.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
     userid = this.userid,
     rutinaid = this.rutinaid
 )
+fun UsuarioRutina.toUsuarioRutinaEntity(): UsuarioRutinaEntity = UsuarioRutinaEntity(
+    userid = this.userid,
+    rutinaid = this.rutinaid
+)
 fun RutinaMaquinaMock.toRutinaMaquina(): RutinaMaquina = RutinaMaquina(
     rutinaid = this.rutinaid,
     dia = this.dia,
@@ -150,56 +109,4 @@ fun RutinaMaquina.toRutinaMaquinaEntity(): RutinaMaquinaEntity = RutinaMaquinaEn
     rutinaid = this.rutinaid,
     dia = this.dia,
     maquinaid = this.maquinaid
-)
-
-fun UsuarioRutina.toUsuarioRutinaEntity() = UsuarioRutinaEntity(
-    userid = this.userid,
-    rutinaid = this.rutinaid
-)
-
-fun UsuarioRutinaEntity.toUsuarioRutina() = UsuarioRutina(
-    userid = this.userid,
-    rutinaid = this.rutinaid
-)
-
-//endregion
-
-//Region
-
-fun MaquinasApi.toMaquina(): Maquina = Maquina(
-    maquinaid = this.maquinaid,
-    nombre = this.nombre,
-    musculo = this.musculo,
-    imagen = this.imagen,
-    descripcion = this.descripcion
-)
-fun Maquina.toMaquinasApi(): MaquinasApi = MaquinasApi(
-    maquinaid = this.maquinaid,
-    nombre = this.nombre,
-    musculo = this.musculo,
-    imagen = this.imagen,
-    descripcion = this.descripcion
-)
-fun RutinasApi.toRutina(): Rutinas = Rutinas(
-    rutinaid = this.rutinaid,
-    titulo = this.titulo,
-    descripcion = this.descripcion,
-    frecuencia = this.frecuencia,
-    diasDescanso = this.diasdescanso,
-    dificultad = this.dificultad
-)
-fun Rutinas.toRutinaApi(): RutinasApi = RutinasApi(
-    rutinaid = this.rutinaid,
-    titulo = this.titulo,
-    descripcion = this.descripcion,
-    frecuencia = this.frecuencia,
-    diasdescanso = this.diasDescanso,
-    dificultad = this.dificultad)
-fun UsuarioRutina.toUsuarioRutinaApi(): UsuarioRutinaApi = UsuarioRutinaApi(
-    userid = this.userid,
-    rutinaid = this.rutinaid
-)
-fun UsuarioRutinaApi.toUsuarioRutina(): UsuarioRutina = UsuarioRutina(
-    userid = this.userid,
-    rutinaid = this.rutinaid
 )

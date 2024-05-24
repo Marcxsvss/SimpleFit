@@ -10,8 +10,6 @@ import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
 const val ProfileRoute = "Profile"
 
 
-// Definimos un método de extensión de NavGraphBuilder para poder
-// usarlo en el contexto de nuestro NavHost
 fun NavGraphBuilder.profileScreen(
     profileViewModel: ProfileViewModel,
     onNavigateToLogin: () -> Unit

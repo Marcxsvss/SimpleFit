@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -42,7 +43,9 @@ import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material3.Snackbar
+import androidx.compose.runtime.LaunchedEffect
 import com.simplefit.ui.composables.RutinasListItem
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -51,9 +54,11 @@ fun RoutinesScreen(
     rutinaSeleccionadaState: RoutinesUiState?,
     onRutinaEvent: (RoutinesEvent) -> Unit,
     onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
-    onNavigateToAddRutina: ((userid: String) -> Unit)? = null
+    onNavigateToAddRutina: ((userid: String) -> Unit)? = null,
+    mostrarSnack: Boolean,
+    onMostrarSnackbar: () -> Unit
 ) {
-    val scrollState = rememberScrollState()
+
     Surface(
         modifier = Modifier.fillMaxSize()
 
@@ -96,8 +101,24 @@ fun RoutinesScreen(
 
 
             Spacer(modifier = Modifier.fillMaxHeight(0.05f))
-            Row(modifier = Modifier.align(Alignment.End).height(30.dp)) {
+            Row(modifier = Modifier
+                .align(Alignment.End)
+                .height(40.dp)) {
+                LaunchedEffect(mostrarSnack) {
+                    if (mostrarSnack) {
+                        delay(3000L)
+                        onMostrarSnackbar()
+                    }
+                }
+
+                if (mostrarSnack) {
+                    Snackbar( modifier = Modifier.width(250.dp)
+                    ) {
+                        Text(text = "No puedes eliminar una rutina activa",fontSize = 13.sp)
+                    }
+                }
                 if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
+
                     IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked) })
                     {
                         Icon(

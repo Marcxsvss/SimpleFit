@@ -16,8 +16,7 @@ import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 const val VerEntrenamientoRoute = "VerEntrenamiento"
 const val VerEntrenamientoParameterName = "rutinaid"
 
-// Definimos un método de extensión de NavGraphBuilder para poder
-// usarlo en el contexto de nuestro NavHost
+
 fun NavGraphBuilder.verEntrenamientoScreen(
     verEntrenamientoViewModel: VerEntrenamientoViewModel,
     onNavigateToPrevious: () -> Unit,

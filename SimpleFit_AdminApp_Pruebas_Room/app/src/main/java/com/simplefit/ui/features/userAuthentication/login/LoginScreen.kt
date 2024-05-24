@@ -39,10 +39,8 @@ fun LoginScreen(
     onNavigateToHome: ((correo: String) -> Unit)? = null
 ) {
 
-//    var mensaje by remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
 
-    var recordarmeState by remember { mutableStateOf(false) }
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -52,9 +50,6 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(20.dp)
             ) {
-//                CircularImageFromResource(
-//                    idImageResource = R.drawable.simplefit_logo, contentDescription = "Imagen Login"
-//                )
                 Text(
                     text = "SIMPLEFIT ADMIN",
                     color = Color(0xFFDAB338),

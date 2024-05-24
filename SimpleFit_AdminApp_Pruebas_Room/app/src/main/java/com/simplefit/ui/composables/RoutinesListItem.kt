@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-//import androidx.compose.foundation.layout.FlowColumnScopeInstance.align
+
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -156,7 +156,7 @@ fun DatosRutina(
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = Color.White,//MaterialTheme.colorScheme.secondary,
+                color = Color.White,
                 fontSize = 20.sp,
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 fontStyle = FontStyle.Normal
@@ -311,29 +311,6 @@ fun ContenidoCardUsuario(
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
-//                if (rutinaUiState.descripcion.isNotBlank()) {
-//                    Box(
-//                        modifier = Modifier
-//                            .size(80.dp, 80.dp)
-//                            .padding(8.dp),
-//                        contentAlignment = Alignment.Center
-//                    ) {
-//                        Image(
-//                            modifier = Modifier
-//                                .clip(CircleShape)
-//                                .aspectRatio(ratio = 1f)
-//                                .background(Color.White)
-//                                .border(
-//                                    width = 1.dp,
-//                                    color = Color.White,
-//                                    shape = CircleShape
-//                                ),
-//                            contentScale = ContentScale.Crop,
-//                            painter = painterResource(id = imageResource),
-//                            contentDescription = "Imagen objetivo"
-//                        )
-//                    }
-//                }
                 DatosUsuario(
                     modifier = Modifier,
                     email = userUiState.email,
@@ -347,43 +324,6 @@ fun ContenidoCardUsuario(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun RutinasListItem2(
-    onVerRutinaClicked: () -> Unit? = {},
-    modifier: Modifier = Modifier,
-    rutinaUiState: RoutinesUiState,
-    seleccionadoState: Boolean,
-    onRutinaClicked: (Int) -> Unit
-) {
-
-
-    ElevatedCard(
-        onClick = { onRutinaClicked(rutinaUiState.rutinaid) },
-        modifier = modifier.then(
-            Modifier
-                .animateContentSize(
-                    animationSpec = tween(
-                        durationMillis = 300,
-                        easing = LinearOutSlowInEasing
-                    )
-                )
-                .padding(6.dp)
-        ),
-    ) {
-
-        val context = LocalContext.current
-
-        Row {
-            ContenidoPrincipalCardRutina(
-                rutinaUiState = rutinaUiState,
-                seleccionadoState = seleccionadoState,
-                onVerRutinaClicked = onVerRutinaClicked
-            )
-        }
-    }
-
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -455,93 +395,3 @@ fun UsersListItem(
     }
 }
 
-
-@Preview(
-    name = "PORTRAIT",
-    device = "spec:width=360dp,height=800dp,dpi=480",
-    showBackground = true
-)
-// Muestra OutlinedIconButton con los iconos de las
-// acciones posibles sobre ul contacto seleccionado.
-@Composable
-fun AccionesRutina(
-    onCompartirClicked: () -> Unit = {},
-    onDeleteClicked: (Int) -> Unit = {}
-) {
-    data class Accion(
-        val icon: ImageVector,
-        val description: String,
-        val onClick: (() -> Unit)? = null,
-        val onClickDelete: ((Int) -> Unit)? = null
-    )
-
-    val acciones = remember {
-        listOf(
-            Accion(
-                icon = Icons.Filled.Share,
-                description = "Compartir",
-                onClick = onCompartirClicked
-            ),
-            Accion(
-                icon = Icons.Filled.Delete,
-                description = "Eliminar",
-                onClickDelete = onDeleteClicked
-            )
-        )
-    }
-
-    Row(
-        modifier = Modifier
-            .padding(bottom = 8.dp)
-            .fillMaxWidth()
-            .wrapContentHeight()
-            .animateContentSize { initialValue, targetValue -> },
-        horizontalArrangement = Arrangement.End,
-        verticalAlignment = Alignment.CenterVertically
-    )
-    {
-        for (accion in acciones) {
-            accion.onClick?.let {
-                OutlinedIconButton(
-                    modifier = Modifier.padding(start = 8.dp),
-                    onClick = it,
-                ) {
-                    Icon(
-                        imageVector = accion.icon,
-                        contentDescription = accion.description,
-                        modifier = Modifier.size(ButtonDefaults.IconSize),
-                    )
-                }
-            }
-        }
-        Spacer(modifier = Modifier.width(70.dp))
-    }
-}
-
-@Composable
-fun ImagenRutina(
-    modifier: Modifier = Modifier,
-    foto: ImageBitmap?,
-    anchoBorde: Dp = 4.dp,
-) {
-    val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)
-    var painterFoto = remember(foto) {
-        foto?.let { BitmapPainter(it) } ?: imagenSinFoto
-    }
-    Image(
-        modifier = modifier.then(
-            Modifier
-                .clip(CircleShape)
-                .aspectRatio(ratio = 1f)
-                .background(MaterialTheme.colorScheme.surface)
-                .border(
-                    width = anchoBorde,
-                    color = MaterialTheme.colorScheme.inversePrimary,
-                    shape = CircleShape
-                )
-        ),
-        painter = painterFoto,
-        contentScale = ContentScale.Crop,
-        contentDescription = "Imagen rutina objetivo"
-    )
-}

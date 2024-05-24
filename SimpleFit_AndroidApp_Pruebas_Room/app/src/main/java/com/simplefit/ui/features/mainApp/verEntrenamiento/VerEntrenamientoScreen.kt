@@ -112,7 +112,6 @@ fun VerEntrenamientoScreen(
                 Text("VOLVER")
             }
 
-            //Spacer(modifier = Modifier.height(15.dp))
             Text(
                 text = diaActual,
                 color = Color(0xFF89602F),

@@ -8,8 +8,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,6 +22,8 @@ import com.pmdm.tienda.utilities.validacion.Validacion
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSexo
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
+import com.simplefit.ui.features.mainApp.profile.ValidacionProfileUiState
+import kotlinx.coroutines.delay
 
 @Composable
 fun RegisterProfileInfoForm(
@@ -36,7 +40,8 @@ fun RegisterProfileInfoForm(
     onValueChangeSomatotipo: (String) -> Unit,
     onValueChangeAltura: (String) -> Unit,
     onValueChangePeso: (String) -> Unit,
-    onClickGuardar: () -> Unit
+    onClickGuardar: () -> Unit,
+
 ) {
     val scrollState = rememberScrollState()
     Column(verticalArrangement=  Arrangement.Center,
@@ -70,6 +75,7 @@ fun RegisterProfileInfoForm(
             somatotipoState = somatotipoState,
             onValueChange = onValueChangeSomatotipo
         )
+
         Button(
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDAB338)),
             onClick = onClickGuardar,
@@ -83,28 +89,4 @@ fun RegisterProfileInfoForm(
 }
 
 
-//@Preview(showBackground = true)
-//@Composable
-//fun RegisterFormTest() {
-//
-//    var nombreState by remember { mutableStateOf("") }
-//    var edadState by remember { mutableStateOf(0) }
-//    var sexoState by remember { mutableStateOf("") }
-//    var recordarme by remember { mutableStateOf(false) }
-//
-//    SimpleFitTheme {
-//        RegisterProfileInfoForm(
-//            modifier = Modifier.fillMaxWidth(),
-//            nombreState = nombreState,
-//            validacionNombre = object : Validacion {},
-//            edadState = edadState,
-//            sexoState = sexoState,
-//            validacionDni = object : Validacion {},
-//            validacionPassword = object : Validacion {},
-//            onValueChangeEmail = { emailState = it },
-//            onValueChangePassword = { passwordState = it },
-//            onValueChangeDni = { dniState = it },
-//            onClickRegistrarse = {}
-//        )
-//    }
-//}
+

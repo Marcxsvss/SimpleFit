@@ -15,9 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pmdm.recetas.ui.composables.OutlinedTextFieldDni
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldEmail
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldNombre
 import com.pmdm.recetas.ui.composables.OutlinedTextFieldPassword

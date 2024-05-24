@@ -28,16 +28,6 @@ fun CheckboxWithText(
     onCheckedChange: (Boolean) -> Unit) {
     Row(
         modifier = modifier
-           /* .then(
-                Modifier
-
-                    .height(56.dp)
-                    .toggleable(
-                        value = checkedState,
-                        onValueChange = { onStateChange(it) },
-                        role = Role.Checkbox
-                    )
-            )*/
             .padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

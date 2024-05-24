@@ -19,6 +19,7 @@ import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -73,6 +74,18 @@ fun ProfileScreen(
                     fontSize = 30.sp,
                     fontStyle = FontStyle.Italic
                 )
+
+                if (mostrarSnack) {
+                    var mensaje = ""
+                    mensaje =
+                        if (validacionProfileUiState.hayError) validacionProfileUiState.mensajeError ?: "Datos Guardados"
+                        else "Datos Guardados"
+                    Snackbar(
+
+                    ) {
+                        Text(text = mensaje)
+                    }
+                }
                 Spacer(modifier = Modifier.fillMaxHeight(0.05f))
 
                 RegisterProfileInfoForm(
@@ -98,7 +111,7 @@ fun ProfileScreen(
                     },
                     onValueChangePeso = {
                         onProfileEvent(ProfileEvent.PesoChanged(it))
-                    },
+                    }
                 )
                 {
                     onProfileEvent(
@@ -106,22 +119,16 @@ fun ProfileScreen(
                     )
 
                     scope.launch {
-                        delay(1000)
                         onMostrarSnackBar()
+                        delay(2000)
+                        onMostrarSnackBar()
+
                     }
                 }
                 Spacer(modifier = Modifier.fillMaxHeight(0.1f))
+
             }
-            if (mostrarSnack) {
-                var mensaje = "Error"
-                if (validacionProfileUiState.hayError) mensaje = validacionProfileUiState.mensajeError ?: ""
-                else mensaje = "Error, los datos introducidos no son correctos"
-                Snackbar(
-                    modifier = Modifier.align(Alignment.BottomCenter)
-                ) {
-                    Text(text = mensaje)
-                }
-            }
+
         }
     }
 }

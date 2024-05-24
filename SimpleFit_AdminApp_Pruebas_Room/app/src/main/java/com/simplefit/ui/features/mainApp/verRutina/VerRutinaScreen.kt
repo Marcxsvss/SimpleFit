@@ -49,12 +49,6 @@ import com.simplefit.ui.composables.DescansoScreen
 import com.simplefit.ui.features.mainApp.MaquinaUiState
 import java.util.Calendar
 
-fun obtenerDiaDeLaSemana(): String {
-    val dias = arrayOf("D", "L", "M", "X", "J", "V", "S")
-    val calendario = Calendar.getInstance()
-    val diaDeLaSemana = calendario.get(Calendar.DAY_OF_WEEK)
-    return dias[diaDeLaSemana - 1]
-}
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -66,7 +60,6 @@ fun VerRoutinesScreen(
     onMostrarDialog: (Boolean) -> Unit,
     maquinaUiState: MaquinaUiState,
     onNavigateToPrevious: () -> Unit,
-    onNavigateToRutinas: ((userid: String) -> Unit)? = null
 ) {
 
     val imagenSinFoto = rememberVectorPainter(image = Icons.Filled.Face2)

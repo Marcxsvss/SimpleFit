@@ -75,13 +75,9 @@ fun DatosUsuario(
 ) {
     Column(
         modifier = modifier.then(
-//            if (titulo.isNotBlank()) {
-//                Modifier.width(172.dp)
-//            } else {
             Modifier
                 .width(250.dp)
                 .padding(start = 12.dp, top = 10.dp)
-            //}
         ),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start
@@ -311,29 +307,6 @@ fun ContenidoCardUsuario(
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
-//                if (rutinaUiState.descripcion.isNotBlank()) {
-//                    Box(
-//                        modifier = Modifier
-//                            .size(80.dp, 80.dp)
-//                            .padding(8.dp),
-//                        contentAlignment = Alignment.Center
-//                    ) {
-//                        Image(
-//                            modifier = Modifier
-//                                .clip(CircleShape)
-//                                .aspectRatio(ratio = 1f)
-//                                .background(Color.White)
-//                                .border(
-//                                    width = 1.dp,
-//                                    color = Color.White,
-//                                    shape = CircleShape
-//                                ),
-//                            contentScale = ContentScale.Crop,
-//                            painter = painterResource(id = imageResource),
-//                            contentDescription = "Imagen objetivo"
-//                        )
-//                    }
-//                }
                 DatosUsuario(
                     modifier = Modifier,
                     email = userUiState.email,
@@ -347,43 +320,6 @@ fun ContenidoCardUsuario(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun RutinasListItem2(
-    onVerRutinaClicked: () -> Unit? = {},
-    modifier: Modifier = Modifier,
-    rutinaUiState: RoutinesUiState,
-    seleccionadoState: Boolean,
-    onRutinaClicked: (Int) -> Unit
-) {
-
-
-    ElevatedCard(
-        onClick = { onRutinaClicked(rutinaUiState.rutinaid) },
-        modifier = modifier.then(
-            Modifier
-                .animateContentSize(
-                    animationSpec = tween(
-                        durationMillis = 300,
-                        easing = LinearOutSlowInEasing
-                    )
-                )
-                .padding(6.dp)
-        ),
-    ) {
-
-        val context = LocalContext.current
-
-        Row {
-            ContenidoPrincipalCardRutina(
-                rutinaUiState = rutinaUiState,
-                seleccionadoState = seleccionadoState,
-                onVerRutinaClicked = onVerRutinaClicked
-            )
-        }
-    }
-
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

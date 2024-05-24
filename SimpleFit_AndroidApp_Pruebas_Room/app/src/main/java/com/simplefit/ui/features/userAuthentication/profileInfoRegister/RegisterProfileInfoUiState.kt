@@ -10,7 +10,6 @@ data class RegisterProfileInfoUiState(
     val sexo : String,
     val somatotipo : String,
     val alergia : String,
-
 ) {
 
 

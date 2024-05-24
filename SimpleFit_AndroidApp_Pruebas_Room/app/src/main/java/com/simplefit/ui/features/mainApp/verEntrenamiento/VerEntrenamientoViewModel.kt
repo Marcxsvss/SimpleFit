@@ -6,14 +6,10 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.MaquinasRepository
-import com.simplefit.data.UsuarioRepository
-import com.simplefit.data.UsuarioRutinaRepository
 import com.simplefit.ui.features.mainApp.MaquinaUiState
 import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
 import com.simplefit.ui.features.toMaquinaUiState
-import com.simplefit.ui.features.toUsuarioRutina
 import com.simplefit.ui.features.toVerEntrenamientoUiState
-import com.simplefit.ui.features.toVerRutinaUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.util.Calendar
@@ -21,8 +17,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VerEntrenamientoViewModel @Inject constructor(
-    private val usuarioRepository: UsuarioRepository,
-    private val usuarioRutinaRepository : UsuarioRutinaRepository,
     private val maquinasRepository : MaquinasRepository,
 ) : ViewModel() {
     var userid by mutableStateOf("")

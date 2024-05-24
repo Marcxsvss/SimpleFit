@@ -11,7 +11,6 @@ sealed interface ProfileEvent {
 
 
 
-    //Añadir los eventos necesarios
 
 
 }

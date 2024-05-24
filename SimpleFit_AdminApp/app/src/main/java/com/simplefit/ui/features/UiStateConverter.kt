@@ -27,7 +27,8 @@ fun UsersUiState.toUsuario(): Usuario = Usuario(
     sexo = this.sexo,
     somatotipo = this.somatotipo,
     rutinaState = this.rutinaState,
-    acceso = this.acceso
+    acceso = this.acceso,
+    foto = this.foto
 )
 
 fun LoginUiState.toUsuario(): Usuario = Usuario(
@@ -40,7 +41,9 @@ this.password,
 "",
     "",
     rutinaState = null,
-    acceso = 0
+    acceso = 0,
+    foto = null
+
 )
 fun Usuario.toUsuarioUiState(): UsersUiState = UsersUiState(
     this.email,
@@ -52,7 +55,8 @@ fun Usuario.toUsuarioUiState(): UsersUiState = UsersUiState(
     this.sexo,
     this.somatotipo,
     this.rutinaState,
-    this.acceso
+    this.acceso,
+    this.foto
 )
 fun Rutinas.toRutinasUiState(): RoutinesUiState = RoutinesUiState(
     rutinaid = this.rutinaid,

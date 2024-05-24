@@ -169,7 +169,6 @@ fun VerRoutinesScreen(
                     }
                 }
                 Box(modifier = Modifier.clickable { if (mostrarSnack) onMostrarSnackbar() }) {
-                    // Aquí va el resto de tu interfaz de usuario
 
                     LaunchedEffect(mostrarSnack) {
                         if (mostrarSnack) {

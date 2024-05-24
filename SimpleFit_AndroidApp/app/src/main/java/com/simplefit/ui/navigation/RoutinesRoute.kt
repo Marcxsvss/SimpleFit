@@ -15,8 +15,7 @@ import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
 const val RoutinesRoute = "Routines"
 const val RoutinesParameterName = "userid"
 
-// Definimos un método de extensión de NavGraphBuilder para poder
-// usarlo en el contexto de nuestro NavHost
+
 fun NavGraphBuilder.routinesScreen(
     routinesViewModel: RoutinesViewModel,
     onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null,
@@ -31,7 +30,9 @@ fun NavGraphBuilder.routinesScreen(
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
             onRutinaEvent = routinesViewModel::onRoutinesEvent,
             onNavigateToVerRutina = onNavigateToVerRutina,
-            onNavigateToAddRutina = onNavigateToAddRutina
+            onNavigateToAddRutina = onNavigateToAddRutina,
+            mostrarSnack = routinesViewModel.mostrarSnackBar,
+            onMostrarSnackbar = routinesViewModel.onMostrarSnackBar
         )
     }
 

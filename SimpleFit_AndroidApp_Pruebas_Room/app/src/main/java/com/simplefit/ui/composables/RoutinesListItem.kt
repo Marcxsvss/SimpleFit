@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-//import androidx.compose.foundation.layout.FlowColumnScopeInstance.align
+
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -26,11 +26,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
-import androidx.compose.material.icons.filled.ArrowBackIosNew
-import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.ArrowForwardIos
+
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Edit
+
 import androidx.compose.material.icons.filled.Face2
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.ButtonDefaults
@@ -105,7 +103,7 @@ fun DatosRutina(
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                color = Color(0xFF89602F),
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 fontStyle = FontStyle.Normal
             )
@@ -116,7 +114,7 @@ fun DatosRutina(
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                color = Color(0xFF89602F),
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 fontStyle = FontStyle.Normal,
 
@@ -130,20 +128,15 @@ fun DatosRutina(
                 fontStyle = FontStyle.Normal,
                 fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
                 modifier = Modifier
-                    //.align(Alignment.Start)
-                    //.padding(bottom = 2.dp, start = 10.dp)
+
             )
         }
-        //Spacer(modifier = Modifier.width(8.dp))
     }
 
 
 }
 
 @OptIn(ExperimentalLayoutApi::class)
-// Muestra la imagen del contacto, los datos del contacto y un perqueño
-// icono que tendrá una animación de rotación cuando el contacto esté
-// seleccionado.
 @Composable
 fun ContenidoPrincipalCardRutina(
     rutinaUiState: RoutinesUiState,
@@ -165,7 +158,7 @@ fun ContenidoPrincipalCardRutina(
                 )
             )
 
-//
+
     )
     {
         Row(
@@ -178,8 +171,6 @@ fun ContenidoPrincipalCardRutina(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            // Usa FlowRow para que la imagen se superponga a los datos
-            // de contacto cuando no haya suficiente espacio para ambos
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -220,8 +211,6 @@ fun ContenidoPrincipalCardRutina(
                     dificultad = rutinaUiState.dificultad,
                     estado = rutinaUiState.estado
                 )
-                //Spacer(modifier = Modifier.width(12.dp))
-                //Text(modifier = Modifier.padding(top = 60.dp) ,text = "Ver más", style = MaterialTheme.typography.labelMedium, color = Color.White)
                 if (seleccionadoState) {
                     Box(modifier = Modifier.size(70.dp))
                     {
@@ -304,8 +293,6 @@ fun RutinasListItem(
         ),
     ) {
 
-        val context = LocalContext.current
-
         Row() {
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
@@ -318,67 +305,7 @@ fun RutinasListItem(
 }
 
 
-@Preview(
-    name = "PORTRAIT",
-    device = "spec:width=360dp,height=800dp,dpi=480",
-    showBackground = true
-)
-// Muestra OutlinedIconButton con los iconos de las
-// acciones posibles sobre ul contacto seleccionado.
-@Composable
-fun AccionesRutina(
-    onCompartirClicked: () -> Unit = {},
-    onDeleteClicked: (Int) -> Unit = {}
-) {
-    data class Accion(
-        val icon: ImageVector,
-        val description: String,
-        val onClick: (() -> Unit)? = null,
-        val onClickDelete: ((Int) -> Unit)? = null
-    )
 
-    val acciones = remember {
-        listOf(
-            Accion(
-                icon = Icons.Filled.Share,
-                description = "Compartir",
-                onClick = onCompartirClicked
-            ),
-            Accion(
-                icon = Icons.Filled.Delete,
-                description = "Eliminar",
-                onClickDelete = onDeleteClicked
-            )
-        )
-    }
-
-    Row(
-        modifier = Modifier
-            .padding(bottom = 8.dp)
-            .fillMaxWidth()
-            .wrapContentHeight()
-            .animateContentSize { initialValue, targetValue -> },
-        horizontalArrangement = Arrangement.End,
-        verticalAlignment = Alignment.CenterVertically
-    )
-    {
-        for (accion in acciones) {
-            accion.onClick?.let {
-                OutlinedIconButton(
-                    modifier = Modifier.padding(start = 8.dp),
-                    onClick = it,
-                ) {
-                    Icon(
-                        imageVector = accion.icon,
-                        contentDescription = accion.description,
-                        modifier = Modifier.size(ButtonDefaults.IconSize),
-                    )
-                }
-            }
-        }
-        Spacer(modifier = Modifier.width(70.dp))
-    }
-}
 
 @Composable
 fun ImagenRutina(

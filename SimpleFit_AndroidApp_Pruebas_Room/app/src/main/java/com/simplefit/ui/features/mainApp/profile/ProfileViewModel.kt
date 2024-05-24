@@ -18,8 +18,6 @@ class ProfileViewModel @Inject constructor(
     private val usuarioRepository: UsuarioRepository
 ) : ViewModel() {
 
-    //var accountMail by mutableStateOf("")
-
     var profileUiState by mutableStateOf(ProfileUiState())
         private set
     var validacionProfileUiState by mutableStateOf(ValidacionProfileUiState())

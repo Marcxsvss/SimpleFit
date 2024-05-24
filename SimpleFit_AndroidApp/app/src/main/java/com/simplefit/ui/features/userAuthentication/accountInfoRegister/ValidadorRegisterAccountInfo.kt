@@ -13,7 +13,6 @@ class ValidadorRegisterAccountInfo  @Inject constructor() : Validador<RegisterAc
     var validadorEmail =
         ValidadorCompuesto<String>()
             .add(ValidadorTextoNoVacio("El email no puede estar vacío"))
-            //.add(ValidadorCorreoEnUso("El correo ya esta en uso"))
             .add(ValidadorCorreo("El correo no es válido"))
 
 

@@ -65,7 +65,7 @@ fun NavBar(
 
     var selectedItem: Int by remember { mutableIntStateOf(currentIndex) }
 
-    NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFDAB338/*0xFFdbc06d*/)) {
+    NavigationBar(modifier = Modifier.height(80.dp),containerColor = Color(0xFFDAB338)) {
         listItemsIconButtons.forEachIndexed { index, button ->
             NavigationBarItem(
                 icon = { Icon(imageVector = button.icon, contentDescription = button.title,tint = Color(0xFF3C4932)) },
@@ -76,11 +76,4 @@ fun NavBar(
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun NavBarPreview()
-{
-    //NavBar(0, {})
 }

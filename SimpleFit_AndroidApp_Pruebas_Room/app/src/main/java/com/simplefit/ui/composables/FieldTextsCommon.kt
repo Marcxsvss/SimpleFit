@@ -125,12 +125,6 @@ fun OutlinedTextFieldWithErrorState(
                         style = TextStyle(color = Color(0xFFDAB338))
                     )
                 },
-//        label = { Text(
-//            if (validacionState.hayError && textoState.isNullOrBlank()) "${label}*"
-//            else if(!validacionState.hayError && textoState.isNullOrBlank()) label
-//            else if(validacionState.hayError) "${textoState}*"
-//            else textoState
-//        ) },
                 keyboardOptions = keyboardOptions,
                 supportingText = {
                     if (validacionState.hayError) {
@@ -153,49 +147,6 @@ fun OutlinedTextFieldWithErrorState(
 
 }
 
-@Composable
-fun TextFieldPassword(
-    modifier: Modifier = Modifier,
-    passwordState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit,
-    label: String = "Clave",
-    labelShow: String = "Muestra clave",
-    labelHide: String = "Oculta clave",
-    iconoInformativo: Painter = rememberVectorPainter(image = Icons.Filled.Lock),
-) {
-    var passwordHidden by remember { mutableStateOf(true) }
-    TextField(
-        modifier = modifier,
-        value = passwordState,
-        onValueChange = onValueChange,
-        singleLine = true,
-        label = { Text(if (validacionState.hayError) "${label}*" else label) },
-        supportingText = {
-            if (validacionState.hayError) {
-                Text(text = validacionState.mensajeError!!)
-            }
-        },
-        isError = validacionState.hayError,
-        visualTransformation =
-        if (passwordHidden) PasswordVisualTransformation() else VisualTransformation.None,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        leadingIcon = {
-            Icon(
-                painter = iconoInformativo,
-                contentDescription = label
-            )
-        },
-        trailingIcon = {
-            IconButton(onClick = { passwordHidden = !passwordHidden }) {
-                val visibilityIcon =
-                    if (passwordHidden) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
-                val description = if (passwordHidden) labelShow else labelHide
-                Icon(imageVector = visibilityIcon, contentDescription = description)
-            }
-        }
-    )
-}
 
 @Composable
 fun OutlinedTextFieldPassword(
@@ -248,40 +199,6 @@ fun OutlinedTextFieldPassword(
     )
 }
 
-@Composable
-fun TextFieldPhone(
-    modifier: Modifier = Modifier,
-    label: String = "Teléfono",
-    telefonoState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit
-) {
-    TextFieldWithErrorState(
-        modifier = modifier,
-        label = label,
-        textoState = telefonoState,
-        textoPista = "999 99 99 99",
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.Phone,
-                contentDescription = "Teléfono"
-            )
-        },
-        validacionState = validacionState,
-        onValueChange = {
-            var text = it
-            if (!validacionState.hayError) {
-                try {
-                    text = PhoneNumberUtils.formatNumber(it, "ES")
-                } catch (e: Exception) {
-
-                }
-            }
-            onValueChange(text)
-        }
-    )
-}
 
 @Composable
 fun OutlinedTextFieldPhone(
@@ -318,32 +235,6 @@ fun OutlinedTextFieldPhone(
     )
 }
 
-@Composable
-fun TextFieldEmail(
-    modifier: Modifier = Modifier,
-    label: String = "Email",
-    enabled: Boolean=true,
-    emailState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit
-) {
-
-    TextFieldWithErrorState(
-        modifier = modifier,
-        label = label,
-        textoState = emailState,
-        textoPista = "ejemplo@correo.com",
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.Email,
-                contentDescription = "Email"
-            )
-        },
-        validacionState = validacionState,
-        onValueChange = { onValueChange(it) }
-    )
-}
 
 @Composable
 fun OutlinedTextFieldEmail(
@@ -365,33 +256,6 @@ fun OutlinedTextFieldEmail(
             Icon(
                 imageVector = Icons.Filled.Email,
                 contentDescription = "Email"
-            )
-        },
-        validacionState = validacionState,
-        onValueChange = onValueChange
-    )
-}
-@Composable
-fun OutlinedTextFieldDni(
-    modifier: Modifier = Modifier,
-    enabled: Boolean=true,
-    label: String = "Email",
-    dniState: String,
-    validacionState: Validacion,
-    onValueChange: (String) -> Unit
-)
-{
-    OutlinedTextFieldWithErrorState(
-        modifier = modifier,
-        label = label,
-        enabled=enabled,
-        textoState = dniState,
-        textoPista = "12345678R",
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.CreditCard,
-                contentDescription = "DNI"
             )
         },
         validacionState = validacionState,

@@ -33,6 +33,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleFit"
         android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
         <activity
             android:name="com.simplefit.ui.views.MainActivity"

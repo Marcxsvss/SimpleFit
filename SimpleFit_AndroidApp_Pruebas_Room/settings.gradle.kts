@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SimpleFit_AndroidApp"
+rootProject.name = "SimpleFit_AndroidApp_Pruebas_Room"
 include(":app")

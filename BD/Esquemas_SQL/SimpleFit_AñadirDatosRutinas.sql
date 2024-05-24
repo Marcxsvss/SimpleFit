@@ -1,15 +1,15 @@
-INSERT INTO usuarios (email, password, nombre, altura, peso, edad, sexo, somatotipo, rutinaState, acceso) VALUES
-('marcos@gmail.com','12345678','marcos','184','84','16-28','Masculino','ectomorfo',2,1),
-('ana@hotmail.com','password123','Ana','165','60','18-30','Femenino','mesomorfo',1,2),
-('pablo@yahoo.com','mypassword','Pablo','175','78','20-32','Masculino','endomorfo',3,1),
-('maria@gmail.com','maria1234','Maria','170','65','22-34','Femenino','ectomorfo',2,3),
-('carlos@gmail.com','carlos987','Carlos','180','80','24-36','Masculino','mesomorfo',1,2),
-('luisa@yahoo.com','luisa456','Luisa','160','55','26-38','Femenino','endomorfo',3,1),
-('pedro@hotmail.com','pedro123','Pedro','185','90','28-40','Masculino','ectomorfo',2,3),
-('sofia@gmail.com','sofia789','Sofia','175','68','18-30','Femenino','mesomorfo',1,2),
-('juan@yahoo.com','juan321','Juan','170','75','20-32','Masculino','endomorfo',3,1),
-('laura@hotmail.com','laura654','Laura','168','62','22-34','Femenino','ectomorfo',2,3),
-('andres@gmail.com','andres987','Andres','178','85','24-36','Masculino','mesomorfo',1,2);
+INSERT INTO usuarios (email, password, nombre, altura, peso, edad, sexo, somatotipo, rutinaState, acceso,foto) VALUES
+('marcos@gmail.com','12345678','marcos','184','84','16-28','Masculino','ectomorfo',2,1,null),
+('ana@hotmail.com','password123','Ana','165','60','18-30','Femenino','mesomorfo',1,2,null),
+('pablo@yahoo.com','mypassword','Pablo','175','78','20-32','Masculino','endomorfo',3,1,null),
+('maria@gmail.com','maria1234','Maria','170','65','22-34','Femenino','ectomorfo',2,3,null),
+('carlos@gmail.com','carlos987','Carlos','180','80','24-36','Masculino','mesomorfo',1,2,null),
+('luisa@yahoo.com','luisa456','Luisa','160','55','26-38','Femenino','endomorfo',3,1,null),
+('pedro@hotmail.com','pedro123','Pedro','185','90','28-40','Masculino','ectomorfo',2,3,null),
+('sofia@gmail.com','sofia789','Sofia','175','68','18-30','Femenino','mesomorfo',1,2,null),
+('juan@yahoo.com','juan321','Juan','170','75','20-32','Masculino','endomorfo',3,1,null),
+('laura@hotmail.com','laura654','Laura','168','62','22-34','Femenino','ectomorfo',2,3,null),
+('andres@gmail.com','andres987','Andres','178','85','24-36','Masculino','mesomorfo',1,2,null);
 
  INSERT INTO rutinas(rutinaid,titulo,descripcion,frecuencia,diasdescanso,dificultad)
  VALUES
