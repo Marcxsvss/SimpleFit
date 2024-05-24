@@ -9,10 +9,3 @@ Verde oscuro -> #2e3f2d -> Color(0xFF2E3F2D)
 Verde claro -> #3c4932 -> Color(0xFF3C4932)
 
 
-colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = Color(0xFFDAB338),
-            unfocusedBorderColor = Color(0xFFDAB338),
-            errorBorderColor = Color.Red,
-            disabledBorderColor = Color.Gray
-        )
-
