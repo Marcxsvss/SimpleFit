@@ -117,57 +117,7 @@ public class ServiceRESTRutinas {
         return response;
     }
 
-    /*@Path("/delete/{rutinaid}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response delete(@PathParam("rutinaid") int rutinaid) {
-        EntityManagerFactory emf = null;
-        HashMap<String, String> mensaje = new HashMap<>();
-        Response response;
-        Response.Status statusResul;
-        try {
-            emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
-            EntityManager em = emf.createEntityManager();
-
-            RutinasJpaController rutinasController = new RutinasJpaController(emf);
-            Rutinas rutina = rutinasController.findRutinas(rutinaid);
-
-            if (rutina == null) {
-                statusResul = Response.Status.NOT_FOUND;
-                mensaje.put("mensaje", "No existe rutina con id " + rutinaid);
-                response = Response
-                        .status(statusResul)
-                        .entity(mensaje)
-                        .build();
-            } else {
-                // Eliminamos todos los registros en la tabla Rutinamaquina asociados a esta rutina
-                List<Rutinamaquina> rutinamaquinaList = (List<Rutinamaquina>) rutina.getRutinamaquinaCollection();
-                for (Rutinamaquina rutinamaquina : rutinamaquinaList) {
-                    em.remove(em.merge(rutinamaquina));
-                }
-
-                // Ahora podemos eliminar la rutina
-                rutinasController.destroy(rutinaid);
-                statusResul = Response.Status.OK;
-                mensaje.put("mensaje", "Rutina con ID " + rutinaid + " eliminada correctamente");
-                response = Response
-                        .status(statusResul)
-                        .entity(mensaje)
-                        .build();
-            }
-        } catch (Exception ex) {
-            statusResul = Response.Status.BAD_REQUEST;
-            mensaje.put("mensaje", "Error al procesar la petición: " + ex.getMessage());
-            response = Response
-                    .status(statusResul)
-                    .entity(mensaje)
-                    .build();
-        } finally {
-            if (emf != null) {
-                emf.close();
-            }
-        }
-        return response;
-    }*/
+   
     @DELETE
     @Path("/delete/{rutinaid}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -176,18 +126,18 @@ public class ServiceRESTRutinas {
         HashMap<String, String> mensaje = new HashMap<>();
         Response response;
         Response.Status statusResul;
-        List<Rutinas> rutina;
+        List<Rutinas> rutinas;
         try {
             emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             EntityManager em = emf.createEntityManager();
-            
             RutinasJpaController dao = new RutinasJpaController(emf);
+            
             TypedQuery<Rutinas> consultaRegistros
                     = em.createNamedQuery("Rutinas.findByRutinaid", Rutinas.class);
-            rutina = consultaRegistros.setParameter("rutinaid", rutinaid).getResultList();
-            
+            rutinas = consultaRegistros.setParameter("rutinaid", rutinaid).getResultList();
+           
 
-            if (rutina.size() == 0) {
+            if (rutinas.size() == 0) {
                 statusResul = Response.Status.NOT_FOUND;
                 mensaje.put("mensaje", "No existe rutina con id " + rutinaid);
                 response = Response
@@ -195,6 +145,7 @@ public class ServiceRESTRutinas {
                         .entity(mensaje)
                         .build();
             } else {
+                
                 dao.destroy(rutinaid);
                 statusResul = Response.Status.OK;
                 mensaje.put("mensaje", "Rutina con ID " + rutinaid + " eliminado");

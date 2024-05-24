@@ -21,8 +21,6 @@ import javax.inject.Inject
 @HiltViewModel
 class RoutinesViewModel @Inject constructor(
     private val rutinasRepository: RutinasRepository,
-    private val usuarioRutinaRepository: UsuarioRutinaRepository,
-    private val rutinaMaquinaRepository: RutinaMaquinaRepository,
 
 ) : ViewModel() {
     var routinesUiState by mutableStateOf(RoutinesUiState())

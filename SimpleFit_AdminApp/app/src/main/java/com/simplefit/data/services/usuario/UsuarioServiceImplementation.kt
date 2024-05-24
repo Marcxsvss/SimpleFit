@@ -45,25 +45,6 @@ class UsuarioServiceImplementation @Inject constructor(
             throw ApiServicesException(mensajeError)
         }
     }
-    suspend fun insert(usuario: UsuarioApi) {
-        val mensajeError ="No se ha podido añadir el usuario"
-        try {
-            val response = usuarioService.insert(usuario)
-            if (response.isSuccessful) {
-                Log.d(logTag, response.toString())
-                // Aquí response.body() es un objeto de tipo RespuestaApi
-                // que simplemente logeamos si no es null.
-                Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")
-            } else {
-                val body = response.errorBody()?.string()
-                Log.e(logTag, "$mensajeError (código ${response.code()}): $this\n${body}")
-                throw ApiServicesException(mensajeError)
-            }
-        } catch (e: Exception) {
-            Log.e(logTag, "Error: ${e.localizedMessage}")
-            throw ApiServicesException(mensajeError)
-        }
-    }
 
     suspend fun update(usuario: UsuarioApi) {
         //Tendré que hacer otro update para la actualizacion dela rutina

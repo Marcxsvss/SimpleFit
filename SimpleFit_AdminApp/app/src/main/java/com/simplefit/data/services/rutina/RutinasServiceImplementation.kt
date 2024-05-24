@@ -44,10 +44,10 @@ class RutinasServiceImplementation @Inject constructor(
             throw ApiServicesException(mensajeError)
         }
     }
-    suspend fun delete(rutinaidid: Int) {
+    suspend fun delete(rutinaid: Int) {
         val mensajeError = "No se ha podido borrar la rutina"
         try {
-            val response = rutinasService.delete(rutinaidid)
+            val response = rutinasService.delete(rutinaid)
             if (response.isSuccessful) {
                 Log.d(logTag, response.toString())
                 Log.d(logTag, response.body()?.toString() ?: "No hay respuesta")

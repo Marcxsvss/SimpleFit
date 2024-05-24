@@ -21,8 +21,6 @@ suspend fun get(): List<Usuario> =
             usuarioServiceImplementation.get(email)?.toUsuario()
         } //El problema está en cuando intento obtener un email que no existe
 
-    suspend fun insert(usuario: Usuario) =
-        withContext(Dispatchers.IO) { usuarioServiceImplementation.insert(usuario.toUsuarioApi()) }
     suspend fun delete(email: String) = withContext(Dispatchers.IO) {
         usuarioServiceImplementation.delete(email)
     }

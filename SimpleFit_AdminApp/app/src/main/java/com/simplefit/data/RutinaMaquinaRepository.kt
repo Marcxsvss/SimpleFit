@@ -14,7 +14,7 @@ class RutinaMaquinaRepository @Inject constructor(
     suspend fun get(rutinaid: Int, dia: String): List<Int> = //Devuelve los id de maquina para esa rutina ese dia
         withContext(Dispatchers.IO)
         {
-            rutinaMaquinasServiceImplementation.get(rutinaid, dia).totalRegistros
+            rutinaMaquinasServiceImplementation.get(rutinaid, dia)
         }
     suspend fun delete(rutinaid: Int) =
         withContext(Dispatchers.IO)

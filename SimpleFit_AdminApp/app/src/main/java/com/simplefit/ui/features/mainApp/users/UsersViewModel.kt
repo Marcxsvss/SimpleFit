@@ -52,7 +52,7 @@ class UsersViewModel @Inject constructor(
 
             is UsersEvent.onDeleteClicked -> {
                 viewModelScope.launch {
-                    usuarioRutinaRepository.deleteUserRoutines(usersUiState.email)
+                    //usuarioRutinaRepository.deleteUserRoutines(usersUiState.email)
                     usuarioRepository.delete(usersUiState.email)
                     usersList = usuarioRepository.get().map { it.toUsuarioUiState() }
                     usersUiState = UsersUiState()

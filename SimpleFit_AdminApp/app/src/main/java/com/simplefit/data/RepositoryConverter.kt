@@ -22,7 +22,8 @@ fun Usuario.toUsuarioApi() = UsuarioApi(
     this.sexo,
     this.somatotipo,
     this.rutinaState,
-    this.acceso
+    this.acceso,
+    this.foto
 
 )
 
@@ -36,7 +37,8 @@ fun UsuarioApi.toUsuario() = Usuario(
     this.sexo,
     this.somatotipo,
     this.rutinastate,
-    this.acceso
+    this.acceso,
+    this.foto
 )
 
 fun MaquinasApi.toMaquina(): Maquina = Maquina(

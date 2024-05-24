@@ -165,6 +165,45 @@ public class RutinasJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
+
+            Rutinas rutinas;
+            try {
+                rutinas = em.getReference(Rutinas.class, id);
+                rutinas.getRutinaid();
+            } catch (EntityNotFoundException enfe) {
+                throw new NonexistentEntityException("The rutinas with id " + id + " no longer exists.", enfe);
+            }
+            ///////////////////////////
+
+            // 1. Eliminar todas las relaciones en Rutinamaquina
+            em.createQuery("DELETE FROM Rutinamaquina rm WHERE rm.rutinamaquinaPK.rutinaid = :rutinaid")
+                    .setParameter("rutinaid", id)
+                    .executeUpdate();
+
+            // 2. Eliminar todas las relaciones en Usuariorutina
+            if (rutinas != null) {
+                for (Usuarios usuario : rutinas.getUsuariosCollection()) {
+                    usuario.getRutinasCollection().remove(rutinas);
+                }
+                em.merge(rutinas); // Actualizar los cambios en los usuarios
+            }
+
+            // 3. Eliminar la rutina en sí
+            em.remove(rutinas);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+
+    /*
+    public void destroy(Integer id) throws IllegalOrphanException, NonexistentEntityException {
+        EntityManager em = null;
+        try {
+            em = getEntityManager();
+            em.getTransaction().begin();
             Rutinas rutinas;
             try {
                 rutinas = em.getReference(Rutinas.class, id);
@@ -196,7 +235,7 @@ public class RutinasJpaController implements Serializable {
             }
         }
     }
-
+     */
     public List<Rutinas> findRutinasEntities() {
         return findRutinasEntities(true, -1, -1);
     }
@@ -242,5 +281,5 @@ public class RutinasJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

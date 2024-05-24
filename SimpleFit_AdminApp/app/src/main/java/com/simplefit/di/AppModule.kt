@@ -42,9 +42,7 @@ class AppModule {
         okHttpClient: OkHttpClient
     ) : Retrofit = Retrofit.Builder()
         .client(okHttpClient)
-        //.baseUrl("http://marcosvm.eastus.cloudapp.azure.com:8080/SimpleFitApiJPATorre1.1/webresources/")
-        //.baseUrl("http://localhost:8080/simplefit/webresources/")
-        .baseUrl("http://marcosvm.eastus.cloudapp.azure.com:8080/simplefitapi/webresources/")
+        .baseUrl("http://marcosvm.eastus.cloudapp.azure.com:8080/simplefit/datos/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     @Provides

@@ -17,15 +17,11 @@ class MaquinasRepository @Inject constructor(
     suspend fun get(rutinaid: Int, dia: String): List<Maquina> =
         withContext(Dispatchers.IO)
         {
-            maquinasServiceImplementation.get().filter{ it.maquinaid in rutinaMaquinaServiceImplementation.get(rutinaid, dia).totalRegistros }.map { it.toMaquina() }
+            maquinasServiceImplementation.get().filter{ it.maquinaid in rutinaMaquinaServiceImplementation.get(rutinaid, dia) }.map { it.toMaquina() }
 
 
         }
-        suspend fun get(rutinaid: Int, dia: String): List<Maquina> =
-        withContext(Dispatchers.IO)
-        {
-            maquinasServiceImplementation.get().filter { it.maquinaid in rutinaMaquinaRepository.get(rutinaid, dia) }.map { it.toMaquina() }
-        }
+
 
 }
 

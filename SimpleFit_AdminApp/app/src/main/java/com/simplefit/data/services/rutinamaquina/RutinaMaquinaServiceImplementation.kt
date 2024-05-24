@@ -9,7 +9,7 @@ class RutinaMaquinaServiceImplementation @Inject constructor(
     private val rutinaMaquinaService: RutinaMaquinaService
 ) {
     private val logTag: String = "OkHttp"
-    suspend fun get(rutinaid : Int,dia: String): MaquinasDiaRutinaApi {
+    suspend fun get(rutinaid : Int,dia: String): List<Int> {
         val mensajeError = "No se han podido obtener la rutina con id = $rutinaid y dia = $dia"
         try {
             val response = rutinaMaquinaService.rutinaMaquina(rutinaid,dia)

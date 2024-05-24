@@ -10,24 +10,10 @@ import javax.inject.Inject
 class UsuarioRutinaRepository@Inject constructor(
     private val usuarioRutinaServiceImplementation: UsuarioRutinaServiceImplementation
 ) {
-    suspend fun get(userid: String): List<UsuarioRutina> =
-        withContext(Dispatchers.IO)
-        {
-            usuarioRutinaServiceImplementation.get(userid).map { it.toUsuarioRutina() }
-        }
-    suspend fun insert(rutina: UsuarioRutina) = withContext(Dispatchers.IO) {
-        usuarioRutinaServiceImplementation.insert(rutina.toUsuarioRutinaApi())
-    }
-    suspend fun delete(userid: String, rutinaid: Int) = withContext(Dispatchers.IO) {
-        usuarioRutinaServiceImplementation.delete(userid, rutinaid)
-    }
 
-    suspend fun deleteUserRoutines(userid: String) = withContext(Dispatchers.IO) {
-        usuarioRutinaServiceImplementation.deleteUserRoutines(userid)
-    }
-    suspend fun deleteRoutinesFromUsers(rutinaid : Int) = withContext(Dispatchers.IO) {
-        usuarioRutinaServiceImplementation.deleteRoutinesFromUsers(rutinaid)
-    }
+
+
+
 
 }
 

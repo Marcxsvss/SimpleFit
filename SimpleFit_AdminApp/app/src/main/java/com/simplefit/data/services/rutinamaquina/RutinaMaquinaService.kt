@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface RutinaMaquinaService {
     @GET("rutinamaquina/{rutinaid}/{dia}")
     @Headers("Accept: application/json", "Content-Type: application/json")
-    suspend fun rutinaMaquina(@Path("rutinaid") rutinaid: Int,@Path("dia") dia: String): Response<MaquinasDiaRutinaApi>
+    suspend fun rutinaMaquina(@Path("rutinaid") rutinaid: Int,@Path("dia") dia: String): Response<List<Int>>
 
     @DELETE("rutinamaquina/{rutinaid}")
     @Headers("Accept: application/json", "Content-Type: application/json")
