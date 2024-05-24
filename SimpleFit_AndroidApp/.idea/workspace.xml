@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e13dc0a-d1ea-4398-ae25-2765707918bf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BD/Esquemas_SQL/SimpleFit_AñadirDatosConsejos.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/Esquemas_SQL/SimpleFit_AñadirDatosRutinas.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/Esquemas_SQL/SimpleFit_AñadirMaquinasV2.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/Esquemas_SQL/SimpleFit_AñadirRutinaMaquina.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/Esquemas_SQL/SimpleFit_CreacionTablas.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/bd-mysql/maven-mysql.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/bd-mysql/mysql-connector-j-8.0.33.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/bd-mysql/protobuf-java-3.21.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/angus-activation-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/angus-mail-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/aopalliance-repackaged-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/asm-9.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/hk2-api-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/hk2-locator-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/hk2-utils-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.activation-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.annotation-api-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.authentication-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.authorization-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.batch-api-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.ejb-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.el-api-5.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.enterprise.cdi-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.enterprise.lang-model-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.faces-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.inject-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.interceptor-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.jakartaee-api-10.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.jakartaee-web-api-10.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.jms-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.json-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.json.bind-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.mail-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.persistence-2.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.persistence-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.resource-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.security.enterprise-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.servlet-api-6.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.servlet.jsp-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.servlet.jsp.jstl-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.transaction-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.validation-api-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.websocket-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.websocket-client-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.ws.rs-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jakarta.xml.bind-api-4.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/javassist-3.29.2-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-client-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-common-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-container-servlet-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-container-servlet-core-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-entity-filtering-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-hk2-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-media-jaxb-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-media-json-binding-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-media-moxy-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/jersey-server-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/maven-eclipselink-2.7.13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/maven-eclipselink-4.0.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/maven-jakartaee10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.antlr-2.7.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.asm-9.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.core-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.jpa-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.jpa.jpql-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.jpa.modelgen.processor-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/org.eclipse.persistence.moxy-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/osgi-resource-locator-1.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/parsson-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/jakartaee10/yasson-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/json-org/json-20230618.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/lib/json-org/maven-json-org.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/ant-deploy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/nbproject/rest-build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/conf/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/conf/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/Consejos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/ConsejosJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/Maquinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/MaquinasJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/Rutinamaquina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/RutinamaquinaJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/RutinamaquinaPK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/Rutinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/RutinasJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/Usuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/UsuariosJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/exceptions/IllegalOrphanException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/exceptions/NonexistentEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/jpasimplefit/exceptions/PreexistingEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ServiceRESTConsejos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ServiceRESTMaquinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ServiceRESTRutinamaquina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ServiceRESTRutinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/src/java/sersimplefit/ServiceRESTUsuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/web/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitApiJPATorre1.1/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/bd-mysql/maven-mysql.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/bd-mysql/mysql-connector-j-8.0.33.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/bd-mysql/protobuf-java-3.21.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/angus-activation-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/angus-mail-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/aopalliance-repackaged-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/asm-9.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/hk2-api-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/hk2-locator-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/hk2-utils-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.activation-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.annotation-api-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.authentication-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.authorization-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.batch-api-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.ejb-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.el-api-5.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.enterprise.cdi-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.enterprise.lang-model-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.faces-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.inject-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.interceptor-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.jakartaee-api-10.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.jakartaee-web-api-10.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.jms-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.json-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.json.bind-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.mail-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.persistence-2.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.persistence-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.resource-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.security.enterprise-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.servlet-api-6.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.servlet.jsp-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.servlet.jsp.jstl-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.transaction-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.validation-api-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.websocket-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.websocket-client-api-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.ws.rs-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jakarta.xml.bind-api-4.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/javassist-3.29.2-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-client-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-common-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-container-servlet-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-container-servlet-core-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-entity-filtering-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-hk2-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-media-jaxb-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-media-json-binding-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-media-moxy-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/jersey-server-3.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/maven-eclipselink-2.7.13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/maven-eclipselink-4.0.2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/maven-jakartaee10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.antlr-2.7.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.asm-9.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.core-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.jpa-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.jpa.jpql-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.jpa.modelgen.processor-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/org.eclipse.persistence.moxy-4.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/osgi-resource-locator-1.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/parsson-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/jakartaee10/yasson-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/json-org/json-20230618.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/lib/json-org/maven-json-org.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/ant-deploy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/nbproject/rest-build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/conf/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/conf/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/Consejos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/ConsejosJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/Maquinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/MaquinasJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/Rutinamaquina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/RutinamaquinaJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/RutinamaquinaPK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/Rutinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/RutinasJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/Usuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/UsuariosJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/exceptions/IllegalOrphanException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/exceptions/NonexistentEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/jpasimplefit/exceptions/PreexistingEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ServiceRESTConsejos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ServiceRESTMaquinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ServiceRESTRutinamaquina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ServiceRESTRutinas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/src/java/sersimplefit/ServiceRESTUsuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/web/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BD/SimpleFitJPAV2/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentacion/SimpleFit_Documentación_MarcosVerduSanchez.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentacion/SimpleFit_Documentación_MarcosVerduSanchez.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/androidTest/java/com/simplefit/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/SimpleFitAdminApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/MaquinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/RepositoryConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/RutinaMaquinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/RutinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/UsuarioRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/UsuarioRutinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/ApiServicesException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/DatosUsuarioApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/MaquinasDiaRutinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/RespuestaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/maquina/MaquinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/maquina/MaquinasApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/maquina/MaquinasServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutina/RutinasApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutina/RutinasService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutina/RutinasServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuario/UsuarioApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuario/UsuarioService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuario/UsuarioServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/di/AppModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/models/Maquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/models/RutinaMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/models/Rutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/models/Usuario.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/models/UsuarioRutina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/composables/Buttons.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/composables/FieldTextsCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/composables/FilterChipCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/composables/RoutinesListItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/composables/VerRutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/SimpleFitScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/UiStateConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/MaquinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidacionLoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidadorLogin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/components/LoginForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/HomeRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/LoginRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/RoutinesRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/SimpleFitNavHost.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/UsersRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/navigation/VerRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/ui/views/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/device/RegistroContratosCompose.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/imagenes/Imagenes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/Validacion.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/ValidacionCompuesta.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/Validador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/ValidadorCompuesto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorAltura.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorCorreo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMaximaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMinimaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroEntero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroReal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorPeso.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTelefono.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTextoNoVacio.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/compartir_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/consejos_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/consejos_background_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/definicion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/hipertrofia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/jalon_al_pecho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/mantenimiento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/mantenimiento2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/recuperacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/simplefit_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/drawable/ver_entrenamiento_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/bayon_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_mediumitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/roboto_thinitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/font/robotoblack.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/app/src/test/java/com/simplefit/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/androidTest/java/com/simplefit/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/SimpleFitAdminApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/MaquinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RepositoryConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RutinaMaquinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RutinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/UsuarioRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/UsuarioRutinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/MaquinasDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/MaquinasMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinaMaquinaDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinaMaquinaMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinasDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinasMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioRutinaDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioRutinaMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/RoomConverters.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/SimpleFitDB.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/maquinas/MaquinasDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/maquinas/MaquinasEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinaMaquina/RutinaMaquinaDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinaMaquina/RutinaMaquinaEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinas/RutinasDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinas/RutinasEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuario/UsuarioDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuario/UsuarioEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuarioRutina/UsuarioRutinaDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuarioRutina/UsuarioRutinaEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/di/AppModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Maquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/models/RutinaMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Rutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Usuario.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/models/UsuarioRutina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/Buttons.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/FieldTextsCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/FilterChipCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/RoutinesListItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/VerRutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/SimpleFitScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/UiStateConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/MaquinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/users/UsersViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidacionLoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidadorLogin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/components/LoginForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/HomeRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/LoginRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/RoutinesRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/SimpleFitNavHost.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/UsersRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/VerRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/views/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/device/RegistroContratosCompose.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/imagenes/Imagenes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/Validacion.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/ValidacionCompuesta.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/Validador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/ValidadorCompuesto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorAltura.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorCorreo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMaximaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMinimaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroEntero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroReal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorPeso.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTelefono.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTextoNoVacio.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/compartir_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/consejos_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/consejos_background_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/definicion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/hipertrofia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/jalon_al_pecho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/mantenimiento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/mantenimiento2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/recuperacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/simplefit_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/drawable/ver_entrenamiento_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/bayon_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_mediumitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/roboto_thinitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/font/robotoblack.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/app/src/test/java/com/simplefit/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AdminApp_Pruebas_Room/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/simplefit/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/SimpleFitApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/ConsejosRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/MaquinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/RepositoryConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/RutinaMaquinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/RutinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/UsuarioRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/UsuarioRutinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/ApiServicesException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/DatosUsuarioApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/ListaConsejosApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/MaquinasDiaRutinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/RespuestaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/consejo/ConsejosApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/consejo/ConsejosService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/consejo/ConsejosServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/maquina/MaquinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/maquina/MaquinasApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/maquina/MaquinasServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutina/RutinasApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutina/RutinasService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutina/RutinasServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/rutinamaquina/RutinaMaquinaServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuario/UsuarioApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuario/UsuarioService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuario/UsuarioServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/data/services/usuariorutina/UsuarioRutinaServiceImplementation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/di/AppModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/Consejo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/Maquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/RutinaMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/Rutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/Usuario.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/models/UsuarioRutina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/Bars.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/Buttons.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/CheckBoxCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/ExposedDropDownMenuCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/FieldTextsCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/FilterChipCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/FormScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/HorizontalPager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/ImageCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/ImagenMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/RoutinesListItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/TextCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/composables/VerRutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/SimpleFitScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/UiStateConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/MaquinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ValidacionProfileUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ValidadorProfile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/ValidacionRegisterAccountInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/ValidadorRegisterAccountInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/components/RegisterAccountInfoForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidacionLoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidadorLogin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/components/LoginForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/ValidacionRegisterProfileInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/ValidadorRegisterProfileInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/components/RegisterProfileInfoForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/AddRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/HomeRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/LoginRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/ProfileRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/RegisterAccountInfoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/RegisterProfileInfoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/RoutinesRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/SimpleFitNavHost.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/VerEntrenamientoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/navigation/VerRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/views/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/device/RegistroContratosCompose.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/imagenes/Imagenes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/Validacion.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/ValidacionCompuesta.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/Validador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/ValidadorCompuesto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorAltura.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorCorreo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorCorreoEnUso.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMaximaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMinimaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroEntero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroReal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorPeso.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTelefono.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTextoNoVacio.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/compartir_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/consejos_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/consejos_background_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/definicion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/hipertrofia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/jalon_al_pecho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mantenimiento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mantenimiento2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/recuperacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/simplefit_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ver_entrenamiento_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/bayon_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_mediumitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/roboto_thinitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/robotoblack.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/simplefit/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/androidTest/java/com/simplefit/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/SimpleFitApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/ConsejosRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/MaquinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RepositoryConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RutinaMaquinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/RutinasRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/UsuarioRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/UsuarioRutinaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/ConsejosDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/ConsejosMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/MaquinasDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/MaquinasMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinaMaquinaDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinaMaquinaMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinasDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/RutinasMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioRutinaDaoMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/mocks/UsuarioRutinaMock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/RoomConverters.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/SimpleFitDB.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/consejos/ConsejosDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/consejos/ConsejosEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/maquinas/MaquinasDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/maquinas/MaquinasEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinaMaquina/RutinaMaquinaDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinaMaquina/RutinaMaquinaEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinas/RutinasDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/rutinas/RutinasEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuario/UsuarioDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuario/UsuarioEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuarioRutina/UsuarioRutinaDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/data/room/usuarioRutina/UsuarioRutinaEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/di/AppModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Consejo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Maquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/RutinaMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Rutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/Usuario.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/models/UsuarioRutina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/Bars.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/Buttons.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/CheckBoxCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/ExposedDropDownMenuCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/FieldTextsCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/FilterChipCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/FormScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/HorizontalPager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/ImagenMaquina.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/RoutinesListItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/TextCommon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/composables/VerRutinas.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/SimpleFitScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/UiStateConverter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/MaquinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/crearRutina/AddRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ProfileViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ValidacionProfileUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/profile/ValidadorProfile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verEntrenamiento/VerEntrenamientoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/mainApp/verRutina/VerRutinaViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/RegisterAccountInfoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/ValidacionRegisterAccountInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/ValidadorRegisterAccountInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/accountInfoRegister/components/RegisterAccountInfoForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/LoginViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidacionLoginUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/ValidadorLogin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/login/components/LoginForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/RegisterProfileInfoViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/ValidacionRegisterProfileInfoUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/ValidadorRegisterProfileInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/features/userAuthentication/profileInfoRegister/components/RegisterProfileInfoForm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/AddRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/HomeRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/LoginRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/ProfileRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/RegisterAccountInfoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/RegisterProfileInfoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/RoutinesRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/SimpleFitNavHost.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/VerEntrenamientoRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/navigation/VerRutinaRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/ui/views/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/device/RegistroContratosCompose.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/imagenes/Imagenes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/Validacion.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/ValidacionCompuesta.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/Validador.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/ValidadorCompuesto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorAltura.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorCorreo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMaximaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorLongitudMinimaTexto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroEntero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorNumeroReal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorPeso.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTelefono.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/java/com/simplefit/utilities/validacion/validadores/ValidadorTextoNoVacio.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/compartir_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/consejos_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/consejos_background_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/definicion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/hipertrofia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/jalon_al_pecho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/mantenimiento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/mantenimiento2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/recuperacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/simplefit_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/drawable/ver_entrenamiento_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/bayon_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_blackitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_lightitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_mediumitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/roboto_thinitalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/font/robotoblack.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/app/src/test/java/com/simplefit/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFit_AndroidApp_Pruebas_Room/settings.gradle.kts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Marcos\.android\avd\Pixel_3a_API_33.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimpleFit_AndroidApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimpleFit_AndroidApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimpleFit_AndroidApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SimpleFit_AndroidApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2cxvvl2bmm9RJK878C7g93y8Sxx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PROJECT_TRUSTED_KEY": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "ToolWindowLogcat.ShowToolbar": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_directory_selection": "C:/Users/Marcos/Documents/GitHub/SimpleFit/SimpleFit_AndroidApp/app/src/main/res/drawable",
+    "last_opened_file_path": "C:/Users/Marcos/Documents/GitHub/SimpleFit/Android Simplefit/SimpleFit_AndroidApp",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\utilities\device" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\ui\composables" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\data\room\consejos" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\ui\features\mainApp\verEntrenamiento" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\res\drawable" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\ui\features" />
+      <recent name="C:\Users\Marcos\Documents\GitHub\SimpleFit\SimpleFit_AndroidApp\app\src\main\java\com\simplefit\ui\features\mainApp" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.simplefit.ui.features.mainApp" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.simplefit.ui.features.mainApp" />
+      <recent name="com.simplefit.models.modelsPrueba" />
+      <recent name="com.simplefit.data.mocks.mocksPrueba" />
+      <recent name="com.simplefit.data.services.usuario" />
+      <recent name="com.simplefit.ui.views" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.simplefit.data.services.consejo" />
+      <recent name="com.simplefit.data.services.maquina" />
+      <recent name="com.simplefit.data.services.rutina" />
+      <recent name="com.simplefit.data.services.rutinamaquina" />
+      <recent name="com.simplefit.data.services.usuariorutina" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="SimpleFit_AndroidApp.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e13dc0a-d1ea-4398-ae25-2765707918bf" name="Changes" comment="" />
+      <created>1709066277915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709066277915</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/home/HomeViewModel.kt</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="AndroidRunConfigurationType">
+        <watch expression="usuario" />
+        <watch expression="((androidx.compose.runtime.ParcelableSnapshotMutableState)((VerRutinaViewModel)this).verRutinaUiState$delegate).ejercicio" custom="com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel,androidx.compose.runtime.ParcelableSnapshotMutableState" />
+        <watch expression="this.$verRoutinesEvent" />
+        <watch expression="this" />
+      </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/app/src/main/java/com/simplefit/ui/features/mainApp/routines/RoutinesViewModel.kt" line="24">
+        <watch expression="(this as RoutinesViewModel).userid" language="kotlin" custom="import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel" />
+      </inline-watch>
+    </watches-manager>
+  </component>
+</project>
