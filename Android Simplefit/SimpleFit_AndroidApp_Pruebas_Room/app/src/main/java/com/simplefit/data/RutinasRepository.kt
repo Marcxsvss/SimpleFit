@@ -3,7 +3,7 @@ package com.simplefit.data
 import com.simplefit.data.room.rutinas.RutinasDao
 import com.simplefit.data.room.usuario.UsuarioDao
 import com.simplefit.models.Rutinas
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.toRutinasUiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -14,7 +14,7 @@ class RutinasRepository @Inject constructor(
     private val usuarioRutinasRepository: UsuarioRutinaRepository,
     private val usuarioDao: UsuarioDao,
 ) {
-    suspend fun get(userid: String): List<RoutinesUiState> =
+    suspend fun get(userid: String): List<RutinasUiState> =
         withContext(Dispatchers.IO)
         {
             val rutinaState = usuarioDao.get(userid).rutinaState //rutinaState es el id de la rutina que el usuario tiene seleccionada

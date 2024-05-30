@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.profile
+package com.simplefit.ui.features.mainApp.perfil
 
 import android.util.Range
 import com.pmdm.tienda.utilities.validacion.Validador

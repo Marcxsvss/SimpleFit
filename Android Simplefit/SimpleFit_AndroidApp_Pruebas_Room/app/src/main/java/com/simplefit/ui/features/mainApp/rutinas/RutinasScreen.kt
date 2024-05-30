@@ -1,7 +1,6 @@
-package com.simplefit.ui.features.mainApp.routines
+package com.simplefit.ui.features.mainApp.rutinas
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,9 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
@@ -27,21 +24,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simplefit.R
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material3.Snackbar
 import androidx.compose.runtime.LaunchedEffect
 import com.simplefit.ui.composables.RutinasListItem
@@ -49,11 +38,11 @@ import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun RoutinesScreen(
-    rutinasState: List<RoutinesUiState>,
-    rutinaSeleccionadaState: RoutinesUiState?,
-    onRutinaEvent: (RoutinesEvent) -> Unit,
-    onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
+fun RutinasScreen(
+    rutinasState: List<RutinasUiState>,
+    rutinaSeleccionadaState: RutinasUiState?,
+    onRutinaEvent: (RutinasEvent) -> Unit,
+    onNavigateToVerRutina: ((rutina: RutinasUiState) -> Unit)? = null,
     onNavigateToAddRutina: ((userid: String) -> Unit)? = null,
     mostrarSnack: Boolean,
     onMostrarSnackbar: () -> Unit
@@ -87,7 +76,7 @@ fun RoutinesScreen(
                     )
                     IconButton(onClick = {
                         onRutinaEvent(
-                            RoutinesEvent.onAddClicked(
+                            RutinasEvent.onAddClicked(
                                 onNavigateToAddRutina
                             )
                         )
@@ -119,7 +108,7 @@ fun RoutinesScreen(
                         }
                     }
                     if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
-                        IconButton(onClick = { onRutinaEvent(RoutinesEvent.onDeleteClicked) })
+                        IconButton(onClick = { onRutinaEvent(RutinasEvent.onDeleteClicked) })
                         {
                             Icon(
                                 tint = Color(0xFFDAB338),
@@ -127,7 +116,7 @@ fun RoutinesScreen(
                                 contentDescription = "Eliminar Rutina",
                             )
                         }
-                        IconButton(onClick = { onRutinaEvent(RoutinesEvent.onCancelClicked) })
+                        IconButton(onClick = { onRutinaEvent(RutinasEvent.onCancelClicked) })
                         {
                             Icon(
                                 tint = Color(0xFFDAB338),
@@ -151,7 +140,7 @@ fun RoutinesScreen(
                             RutinasListItem(
                                 onVerRutinaClicked = {
                                     onRutinaEvent(
-                                        RoutinesEvent.onVerClicked(
+                                        RutinasEvent.onVerClicked(
                                             onNavigateToVerRutina
                                         )
                                     )
@@ -162,7 +151,7 @@ fun RoutinesScreen(
                                     ?: false,
                                 onRutinaClicked = {
                                     onRutinaEvent(
-                                        RoutinesEvent.onRutinaClicked(
+                                        RutinasEvent.onRutinaClicked(
                                             rutina.rutinaid
                                         )
                                     )

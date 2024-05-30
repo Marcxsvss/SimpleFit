@@ -31,7 +31,7 @@ import com.simplefit.ui.composables.ImageSelector
 import com.simplefit.R
 import com.simplefit.ui.composables.HeaderConsejos
 import com.simplefit.ui.composables.HomeButton
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import kotlinx.coroutines.delay
 import java.util.Calendar
 import java.util.Locale
@@ -48,7 +48,7 @@ fun obtenerDiaDeLaSemana(): String {
 fun HomeScreen(
     homeUiState: HomeUiState,
     onHomeEvent: (HomeEvent) -> Unit,
-    onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
+    onNavigateToVerEntrenamiento: ((rutina: RutinasUiState) -> Unit),
     consejos: List<String>,
     mostrarSnack: Boolean,
     onMostrarSnackbar: () -> Unit

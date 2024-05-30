@@ -4,8 +4,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.simplefit.ui.features.mainApp.profile.ProfileScreen
-import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
+import com.simplefit.ui.features.mainApp.perfil.ProfileScreen
+import com.simplefit.ui.features.mainApp.perfil.ProfileViewModel
 
 const val ProfileRoute = "Profile"
 

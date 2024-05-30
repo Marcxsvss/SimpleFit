@@ -7,18 +7,16 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaScreen
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaViewModel
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.mainApp.verRutina.VerRoutinesScreen
-import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
+import com.simplefit.ui.features.mainApp.addRutina.AddRutinaScreen
+import com.simplefit.ui.features.mainApp.addRutina.AddRutinaViewModel
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 const val AddRutinaRoute = "AddRutina"
 const val AddRutinaParameterName = "userid"
 
 fun NavGraphBuilder.addRutinaScreen(
     addRutinaViewModel: AddRutinaViewModel,
-    onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToVerRutina:((rutina: RutinasUiState) -> Unit)? = null,
     onNavigateUp: () -> Unit
 ) {
     composable(route = "$AddRutinaRoute/{$AddRutinaParameterName}",

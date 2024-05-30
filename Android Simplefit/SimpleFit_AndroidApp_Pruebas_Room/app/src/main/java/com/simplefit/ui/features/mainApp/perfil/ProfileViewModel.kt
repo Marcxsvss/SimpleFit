@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.profile
+package com.simplefit.ui.features.mainApp.perfil
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,9 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.UsuarioRepository
-import com.simplefit.ui.features.userAuthentication.profileInfoRegister.ValidacionRegisterProfileInfoUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

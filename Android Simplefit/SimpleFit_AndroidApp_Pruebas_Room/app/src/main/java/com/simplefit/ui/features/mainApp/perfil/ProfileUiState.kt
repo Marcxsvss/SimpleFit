@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.profile
+package com.simplefit.ui.features.mainApp.perfil
 
 data class ProfileUiState(
     var email : String,

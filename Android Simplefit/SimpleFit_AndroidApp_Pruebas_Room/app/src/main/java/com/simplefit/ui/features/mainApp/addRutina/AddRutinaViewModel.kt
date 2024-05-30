@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.crearRutina
+package com.simplefit.ui.features.mainApp.addRutina
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,8 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
-import com.simplefit.data.UsuarioRepository
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -17,9 +16,9 @@ import javax.inject.Inject
 class AddRutinaViewModel @Inject constructor(
     private val rutinasRepository: RutinasRepository
 ) : ViewModel() {
-    var rutinaUiState by mutableStateOf(RoutinesUiState())
+    var rutinaUiState by mutableStateOf(RutinasUiState())
         private set
-    var rutinasState by mutableStateOf(listOf<RoutinesUiState>())
+    var rutinasState by mutableStateOf(listOf<RutinasUiState>())
         private set
     var userid by mutableStateOf("")
     private set
@@ -51,7 +50,7 @@ class AddRutinaViewModel @Inject constructor(
                 }
             }
             is AddRutinaEvent.onUnSelectClicked -> {
-                rutinaUiState = RoutinesUiState()
+                rutinaUiState = RutinasUiState()
             }
             is AddRutinaEvent.onOrdenarPorFrecuencia -> {
                 viewModelScope.launch { rutinasState = rutinasRepository.get().map { it.toRutinasUiState("UnAdded",userid) }.sortedBy { it.frecuencia } }

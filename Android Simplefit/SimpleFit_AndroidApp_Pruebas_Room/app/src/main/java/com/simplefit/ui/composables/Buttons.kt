@@ -1,7 +1,5 @@
 package com.simplefit.ui.composables
 
-import android.content.Context
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,19 +27,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pmdm.agenda.utilities.device.compartirEnlace
 import com.simplefit.R
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
 import com.simplefit.ui.features.mainApp.home.HomeEvent
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import kotlinx.coroutines.launch
 
 @Composable
@@ -72,7 +67,7 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RoutinesUiState) -> Unit)? = null)
+fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RutinasUiState) -> Unit)? = null)
 {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current

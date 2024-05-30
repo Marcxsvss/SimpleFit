@@ -8,10 +8,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,8 +20,6 @@ import com.pmdm.tienda.utilities.validacion.Validacion
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxEdad
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSexo
 import com.simplefit.ui.composables.ExposedDropdownMenuBoxSomatotipo
-import com.simplefit.ui.features.mainApp.profile.ValidacionProfileUiState
-import kotlinx.coroutines.delay
 
 @Composable
 fun RegisterProfileInfoForm(

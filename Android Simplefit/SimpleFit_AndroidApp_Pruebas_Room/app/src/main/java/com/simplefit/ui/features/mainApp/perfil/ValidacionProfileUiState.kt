@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.profile
+package com.simplefit.ui.features.mainApp.perfil
 
 import com.pmdm.tienda.utilities.validacion.Validacion
 import com.pmdm.tienda.utilities.validacion.ValidacionCompuesta

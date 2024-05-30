@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simplefit.data.MaquinasRepository
 import com.simplefit.ui.features.mainApp.MaquinaUiState
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.toMaquinaUiState
 import com.simplefit.ui.features.toVerEntrenamientoUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,7 +31,7 @@ class VerEntrenamientoViewModel @Inject constructor(
         mostrarDialog = it
     })
     var maquinaUiState by mutableStateOf(MaquinaUiState())
-    fun setRutina(rutina : RoutinesUiState)
+    fun setRutina(rutina : RutinasUiState)
     {
         viewModelScope.launch {
             userid = rutina.userid

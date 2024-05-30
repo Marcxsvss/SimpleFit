@@ -1,6 +1,5 @@
 package com.simplefit.ui.features.mainApp.home
 
-import android.net.Uri
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,13 +11,10 @@ import com.simplefit.data.ConsejosRepository
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.models.Usuario
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaEvent
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -28,7 +24,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     var homeUiState by mutableStateOf(HomeUiState())
         private set
-    var rutinaUiState : RoutinesUiState? by mutableStateOf(null)
+    var rutinaUiState : RutinasUiState? by mutableStateOf(null)
         private set
     var consejos : List<String> = listOf()
 

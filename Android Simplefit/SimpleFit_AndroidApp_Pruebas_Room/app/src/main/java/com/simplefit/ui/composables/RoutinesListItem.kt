@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -27,16 +26,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
 
-import androidx.compose.material.icons.filled.Delete
-
 import androidx.compose.material.icons.filled.Face2
-import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -46,7 +40,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -55,12 +48,11 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 @Composable
 fun DatosRutina(
@@ -139,7 +131,7 @@ fun DatosRutina(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ContenidoPrincipalCardRutina(
-    rutinaUiState: RoutinesUiState,
+    rutinaUiState: RutinasUiState,
     seleccionadoState: Boolean,
     modifier: Modifier = Modifier,
     onVerRutinaClicked: () -> Unit? = {}
@@ -237,7 +229,7 @@ fun ContenidoPrincipalCardRutina(
 fun RutinasListItem2(
     onVerRutinaClicked: () -> Unit? = {},
     modifier: Modifier = Modifier,
-    rutinaUiState: RoutinesUiState,
+    rutinaUiState: RutinasUiState,
     seleccionadoState: Boolean,
     onRutinaClicked: (Int) -> Unit
 ) {
@@ -275,7 +267,7 @@ fun RutinasListItem2(
 fun RutinasListItem(
     onVerRutinaClicked: () -> Unit,
     modifier: Modifier = Modifier,
-    rutinaUiState: RoutinesUiState,
+    rutinaUiState: RutinasUiState,
     seleccionadoState: Boolean,
     onRutinaClicked: (Int) -> Unit,
 ) {

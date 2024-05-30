@@ -5,7 +5,7 @@ import com.simplefit.models.Maquina
 import com.simplefit.models.Rutinas
 import com.simplefit.models.Usuario
 import com.simplefit.models.UsuarioRutina
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoUiState
 import com.simplefit.ui.features.mainApp.MaquinaUiState
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaUiState
@@ -46,7 +46,7 @@ fun RegisterAccountInfoUiState.toUsuario(): Usuario = Usuario(
     0,
     this.foto
 )
-fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RoutinesUiState = RoutinesUiState(
+fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): RutinasUiState = RutinasUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,
@@ -56,7 +56,7 @@ fun Rutinas.toRutinasUiState(state : String = "",userid : String = ""): Routines
     estado = state,
     userid= userid
 )
-fun RoutinesUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
+fun RutinasUiState.toVerRutinaUiState(): VerRutinaUiState = VerRutinaUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo.ifBlank { "Plan de Entrenamiento" },
     descripcion =if(this.descripcion.isBlank()) "Descanso" else this.descripcion,
@@ -75,7 +75,7 @@ fun VerRutinaUiState.toUsuarioRutina(userid : String) = UsuarioRutina(
     userid = userid,
     rutinaid = this.rutinaid)
 
-fun RoutinesUiState.toVerEntrenamientoUiState() = VerEntrenamientoUiState(
+fun RutinasUiState.toVerEntrenamientoUiState() = VerEntrenamientoUiState(
     rutinaid = this.rutinaid,
     titulo = this.titulo,
     descripcion = this.descripcion,

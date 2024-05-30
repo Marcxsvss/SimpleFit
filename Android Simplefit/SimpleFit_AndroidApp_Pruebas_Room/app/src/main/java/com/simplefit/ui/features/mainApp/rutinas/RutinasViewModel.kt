@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.routines
+package com.simplefit.ui.features.mainApp.rutinas
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -8,20 +8,18 @@ import androidx.lifecycle.viewModelScope
 import com.simplefit.data.RutinasRepository
 import com.simplefit.data.UsuarioRepository
 import com.simplefit.data.UsuarioRutinaRepository
-import com.simplefit.data.toRutinasEntity
-import com.simplefit.ui.features.toRutinasUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
-class RoutinesViewModel @Inject constructor(
+class RutinasViewModel @Inject constructor(
     private val rutinasRepository : RutinasRepository,
     private val usuarioRutinaRepository: UsuarioRutinaRepository,
     private val usuarioRepository: UsuarioRepository
 ) : ViewModel() {
-    var routinesUiState by mutableStateOf(RoutinesUiState())
+    var routinesUiState by mutableStateOf(RutinasUiState())
         private set
-    var routinesList by mutableStateOf(listOf<RoutinesUiState>())
+    var routinesList by mutableStateOf(listOf<RutinasUiState>())
         private set
     var userid by mutableStateOf("")
     private set
@@ -34,22 +32,22 @@ class RoutinesViewModel @Inject constructor(
         this.userid = userid
         viewModelScope.launch {
             routinesList = rutinasRepository.get(userid)
-            routinesUiState = RoutinesUiState()
+            routinesUiState = RutinasUiState()
         }
 
     }
-    fun onRoutinesEvent(routinesEvent: RoutinesEvent) {
+    fun onRoutinesEvent(routinesEvent: RutinasEvent) {
         when (routinesEvent) {
-            is RoutinesEvent.onRutinaClicked -> {
+            is RutinasEvent.onRutinaClicked -> {
                 routinesUiState = routinesList.find { it.rutinaid == routinesEvent.rutinaid }!!
             }
-            is RoutinesEvent.onAddClicked -> {
+            is RutinasEvent.onAddClicked -> {
                 routinesEvent.onNavigateToAddRutina?.let { it(userid) }
             }
-            is RoutinesEvent.onVerClicked -> {
+            is RutinasEvent.onVerClicked -> {
                 routinesEvent.onNavigateToVerRutina?.let { it(routinesUiState) }
             }
-            is RoutinesEvent.onDeleteClicked -> {
+            is RutinasEvent.onDeleteClicked -> {
                 viewModelScope.launch {
                     if(usuarioRepository.get(userid)?.rutinaState == routinesUiState.rutinaid)
                         onMostrarSnackBar()
@@ -57,13 +55,13 @@ class RoutinesViewModel @Inject constructor(
                     {
                         usuarioRutinaRepository.delete(routinesUiState.userid, routinesUiState.rutinaid)
                         routinesList = rutinasRepository.get(userid)
-                        routinesUiState = RoutinesUiState()
+                        routinesUiState = RutinasUiState()
                     }
 
                 }
             }
-            is RoutinesEvent.onCancelClicked -> {
-                routinesUiState = RoutinesUiState()
+            is RutinasEvent.onCancelClicked -> {
+                routinesUiState = RutinasUiState()
             }
 
             else -> {}

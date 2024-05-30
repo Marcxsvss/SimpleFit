@@ -9,7 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.simplefit.ui.features.mainApp.home.HomeScreen
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 
 const val HomeRoute = "Home"
@@ -17,7 +17,7 @@ const val HomeParameterName = "email"
 
 fun NavGraphBuilder.homeScreen(
     homeViewModel: HomeViewModel,
-    onNavigateToVerEntrenamiento: ((rutina: RoutinesUiState) -> Unit),
+    onNavigateToVerEntrenamiento: ((rutina: RutinasUiState) -> Unit),
 
     ) {
     composable(

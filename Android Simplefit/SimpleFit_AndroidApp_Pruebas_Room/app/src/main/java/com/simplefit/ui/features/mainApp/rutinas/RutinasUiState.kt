@@ -1,11 +1,10 @@
-package com.simplefit.ui.features.mainApp.routines
+package com.simplefit.ui.features.mainApp.rutinas
 
 import android.os.Parcelable
-import com.simplefit.models.Rutinas
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class RoutinesUiState(
+data class RutinasUiState(
     val rutinaid: Int,
     val titulo : String,
     val descripcion : String,

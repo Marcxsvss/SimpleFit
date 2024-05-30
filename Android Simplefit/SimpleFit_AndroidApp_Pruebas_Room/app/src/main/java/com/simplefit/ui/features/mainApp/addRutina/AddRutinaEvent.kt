@@ -1,11 +1,11 @@
-package com.simplefit.ui.features.mainApp.crearRutina
+package com.simplefit.ui.features.mainApp.addRutina
 
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 sealed interface AddRutinaEvent {
     data class onVolverAtras (val onNavigateToRutinas:(()->Unit)?) : AddRutinaEvent
 
-    data class onVerClicked(val onNavigateToVerRutina: ((RoutinesUiState) -> Unit)? = null) : AddRutinaEvent
+    data class onVerClicked(val onNavigateToVerRutina: ((RutinasUiState) -> Unit)? = null) : AddRutinaEvent
     data object onTodasClicked : AddRutinaEvent
 
     data object onUnSelectClicked : AddRutinaEvent

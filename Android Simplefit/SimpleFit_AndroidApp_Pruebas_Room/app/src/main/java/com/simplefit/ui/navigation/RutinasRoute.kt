@@ -1,22 +1,18 @@
 package com.simplefit.ui.navigation
 
-import android.util.Log
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
-import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.routines.RoutinesScreen
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
-import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
+import com.simplefit.ui.features.mainApp.rutinas.RutinasScreen
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasViewModel
 
 const val RoutinesRoute = "Routines"
 
-fun NavGraphBuilder.routinesScreen(
-    routinesViewModel: RoutinesViewModel,
-    onNavigateToVerRutina:((rutina: RoutinesUiState) -> Unit)? = null,
+fun NavGraphBuilder.rutinasScreen(
+    routinesViewModel: RutinasViewModel,
+    onNavigateToVerRutina:((rutina: RutinasUiState) -> Unit)? = null,
     onNavigateToAddRutina: ((userid: String) -> Unit)? = null
 
 ) {
@@ -24,7 +20,7 @@ fun NavGraphBuilder.routinesScreen(
     composable(route = RoutinesRoute) {
 
 
-        RoutinesScreen( rutinasState = routinesViewModel.routinesList,
+        RutinasScreen( rutinasState = routinesViewModel.routinesList,
             rutinaSeleccionadaState = routinesViewModel.routinesUiState,
             onRutinaEvent = routinesViewModel::onRoutinesEvent,
             onNavigateToVerRutina = onNavigateToVerRutina,

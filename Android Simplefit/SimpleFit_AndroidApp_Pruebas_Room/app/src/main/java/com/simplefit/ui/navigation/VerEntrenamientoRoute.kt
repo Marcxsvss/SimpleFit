@@ -7,11 +7,9 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoScreen
 import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoViewModel
-import com.simplefit.ui.features.mainApp.verRutina.VerRoutinesScreen
-import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 
 const val VerEntrenamientoRoute = "VerEntrenamiento"
 const val VerEntrenamientoParameterName = "rutinaid"
@@ -40,7 +38,7 @@ fun NavGraphBuilder.verEntrenamientoScreen(
     }
 
 }
-fun NavController.navigateToVerEntrenamiento(rutina: RoutinesUiState, navOptions: NavOptions? = null){
+fun NavController.navigateToVerEntrenamiento(rutina: RutinasUiState, navOptions: NavOptions? = null){
     val ruta = VerEntrenamientoRoute
     Log.d("Navegacion", "Navegando a $ruta")
     this.navigate("$ruta/$rutina", navOptions)

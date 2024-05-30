@@ -5,10 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.simplefit.ui.features.mainApp.crearRutina.AddRutinaViewModel
+import com.simplefit.ui.features.mainApp.addRutina.AddRutinaViewModel
 import com.simplefit.ui.features.mainApp.home.HomeViewModel
-import com.simplefit.ui.features.mainApp.profile.ProfileViewModel
-import com.simplefit.ui.features.mainApp.routines.RoutinesViewModel
+import com.simplefit.ui.features.mainApp.perfil.ProfileViewModel
+import com.simplefit.ui.features.mainApp.rutinas.RutinasViewModel
 import com.simplefit.ui.features.mainApp.verEntrenamiento.VerEntrenamientoViewModel
 import com.simplefit.ui.features.mainApp.verRutina.VerRutinaViewModel
 import com.simplefit.ui.features.userAuthentication.accountInfoRegister.RegisterAccountInfoViewModel
@@ -25,7 +25,7 @@ fun SimpleFitNavHost(
     val accountViewModel = hiltViewModel<RegisterAccountInfoViewModel>()
     val registerProfileViewModel = hiltViewModel<RegisterProfileInfoViewModel>()
     val homeViewModel = hiltViewModel<HomeViewModel>()
-    val routinesViewModel = hiltViewModel<RoutinesViewModel>()
+    val routinesViewModel = hiltViewModel<RutinasViewModel>()
     val profileViewModel = hiltViewModel<ProfileViewModel>()
     val verRutinaViewModel = hiltViewModel<VerRutinaViewModel>()
     val addRutinaViewModel = hiltViewModel<AddRutinaViewModel>()
@@ -78,7 +78,7 @@ fun SimpleFitNavHost(
                 navController.navigateToVerEntrenamiento(rutinaUiState)
             }
         )
-        routinesScreen(routinesViewModel = routinesViewModel,
+        rutinasScreen(routinesViewModel = routinesViewModel,
             onNavigateToAddRutina = { userid ->
                 addRutinaViewModel.setRutinas(userid)
                 navController.navigateToAddRutina(userid)

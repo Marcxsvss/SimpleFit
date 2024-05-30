@@ -1,8 +1,6 @@
-package com.simplefit.ui.features.mainApp.crearRutina
+package com.simplefit.ui.features.mainApp.addRutina
 
-import android.graphics.DashPathEffect
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,59 +9,45 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
-import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PaintingStyle.Companion.Stroke
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.PathEffect
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
-import com.simplefit.models.Rutinas
 import com.simplefit.ui.composables.CloudButton
-import com.simplefit.ui.composables.RutinasListItem
 import com.simplefit.ui.composables.RutinasListItem2
-import com.simplefit.ui.features.mainApp.routines.RoutinesEvent
-import com.simplefit.ui.features.mainApp.routines.RoutinesUiState
+import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AddRutinaScreen(
-    rutinasState: List<RoutinesUiState>,
-    rutinaSeleccionadaState: RoutinesUiState?,
+    rutinasState: List<RutinasUiState>,
+    rutinaSeleccionadaState: RutinasUiState?,
     onNavigateUp: () -> Unit,
     onAddRutinaEvent: (AddRutinaEvent) -> Unit,
     mostrarDialog: Boolean,
     onMostrarDialog: (Boolean) -> Unit,
-    onNavigateToVerRutina: ((rutina: RoutinesUiState) -> Unit)? = null,
+    onNavigateToVerRutina: ((rutina: RutinasUiState) -> Unit)? = null,
 
 
-) {
+    ) {
 
     Surface(
 

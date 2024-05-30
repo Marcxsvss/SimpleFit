@@ -1,4 +1,4 @@
-package com.simplefit.ui.features.mainApp.profile
+package com.simplefit.ui.features.mainApp.perfil
 
 sealed interface ProfileEvent {
     data class onClickLogOut(val email : String) : ProfileEvent
