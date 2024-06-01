@@ -11,10 +11,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
+//import androidx.compose.foundation.layout.FlowColumnScopeInstance.align
 
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -61,68 +63,89 @@ fun DatosRutina(
     frecuencia: Int,
     diasDescanso: Int,
     dificultad: String,
-    estado : String
+    estado : String,
+    seleccionadoState: Boolean,
+    onVerRutinaClicked: () -> Unit? = {}
 ) {
-    Column(
-        modifier = modifier.then(
-            if (titulo.isNotBlank()) {
-                Modifier.width(172.dp)
-            } else {
-                Modifier
-                    .width(250.dp)
-                    .padding(start = 12.dp, top = 10.dp)
-            }
-        ),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.Start
-    )
+    Row()
     {
-        Text(
-            modifier = modifier.padding(top = 7.dp),
-            text = titulo,
-            style = MaterialTheme.typography.labelMedium,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            color = Color.White,
-            fontSize = 20.sp,
-            fontFamily = FontFamily(Font(R.font.roboto_medium)),
-            fontStyle = FontStyle.Normal
+
+
+        Column(
+            modifier = modifier.then(
+//                if (titulo.isNotBlank()) {
+                    Modifier.fillMaxWidth(0.50f)
+//                } else {
+//                    Modifier
+//                        .width(250.dp)
+//                        .padding(start = 12.dp, top = 10.dp)
+//                }
+            ),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
         )
-        Row()
         {
             Text(
-                text = if (titulo.isNotBlank()) "$dificultad | " else "",
+                modifier = modifier.padding(top = 7.dp),
+                text = titulo,
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                color = Color.White,
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.roboto_medium)),
                 fontStyle = FontStyle.Normal
             )
+            Row()
+            {
+                Text(
+                    text = if (titulo.isNotBlank()) "$dificultad | " else "",
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color(0xFF89602F),
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    fontStyle = FontStyle.Normal
+                )
 
 
-            Text(
-                text = "Frecuencia $frecuencia" + if (titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
-                style = MaterialTheme.typography.labelMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                fontStyle = FontStyle.Normal,
+                Text(
+                    text = "Frecuencia $frecuencia" + if (titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color(0xFF89602F),
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    fontStyle = FontStyle.Normal,
+
+                    )
+            }
+            if (estado == "current") {
+                Text(
+                    text = "ACTIVA",
+                    color = Color(0xFF89602F),
+                    fontSize = 15.sp,
+                    fontStyle = FontStyle.Normal,
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    modifier = Modifier
 
                 )
+            }
         }
-        if (estado == "current") {
-            Text(
-                text = "ACTIVA",
-                color = Color(0xFF89602F),
-                fontSize = 15.sp,
-                fontStyle = FontStyle.Normal,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                modifier = Modifier
-
-            )
-        }
+        Box(modifier = Modifier.fillMaxWidth(0.25f).fillMaxHeight())
+                    {
+                        if (seleccionadoState) {
+                            Icon(
+                                Icons.AutoMirrored.Filled.ArrowForwardIos,
+                                contentDescription = "Flecha Derecha",
+                                tint = Color.White,
+                                modifier = Modifier.align(Alignment.Center)
+                                    //.padding(top = 28.dp, start = 25.dp)
+                                    .clickable {
+                                        onVerRutinaClicked()
+                                    })
+                        }
+                    }
     }
 
 
@@ -160,8 +183,8 @@ fun ContenidoPrincipalCardRutina(
                     .fillMaxWidth()
                     .padding(5.dp)
             ),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            //verticalAlignment = Alignment.CenterVertically,
+            //horizontalArrangement = Arrangement.SpaceBetween
         ) {
             FlowRow(
                 horizontalArrangement = Arrangement.Center
@@ -169,7 +192,9 @@ fun ContenidoPrincipalCardRutina(
                 if (rutinaUiState.descripcion.isNotBlank()) {
                     Box(
                         modifier = Modifier
-                            .size(80.dp, 80.dp)
+                            .fillMaxWidth(0.25f)
+                            //.size(80.dp, 80.dp)
+                            //.size(0.25f)
                             .padding(8.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -201,22 +226,27 @@ fun ContenidoPrincipalCardRutina(
                     frecuencia = rutinaUiState.frecuencia,
                     diasDescanso = rutinaUiState.diasDescanso,
                     dificultad = rutinaUiState.dificultad,
-                    estado = rutinaUiState.estado
+                    estado = rutinaUiState.estado,
+                    seleccionadoState = seleccionadoState,
+                    onVerRutinaClicked = onVerRutinaClicked
+
                 )
-                if (seleccionadoState) {
-                    Box(modifier = Modifier.size(70.dp))
-                    {
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowForwardIos,
-                            contentDescription = "Flecha Derecha",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .padding(top = 28.dp, start = 25.dp)
-                                .clickable {
-                                    onVerRutinaClicked()
-                                })
-                    }
-                }
+
+//                    Box(modifier = Modifier.size(70.dp))
+//                    {
+//                        if (seleccionadoState) {
+//                            Icon(
+//                                Icons.AutoMirrored.Filled.ArrowForwardIos,
+//                                contentDescription = "Flecha Derecha",
+//                                tint = Color.White,
+//                                modifier = Modifier
+//                                    //.padding(top = 28.dp, start = 25.dp)
+//                                    .clickable {
+//                                        onVerRutinaClicked()
+//                                    })
+//                        }
+//                    }
+
 
 
             }
@@ -285,7 +315,7 @@ fun RutinasListItem(
         ),
     ) {
 
-        Row() {
+
             ContenidoPrincipalCardRutina(
                 rutinaUiState = rutinaUiState,
                 seleccionadoState = seleccionadoState,
@@ -293,7 +323,7 @@ fun RutinasListItem(
             )
 
         }
-    }
+
 }
 
 

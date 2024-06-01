@@ -127,10 +127,10 @@ fun RutinasScreen(
                     }
                 }
 
-                Box(modifier = Modifier.fillMaxWidth().height(100.dp)) {
+                Box(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
 
                     LazyColumn(
-                        contentPadding = PaddingValues(all = 4.dp),
+                        //contentPadding = PaddingValues(all = 4.dp),
                         verticalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         items(
