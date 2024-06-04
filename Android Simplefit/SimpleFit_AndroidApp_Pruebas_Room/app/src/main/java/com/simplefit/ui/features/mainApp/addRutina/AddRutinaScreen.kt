@@ -62,26 +62,7 @@ fun AddRutinaScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         )
         {
-//            Row(horizontalArrangement = Arrangement.Start, modifier = Modifier.fillMaxWidth()) {
 //
-//                IconButton(onClick = { onNavigateUp() }, modifier = Modifier.padding(top = 5.dp, end = 25.dp,start = 5.dp))
-//                {
-//                    Icon(
-//                        tint = Color(0xFFDAB338),
-//                        imageVector = Icons.Filled.ArrowBackIosNew,
-//                        contentDescription = "Volver atras"
-//                    )
-//                }
-//                Text(
-//                    modifier = Modifier.padding(10.dp),
-//                    text = "AÑADIR RUTINA",
-//                    color = Color(0xFFDAB338),
-//                    fontSize = 30.sp,
-//                    fontFamily = FontFamily(
-//                        Font(resId = R.font.roboto_blackitalic)
-//                    )
-//                )
-//            }
             Box(modifier = Modifier.fillMaxWidth()) {
                 IconButton(onClick = { onNavigateUp() }, modifier = Modifier.align(Alignment.CenterStart))
                 {

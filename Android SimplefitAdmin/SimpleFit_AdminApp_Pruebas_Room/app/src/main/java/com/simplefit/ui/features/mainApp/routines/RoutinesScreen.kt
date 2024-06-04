@@ -67,23 +67,28 @@ fun RoutinesScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(20.dp)
         ) {
-            Row(horizontalArrangement =  Arrangement.Start,modifier = Modifier.fillMaxWidth()) {
 
-                IconButton(onClick = { onNavigateUp() })
+            Box(modifier = Modifier.fillMaxWidth()) {
+                IconButton(onClick = { onNavigateUp() }, modifier = Modifier.align(Alignment.CenterStart))
                 {
                     Icon(
                         tint = Color(0xFFDAB338),
                         imageVector = Icons.Filled.ArrowBackIosNew,
-                        contentDescription = "Editar Usuario"
+                        contentDescription = "Volver atras"
                     )
                 }
                 Text(
-                    modifier = Modifier.padding(start = 50.dp,top = 6.dp),
+                    modifier = Modifier.align(Alignment.Center),
                     text = "RUTINAS",
                     color = Color(0xFFDAB338),
                     fontSize = 30.sp,
-                    fontStyle = FontStyle.Italic
+                    fontFamily = FontFamily(
+                        Font(resId = R.font.roboto_blackitalic)
+                    )
                 )
+
+
+
             }
 
             if (rutinaSeleccionadaState!!.descripcion.isBlank()) {

@@ -73,13 +73,7 @@ fun DatosRutina(
 
         Column(
             modifier = modifier.then(
-//                if (titulo.isNotBlank()) {
-                    Modifier.fillMaxWidth(0.50f)
-//                } else {
-//                    Modifier
-//                        .width(250.dp)
-//                        .padding(start = 12.dp, top = 10.dp)
-//                }
+                Modifier.fillMaxWidth(0.50f)
             ),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
@@ -172,8 +166,6 @@ fun ContenidoPrincipalCardRutina(
                     topStart = 10.dp
                 )
             )
-
-
     )
     {
         Row(

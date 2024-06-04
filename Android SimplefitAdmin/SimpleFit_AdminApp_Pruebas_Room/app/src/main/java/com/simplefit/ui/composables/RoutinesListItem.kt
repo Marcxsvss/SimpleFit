@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -71,7 +72,7 @@ fun DatosUsuario(
     modifier: Modifier = Modifier,
     email: String,
     nombre: String,
-    acceso : Int,
+    acceso: Int,
 ) {
     Column(
         modifier = modifier.then(
@@ -111,7 +112,7 @@ fun DatosUsuario(
             )
 
             Text(
-                text = if(acceso == 1) "Administrador" else "Usuario",
+                text = if (acceso == 1) "Administrador" else "Usuario",
                 style = MaterialTheme.typography.labelMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
@@ -126,6 +127,7 @@ fun DatosUsuario(
 
 
 }
+
 @Composable
 fun DatosRutina(
     modifier: Modifier = Modifier,
@@ -133,72 +135,87 @@ fun DatosRutina(
     frecuencia: Int,
     diasDescanso: Int,
     dificultad: String,
-    rutinaid : Int
+    rutinaid: Int,
+    seleccionadoState: Boolean,
+    onVerRutinaClicked: () -> Unit? = {}
 ) {
-    Column(
-        modifier = modifier.then(
-            if (titulo.isNotBlank()) {
-                Modifier.width(200.dp)
-            } else {
-                Modifier
-                    .width(250.dp)
-                    .padding(start = 12.dp, top = 10.dp)
-            }
-        ),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.Start
-    )
+    Row()
     {
-        Row(modifier = Modifier.padding(bottom = 5.dp)) {
-            Text(
-                modifier = modifier.padding(top = 7.dp),
-                text = "ID: $rutinaid  |  ",
-                style = MaterialTheme.typography.labelMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color.White,
-                fontSize = 20.sp,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                fontStyle = FontStyle.Normal
-            )
-            Text(
-                modifier = modifier.padding(top = 7.dp),
-                text = titulo,
-                style = MaterialTheme.typography.labelMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color.White,
-                fontSize = 20.sp,
-                fontFamily = FontFamily(Font(R.font.roboto_medium)),
-                fontStyle = FontStyle.Normal
-            )
-        }
 
-        Row()
+
+        Column(
+            modifier = modifier.then(
+                Modifier.fillMaxWidth(0.7f)
+            ),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
+        )
         {
-            Text(
-                text = if (titulo.isNotBlank()) "$dificultad | " else "",
-                style = MaterialTheme.typography.labelMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                fontStyle = FontStyle.Normal
-            )
-
-
-            Text(
-                text = "Frecuencia $frecuencia" + if (titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
-                style = MaterialTheme.typography.labelMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
-                fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
-                fontStyle = FontStyle.Normal,
-
+            Row(modifier = Modifier.padding(bottom = 5.dp)) {
+                Text(
+                    modifier = modifier.padding(top = 7.dp),
+                    text = "ID: $rutinaid  |  ",
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color.White,
+                    fontSize = 20.sp,
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    fontStyle = FontStyle.Normal
                 )
-        }
+                Text(
+                    modifier = modifier.padding(top = 7.dp),
+                    text = titulo,
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color.White,
+                    fontSize = 20.sp,
+                    fontFamily = FontFamily(Font(R.font.roboto_medium)),
+                    fontStyle = FontStyle.Normal
+                )
+            }
 
+            Row()
+            {
+                Text(
+                    text = if (titulo.isNotBlank()) "$dificultad | " else "",
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    fontStyle = FontStyle.Normal
+                )
+
+
+                Text(
+                    text = "Frecuencia $frecuencia" + if (titulo.isBlank()) " | Desc: $diasDescanso Dias | $dificultad" else "",
+                    style = MaterialTheme.typography.labelMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    color = Color(0xFF89602F),//MaterialTheme.colorScheme.secondary,
+                    fontFamily = FontFamily(Font(R.font.roboto_blackitalic)),
+                    fontStyle = FontStyle.Normal,
+
+                    )
+            }
+
+        }
+        if (seleccionadoState) {
+            Box(modifier = Modifier.fillMaxWidth(0.25f).fillMaxHeight())
+            {
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowForwardIos,
+                    contentDescription = "Flecha Derecha",
+                    tint = Color.White,
+                    modifier = Modifier
+                            .align(Alignment.Center)
+                        .clickable {
+                            onVerRutinaClicked()
+                        })
+            }
+        }
     }
 
 
@@ -234,13 +251,11 @@ fun ContenidoPrincipalCardRutina(
                 Modifier
                     .wrapContentHeight()
                     .fillMaxWidth()
-                    .padding(start = 20.dp, top = 15.dp)
+                    .padding(5.dp)
             ),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.Start
         ) {
-            // Usa FlowRow para que la imagen se superponga a los datos
-            // de contacto cuando no haya suficiente espacio para ambos
             FlowRow(
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -250,29 +265,17 @@ fun ContenidoPrincipalCardRutina(
                     titulo = rutinaUiState.titulo,
                     frecuencia = rutinaUiState.frecuencia,
                     diasDescanso = rutinaUiState.diasDescanso,
-                    dificultad = rutinaUiState.dificultad
+                    dificultad = rutinaUiState.dificultad,
+                    seleccionadoState = seleccionadoState,
+                    onVerRutinaClicked = onVerRutinaClicked
                 )
-
-                if (seleccionadoState) {
-                    Box(modifier = Modifier.size(70.dp))
-                    {
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowForwardIos,
-                            contentDescription = "Flecha Derecha",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .padding(top = 18.dp, start = 40.dp)
-                                .clickable {
-                                    onVerRutinaClicked()
-                                })
-                    }
-                }
 
 
             }
         }
     }
 }
+
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ContenidoCardUsuario(
@@ -350,15 +353,16 @@ fun RutinasListItem(
 
         val context = LocalContext.current
 
-        Row() {
-            ContenidoPrincipalCardRutina(
-                rutinaUiState = rutinaUiState,
-                seleccionadoState = seleccionadoState,
-                onVerRutinaClicked = onVerRutinaClicked
-            )
-        }
+
+        ContenidoPrincipalCardRutina(
+            rutinaUiState = rutinaUiState,
+            seleccionadoState = seleccionadoState,
+            onVerRutinaClicked = onVerRutinaClicked
+        )
+
     }
 }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UsersListItem(
@@ -369,8 +373,10 @@ fun UsersListItem(
     onUserClicked: (String) -> Unit,
 ) {
     ElevatedCard(
-        onClick = { onUserClicked(userUiState.email)
-                  onVerUserClicked()},
+        onClick = {
+            onUserClicked(userUiState.email)
+            onVerUserClicked()
+        },
         modifier = modifier.then(
             Modifier
                 .animateContentSize(

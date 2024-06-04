@@ -85,9 +85,9 @@ fun VerRoutinesScreen(
                     )
                 },
                 text = {
-                    Column {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Image(
-                            modifier = Modifier.size(350.dp),
+                            modifier = Modifier.fillMaxHeight(0.5f),
                             painter = painterFoto,
                             contentDescription = "Imagen ejercicio"
                         )
@@ -96,6 +96,7 @@ fun VerRoutinesScreen(
                             fontFamily = FontFamily(
                                 Font(resId = R.font.roboto_mediumitalic)
                             ),
+                            textAlign = TextAlign.Center,
                         )
                     }
                 },
