@@ -82,7 +82,7 @@ fun RegisterAccountInfoScreen(
             var mensaje = ""
             if (validacionRegisterAccountInfoUiState.hayError) mensaje = validacionRegisterAccountInfoUiState.mensajeError ?: ""
             else if (!registerAccountInfoUiState.estaRegistrado) mensaje =
-                "Entrando a la APP con usuario ${registerAccountInfoUiState.email}"
+                "Usuario ${registerAccountInfoUiState.email} registrado correctamente"
             else mensaje = "Error, el email usuario ya está registrado"
             Snackbar(
                 modifier = Modifier.align(Alignment.BottomCenter)

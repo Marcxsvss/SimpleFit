@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -28,11 +29,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.simplefit.R
 import com.simplefit.ui.composables.CloudButton
 import com.simplefit.ui.composables.RutinasListItem2
+import com.simplefit.ui.features.mainApp.rutinas.RutinasEvent
 import com.simplefit.ui.features.mainApp.rutinas.RutinasUiState
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -59,9 +62,28 @@ fun AddRutinaScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         )
         {
-            Row(horizontalArrangement = Arrangement.Start, modifier = Modifier.fillMaxWidth()) {
-
-                IconButton(onClick = { onNavigateUp() }, modifier = Modifier.padding(top = 5.dp, end = 25.dp,start = 5.dp))
+//            Row(horizontalArrangement = Arrangement.Start, modifier = Modifier.fillMaxWidth()) {
+//
+//                IconButton(onClick = { onNavigateUp() }, modifier = Modifier.padding(top = 5.dp, end = 25.dp,start = 5.dp))
+//                {
+//                    Icon(
+//                        tint = Color(0xFFDAB338),
+//                        imageVector = Icons.Filled.ArrowBackIosNew,
+//                        contentDescription = "Volver atras"
+//                    )
+//                }
+//                Text(
+//                    modifier = Modifier.padding(10.dp),
+//                    text = "AÑADIR RUTINA",
+//                    color = Color(0xFFDAB338),
+//                    fontSize = 30.sp,
+//                    fontFamily = FontFamily(
+//                        Font(resId = R.font.roboto_blackitalic)
+//                    )
+//                )
+//            }
+            Box(modifier = Modifier.fillMaxWidth()) {
+                IconButton(onClick = { onNavigateUp() }, modifier = Modifier.align(Alignment.CenterStart))
                 {
                     Icon(
                         tint = Color(0xFFDAB338),
@@ -70,7 +92,7 @@ fun AddRutinaScreen(
                     )
                 }
                 Text(
-                    modifier = Modifier.padding(10.dp),
+                    modifier = Modifier.align(Alignment.Center),
                     text = "AÑADIR RUTINA",
                     color = Color(0xFFDAB338),
                     fontSize = 30.sp,
@@ -78,6 +100,9 @@ fun AddRutinaScreen(
                         Font(resId = R.font.roboto_blackitalic)
                     )
                 )
+
+
+
             }
 
             Row()

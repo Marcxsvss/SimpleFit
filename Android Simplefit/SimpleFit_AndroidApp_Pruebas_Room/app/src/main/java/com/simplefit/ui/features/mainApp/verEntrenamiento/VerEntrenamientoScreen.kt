@@ -86,9 +86,7 @@ fun VerEntrenamientoScreen(
 
     Surface(
         modifier = Modifier.fillMaxSize()
-
     ) {
-
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
 
@@ -205,6 +203,7 @@ fun VerEntrenamientoScreen(
         }
         if (mostrarDialog) {
             AlertDialog(
+                modifier = Modifier.fillMaxHeight(0.75f),
                 onDismissRequest = { onMostrarDialog(false) },
                 title = {
                     Text(
@@ -215,9 +214,9 @@ fun VerEntrenamientoScreen(
                     )
                 },
                 text = {
-                    Column {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Image(
-                            modifier = Modifier.size(350.dp),
+                            modifier = Modifier.fillMaxHeight(0.5f),
                             painter = painterFoto,
                             contentDescription = "Imagen ejercicio"
                         )
@@ -226,6 +225,8 @@ fun VerEntrenamientoScreen(
                             fontFamily = FontFamily(
                                 Font(resId = R.font.roboto_mediumitalic)
                             ),
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.fillMaxHeight(0.99f)
                         )
                     }
                 },

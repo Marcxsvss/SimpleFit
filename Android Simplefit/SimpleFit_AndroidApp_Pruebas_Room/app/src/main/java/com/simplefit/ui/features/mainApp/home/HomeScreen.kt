@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -60,11 +61,11 @@ fun HomeScreen(
     {
 
 
-        Column {
+        Column() {
             Box(
                 Modifier
                     .fillMaxWidth()
-                    .height(170.dp)
+                    .fillMaxHeight(0.25f)
                     .background(
                         color = Color(0xFFDBC06D),
                         shape = RoundedCornerShape(bottomEnd = 40.dp, bottomStart = 40.dp)
@@ -72,43 +73,55 @@ fun HomeScreen(
             ) {
                 Row()
                 {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.Start,
-                        modifier = Modifier.padding(start = 50.dp, 40.dp)
-                    ) {
-                        Text(
-                            text = "Hola,\n",
-                            color = Color.White,
-                            fontSize = 20.sp,
-                            fontStyle = FontStyle.Normal
-                        )
-                        Text(
-                            homeUiState.nombre.split(" ")[0].replaceFirstChar { it.uppercase(Locale.getDefault()) },
-                            color = Color.White,
-                            fontSize = 30.sp,
-                            fontStyle = FontStyle.Normal,
-                            fontFamily = FontFamily(Font(R.font.roboto_bold)),
-                            modifier = Modifier.size(175.dp)
+                    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxWidth(0.5f).fillMaxHeight())
+                    {
+                        Column(
+//                            verticalArrangement = Arrangement.Center,
+//                            horizontalAlignment = Alignment.Start,
+                            modifier = Modifier.fillMaxWidth(0.7f)
+                                //.padding(start = 50.dp, 40.dp)
+
+                        ) {
+                            Text(
+                                text = "Hola,\n",
+                                color = Color.White,
+                                fontSize = 20.sp,
+                                fontStyle = FontStyle.Normal
+                            )
+                            Text(
+                                homeUiState.nombre.split(" ")[0].replaceFirstChar { it.uppercase(Locale.getDefault()) } ,
+                                color = Color.White,
+                                fontSize = 30.sp,
+                                fontStyle = FontStyle.Normal,
+                                fontFamily = FontFamily(Font(R.font.roboto_bold)),
+
+                                //maxLines = 1
+                            )
+                        }
+                    }
+
+                    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxWidth().fillMaxHeight())
+                    {
+                        ImageSelector(
+                            //modifier = Modifier.align(Alignment.Center),
+                            selectImageBitmap = homeUiState.foto,
+                            onImageChanged = {onHomeEvent(HomeEvent.OnCambiarfoto(it))}
                         )
                     }
-                    ImageSelector(
-                        modifier = Modifier.padding(top = 30.dp),
-                        selectImageBitmap = homeUiState.foto,
-                        onImageChanged = {onHomeEvent(HomeEvent.OnCambiarfoto(it))}
-                    )
+
 
                 }
             }
             Spacer(modifier = Modifier.height(12.dp))
             Column(
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxHeight()
             )
             {
                 Row( //Las bolas de los dias de la semana
                     Modifier
-                        .height(55.dp)
+                        .fillMaxHeight(0.08f)//height(55.dp)
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center
                 ) {
@@ -134,10 +147,12 @@ fun HomeScreen(
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(12.dp))
                 HeaderConsejos(
                     modifier = Modifier,
                     consejos = consejos
                 )
+                Spacer(modifier = Modifier.height(12.dp))
 
 
                 HomeButton(
@@ -145,34 +160,36 @@ fun HomeScreen(
                     texto = "VER ENTRENAMIENTO",
                     foto = painterResource(id = R.drawable.ver_entrenamiento_3),
                     onHomeEvent = onHomeEvent,
+                    modifier = Modifier.fillMaxHeight(0.25f)
                 )
 
 
 
-                Spacer(modifier = Modifier.height(25.dp))
+                Spacer(modifier = Modifier.height(15.dp))
                 HomeButton(
                     texto = "RECOMENDAR AMIGOS",
                     foto = painterResource(id = R.drawable.compartir_background),
-                    onHomeEvent = onHomeEvent
+                    onHomeEvent = onHomeEvent,
+                    modifier = Modifier.fillMaxHeight(0.35f)
                 )
-                Spacer(modifier = Modifier.height(55.dp))
+                //Spacer(modifier = Modifier.height(55.dp))
+                LaunchedEffect(mostrarSnack) {
+                    if (mostrarSnack) {
+                        delay(1500L)
+                        onMostrarSnackbar()
+                    }
+                }
 
-            }
-        }
-        LaunchedEffect(mostrarSnack) {
-            if (mostrarSnack) {
-                delay(1000L)
-                onMostrarSnackbar()
+                if (mostrarSnack) {
+                    Snackbar(
+                        modifier = Modifier//.align(Alignment.BottomCenter)
+                    ) {
+                        Text(text = "No tienes rutina activa")
+                    }
+                }
             }
         }
 
-        if (mostrarSnack) {
-            Snackbar(
-                modifier = Modifier.align(Alignment.BottomCenter)
-            ) {
-                Text(text = "No tienes rutina activa")
-            }
-        }
 
     }
 }

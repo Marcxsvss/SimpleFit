@@ -9,7 +9,7 @@ class ValidadorPeso(
     override fun valida(datos: String): Validacion {
         return object : Validacion {
             override val hayError: Boolean
-                get() = datos.toInt() in 36..149
+                get() = datos.toInt() in 0..300
             override val mensajeError: String
                 get() = error
         }

@@ -56,44 +56,41 @@ fun RutinasScreen(
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(start = 20.dp,end = 20.dp)
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp)
             ) {
-
-
-                Row(
-                    horizontalArrangement = Arrangement.End,
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                )
-                {
-
+                Box(modifier = Modifier.fillMaxWidth()) {
                     Text(
                         text = "RUTINAS",
                         color = Color(0xFFDAB338),
                         fontSize = 30.sp,
                         fontStyle = FontStyle.Italic,
-                        modifier = Modifier.padding(top = 10.dp)
+                        modifier = Modifier.padding(top = 10.dp).align(Alignment.Center)
+
                     )
-                    IconButton(onClick = {
+                    IconButton(modifier = Modifier.align(Alignment.CenterEnd),onClick = {
                         onRutinaEvent(
                             RutinasEvent.onAddClicked(
                                 onNavigateToAddRutina
                             )
                         )
-                    }, modifier = Modifier.padding(start = 70.dp).padding(top = 10.dp)) {
+                    }){
                         Icon(
                             Icons.Filled.Add,
                             contentDescription = "Añadir Plan de Entrenamiento/Alimenticio",
+
                         )
                     }
+
 
                 }
 
 
                 Spacer(modifier = Modifier.fillMaxHeight(0.05f))
-                Row(modifier = Modifier
-                    .align(Alignment.End)
-                    .height(40.dp)) {
+                Row(
+                    modifier = Modifier
+                        .align(Alignment.End)
+                        .height(40.dp)
+                ) {
                     LaunchedEffect(mostrarSnack) {
                         if (mostrarSnack) {
                             delay(3000L)
@@ -102,9 +99,10 @@ fun RutinasScreen(
                     }
 
                     if (mostrarSnack) {
-                        Snackbar( modifier = Modifier.width(250.dp)
+                        Snackbar(
+                            modifier = Modifier.width(250.dp)
                         ) {
-                            Text(text = "No puedes eliminar una rutina activa",fontSize = 13.sp)
+                            Text(text = "No puedes eliminar una rutina activa", fontSize = 13.sp)
                         }
                     }
                     if (rutinaSeleccionadaState!!.descripcion.isNotBlank()) {
@@ -127,7 +125,11 @@ fun RutinasScreen(
                     }
                 }
 
-                Box(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                ) {
 
                     LazyColumn(
                         //contentPadding = PaddingValues(all = 4.dp),
@@ -159,7 +161,6 @@ fun RutinasScreen(
                             )
                         }
                     }
-
 
 
                 }

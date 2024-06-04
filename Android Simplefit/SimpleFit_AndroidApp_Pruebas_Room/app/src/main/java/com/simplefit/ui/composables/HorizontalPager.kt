@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -148,7 +149,7 @@ fun HeaderConsejos(
     }
 
     Column(
-        modifier = modifier.fillMaxWidth().height(150.dp),
+        modifier = modifier.fillMaxWidth().fillMaxHeight(0.25f).padding(start = 18.dp, end = 18.dp),//height(150.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -157,9 +158,9 @@ fun HeaderConsejos(
             pagerState = pagerState,
             consejos = consejos
         )
-        PagerIndicator(
-            modifier = Modifier.padding(top = 10.dp),
-            pagerState = pagerState
-        )
+//        PagerIndicator(
+//            modifier = Modifier.padding(top = 10.dp),
+//            pagerState = pagerState
+//        )
     }
 }

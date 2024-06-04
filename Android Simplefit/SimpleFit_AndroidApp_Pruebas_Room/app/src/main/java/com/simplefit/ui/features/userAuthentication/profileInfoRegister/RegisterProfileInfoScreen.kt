@@ -96,7 +96,7 @@ fun RegisterProfileInfoScreen(
         if (mostrarSnack) {
             var mensaje = ""
             if (validacionRegisterProfileInfoUiState.hayError) mensaje = validacionRegisterProfileInfoUiState.mensajeError ?: ""
-            else mensaje = "Error, los datos introducidos no son correctos"
+            else mensaje = "Perfil completado con éxito!"
             Snackbar(
                 modifier = Modifier.align(Alignment.BottomCenter)
             ) {

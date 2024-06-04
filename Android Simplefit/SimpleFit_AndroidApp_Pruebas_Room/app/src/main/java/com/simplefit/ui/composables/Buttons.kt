@@ -6,7 +6,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -67,14 +69,14 @@ fun CloudButton(texto : String,onTodasClicked: () -> Unit? = {},onFiltroClicked:
 
 }
 @Composable
-fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RutinasUiState) -> Unit)? = null)
+fun HomeButton(modifier : Modifier,texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, dia : String = "",onNavigateToVerEntrenamiento:((rutina: RutinasUiState) -> Unit)? = null)
 {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
-    Box( //Ver entrenamiento de hoy
-        Modifier
-            .width(358.dp)
-            .height(100.dp)
+    Box(
+        modifier.then(Modifier.fillMaxWidth()
+            .fillMaxHeight(0.25f)
+            .padding(start = 18.dp,end = 18.dp)//height(100.dp)
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(Color.Transparent, Color.Transparent),
@@ -91,14 +93,12 @@ fun HomeButton(texto : String,foto : Painter, onHomeEvent: (HomeEvent) -> Unit, 
             .clickable {
                 when (texto) {
                     "VER ENTRENAMIENTO" -> { onHomeEvent(HomeEvent.onVerEntrenamientoClicked(onNavigateToVerEntrenamiento)) }
-                    "CONSEJOS" -> {
-                        //onHomeEvent(HomeEvent.)
-                    }
                     else -> {
                         coroutineScope.launch { compartirEnlace(context, "https://play.google.com/store/apps/simplefit")}
                     }
                 }
-            }
+            })
+
     ) {
         Image(
             painter = foto,
